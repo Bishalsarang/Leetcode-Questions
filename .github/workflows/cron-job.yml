@@ -1,10 +1,6 @@
-name: download_letcode
+name: download_letcode_cron
 
 on:
-  push:
-    branches:
-      - main
-      - master
   schedule:
     - cron: '0 0 * * *'
 

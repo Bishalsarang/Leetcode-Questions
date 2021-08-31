@@ -1,0 +1,35 @@
+name: download_letcode_manual
+
+on:
+  workflow_dispatch:
+    inputs:
+      numberOfProblems:
+        description: 'Number of problems to download'     
+        default: '30'
+      sleepTimePerProblemInSecond:
+        description: 'Number of seconds to wait after downloading each problem'  
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Generate epub and html
+        run: |
+          python main.py
+      - name: Commit and push
+        run: |-
+          git config --global user.email "githubaction@example.com"
+          git config --global user.name "github-action"
+          git diff --quiet || (git add chapters.pickle out.html track.conf "Leetcode Questions.epub" && git commit -m "Update with new problems")
+          git push origin HEAD:main
