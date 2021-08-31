@@ -1,1 +1,146 @@
- 
+ <style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>**********<div id="title">1. Two Sum</div>
+**********<div class="content__u3I1 question-content__JfgR"><div><p>Given an array of integers <code>nums</code> and an integer <code>target</code>, return <em>indices of the two numbers such that they add up to <code>target</code></em>.</p>
+<p>You may assume that each input would have <strong><em>exactly</em> one solution</strong>, and you may not use the <em>same</em> element twice.</p>
+<p>You can return the answer in any order.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [2,7,11,15], target = 9
+<strong>Output:</strong> [0,1]
+<strong>Output:</strong> Because nums[0] + nums[1] == 9, we return [0, 1].
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [3,2,4], target = 6
+<strong>Output:</strong> [1,2]
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> nums = [3,3], target = 6
+<strong>Output:</strong> [0,1]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>2 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>
+<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
+<li><code>-10<sup>9</sup> &lt;= target &lt;= 10<sup>9</sup></code></li>
+<li><strong>Only one valid answer exists.</strong></li>
+</ul>
+<p> </p>
+<strong>Follow-up: </strong>Can you come up with an algorithm that is less than <code>O(n<sup>2</sup>) </code>time complexity?</div></div><br><br><hr><br>******************<div id="title">7. Reverse Integer</div>
+******************<div class="content__u3I1 question-content__JfgR"><div><p>Given a signed 32-bit integer <code>x</code>, return <code>x</code><em> with its digits reversed</em>. If reversing <code>x</code> causes the value to go outside the signed 32-bit integer range <code>[-2<sup>31</sup>, 2<sup>31</sup> - 1]</code>, then return <code>0</code>.</p>
+<p><strong>Assume the environment does not allow you to store 64-bit integers (signed or unsigned).</strong></p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> x = 123
+<strong>Output:</strong> 321
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> x = -123
+<strong>Output:</strong> -321
+</pre><p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> x = 120
+<strong>Output:</strong> 21
+</pre><p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> x = 0
+<strong>Output:</strong> 0
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>-2<sup>31</sup> &lt;= x &lt;= 2<sup>31</sup> - 1</code></li>
+</ul>
+</div></div><br><br><hr><br>********************<div id="title">9. Palindrome Number</div>
+********************<div class="content__u3I1 question-content__JfgR"><div><p>Given an integer <code>x</code>, return <code>true</code> if <code>x</code> is palindrome integer.</p>
+<p>An integer is a <strong>palindrome</strong> when it reads the same backward as forward. For example, <code>121</code> is palindrome while <code>123</code> is not.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> x = 121
+<strong>Output:</strong> true
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> x = -121
+<strong>Output:</strong> false
+<strong>Explanation:</strong> From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> x = 10
+<strong>Output:</strong> false
+<strong>Explanation:</strong> Reads 01 from right to left. Therefore it is not a palindrome.
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> x = -101
+<strong>Output:</strong> false
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>-2<sup>31</sup> &lt;= x &lt;= 2<sup>31</sup> - 1</code></li>
+</ul>
+<p> </p>
+<strong>Follow up:</strong> Could you solve it without converting the integer to a string?</div></div><br><br><hr><br>********************<div id="title">13. Roman to Integer</div>
+********************<div class="content__u3I1 question-content__JfgR"><div><p>Roman numerals are represented by seven different symbols: <code>I</code>, <code>V</code>, <code>X</code>, <code>L</code>, <code>C</code>, <code>D</code> and <code>M</code>.</p>
+<pre><strong>Symbol</strong>       <strong>Value</strong>
+I             1
+V             5
+X             10
+L             50
+C             100
+D             500
+M             1000</pre>
+<p>For example, <code>2</code> is written as <code>II</code> in Roman numeral, just two one's added together. <code>12</code> is written as <code>XII</code>, which is simply <code>X + II</code>. The number <code>27</code> is written as <code>XXVII</code>, which is <code>XX + V + II</code>.</p>
+<p>Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not <code>IIII</code>. Instead, the number four is written as <code>IV</code>. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as <code>IX</code>. There are six instances where subtraction is used:</p>
+<ul>
+<li><code>I</code> can be placed before <code>V</code> (5) and <code>X</code> (10) to make 4 and 9. </li>
+<li><code>X</code> can be placed before <code>L</code> (50) and <code>C</code> (100) to make 40 and 90. </li>
+<li><code>C</code> can be placed before <code>D</code> (500) and <code>M</code> (1000) to make 400 and 900.</li>
+</ul>
+<p>Given a roman numeral, convert it to an integer.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "III"
+<strong>Output:</strong> 3
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "IV"
+<strong>Output:</strong> 4
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> s = "IX"
+<strong>Output:</strong> 9
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> s = "LVIII"
+<strong>Output:</strong> 58
+<strong>Explanation:</strong> L = 50, V= 5, III = 3.
+</pre>
+<p><strong>Example 5:</strong></p>
+<pre><strong>Input:</strong> s = "MCMXCIV"
+<strong>Output:</strong> 1994
+<strong>Explanation:</strong> M = 1000, CM = 900, XC = 90 and IV = 4.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 15</code></li>
+<li><code>s</code> contains only the characters <code>('I', 'V', 'X', 'L', 'C', 'D', 'M')</code>.</li>
+<li>It is <strong>guaranteed</strong> that <code>s</code> is a valid roman numeral in the range <code>[1, 3999]</code>.</li>
+</ul>
+</div></div><br><br><hr><br>*************************<div id="title">14. Longest Common Prefix</div>
+*************************<div class="content__u3I1 question-content__JfgR"><div><p>Write a function to find the longest common prefix string amongst an array of strings.</p>
+<p>If there is no common prefix, return an empty string <code>""</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> strs = ["flower","flow","flight"]
+<strong>Output:</strong> "fl"
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> strs = ["dog","racecar","car"]
+<strong>Output:</strong> ""
+<strong>Explanation:</strong> There is no common prefix among the input strings.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= strs.length &lt;= 200</code></li>
+<li><code>0 &lt;= strs[i].length &lt;= 200</code></li>
+<li><code>strs[i]</code> consists of only lower-case English letters.</li>
+</ul>
+</div></div><br><br><hr><br>

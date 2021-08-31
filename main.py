@@ -78,7 +78,7 @@ def download(problem_num, url, title, solution_slug):
         driver.quit()
 
 def main():
-
+    MAXIMUM_NUMBER_OF_PROBLEMS_PER_INSTANCE = 40
     # Leetcode API URL to get json of problems on algorithms categories
     ALGORITHMS_ENDPOINT_URL = "https://leetcode.com/api/problems/algorithms/"
 
@@ -108,17 +108,19 @@ def main():
 
     # Sort by difficulty follwed by problem id in ascending order
     links = sorted(links, key=lambda x: (x[1], x[2]))
-
-    # TODO: make it work for all links. Currently set to 5
+    downloaded_now = 0
     try: 
-        for i in range(completed_upto + 1, 5):
+        for i in range(completed_upto + 1, len(links)):
              question__title_slug, _ , frontend_question_id, question__title, question__article__slug = links[i]
              url = ALGORITHMS_BASE_URL + question__title_slug
              title = f"{frontend_question_id}. {question__title}"
 
              # Download each file as html and write chapter to chapters.pickle
              download(i, url , title, question__article__slug)
-
+             downloaded_now += 1
+            
+             if downloaded_now == MAXIMUM_NUMBER_OF_PROBLEMS_PER_INSTANCE:
+                break
              # Sleep for 20 secs for each problem and 2 minns after every 30 problems
              if i % 30 == 0:
                  print(f"Sleeping 120 secs\n")

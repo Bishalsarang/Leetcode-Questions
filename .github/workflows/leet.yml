@@ -30,5 +30,5 @@ jobs:
         run: |-
           git config --global user.email "githubaction@example.com"
           git config --global user.name "github-action"
-          git diff --quiet || (git add chapters.pickle out.html track.conf "Leetcode Questions.epub" && git commit -m "Update with latest stocks")
+          git diff --quiet || (git add chapters.pickle out.html track.conf "Leetcode Questions.epub" && git commit -m "Update with new problems")
           git push origin HEAD:main
