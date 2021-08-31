@@ -143,4 +143,1106 @@ M             1000</pre>
 <li><code>0 &lt;= strs[i].length &lt;= 200</code></li>
 <li><code>strs[i]</code> consists of only lower-case English letters.</li>
 </ul>
-</div></div><br><br><hr><br>
+</div></div><br><br><hr><br><style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>*********************<div id="title">20. Valid Parentheses</div>
+*********************<div class="content__u3I1 question-content__JfgR"><div><p>Given a string <code>s</code> containing just the characters <code>'('</code>, <code>')'</code>, <code>'{'</code>, <code>'}'</code>, <code>'['</code> and <code>']'</code>, determine if the input string is valid.</p>
+<p>An input string is valid if:</p>
+<ol>
+<li>Open brackets must be closed by the same type of brackets.</li>
+<li>Open brackets must be closed in the correct order.</li>
+</ol>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "()"
+<strong>Output:</strong> true
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "()[]{}"
+<strong>Output:</strong> true
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> s = "(]"
+<strong>Output:</strong> false
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> s = "([)]"
+<strong>Output:</strong> false
+</pre>
+<p><strong>Example 5:</strong></p>
+<pre><strong>Input:</strong> s = "{[]}"
+<strong>Output:</strong> true
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 10<sup>4</sup></code></li>
+<li><code>s</code> consists of parentheses only <code>'()[]{}'</code>.</li>
+</ul>
+</div></div><br><br><hr><br>**************************<div id="title">21. Merge Two Sorted Lists</div>
+**************************<div class="content__u3I1 question-content__JfgR"><div><p>Merge two sorted linked lists and return it as a <strong>sorted</strong> list. The list should be made by splicing together the nodes of the first two lists.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/10/03/merge_ex1.jpg" style="width: 662px; height: 302px;"/>
+<pre><strong>Input:</strong> l1 = [1,2,4], l2 = [1,3,4]
+<strong>Output:</strong> [1,1,2,3,4,4]
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> l1 = [], l2 = []
+<strong>Output:</strong> []
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> l1 = [], l2 = [0]
+<strong>Output:</strong> [0]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in both lists is in the range <code>[0, 50]</code>.</li>
+<li><code>-100 &lt;= Node.val &lt;= 100</code></li>
+<li>Both <code>l1</code> and <code>l2</code> are sorted in <strong>non-decreasing</strong> order.</li>
+</ul>
+</div></div><br><br><hr><br>***************************************<div id="title">26. Remove Duplicates from Sorted Array</div>
+***************************************<div class="content__u3I1 question-content__JfgR"><div><p>Given an integer array <code>nums</code> sorted in <strong>non-decreasing order</strong>, remove the duplicates <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank"><strong>in-place</strong></a> such that each unique element appears only <strong>once</strong>. The <strong>relative order</strong> of the elements should be kept the <strong>same</strong>.</p>
+<p>Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the <strong>first part</strong> of the array <code>nums</code>. More formally, if there are <code>k</code> elements after removing the duplicates, then the first <code>k</code> elements of <code>nums</code> should hold the final result. It does not matter what you leave beyond the first <code>k</code> elements.</p>
+<p>Return <code>k</code><em> after placing the final result in the first </em><code>k</code><em> slots of </em><code>nums</code>.</p>
+<p>Do <strong>not</strong> allocate extra space for another array. You must do this by <strong>modifying the input array <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank">in-place</a></strong> with O(1) extra memory.</p>
+<p><strong>Custom Judge:</strong></p>
+<p>The judge will test your solution with the following code:</p>
+<pre>int[] nums = [...]; // Input array
+int[] expectedNums = [...]; // The expected answer with correct length
+
+int k = removeDuplicates(nums); // Calls your implementation
+
+assert k == expectedNums.length;
+for (int i = 0; i &lt; k; i++) {
+    assert nums[i] == expectedNums[i];
+}
+</pre>
+<p>If all assertions pass, then your solution will be <strong>accepted</strong>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [1,1,2]
+<strong>Output:</strong> 2, nums = [1,2,_]
+<strong>Explanation:</strong> Your function should return k = 2, with the first two elements of nums being 1 and 2 respectively.
+It does not matter what you leave beyond the returned k (hence they are underscores).
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [0,0,1,1,1,2,2,3,3,4]
+<strong>Output:</strong> 5, nums = [0,1,2,3,4,_,_,_,_,_]
+<strong>Explanation:</strong> Your function should return k = 5, with the first five elements of nums being 0, 1, 2, 3, and 4 respectively.
+It does not matter what you leave beyond the returned k (hence they are underscores).
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>0 &lt;= nums.length &lt;= 3 * 10<sup>4</sup></code></li>
+<li><code>-100 &lt;= nums[i] &lt;= 100</code></li>
+<li><code>nums</code> is sorted in <strong>non-decreasing</strong> order.</li>
+</ul>
+</div></div><br><br><hr><br>******************<div id="title">27. Remove Element</div>
+******************<div class="content__u3I1 question-content__JfgR"><div><p>Given an integer array <code>nums</code> and an integer <code>val</code>, remove all occurrences of <code>val</code> in <code>nums</code> <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank"><strong>in-place</strong></a>. The relative order of the elements may be changed.</p>
+<p>Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the <strong>first part</strong> of the array <code>nums</code>. More formally, if there are <code>k</code> elements after removing the duplicates, then the first <code>k</code> elements of <code>nums</code> should hold the final result. It does not matter what you leave beyond the first <code>k</code> elements.</p>
+<p>Return <code>k</code><em> after placing the final result in the first </em><code>k</code><em> slots of </em><code>nums</code>.</p>
+<p>Do <strong>not</strong> allocate extra space for another array. You must do this by <strong>modifying the input array <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank">in-place</a></strong> with O(1) extra memory.</p>
+<p><strong>Custom Judge:</strong></p>
+<p>The judge will test your solution with the following code:</p>
+<pre>int[] nums = [...]; // Input array
+int val = ...; // Value to remove
+int[] expectedNums = [...]; // The expected answer with correct length.
+                            // It is sorted with no values equaling val.
+
+int k = removeElement(nums, val); // Calls your implementation
+
+assert k == expectedNums.length;
+sort(nums, 0, k); // Sort the first k elements of nums
+for (int i = 0; i &lt; actualLength; i++) {
+    assert nums[i] == expectedNums[i];
+}
+</pre>
+<p>If all assertions pass, then your solution will be <strong>accepted</strong>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [3,2,2,3], val = 3
+<strong>Output:</strong> 2, nums = [2,2,_,_]
+<strong>Explanation:</strong> Your function should return k = 2, with the first two elements of nums being 2.
+It does not matter what you leave beyond the returned k (hence they are underscores).
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [0,1,2,2,3,0,4,2], val = 2
+<strong>Output:</strong> 5, nums = [0,1,4,0,3,_,_,_]
+<strong>Explanation:</strong> Your function should return k = 5, with the first five elements of nums containing 0, 0, 1, 3, and 4.
+Note that the five elements can be returned in any order.
+It does not matter what you leave beyond the returned k (hence they are underscores).
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>0 &lt;= nums.length &lt;= 100</code></li>
+<li><code>0 &lt;= nums[i] &lt;= 50</code></li>
+<li><code>0 &lt;= val &lt;= 100</code></li>
+</ul>
+</div></div><br><br><hr><br>**********************<div id="title">28. Implement strStr()</div>
+**********************<div class="content__u3I1 question-content__JfgR"><div><p>Implement <a href="http://www.cplusplus.com/reference/cstring/strstr/" target="_blank">strStr()</a>.</p>
+<p>Return the index of the first occurrence of needle in haystack, or <code>-1</code> if <code>needle</code> is not part of <code>haystack</code>.</p>
+<p><strong>Clarification:</strong></p>
+<p>What should we return when <code>needle</code> is an empty string? This is a great question to ask during an interview.</p>
+<p>For the purpose of this problem, we will return 0 when <code>needle</code> is an empty string. This is consistent to C's <a href="http://www.cplusplus.com/reference/cstring/strstr/" target="_blank">strstr()</a> and Java's <a href="https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#indexOf(java.lang.String)" target="_blank">indexOf()</a>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> haystack = "hello", needle = "ll"
+<strong>Output:</strong> 2
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> haystack = "aaaaa", needle = "bba"
+<strong>Output:</strong> -1
+</pre><p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> haystack = "", needle = ""
+<strong>Output:</strong> 0
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>0 &lt;= haystack.length, needle.length &lt;= 5 * 10<sup>4</sup></code></li>
+<li><code>haystack</code> and <code>needle</code> consist of only lower-case English characters.</li>
+</ul>
+</div></div><br><br><hr><br>**************************<div id="title">35. Search Insert Position</div>
+**************************<div class="content__u3I1 question-content__JfgR"><div><p>Given a sorted array of distinct integers and a target value, return the index if the target is found. If not, return the index where it would be if it were inserted in order.</p>
+<p>You must write an algorithm with <code>O(log n)</code> runtime complexity.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [1,3,5,6], target = 5
+<strong>Output:</strong> 2
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [1,3,5,6], target = 2
+<strong>Output:</strong> 1
+</pre><p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> nums = [1,3,5,6], target = 7
+<strong>Output:</strong> 4
+</pre><p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> nums = [1,3,5,6], target = 0
+<strong>Output:</strong> 0
+</pre><p><strong>Example 5:</strong></p>
+<pre><strong>Input:</strong> nums = [1], target = 0
+<strong>Output:</strong> 0
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>
+<li><code>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>
+<li><code>nums</code> contains <strong>distinct</strong> values sorted in <strong>ascending</strong> order.</li>
+<li><code>-10<sup>4</sup> &lt;= target &lt;= 10<sup>4</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>********************<div id="title">53. Maximum Subarray</div>
+********************<div class="content__u3I1 question-content__JfgR"><div><p>Given an integer array <code>nums</code>, find the contiguous subarray (containing at least one number) which has the largest sum and return <em>its sum</em>.</p>
+<p>A <strong>subarray</strong> is a <strong>contiguous</strong> part of an array.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [-2,1,-3,4,-1,2,1,-5,4]
+<strong>Output:</strong> 6
+<strong>Explanation:</strong> [4,-1,2,1] has the largest sum = 6.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [1]
+<strong>Output:</strong> 1
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> nums = [5,4,-1,7,8]
+<strong>Output:</strong> 23
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 3 * 10<sup>4</sup></code></li>
+<li><code>-10<sup>5</sup> &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
+</ul>
+<p> </p>
+<p><strong>Follow up:</strong> If you have figured out the <code>O(n)</code> solution, try coding another solution using the <strong>divide and conquer</strong> approach, which is more subtle.</p>
+</div></div><br><br><hr><br>***********************<div id="title">58. Length of Last Word</div>
+***********************<div class="content__u3I1 question-content__JfgR"><div><p>Given a string <code>s</code> consisting of some words separated by some number of spaces, return <em>the length of the <strong>last</strong> word in the string.</em></p>
+<p>A <strong>word</strong> is a maximal substring consisting of non-space characters only.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "Hello World"
+<strong>Output:</strong> 5
+<strong>Explanation:</strong> The last word is "World" with length 5.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "   fly me   to   the moon  "
+<strong>Output:</strong> 4
+<strong>Explanation:</strong> The last word is "moon" with length 4.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> s = "luffy is still joyboy"
+<strong>Output:</strong> 6
+<strong>Explanation:</strong> The last word is "joyboy" with length 6.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 10<sup>4</sup></code></li>
+<li><code>s</code> consists of only English letters and spaces <code>' '</code>.</li>
+<li>There will be at least one word in <code>s</code>.</li>
+</ul>
+</div></div><br><br><hr><br>************<div id="title">66. Plus One</div>
+************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a <strong>large integer</strong> represented as an integer array <code>digits</code>, where each <code>digits[i]</code> is the <code>i<sup>th</sup></code> digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading <code>0</code>'s.</p>
+<p>Increment the large integer by one and return <em>the resulting array of digits</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> digits = [1,2,3]
+<strong>Output:</strong> [1,2,4]
+<strong>Explanation:</strong> The array represents the integer 123.
+Incrementing by one gives 123 + 1 = 124.
+Thus, the result should be [1,2,4].
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> digits = [4,3,2,1]
+<strong>Output:</strong> [4,3,2,2]
+<strong>Explanation:</strong> The array represents the integer 4321.
+Incrementing by one gives 4321 + 1 = 4322.
+Thus, the result should be [4,3,2,2].
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> digits = [0]
+<strong>Output:</strong> [1]
+<strong>Explanation:</strong> The array represents the integer 0.
+Incrementing by one gives 0 + 1 = 1.
+Thus, the result should be [1].
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> digits = [9]
+<strong>Output:</strong> [1,0]
+<strong>Explanation:</strong> The array represents the integer 9.
+Incrementing by one gives 9 + 1 = 10.
+Thus, the result should be [1,0].
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= digits.length &lt;= 100</code></li>
+<li><code>0 &lt;= digits[i] &lt;= 9</code></li>
+<li><code>digits</code> does not contain any leading <code>0</code>'s.</li>
+</ul>
+</div></div><br><br><hr><br>**************<div id="title">67. Add Binary</div>
+**************<div class="content__u3I1 question-content__JfgR"><div><p>Given two binary strings <code>a</code> and <code>b</code>, return <em>their sum as a binary string</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> a = "11", b = "1"
+<strong>Output:</strong> "100"
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> a = "1010", b = "1011"
+<strong>Output:</strong> "10101"
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= a.length, b.length &lt;= 10<sup>4</sup></code></li>
+<li><code>a</code> and <code>b</code> consist only of <code>'0'</code> or <code>'1'</code> characters.</li>
+<li>Each string does not contain leading zeros except for the zero itself.</li>
+</ul>
+</div></div><br><br><hr><br>***********<div id="title">69. Sqrt(x)</div>
+***********<div class="content__u3I1 question-content__JfgR"><div><p>Given a non-negative integer <code>x</code>, compute and return <em>the square root of</em> <code>x</code>.</p>
+<p>Since the return type is an integer, the decimal digits are <strong>truncated</strong>, and only <strong>the integer part</strong> of the result is returned.</p>
+<p><strong>Note: </strong>You are not allowed to use any built-in exponent function or operator, such as <code>pow(x, 0.5)</code> or <code>x ** 0.5</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> x = 4
+<strong>Output:</strong> 2
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> x = 8
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> The square root of 8 is 2.82842..., and since the decimal part is truncated, 2 is returned.</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>0 &lt;= x &lt;= 2<sup>31</sup> - 1</code></li>
+</ul>
+</div></div><br><br><hr><br>*******************<div id="title">70. Climbing Stairs</div>
+*******************<div class="content__u3I1 question-content__JfgR"><div><p>You are climbing a staircase. It takes <code>n</code> steps to reach the top.</p>
+<p>Each time you can either climb <code>1</code> or <code>2</code> steps. In how many distinct ways can you climb to the top?</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> n = 2
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> There are two ways to climb to the top.
+1. 1 step + 1 step
+2. 2 steps
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> n = 3
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> There are three ways to climb to the top.
+1. 1 step + 1 step + 1 step
+2. 1 step + 2 steps
+3. 2 steps + 1 step
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 45</code></li>
+</ul>
+</div></div><br><br><hr><br>**************************************<div id="title">83. Remove Duplicates from Sorted List</div>
+**************************************<div class="content__u3I1 question-content__JfgR"><div><p>Given the <code>head</code> of a sorted linked list, <em>delete all duplicates such that each element appears only once</em>. Return <em>the linked list <strong>sorted</strong> as well</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/01/04/list1.jpg" style="width: 302px; height: 242px;"/>
+<pre><strong>Input:</strong> head = [1,1,2]
+<strong>Output:</strong> [1,2]
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/01/04/list2.jpg" style="width: 542px; height: 222px;"/>
+<pre><strong>Input:</strong> head = [1,1,2,3,3]
+<strong>Output:</strong> [1,2,3]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the list is in the range <code>[0, 300]</code>.</li>
+<li><code>-100 &lt;= Node.val &lt;= 100</code></li>
+<li>The list is guaranteed to be <strong>sorted</strong> in ascending order.</li>
+</ul>
+</div></div><br><br><hr><br>**********************<div id="title">88. Merge Sorted Array</div>
+**********************<div class="content__u3I1 question-content__JfgR"><div><p>You are given two integer arrays <code>nums1</code> and <code>nums2</code>, sorted in <strong>non-decreasing order</strong>, and two integers <code>m</code> and <code>n</code>, representing the number of elements in <code>nums1</code> and <code>nums2</code> respectively.</p>
+<p><strong>Merge</strong> <code>nums1</code> and <code>nums2</code> into a single array sorted in <strong>non-decreasing order</strong>.</p>
+<p>The final sorted array should not be returned by the function, but instead be <em>stored inside the array </em><code>nums1</code>. To accommodate this, <code>nums1</code> has a length of <code>m + n</code>, where the first <code>m</code> elements denote the elements that should be merged, and the last <code>n</code> elements are set to <code>0</code> and should be ignored. <code>nums2</code> has a length of <code>n</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
+<strong>Output:</strong> [1,2,2,3,5,6]
+<strong>Explanation:</strong> The arrays we are merging are [1,2,3] and [2,5,6].
+The result of the merge is [<u>1</u>,<u>2</u>,2,<u>3</u>,5,6] with the underlined elements coming from nums1.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums1 = [1], m = 1, nums2 = [], n = 0
+<strong>Output:</strong> [1]
+<strong>Explanation:</strong> The arrays we are merging are [1] and [].
+The result of the merge is [1].
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> nums1 = [0], m = 0, nums2 = [1], n = 1
+<strong>Output:</strong> [1]
+<strong>Explanation:</strong> The arrays we are merging are [] and [1].
+The result of the merge is [1].
+Note that because m = 0, there are no elements in nums1. The 0 is only there to ensure the merge result can fit in nums1.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>nums1.length == m + n</code></li>
+<li><code>nums2.length == n</code></li>
+<li><code>0 &lt;= m, n &lt;= 200</code></li>
+<li><code>1 &lt;= m + n &lt;= 200</code></li>
+<li><code>-10<sup>9</sup> &lt;= nums1[i], nums2[j] &lt;= 10<sup>9</sup></code></li>
+</ul>
+<p> </p>
+<p><strong>Follow up: </strong>Can you come up with an algorithm that runs in <code>O(m + n)</code> time?</p>
+</div></div><br><br><hr><br>*********************************<div id="title">94. Binary Tree Inorder Traversal</div>
+*********************************<div class="content__u3I1 question-content__JfgR"><div><p>Given the <code>root</code> of a binary tree, return <em>the inorder traversal of its nodes' values</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/09/15/inorder_1.jpg" style="width: 202px; height: 324px;"/>
+<pre><strong>Input:</strong> root = [1,null,2,3]
+<strong>Output:</strong> [1,3,2]
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> root = []
+<strong>Output:</strong> []
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> root = [1]
+<strong>Output:</strong> [1]
+</pre>
+<p><strong>Example 4:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/09/15/inorder_5.jpg" style="width: 202px; height: 202px;"/>
+<pre><strong>Input:</strong> root = [1,2]
+<strong>Output:</strong> [2,1]
+</pre>
+<p><strong>Example 5:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/09/15/inorder_4.jpg" style="width: 202px; height: 202px;"/>
+<pre><strong>Input:</strong> root = [1,null,2]
+<strong>Output:</strong> [1,2]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the tree is in the range <code>[0, 100]</code>.</li>
+<li><code>-100 &lt;= Node.val &lt;= 100</code></li>
+</ul>
+<p> </p>
+<strong>Follow up:</strong> Recursive solution is trivial, could you do it iteratively?</div></div><br><br><hr><br>**************<div id="title">100. Same Tree</div>
+**************<div class="content__u3I1 question-content__JfgR"><div><p>Given the roots of two binary trees <code>p</code> and <code>q</code>, write a function to check if they are the same or not.</p>
+<p>Two binary trees are considered the same if they are structurally identical, and the nodes have the same value.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/12/20/ex1.jpg" style="width: 622px; height: 182px;"/>
+<pre><strong>Input:</strong> p = [1,2,3], q = [1,2,3]
+<strong>Output:</strong> true
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/12/20/ex2.jpg" style="width: 382px; height: 182px;"/>
+<pre><strong>Input:</strong> p = [1,2], q = [1,null,2]
+<strong>Output:</strong> false
+</pre>
+<p><strong>Example 3:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/12/20/ex3.jpg" style="width: 622px; height: 182px;"/>
+<pre><strong>Input:</strong> p = [1,2,1], q = [1,1,2]
+<strong>Output:</strong> false
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in both trees is in the range <code>[0, 100]</code>.</li>
+<li><code>-10<sup>4</sup> &lt;= Node.val &lt;= 10<sup>4</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>*******************<div id="title">101. Symmetric Tree</div>
+*******************<div class="content__u3I1 question-content__JfgR"><div><p>Given the <code>root</code> of a binary tree, <em>check whether it is a mirror of itself</em> (i.e., symmetric around its center).</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/02/19/symtree1.jpg" style="width: 354px; height: 291px;"/>
+<pre><strong>Input:</strong> root = [1,2,2,3,4,4,3]
+<strong>Output:</strong> true
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/02/19/symtree2.jpg" style="width: 308px; height: 258px;"/>
+<pre><strong>Input:</strong> root = [1,2,2,null,3,null,3]
+<strong>Output:</strong> false
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the tree is in the range <code>[1, 1000]</code>.</li>
+<li><code>-100 &lt;= Node.val &lt;= 100</code></li>
+</ul>
+<p> </p>
+<strong>Follow up:</strong> Could you solve it both recursively and iteratively?</div></div><br><br><hr><br>*********************************<div id="title">104. Maximum Depth of Binary Tree</div>
+*********************************<div class="content__u3I1 question-content__JfgR"><div><p>Given the <code>root</code> of a binary tree, return <em>its maximum depth</em>.</p>
+<p>A binary tree's <strong>maximum depth</strong> is the number of nodes along the longest path from the root node down to the farthest leaf node.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/11/26/tmp-tree.jpg" style="width: 400px; height: 277px;"/>
+<pre><strong>Input:</strong> root = [3,9,20,null,null,15,7]
+<strong>Output:</strong> 3
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> root = [1,null,2]
+<strong>Output:</strong> 2
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> root = []
+<strong>Output:</strong> 0
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> root = [0]
+<strong>Output:</strong> 1
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the tree is in the range <code>[0, 10<sup>4</sup>]</code>.</li>
+<li><code>-100 &lt;= Node.val &lt;= 100</code></li>
+</ul>
+</div></div><br><br><hr><br>***********************************************<div id="title">108. Convert Sorted Array to Binary Search Tree</div>
+***********************************************<div class="content__u3I1 question-content__JfgR"><div><p>Given an integer array <code>nums</code> where the elements are sorted in <strong>ascending order</strong>, convert <em>it to a <strong>height-balanced</strong> binary search tree</em>.</p>
+<p>A <strong>height-balanced</strong> binary tree is a binary tree in which the depth of the two subtrees of every node never differs by more than one.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/02/18/btree1.jpg" style="width: 302px; height: 222px;"/>
+<pre><strong>Input:</strong> nums = [-10,-3,0,5,9]
+<strong>Output:</strong> [0,-3,9,-10,null,5]
+<strong>Explanation:</strong> [0,-10,5,null,-3,null,9] is also accepted:
+<img alt="" src="https://assets.leetcode.com/uploads/2021/02/18/btree2.jpg" style="width: 302px; height: 222px;"/>
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/02/18/btree.jpg" style="width: 342px; height: 142px;"/>
+<pre><strong>Input:</strong> nums = [1,3]
+<strong>Output:</strong> [3,1]
+<strong>Explanation:</strong> [1,3] and [3,1] are both a height-balanced BSTs.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>
+<li><code>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>
+<li><code>nums</code> is sorted in a <strong>strictly increasing</strong> order.</li>
+</ul>
+</div></div><br><br><hr><br>*************************<div id="title">110. Balanced Binary Tree</div>
+*************************<div class="content__u3I1 question-content__JfgR"><div><p>Given a binary tree, determine if it is height-balanced.</p>
+<p>For this problem, a height-balanced binary tree is defined as:</p>
+<blockquote>
+<p>a binary tree in which the left and right subtrees of <em>every</em> node differ in height by no more than 1.</p>
+</blockquote>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/10/06/balance_1.jpg" style="width: 342px; height: 221px;"/>
+<pre><strong>Input:</strong> root = [3,9,20,null,null,15,7]
+<strong>Output:</strong> true
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/10/06/balance_2.jpg" style="width: 452px; height: 301px;"/>
+<pre><strong>Input:</strong> root = [1,2,2,3,3,null,null,4,4]
+<strong>Output:</strong> false
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> root = []
+<strong>Output:</strong> true
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the tree is in the range <code>[0, 5000]</code>.</li>
+<li><code>-10<sup>4</sup> &lt;= Node.val &lt;= 10<sup>4</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>*********************************<div id="title">111. Minimum Depth of Binary Tree</div>
+*********************************<div class="content__u3I1 question-content__JfgR"><div><p>Given a binary tree, find its minimum depth.</p>
+<p>The minimum depth is the number of nodes along the shortest path from the root node down to the nearest leaf node.</p>
+<p><strong>Note:</strong> A leaf is a node with no children.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/10/12/ex_depth.jpg" style="width: 432px; height: 302px;"/>
+<pre><strong>Input:</strong> root = [3,9,20,null,null,15,7]
+<strong>Output:</strong> 2
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> root = [2,null,3,null,4,null,5,null,6]
+<strong>Output:</strong> 5
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the tree is in the range <code>[0, 10<sup>5</sup>]</code>.</li>
+<li><code>-1000 &lt;= Node.val &lt;= 1000</code></li>
+</ul>
+</div></div><br><br><hr><br>*************<div id="title">112. Path Sum</div>
+*************<div class="content__u3I1 question-content__JfgR"><div><p>Given the <code>root</code> of a binary tree and an integer <code>targetSum</code>, return <code>true</code> if the tree has a <strong>root-to-leaf</strong> path such that adding up all the values along the path equals <code>targetSum</code>.</p>
+<p>A <strong>leaf</strong> is a node with no children.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/01/18/pathsum1.jpg" style="width: 500px; height: 356px;"/>
+<pre><strong>Input:</strong> root = [5,4,8,11,null,13,4,7,2,null,null,null,1], targetSum = 22
+<strong>Output:</strong> true
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/01/18/pathsum2.jpg"/>
+<pre><strong>Input:</strong> root = [1,2,3], targetSum = 5
+<strong>Output:</strong> false
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> root = [1,2], targetSum = 0
+<strong>Output:</strong> false
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the tree is in the range <code>[0, 5000]</code>.</li>
+<li><code>-1000 &lt;= Node.val &lt;= 1000</code></li>
+<li><code>-1000 &lt;= targetSum &lt;= 1000</code></li>
+</ul>
+</div></div><br><br><hr><br>**********************<div id="title">118. Pascal's Triangle</div>
+**********************<div class="content__u3I1 question-content__JfgR"><div><p>Given an integer <code>numRows</code>, return the first numRows of <strong>Pascal's triangle</strong>.</p>
+<p>In <strong>Pascal's triangle</strong>, each number is the sum of the two numbers directly above it as shown:</p>
+<img alt="" src="https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif" style="height:240px; width:260px"/>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> numRows = 5
+<strong>Output:</strong> [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> numRows = 1
+<strong>Output:</strong> [[1]]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= numRows &lt;= 30</code></li>
+</ul>
+</div></div><br><br><hr><br>*************************<div id="title">119. Pascal's Triangle II</div>
+*************************<div class="content__u3I1 question-content__JfgR"><div><p>Given an integer <code>rowIndex</code>, return the <code>rowIndex<sup>th</sup></code> (<strong>0-indexed</strong>) row of the <strong>Pascal's triangle</strong>.</p>
+<p>In <strong>Pascal's triangle</strong>, each number is the sum of the two numbers directly above it as shown:</p>
+<img alt="" src="https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif" style="height:240px; width:260px"/>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> rowIndex = 3
+<strong>Output:</strong> [1,3,3,1]
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> rowIndex = 0
+<strong>Output:</strong> [1]
+</pre><p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> rowIndex = 1
+<strong>Output:</strong> [1,1]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>0 &lt;= rowIndex &lt;= 33</code></li>
+</ul>
+<p> </p>
+<p><strong>Follow up:</strong> Could you optimize your algorithm to use only <code>O(rowIndex)</code> extra space?</p>
+</div></div><br><br><hr><br>************************************<div id="title">121. Best Time to Buy and Sell Stock</div>
+************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given an array <code>prices</code> where <code>prices[i]</code> is the price of a given stock on the <code>i<sup>th</sup></code> day.</p>
+<p>You want to maximize your profit by choosing a <strong>single day</strong> to buy one stock and choosing a <strong>different day in the future</strong> to sell that stock.</p>
+<p>Return <em>the maximum profit you can achieve from this transaction</em>. If you cannot achieve any profit, return <code>0</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> prices = [7,1,5,3,6,4]
+<strong>Output:</strong> 5
+<strong>Explanation:</strong> Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.
+Note that buying on day 2 and selling on day 1 is not allowed because you must buy before you sell.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> prices = [7,6,4,3,1]
+<strong>Output:</strong> 0
+<strong>Explanation:</strong> In this case, no transactions are done and the max profit = 0.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= prices.length &lt;= 10<sup>5</sup></code></li>
+<li><code>0 &lt;= prices[i] &lt;= 10<sup>4</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>***************************************<div id="title">122. Best Time to Buy and Sell Stock II</div>
+***************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given an integer array <code>prices</code> where <code>prices[i]</code> is the price of a given stock on the <code>i<sup>th</sup></code> day.</p>
+<p>On each day, you may decide to buy and/or sell the stock. You can only hold <strong>at most one</strong> share of the stock at any time. However, you can buy it then immediately sell it on the <strong>same day</strong>.</p>
+<p>Find and return <em>the <strong>maximum</strong> profit you can achieve</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> prices = [7,1,5,3,6,4]
+<strong>Output:</strong> 7
+<strong>Explanation:</strong> Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4.
+Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.
+Total profit is 4 + 3 = 7.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> prices = [1,2,3,4,5]
+<strong>Output:</strong> 4
+<strong>Explanation:</strong> Buy on day 1 (price = 1) and sell on day 5 (price = 5), profit = 5-1 = 4.
+Total profit is 4.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> prices = [7,6,4,3,1]
+<strong>Output:</strong> 0
+<strong>Explanation:</strong> There is no way to make a positive profit, so we never buy the stock to achieve the maximum profit of 0.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= prices.length &lt;= 3 * 10<sup>4</sup></code></li>
+<li><code>0 &lt;= prices[i] &lt;= 10<sup>4</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>*********************<div id="title">125. Valid Palindrome</div>
+*********************<div class="content__u3I1 question-content__JfgR"><div><p>Given a string <code>s</code>, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "A man, a plan, a canal: Panama"
+<strong>Output:</strong> true
+<strong>Explanation:</strong> "amanaplanacanalpanama" is a palindrome.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "race a car"
+<strong>Output:</strong> false
+<strong>Explanation:</strong> "raceacar" is not a palindrome.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 2 * 10<sup>5</sup></code></li>
+<li><code>s</code> consists only of printable ASCII characters.</li>
+</ul>
+</div></div><br><br><hr><br>******************<div id="title">136. Single Number</div>
+******************<div class="content__u3I1 question-content__JfgR"><div><p>Given a <strong>non-empty</strong> array of integers <code>nums</code>, every element appears <em>twice</em> except for one. Find that single one.</p>
+<p>You must implement a solution with a linear runtime complexity and use only constant extra space.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [2,2,1]
+<strong>Output:</strong> 1
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [4,1,2,1,2]
+<strong>Output:</strong> 4
+</pre><p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> nums = [1]
+<strong>Output:</strong> 1
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 3 * 10<sup>4</sup></code></li>
+<li><code>-3 * 10<sup>4</sup> &lt;= nums[i] &lt;= 3 * 10<sup>4</sup></code></li>
+<li>Each element in the array appears twice except for one element which appears only once.</li>
+</ul>
+</div></div><br><br><hr><br>**********************<div id="title">141. Linked List Cycle</div>
+**********************<div class="content__u3I1 question-content__JfgR"><div><p>Given <code>head</code>, the head of a linked list, determine if the linked list has a cycle in it.</p>
+<p>There is a cycle in a linked list if there is some node in the list that can be reached again by continuously following the <code>next</code> pointer. Internally, <code>pos</code> is used to denote the index of the node that tail's <code>next</code> pointer is connected to. <strong>Note that <code>pos</code> is not passed as a parameter</strong>.</p>
+<p>Return <code>true</code><em> if there is a cycle in the linked list</em>. Otherwise, return <code>false</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist.png" style="width: 300px; height: 97px; margin-top: 8px; margin-bottom: 8px;"/>
+<pre><strong>Input:</strong> head = [3,2,0,-4], pos = 1
+<strong>Output:</strong> true
+<strong>Explanation:</strong> There is a cycle in the linked list, where the tail connects to the 1st node (0-indexed).
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist_test2.png" style="width: 141px; height: 74px;"/>
+<pre><strong>Input:</strong> head = [1,2], pos = 0
+<strong>Output:</strong> true
+<strong>Explanation:</strong> There is a cycle in the linked list, where the tail connects to the 0th node.
+</pre>
+<p><strong>Example 3:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist_test3.png" style="width: 45px; height: 45px;"/>
+<pre><strong>Input:</strong> head = [1], pos = -1
+<strong>Output:</strong> false
+<strong>Explanation:</strong> There is no cycle in the linked list.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of the nodes in the list is in the range <code>[0, 10<sup>4</sup>]</code>.</li>
+<li><code>-10<sup>5</sup> &lt;= Node.val &lt;= 10<sup>5</sup></code></li>
+<li><code>pos</code> is <code>-1</code> or a <strong>valid index</strong> in the linked-list.</li>
+</ul>
+<p> </p>
+<p><strong>Follow up:</strong> Can you solve it using <code>O(1)</code> (i.e. constant) memory?</p>
+</div></div><br><br><hr><br>***********************************<div id="title">144. Binary Tree Preorder Traversal</div>
+***********************************<div class="content__u3I1 question-content__JfgR"><div><p>Given the <code>root</code> of a binary tree, return <em>the preorder traversal of its nodes' values</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/09/15/inorder_1.jpg" style="width: 202px; height: 324px;"/>
+<pre><strong>Input:</strong> root = [1,null,2,3]
+<strong>Output:</strong> [1,2,3]
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> root = []
+<strong>Output:</strong> []
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> root = [1]
+<strong>Output:</strong> [1]
+</pre>
+<p><strong>Example 4:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/09/15/inorder_5.jpg" style="width: 202px; height: 202px;"/>
+<pre><strong>Input:</strong> root = [1,2]
+<strong>Output:</strong> [1,2]
+</pre>
+<p><strong>Example 5:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/09/15/inorder_4.jpg" style="width: 202px; height: 202px;"/>
+<pre><strong>Input:</strong> root = [1,null,2]
+<strong>Output:</strong> [1,2]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the tree is in the range <code>[0, 100]</code>.</li>
+<li><code>-100 &lt;= Node.val &lt;= 100</code></li>
+</ul>
+<p> </p>
+<p><strong>Follow up:</strong> Recursive solution is trivial, could you do it iteratively?</p>
+</div></div><br><br><hr><br>************************************<div id="title">145. Binary Tree Postorder Traversal</div>
+************************************<div class="content__u3I1 question-content__JfgR"><div><p>Given the <code>root</code> of a binary tree, return <em>the postorder traversal of its nodes' values</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/08/28/pre1.jpg" style="width: 202px; height: 317px;"/>
+<pre><strong>Input:</strong> root = [1,null,2,3]
+<strong>Output:</strong> [3,2,1]
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> root = []
+<strong>Output:</strong> []
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> root = [1]
+<strong>Output:</strong> [1]
+</pre>
+<p><strong>Example 4:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/08/28/pre3.jpg" style="width: 202px; height: 197px;"/>
+<pre><strong>Input:</strong> root = [1,2]
+<strong>Output:</strong> [2,1]
+</pre>
+<p><strong>Example 5:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/08/28/pre2.jpg" style="width: 202px; height: 197px;"/>
+<pre><strong>Input:</strong> root = [1,null,2]
+<strong>Output:</strong> [2,1]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of the nodes in the tree is in the range <code>[0, 100]</code>.</li>
+<li><code>-100 &lt;= Node.val &lt;= 100</code></li>
+</ul>
+<p> </p>
+<strong>Follow up:</strong> Recursive solution is trivial, could you do it iteratively?</div></div><br><br><hr><br>**************<div id="title">155. Min Stack</div>
+**************<div class="content__u3I1 question-content__JfgR"><div><p>Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.</p>
+<p>Implement the <code>MinStack</code> class:</p>
+<ul>
+<li><code>MinStack()</code> initializes the stack object.</li>
+<li><code>void push(val)</code> pushes the element <code>val</code> onto the stack.</li>
+<li><code>void pop()</code> removes the element on the top of the stack.</li>
+<li><code>int top()</code> gets the top element of the stack.</li>
+<li><code>int getMin()</code> retrieves the minimum element in the stack.</li>
+</ul>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input</strong>
+["MinStack","push","push","push","getMin","pop","top","getMin"]
+[[],[-2],[0],[-3],[],[],[],[]]
+
+<strong>Output</strong>
+[null,null,null,null,-3,null,0,-2]
+
+<strong>Explanation</strong>
+MinStack minStack = new MinStack();
+minStack.push(-2);
+minStack.push(0);
+minStack.push(-3);
+minStack.getMin(); // return -3
+minStack.pop();
+minStack.top();    // return 0
+minStack.getMin(); // return -2
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>-2<sup>31</sup> &lt;= val &lt;= 2<sup>31</sup> - 1</code></li>
+<li>Methods <code>pop</code>, <code>top</code> and <code>getMin</code> operations will always be called on <strong>non-empty</strong> stacks.</li>
+<li>At most <code>3 * 10<sup>4</sup></code> calls will be made to <code>push</code>, <code>pop</code>, <code>top</code>, and <code>getMin</code>.</li>
+</ul>
+</div></div><br><br><hr><br>*************************************<div id="title">160. Intersection of Two Linked Lists</div>
+*************************************<div class="content__u3I1 question-content__JfgR"><div><p>Given the heads of two singly linked-lists <code>headA</code> and <code>headB</code>, return <em>the node at which the two lists intersect</em>. If the two linked lists have no intersection at all, return <code>null</code>.</p>
+<p>For example, the following two linked lists begin to intersect at node <code>c1</code>:</p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/03/05/160_statement.png" style="width: 500px; height: 162px;"/>
+<p>The test cases are generated such that there are no cycles anywhere in the entire linked structure.</p>
+<p><strong>Note</strong> that the linked lists must <strong>retain their original structure</strong> after the function returns.</p>
+<p><strong>Custom Judge:</strong></p>
+<p>The inputs to the <strong>judge</strong> are given as follows (your program is <strong>not</strong> given these inputs):</p>
+<ul>
+<li><code>intersectVal</code> - The value of the node where the intersection occurs. This is <code>0</code> if there is no intersected node.</li>
+<li><code>listA</code> - The first linked list.</li>
+<li><code>listB</code> - The second linked list.</li>
+<li><code>skipA</code> - The number of nodes to skip ahead in <code>listA</code> (starting from the head) to get to the intersected node.</li>
+<li><code>skipB</code> - The number of nodes to skip ahead in <code>listB</code> (starting from the head) to get to the intersected node.</li>
+</ul>
+<p>The judge will then create the linked structure based on these inputs and pass the two heads, <code>headA</code> and <code>headB</code> to your program. If you correctly return the intersected node, then your solution will be <strong>accepted</strong>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/03/05/160_example_1_1.png" style="width: 500px; height: 162px;"/>
+<pre><strong>Input:</strong> intersectVal = 8, listA = [4,1,8,4,5], listB = [5,6,1,8,4,5], skipA = 2, skipB = 3
+<strong>Output:</strong> Intersected at '8'
+<strong>Explanation:</strong> The intersected node's value is 8 (note that this must not be 0 if the two lists intersect).
+From the head of A, it reads as [4,1,8,4,5]. From the head of B, it reads as [5,6,1,8,4,5]. There are 2 nodes before the intersected node in A; There are 3 nodes before the intersected node in B.
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/03/05/160_example_2.png" style="width: 500px; height: 194px;"/>
+<pre><strong>Input:</strong> intersectVal = 2, listA = [1,9,1,2,4], listB = [3,2,4], skipA = 3, skipB = 1
+<strong>Output:</strong> Intersected at '2'
+<strong>Explanation:</strong> The intersected node's value is 2 (note that this must not be 0 if the two lists intersect).
+From the head of A, it reads as [1,9,1,2,4]. From the head of B, it reads as [3,2,4]. There are 3 nodes before the intersected node in A; There are 1 node before the intersected node in B.
+</pre>
+<p><strong>Example 3:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/03/05/160_example_3.png" style="width: 300px; height: 189px;"/>
+<pre><strong>Input:</strong> intersectVal = 0, listA = [2,6,4], listB = [1,5], skipA = 3, skipB = 2
+<strong>Output:</strong> No intersection
+<strong>Explanation:</strong> From the head of A, it reads as [2,6,4]. From the head of B, it reads as [1,5]. Since the two lists do not intersect, intersectVal must be 0, while skipA and skipB can be arbitrary values.
+Explanation: The two lists do not intersect, so return null.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes of <code>listA</code> is in the <code>m</code>.</li>
+<li>The number of nodes of <code>listB</code> is in the <code>n</code>.</li>
+<li><code>0 &lt;= m, n &lt;= 3 * 10<sup>4</sup></code></li>
+<li><code>1 &lt;= Node.val &lt;= 10<sup>5</sup></code></li>
+<li><code>0 &lt;= skipA &lt;= m</code></li>
+<li><code>0 &lt;= skipB &lt;= n</code></li>
+<li><code>intersectVal</code> is <code>0</code> if <code>listA</code> and <code>listB</code> do not intersect.</li>
+<li><code>intersectVal == listA[skipA] == listB[skipB]</code> if <code>listA</code> and <code>listB</code> intersect.</li>
+</ul>
+<p> </p>
+<strong>Follow up:</strong> Could you write a solution that runs in <code>O(n)</code> time and use only <code>O(1)</code> memory?</div></div><br><br><hr><br>***************************************<div id="title">167. Two Sum II - Input array is sorted</div>
+***************************************<div class="content__u3I1 question-content__JfgR"><div><p>Given an array of integers <code>numbers</code> that is already <strong><em>sorted in non-decreasing order</em></strong>, find two numbers such that they add up to a specific <code>target</code> number.</p>
+<p>Return<em> the indices of the two numbers (<strong>1-indexed</strong>) as an integer array </em><code>answer</code><em> of size </em><code>2</code><em>, where </em><code>1 &lt;= answer[0] &lt; answer[1] &lt;= numbers.length</code>.</p>
+<p>The tests are generated such that there is <strong>exactly one solution</strong>. You <strong>may not</strong> use the same element twice.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> numbers = [2,7,11,15], target = 9
+<strong>Output:</strong> [1,2]
+<strong>Explanation:</strong> The sum of 2 and 7 is 9. Therefore index1 = 1, index2 = 2.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> numbers = [2,3,4], target = 6
+<strong>Output:</strong> [1,3]
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> numbers = [-1,0], target = -1
+<strong>Output:</strong> [1,2]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>2 &lt;= numbers.length &lt;= 3 * 10<sup>4</sup></code></li>
+<li><code>-1000 &lt;= numbers[i] &lt;= 1000</code></li>
+<li><code>numbers</code> is sorted in <strong>non-decreasing order</strong>.</li>
+<li><code>-1000 &lt;= target &lt;= 1000</code></li>
+<li>The tests are generated such that there is <strong>exactly one solution</strong>.</li>
+</ul>
+</div></div><br><br><hr><br>*****************************<div id="title">168. Excel Sheet Column Title</div>
+*****************************<div class="content__u3I1 question-content__JfgR"><div><p>Given an integer <code>columnNumber</code>, return <em>its corresponding column title as it appears in an Excel sheet</em>.</p>
+<p>For example:</p>
+<pre>A -&gt; 1
+B -&gt; 2
+C -&gt; 3
+...
+Z -&gt; 26
+AA -&gt; 27
+AB -&gt; 28 
+...
+</pre>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> columnNumber = 1
+<strong>Output:</strong> "A"
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> columnNumber = 28
+<strong>Output:</strong> "AB"
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> columnNumber = 701
+<strong>Output:</strong> "ZY"
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> columnNumber = 2147483647
+<strong>Output:</strong> "FXSHRXW"
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= columnNumber &lt;= 2<sup>31</sup> - 1</code></li>
+</ul>
+</div></div><br><br><hr><br>*********************<div id="title">169. Majority Element</div>
+*********************<div class="content__u3I1 question-content__JfgR"><div><p>Given an array <code>nums</code> of size <code>n</code>, return <em>the majority element</em>.</p>
+<p>The majority element is the element that appears more than <code>⌊n / 2⌋</code> times. You may assume that the majority element always exists in the array.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [3,2,3]
+<strong>Output:</strong> 3
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [2,2,1,1,1,2,2]
+<strong>Output:</strong> 2
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == nums.length</code></li>
+<li><code>1 &lt;= n &lt;= 5 * 10<sup>4</sup></code></li>
+<li><code>-2<sup>31</sup> &lt;= nums[i] &lt;= 2<sup>31</sup> - 1</code></li>
+</ul>
+<p> </p>
+<strong>Follow-up:</strong> Could you solve the problem in linear time and in <code>O(1)</code> space?</div></div><br><br><hr><br>******************************<div id="title">171. Excel Sheet Column Number</div>
+******************************<div class="content__u3I1 question-content__JfgR"><div><p>Given a string <code>columnTitle</code> that represents the column title as appear in an Excel sheet, return <em>its corresponding column number</em>.</p>
+<p>For example:</p>
+<pre>A -&gt; 1
+B -&gt; 2
+C -&gt; 3
+...
+Z -&gt; 26
+AA -&gt; 27
+AB -&gt; 28 
+...
+</pre>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> columnTitle = "A"
+<strong>Output:</strong> 1
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> columnTitle = "AB"
+<strong>Output:</strong> 28
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> columnTitle = "ZY"
+<strong>Output:</strong> 701
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> columnTitle = "FXSHRXW"
+<strong>Output:</strong> 2147483647
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= columnTitle.length &lt;= 7</code></li>
+<li><code>columnTitle</code> consists only of uppercase English letters.</li>
+<li><code>columnTitle</code> is in the range <code>["A", "FXSHRXW"]</code>.</li>
+</ul>
+</div></div><br><br><hr><br>******************************<div id="title">172. Factorial Trailing Zeroes</div>
+******************************<div class="content__u3I1 question-content__JfgR"><div><p>Given an integer <code>n</code>, return <em>the number of trailing zeroes in <code>n!</code></em>.</p>
+<p><b>Follow up: </b>Could you write a solution that works in logarithmic time complexity?</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> n = 3
+<strong>Output:</strong> 0
+<strong>Explanation:</strong> 3! = 6, no trailing zero.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> n = 5
+<strong>Output:</strong> 1
+<strong>Explanation:</strong> 5! = 120, one trailing zero.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> n = 0
+<strong>Output:</strong> 0
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>0 &lt;= n &lt;= 10<sup>4</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>*****************<div id="title">190. Reverse Bits</div>
+*****************<div class="content__u3I1 question-content__JfgR"><div><p>Reverse bits of a given 32 bits unsigned integer.</p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>Note that in some languages such as Java, there is no unsigned integer type. In this case, both input and output will be given as a signed integer type. They should not affect your implementation, as the integer's internal binary representation is the same, whether it is signed or unsigned.</li>
+<li>In Java, the compiler represents the signed integers using <a href="https://en.wikipedia.org/wiki/Two%27s_complement" target="_blank">2's complement notation</a>. Therefore, in <strong>Example 2</strong> above, the input represents the signed integer <code>-3</code> and the output represents the signed integer <code>-1073741825</code>.</li>
+</ul>
+<p><b>Follow up</b>:</p>
+<p>If this function is called many times, how would you optimize it?</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> n = 00000010100101000001111010011100
+<strong>Output:</strong>    964176192 (00111001011110000010100101000000)
+<strong>Explanation: </strong>The input binary string <strong>00000010100101000001111010011100</strong> represents the unsigned integer 43261596, so return 964176192 which its binary representation is <strong>00111001011110000010100101000000</strong>.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> n = 11111111111111111111111111111101
+<strong>Output:</strong>   3221225471 (10111111111111111111111111111111)
+<strong>Explanation: </strong>The input binary string <strong>11111111111111111111111111111101</strong> represents the unsigned integer 4294967293, so return 3221225471 which its binary representation is <strong>10111111111111111111111111111111</strong>.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The input must be a <strong>binary string</strong> of length <code>32</code></li>
+</ul>
+</div></div><br><br><hr><br>*********************<div id="title">191. Number of 1 Bits</div>
+*********************<div class="content__u3I1 question-content__JfgR"><div><p>Write a function that takes an unsigned integer and returns the number of '1' bits it has (also known as the <a href="http://en.wikipedia.org/wiki/Hamming_weight" target="_blank">Hamming weight</a>).</p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>Note that in some languages, such as Java, there is no unsigned integer type. In this case, the input will be given as a signed integer type. It should not affect your implementation, as the integer's internal binary representation is the same, whether it is signed or unsigned.</li>
+<li>In Java, the compiler represents the signed integers using <a href="https://en.wikipedia.org/wiki/Two%27s_complement" target="_blank">2's complement notation</a>. Therefore, in <strong>Example 3</strong>, the input represents the signed integer. <code>-3</code>.</li>
+</ul>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> n = 00000000000000000000000000001011
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> The input binary string <strong>00000000000000000000000000001011</strong> has a total of three '1' bits.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> n = 00000000000000000000000010000000
+<strong>Output:</strong> 1
+<strong>Explanation:</strong> The input binary string <strong>00000000000000000000000010000000</strong> has a total of one '1' bit.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> n = 11111111111111111111111111111101
+<strong>Output:</strong> 31
+<strong>Explanation:</strong> The input binary string <strong>11111111111111111111111111111101</strong> has a total of thirty one '1' bits.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The input must be a <strong>binary string</strong> of length <code>32</code>.</li>
+</ul>
+<p> </p>
+<strong>Follow up:</strong> If this function is called many times, how would you optimize it?</div></div><br><br><hr><br>
