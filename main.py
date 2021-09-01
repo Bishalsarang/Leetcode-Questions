@@ -82,7 +82,7 @@ def download(problem_num, url, title, solution_slug):
 
 
 def main():
-    MAXIMUM_NUMBER_OF_PROBLEMS_PER_INSTANCE = int(os.environ.get("MAXIMUM_NUMBER_OF_PROBLEMS", 40))
+    MAXIMUM_NUMBER_OF_PROBLEMS_PER_INSTANCE = int(os.environ.get("MAXIMUM_NUMBER_OF_PROBLEMS", 400))
     SLEEP_TIME_PER_PROBLEM_IN_SECOND = int(os.environ.get("SLEEP_TIME_PER_PROBLEM_IN_SECOND", 5))
 
     # Leetcode API URL to get json of problems on algorithms categories

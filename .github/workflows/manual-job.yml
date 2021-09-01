@@ -7,7 +7,8 @@ on:
         description: 'Number of problems to download'     
         default: '30'
       SLEEP_TIME_PER_PROBLEM_IN_SECOND:
-        description: 'Number of seconds to wait after downloading each problem'  
+        description: 'Number of seconds to wait after downloading each problem'
+        default: '8'
 
 jobs:
   build:
