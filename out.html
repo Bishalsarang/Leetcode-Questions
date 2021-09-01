@@ -2258,4 +2258,984 @@ numArray.sumRange(0, 5); // return (-2) + 0 + 3 + (-5) + 2 + (-1) = -3
 <li>The number of nodes in the tree is in the range <code>[1, 1000]</code>.</li>
 <li><code>-1000 &lt;= Node.val &lt;= 1000</code></li>
 </ul>
+</div></div><br><br><hr><br><style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>************************************<div id="title">405. Convert a Number to Hexadecimal</div>
+************************************<div class="content__u3I1 question-content__JfgR"><div><p>Given an integer <code>num</code>, return <em>a string representing its hexadecimal representation</em>. For negative integers, <a href="https://en.wikipedia.org/wiki/Two%27s_complement" target="_blank">two’s complement</a> method is used.</p>
+<p>All the letters in the answer string should be lowercase characters, and there should not be any leading zeros in the answer except for the zero itself.</p>
+<p><strong>Note: </strong>You are not allowed to use any built-in library method to directly solve this problem.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> num = 26
+<strong>Output:</strong> "1a"
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> num = -1
+<strong>Output:</strong> "ffffffff"
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>-2<sup>31</sup> &lt;= num &lt;= 2<sup>31</sup> - 1</code></li>
+</ul>
+</div></div><br><br><hr><br>***********************<div id="title">409. Longest Palindrome</div>
+***********************<div class="content__u3I1 question-content__JfgR"><div><p>Given a string <code>s</code> which consists of lowercase or uppercase letters, return <em>the length of the <strong>longest palindrome</strong></em> that can be built with those letters.</p>
+<p>Letters are <strong>case sensitive</strong>, for example, <code>"Aa"</code> is not considered a palindrome here.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "abccccdd"
+<strong>Output:</strong> 7
+<strong>Explanation:</strong>
+One longest palindrome that can be built is "dccaccd", whose length is 7.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "a"
+<strong>Output:</strong> 1
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> s = "bb"
+<strong>Output:</strong> 2
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 2000</code></li>
+<li><code>s</code> consists of lowercase <strong>and/or</strong> uppercase English letters only.</li>
+</ul>
+</div></div><br><br><hr><br>**************<div id="title">412. Fizz Buzz</div>
+**************<div class="content__u3I1 question-content__JfgR"><div><p>Given an integer <code>n</code>, return <em>a string array</em> <code>answer</code> (<strong>1-indexed</strong>) <em>where</em>:</p>
+<ul>
+<li><code>answer[i] == "FizzBuzz"</code> if <code>i</code> is divisible by <code>3</code> and <code>5</code>.</li>
+<li><code>answer[i] == "Fizz"</code> if <code>i</code> is divisible by <code>3</code>.</li>
+<li><code>answer[i] == "Buzz"</code> if <code>i</code> is divisible by <code>5</code>.</li>
+<li><code>answer[i] == i</code> if non of the above conditions are true.</li>
+</ul>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> n = 3
+<strong>Output:</strong> ["1","2","Fizz"]
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> n = 5
+<strong>Output:</strong> ["1","2","Fizz","4","Buzz"]
+</pre><p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> n = 15
+<strong>Output:</strong> ["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13","14","FizzBuzz"]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 10<sup>4</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>*************************<div id="title">414. Third Maximum Number</div>
+*************************<div class="content__u3I1 question-content__JfgR"><div><p>Given an integer array <code>nums</code>, return <em>the <strong>third distinct maximum</strong> number in this array. If the third maximum does not exist, return the <strong>maximum</strong> number</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [3,2,1]
+<strong>Output:</strong> 1
+<strong>Explanation:</strong>
+The first distinct maximum is 3.
+The second distinct maximum is 2.
+The third distinct maximum is 1.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [1,2]
+<strong>Output:</strong> 2
+<strong>Explanation:</strong>
+The first distinct maximum is 2.
+The second distinct maximum is 1.
+The third distinct maximum does not exist, so the maximum (2) is returned instead.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> nums = [2,2,3,1]
+<strong>Output:</strong> 1
+<strong>Explanation:</strong>
+The first distinct maximum is 3.
+The second distinct maximum is 2 (both 2's are counted together since they have the same value).
+The third distinct maximum is 1.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>
+<li><code>-2<sup>31</sup> &lt;= nums[i] &lt;= 2<sup>31</sup> - 1</code></li>
+</ul>
+<p> </p>
+<strong>Follow up:</strong> Can you find an <code>O(n)</code> solution?</div></div><br><br><hr><br>****************<div id="title">415. Add Strings</div>
+****************<div class="content__u3I1 question-content__JfgR"><div><p>Given two non-negative integers, <code>num1</code> and <code>num2</code> represented as string, return <em>the sum of</em> <code>num1</code> <em>and</em> <code>num2</code> <em>as a string</em>.</p>
+<p>You must solve the problem without using any built-in library for handling large integers (such as <code>BigInteger</code>). You must also not convert the inputs to integers directly.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> num1 = "11", num2 = "123"
+<strong>Output:</strong> "134"
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> num1 = "456", num2 = "77"
+<strong>Output:</strong> "533"
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> num1 = "0", num2 = "0"
+<strong>Output:</strong> "0"
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= num1.length, num2.length &lt;= 10<sup>4</sup></code></li>
+<li><code>num1</code> and <code>num2</code> consist of only digits.</li>
+<li><code>num1</code> and <code>num2</code> don't have any leading zeros except for the zero itself.</li>
+</ul>
+</div></div><br><br><hr><br>***********************************<div id="title">434. Number of Segments in a String</div>
+***********************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a string <code>s</code>, return <em>the number of segments in the string</em>. </p>
+<p>A <strong>segment</strong> is defined to be a contiguous sequence of <strong>non-space characters</strong>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "Hello, my name is John"
+<strong>Output:</strong> 5
+<strong>Explanation:</strong> The five segments are ["Hello,", "my", "name", "is", "John"]
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "Hello"
+<strong>Output:</strong> 1
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> s = "love live! mu'sic forever"
+<strong>Output:</strong> 4
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> s = ""
+<strong>Output:</strong> 0
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>0 &lt;= s.length &lt;= 300</code></li>
+<li><code>s</code> consists of lower-case and upper-case English letters, digits or one of the following characters <code>"!@#$%^&amp;*()_+-=',.:"</code>.</li>
+<li>The only space character in <code>s</code> is <code>' '</code>.</li>
+</ul>
+</div></div><br><br><hr><br>********************<div id="title">441. Arranging Coins</div>
+********************<div class="content__u3I1 question-content__JfgR"><div><p>You have <code>n</code> coins and you want to build a staircase with these coins. The staircase consists of <code>k</code> rows where the <code>i<sup>th</sup></code> row has exactly <code>i</code> coins. The last row of the staircase <strong>may be</strong> incomplete.</p>
+<p>Given the integer <code>n</code>, return <em>the number of <strong>complete rows</strong> of the staircase you will build</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/04/09/arrangecoins1-grid.jpg" style="width: 253px; height: 253px;"/>
+<pre><strong>Input:</strong> n = 5
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> Because the 3<sup>rd</sup> row is incomplete, we return 2.
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/04/09/arrangecoins2-grid.jpg" style="width: 333px; height: 333px;"/>
+<pre><strong>Input:</strong> n = 8
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> Because the 4<sup>th</sup> row is incomplete, we return 3.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 2<sup>31</sup> - 1</code></li>
+</ul>
+</div></div><br><br><hr><br>*********************************************<div id="title">448. Find All Numbers Disappeared in an Array</div>
+*********************************************<div class="content__u3I1 question-content__JfgR"><div><p>Given an array <code>nums</code> of <code>n</code> integers where <code>nums[i]</code> is in the range <code>[1, n]</code>, return <em>an array of all the integers in the range</em> <code>[1, n]</code> <em>that do not appear in</em> <code>nums</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [4,3,2,7,8,2,3,1]
+<strong>Output:</strong> [5,6]
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [1,1]
+<strong>Output:</strong> [2]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == nums.length</code></li>
+<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= nums[i] &lt;= n</code></li>
+</ul>
+<p> </p>
+<p><strong>Follow up:</strong> Could you do it without extra space and in <code>O(n)</code> runtime? You may assume the returned list does not count as extra space.</p>
+</div></div><br><br><hr><br>******************************************<div id="title">453. Minimum Moves to Equal Array Elements</div>
+******************************************<div class="content__u3I1 question-content__JfgR"><div><p>Given an integer array <code>nums</code> of size <code>n</code>, return <em>the minimum number of moves required to make all array elements equal</em>.</p>
+<p>In one move, you can increment <code>n - 1</code> elements of the array by <code>1</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [1,2,3]
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> Only three moves are needed (remember each move increments two elements):
+[1,2,3]  =&gt;  [2,3,3]  =&gt;  [3,4,3]  =&gt;  [4,4,4]
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [1,1,1]
+<strong>Output:</strong> 0
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == nums.length</code></li>
+<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
+<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
+<li>The answer is guaranteed to fit in a <strong>32-bit</strong> integer.</li>
+</ul>
+</div></div><br><br><hr><br>*******************<div id="title">455. Assign Cookies</div>
+*******************<div class="content__u3I1 question-content__JfgR"><div><p>Assume you are an awesome parent and want to give your children some cookies. But, you should give each child at most one cookie.</p>
+<p>Each child <code>i</code> has a greed factor <code>g[i]</code>, which is the minimum size of a cookie that the child will be content with; and each cookie <code>j</code> has a size <code>s[j]</code>. If <code>s[j] &gt;= g[i]</code>, we can assign the cookie <code>j</code> to the child <code>i</code>, and the child <code>i</code> will be content. Your goal is to maximize the number of your content children and output the maximum number.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> g = [1,2,3], s = [1,1]
+<strong>Output:</strong> 1
+<strong>Explanation:</strong> You have 3 children and 2 cookies. The greed factors of 3 children are 1, 2, 3. 
+And even though you have 2 cookies, since their size is both 1, you could only make the child whose greed factor is 1 content.
+You need to output 1.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> g = [1,2], s = [1,2,3]
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> You have 2 children and 3 cookies. The greed factors of 2 children are 1, 2. 
+You have 3 cookies and their sizes are big enough to gratify all of the children, 
+You need to output 2.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= g.length &lt;= 3 * 10<sup>4</sup></code></li>
+<li><code>0 &lt;= s.length &lt;= 3 * 10<sup>4</sup></code></li>
+<li><code>1 &lt;= g[i], s[j] &lt;= 2<sup>31</sup> - 1</code></li>
+</ul>
+</div></div><br><br><hr><br>*******************************<div id="title">459. Repeated Substring Pattern</div>
+*******************************<div class="content__u3I1 question-content__JfgR"><div><p>Given a string <code>s</code>, check if it can be constructed by taking a substring of it and appending multiple copies of the substring together.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "abab"
+<strong>Output:</strong> true
+<strong>Explanation:</strong> It is the substring "ab" twice.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "aba"
+<strong>Output:</strong> false
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> s = "abcabcabcabc"
+<strong>Output:</strong> true
+<strong>Explanation:</strong> It is the substring "abc" four times or the substring "abcabc" twice.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 10<sup>4</sup></code></li>
+<li><code>s</code> consists of lowercase English letters.</li>
+</ul>
+</div></div><br><br><hr><br>*********************<div id="title">461. Hamming Distance</div>
+*********************<div class="content__u3I1 question-content__JfgR"><div><p>The <a href="https://en.wikipedia.org/wiki/Hamming_distance" target="_blank">Hamming distance</a> between two integers is the number of positions at which the corresponding bits are different.</p>
+<p>Given two integers <code>x</code> and <code>y</code>, return <em>the <strong>Hamming distance</strong> between them</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> x = 1, y = 4
+<strong>Output:</strong> 2
+<strong>Explanation:</strong>
+1   (0 0 0 1)
+4   (0 1 0 0)
+       ↑   ↑
+The above arrows point to positions where the corresponding bits are different.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> x = 3, y = 1
+<strong>Output:</strong> 1
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>0 &lt;= x, y &lt;= 2<sup>31</sup> - 1</code></li>
+</ul>
+</div></div><br><br><hr><br>*********************<div id="title">463. Island Perimeter</div>
+*********************<div class="content__u3I1 question-content__JfgR"><div><p>You are given <code>row x col</code> <code>grid</code> representing a map where <code>grid[i][j] = 1</code> represents land and <code>grid[i][j] = 0</code> represents water.</p>
+<p>Grid cells are connected <strong>horizontally/vertically</strong> (not diagonally). The <code>grid</code> is completely surrounded by water, and there is exactly one island (i.e., one or more connected land cells).</p>
+<p>The island doesn't have "lakes", meaning the water inside isn't connected to the water around the island. One cell is a square with side length 1. The grid is rectangular, width and height don't exceed 100. Determine the perimeter of the island.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img src="https://assets.leetcode.com/uploads/2018/10/12/island.png" style="width: 221px; height: 213px;"/>
+<pre><strong>Input:</strong> grid = [[0,1,0,0],[1,1,1,0],[0,1,0,0],[1,1,0,0]]
+<strong>Output:</strong> 16
+<strong>Explanation:</strong> The perimeter is the 16 yellow stripes in the image above.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> grid = [[1]]
+<strong>Output:</strong> 4
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> grid = [[1,0]]
+<strong>Output:</strong> 4
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>row == grid.length</code></li>
+<li><code>col == grid[i].length</code></li>
+<li><code>1 &lt;= row, col &lt;= 100</code></li>
+<li><code>grid[i][j]</code> is <code>0</code> or <code>1</code>.</li>
+</ul>
+</div></div><br><br><hr><br>**********************<div id="title">476. Number Complement</div>
+**********************<div class="content__u3I1 question-content__JfgR"><div><p>The <strong>complement</strong> of an integer is the integer you get when you flip all the <code>0</code>'s to <code>1</code>'s and all the <code>1</code>'s to <code>0</code>'s in its binary representation.</p>
+<ul>
+<li>For example, The integer <code>5</code> is <code>"101"</code> in binary and its <strong>complement</strong> is <code>"010"</code> which is the integer <code>2</code>.</li>
+</ul>
+<p>Given an integer <code>num</code>, return <em>its complement</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> num = 5
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> The binary representation of 5 is 101 (no leading zero bits), and its complement is 010. So you need to output 2.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> num = 1
+<strong>Output:</strong> 0
+<strong>Explanation:</strong> The binary representation of 1 is 1 (no leading zero bits), and its complement is 0. So you need to output 0.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= num &lt; 2<sup>31</sup></code></li>
+</ul>
+<p> </p>
+<p><strong>Note:</strong> This question is the same as 1009: <a href="https://leetcode.com/problems/complement-of-base-10-integer/" target="_blank">https://leetcode.com/problems/complement-of-base-10-integer/</a></p>
+</div></div><br><br><hr><br>***************************<div id="title">482. License Key Formatting</div>
+***************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a license key represented as a string <code>s</code> that consists of only alphanumeric characters and dashes. The string is separated into <code>n + 1</code> groups by <code>n</code> dashes. You are also given an integer <code>k</code>.</p>
+<p>We want to reformat the string <code>s</code> such that each group contains exactly <code>k</code> characters, except for the first group, which could be shorter than <code>k</code> but still must contain at least one character. Furthermore, there must be a dash inserted between two groups, and you should convert all lowercase letters to uppercase.</p>
+<p>Return <em>the reformatted license key</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "5F3Z-2e-9-w", k = 4
+<strong>Output:</strong> "5F3Z-2E9W"
+<strong>Explanation:</strong> The string s has been split into two parts, each part has 4 characters.
+Note that the two extra dashes are not needed and can be removed.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "2-5g-3-J", k = 2
+<strong>Output:</strong> "2-5G-3J"
+<strong>Explanation:</strong> The string s has been split into three parts, each part has 2 characters except the first part as it could be shorter as mentioned above.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>
+<li><code>s</code> consists of English letters, digits, and dashes <code>'-'</code>.</li>
+<li><code>1 &lt;= k &lt;= 10<sup>4</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>*************************<div id="title">485. Max Consecutive Ones</div>
+*************************<div class="content__u3I1 question-content__JfgR"><div><p>Given a binary array <code>nums</code>, return <em>the maximum number of consecutive </em><code>1</code><em>'s in the array</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [1,1,0,1,1,1]
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> The first two digits or the last three digits are consecutive 1s. The maximum number of consecutive 1s is 3.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [1,0,1,1,0,1]
+<strong>Output:</strong> 2
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
+<li><code>nums[i]</code> is either <code>0</code> or <code>1</code>.</li>
+</ul>
+</div></div><br><br><hr><br>****************************<div id="title">492. Construct the Rectangle</div>
+****************************<div class="content__u3I1 question-content__JfgR"><div><p>A web developer needs to know how to design a web page's size. So, given a specific rectangular web page’s area, your job by now is to design a rectangular web page, whose length L and width W satisfy the following requirements:</p>
+<ol>
+<li>The area of the rectangular web page you designed must equal to the given target area.</li>
+<li>The width <code>W</code> should not be larger than the length <code>L</code>, which means <code>L &gt;= W</code>.</li>
+<li>The difference between length <code>L</code> and width <code>W</code> should be as small as possible.</li>
+</ol>
+<p>Return <em>an array <code>[L, W]</code> where <code>L</code> and <code>W</code> are the length and width of the web page you designed in sequence.</em></p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> area = 4
+<strong>Output:</strong> [2,2]
+<strong>Explanation:</strong> The target area is 4, and all the possible ways to construct it are [1,4], [2,2], [4,1]. 
+But according to requirement 2, [1,4] is illegal; according to requirement 3,  [4,1] is not optimal compared to [2,2]. So the length L is 2, and the width W is 2.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> area = 37
+<strong>Output:</strong> [37,1]
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> area = 122122
+<strong>Output:</strong> [427,286]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= area &lt;= 10<sup>7</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>********************<div id="title">495. Teemo Attacking</div>
+********************<div class="content__u3I1 question-content__JfgR"><div><p>Our hero Teemo is attacking an enemy Ashe with poison attacks! When Teemo attacks Ashe, Ashe gets poisoned for a exactly <code>duration</code> seconds. More formally, an attack at second <code>t</code> will mean Ashe is poisoned during the <strong>inclusive</strong> time interval <code>[t, t + duration - 1]</code>. If Teemo attacks again <strong>before</strong> the poison effect ends, the timer for it is <strong>reset</strong>, and the poison effect will end <code>duration</code> seconds after the new attack.</p>
+<p>You are given a <strong>non-decreasing</strong> integer array <code>timeSeries</code>, where <code>timeSeries[i]</code> denotes that Teemo attacks Ashe at second <code>timeSeries[i]</code>, and an integer <code>duration</code>.</p>
+<p>Return <em>the <strong>total</strong> number of seconds that Ashe is poisoned</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> timeSeries = [1,4], duration = 2
+<strong>Output:</strong> 4
+<strong>Explanation:</strong> Teemo's attacks on Ashe go as follows:
+- At second 1, Teemo attacks, and Ashe is poisoned for seconds 1 and 2.
+- At second 4, Teemo attacks, and Ashe is poisoned for seconds 4 and 5.
+Ashe is poisoned for seconds 1, 2, 4, and 5, which is 4 seconds in total.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> timeSeries = [1,2], duration = 2
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> Teemo's attacks on Ashe go as follows:
+- At second 1, Teemo attacks, and Ashe is poisoned for seconds 1 and 2.
+- At second 2 however, Teemo attacks again and resets the poison timer. Ashe is poisoned for seconds 2 and 3.
+Ashe is poisoned for seconds 1, 2, and 3, which is 3 seconds in total.</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= timeSeries.length &lt;= 10<sup>4</sup></code></li>
+<li><code>0 &lt;= timeSeries[i], duration &lt;= 10<sup>7</sup></code></li>
+<li><code>timeSeries</code> is sorted in <strong>non-decreasing</strong> order.</li>
+</ul>
+</div></div><br><br><hr><br>***************************<div id="title">496. Next Greater Element I</div>
+***************************<div class="content__u3I1 question-content__JfgR"><div><p>The <strong>next greater element</strong> of some element <code>x</code> in an array is the <strong>first greater</strong> element that is <strong>to the right</strong> of <code>x</code> in the same array.</p>
+<p>You are given two <strong>distinct 0-indexed</strong> integer arrays <code>nums1</code> and <code>nums2</code>, where <code>nums1</code> is a subset of <code>nums2</code>.</p>
+<p>For each <code>0 &lt;= i &lt; nums1.length</code>, find the index <code>j</code> such that <code>nums1[i] == nums2[j]</code> and determine the <strong>next greater element</strong> of <code>nums2[j]</code> in <code>nums2</code>. If there is no next greater element, then the answer for this query is <code>-1</code>.</p>
+<p>Return <em>an array </em><code>ans</code><em> of length </em><code>nums1.length</code><em> such that </em><code>ans[i]</code><em> is the <strong>next greater element</strong> as described above.</em></p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums1 = [4,1,2], nums2 = [1,3,4,2]
+<strong>Output:</strong> [-1,3,-1]
+<strong>Explanation:</strong> The next greater element for each value of nums1 is as follows:
+- 4 is underlined in nums2 = [1,3,<u>4</u>,2]. There is no next greater element, so the answer is -1.
+- 1 is underlined in nums2 = [<u>1</u>,3,4,2]. The next greater element is 3.
+- 2 is underlined in nums2 = [1,3,4,<u>2</u>]. There is no next greater element, so the answer is -1.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums1 = [2,4], nums2 = [1,2,3,4]
+<strong>Output:</strong> [3,-1]
+<strong>Explanation:</strong> The next greater element for each value of nums1 is as follows:
+- 2 is underlined in nums2 = [1,<u>2</u>,3,4]. The next greater element is 3.
+- 4 is underlined in nums2 = [1,2,3,<u>4</u>]. There is no next greater element, so the answer is -1.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums1.length &lt;= nums2.length &lt;= 1000</code></li>
+<li><code>0 &lt;= nums1[i], nums2[i] &lt;= 10<sup>4</sup></code></li>
+<li>All integers in <code>nums1</code> and <code>nums2</code> are <strong>unique</strong>.</li>
+<li>All the integers of <code>nums1</code> also appear in <code>nums2</code>.</li>
+</ul>
+<p> </p>
+<strong>Follow up:</strong> Could you find an <code>O(nums1.length + nums2.length)</code> solution?</div></div><br><br><hr><br>*****************<div id="title">500. Keyboard Row</div>
+*****************<div class="content__u3I1 question-content__JfgR"><div><p>Given an array of strings <code>words</code>, return <em>the words that can be typed using letters of the alphabet on only one row of American keyboard like the image below</em>.</p>
+<p>In the <strong>American keyboard</strong>:</p>
+<ul>
+<li>the first row consists of the characters <code>"qwertyuiop"</code>,</li>
+<li>the second row consists of the characters <code>"asdfghjkl"</code>, and</li>
+<li>the third row consists of the characters <code>"zxcvbnm"</code>.</li>
+</ul>
+<img alt="" src="https://assets.leetcode.com/uploads/2018/10/12/keyboard.png" style="width: 800px; max-width: 600px; height: 267px;"/>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> words = ["Hello","Alaska","Dad","Peace"]
+<strong>Output:</strong> ["Alaska","Dad"]
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> words = ["omk"]
+<strong>Output:</strong> []
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> words = ["adsdf","sfd"]
+<strong>Output:</strong> ["adsdf","sfd"]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= words.length &lt;= 20</code></li>
+<li><code>1 &lt;= words[i].length &lt;= 100</code></li>
+<li><code>words[i]</code> consists of English letters (both lowercase and uppercase). </li>
+</ul>
+</div></div><br><br><hr><br>************************************<div id="title">501. Find Mode in Binary Search Tree</div>
+************************************<div class="content__u3I1 question-content__JfgR"><div><p>Given the <code>root</code> of a binary search tree (BST) with duplicates, return <em>all the <a href="https://en.wikipedia.org/wiki/Mode_(statistics)" target="_blank">mode(s)</a> (i.e., the most frequently occurred element) in it</em>.</p>
+<p>If the tree has more than one mode, return them in <strong>any order</strong>.</p>
+<p>Assume a BST is defined as follows:</p>
+<ul>
+<li>The left subtree of a node contains only nodes with keys <strong>less than or equal to</strong> the node's key.</li>
+<li>The right subtree of a node contains only nodes with keys <strong>greater than or equal to</strong> the node's key.</li>
+<li>Both the left and right subtrees must also be binary search trees.</li>
+</ul>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/03/11/mode-tree.jpg" style="width: 142px; height: 222px;"/>
+<pre><strong>Input:</strong> root = [1,null,2,2]
+<strong>Output:</strong> [2]
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> root = [0]
+<strong>Output:</strong> [0]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the tree is in the range <code>[1, 10<sup>4</sup>]</code>.</li>
+<li><code>-10<sup>5</sup> &lt;= Node.val &lt;= 10<sup>5</sup></code></li>
+</ul>
+<p> </p>
+<strong>Follow up:</strong> Could you do that without using any extra space? (Assume that the implicit stack space incurred due to recursion does not count).</div></div><br><br><hr><br>***********<div id="title">504. Base 7</div>
+***********<div class="content__u3I1 question-content__JfgR"><div><p>Given an integer <code>num</code>, return <em>a string of its <strong>base 7</strong> representation</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> num = 100
+<strong>Output:</strong> "202"
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> num = -7
+<strong>Output:</strong> "-10"
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>-10<sup>7</sup> &lt;= num &lt;= 10<sup>7</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>*******************<div id="title">506. Relative Ranks</div>
+*******************<div class="content__u3I1 question-content__JfgR"><div><p>You are given an integer array <code>score</code> of size <code>n</code>, where <code>score[i]</code> is the score of the <code>i<sup>th</sup></code> athlete in a competition. All the scores are guaranteed to be <strong>unique</strong>.</p>
+<p>The athletes are <strong>placed</strong> based on their scores, where the <code>1<sup>st</sup></code> place athlete has the highest score, the <code>2<sup>nd</sup></code> place athlete has the <code>2<sup>nd</sup></code> highest score, and so on. The placement of each athlete determines their rank:</p>
+<ul>
+<li>The <code>1<sup>st</sup></code> place athlete's rank is <code>"Gold Medal"</code>.</li>
+<li>The <code>2<sup>nd</sup></code> place athlete's rank is <code>"Silver Medal"</code>.</li>
+<li>The <code>3<sup>rd</sup></code> place athlete's rank is <code>"Bronze Medal"</code>.</li>
+<li>For the <code>4<sup>th</sup></code> place to the <code>n<sup>th</sup></code> place athlete, their rank is their placement number (i.e., the <code>x<sup>th</sup></code> place athlete's rank is <code>"x"</code>).</li>
+</ul>
+<p>Return an array <code>answer</code> of size <code>n</code> where <code>answer[i]</code> is the <strong>rank</strong> of the <code>i<sup>th</sup></code> athlete.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> score = [5,4,3,2,1]
+<strong>Output:</strong> ["Gold Medal","Silver Medal","Bronze Medal","4","5"]
+<strong>Explanation:</strong> The placements are [1<sup>st</sup>, 2<sup>nd</sup>, 3<sup>rd</sup>, 4<sup>th</sup>, 5<sup>th</sup>].</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> score = [10,3,8,9,4]
+<strong>Output:</strong> ["Gold Medal","5","Bronze Medal","Silver Medal","4"]
+<strong>Explanation:</strong> The placements are [1<sup>st</sup>, 5<sup>th</sup>, 3<sup>rd</sup>, 2<sup>nd</sup>, 4<sup>th</sup>].
+
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == score.length</code></li>
+<li><code>1 &lt;= n &lt;= 10<sup>4</sup></code></li>
+<li><code>0 &lt;= score[i] &lt;= 10<sup>6</sup></code></li>
+<li>All the values in <code>score</code> are <strong>unique</strong>.</li>
+</ul>
+</div></div><br><br><hr><br>*******************<div id="title">507. Perfect Number</div>
+*******************<div class="content__u3I1 question-content__JfgR"><div><p>A <a href="https://en.wikipedia.org/wiki/Perfect_number" target="_blank"><strong>perfect number</strong></a> is a <strong>positive integer</strong> that is equal to the sum of its <strong>positive divisors</strong>, excluding the number itself. A <strong>divisor</strong> of an integer <code>x</code> is an integer that can divide <code>x</code> evenly.</p>
+<p>Given an integer <code>n</code>, return <code>true</code><em> if </em><code>n</code><em> is a perfect number, otherwise return </em><code>false</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> num = 28
+<strong>Output:</strong> true
+<strong>Explanation:</strong> 28 = 1 + 2 + 4 + 7 + 14
+1, 2, 4, 7, and 14 are all divisors of 28.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> num = 6
+<strong>Output:</strong> true
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> num = 496
+<strong>Output:</strong> true
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> num = 8128
+<strong>Output:</strong> true
+</pre>
+<p><strong>Example 5:</strong></p>
+<pre><strong>Input:</strong> num = 2
+<strong>Output:</strong> false
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= num &lt;= 10<sup>8</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>*********************<div id="title">509. Fibonacci Number</div>
+*********************<div class="content__u3I1 question-content__JfgR"><div><p>The <b>Fibonacci numbers</b>, commonly denoted <code>F(n)</code> form a sequence, called the <b>Fibonacci sequence</b>, such that each number is the sum of the two preceding ones, starting from <code>0</code> and <code>1</code>. That is,</p>
+<pre>F(0) = 0, F(1) = 1
+F(n) = F(n - 1) + F(n - 2), for n &gt; 1.
+</pre>
+<p>Given <code>n</code>, calculate <code>F(n)</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> n = 2
+<strong>Output:</strong> 1
+<strong>Explanation:</strong> F(2) = F(1) + F(0) = 1 + 0 = 1.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> n = 3
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> F(3) = F(2) + F(1) = 1 + 1 = 2.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> n = 4
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> F(4) = F(3) + F(2) = 2 + 1 = 3.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>0 &lt;= n &lt;= 30</code></li>
+</ul>
+</div></div><br><br><hr><br>*******************<div id="title">520. Detect Capital</div>
+*******************<div class="content__u3I1 question-content__JfgR"><div><p>We define the usage of capitals in a word to be right when one of the following cases holds:</p>
+<ul>
+<li>All letters in this word are capitals, like <code>"USA"</code>.</li>
+<li>All letters in this word are not capitals, like <code>"leetcode"</code>.</li>
+<li>Only the first letter in this word is capital, like <code>"Google"</code>.</li>
+</ul>
+<p>Given a string <code>word</code>, return <code>true</code> if the usage of capitals in it is right.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> word = "USA"
+<strong>Output:</strong> true
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> word = "FlaG"
+<strong>Output:</strong> false
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= word.length &lt;= 100</code></li>
+<li><code>word</code> consists of lowercase and uppercase English letters.</li>
+</ul>
+</div></div><br><br><hr><br>***********************************<div id="title">521. Longest Uncommon Subsequence I</div>
+***********************************<div class="content__u3I1 question-content__JfgR"><div><p>Given two strings <code>a</code> and <code>b</code>, return <em>the length of the <strong>longest uncommon subsequence</strong> between </em><code>a</code> <em>and</em> <code>b</code>. If the longest uncommon subsequence does not exist, return <code>-1</code>.</p>
+<p>An <strong>uncommon subsequence</strong> between two strings is a string that is a <strong>subsequence of one but not the other</strong>.</p>
+<p>A <strong>subsequence</strong> of a string <code>s</code> is a string that can be obtained after deleting any number of characters from <code>s</code>.</p>
+<ul>
+<li>For example, <code>"abc"</code> is a subsequence of <code>"aebdc"</code> because you can delete the underlined characters in <code>"a<u>e</u>b<u>d</u>c"</code> to get <code>"abc"</code>. Other subsequences of <code>"aebdc"</code> include <code>"aebdc"</code>, <code>"aeb"</code>, and <code>""</code> (empty string).</li>
+</ul>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> a = "aba", b = "cdc"
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> One longest uncommon subsequence is "aba" because "aba" is a subsequence of "aba" but not "cdc".
+Note that "cdc" is also a longest uncommon subsequence.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> a = "aaa", b = "bbb"
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> The longest uncommon subsequences are "aaa" and "bbb".
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> a = "aaa", b = "aaa"
+<strong>Output:</strong> -1
+<strong>Explanation:</strong> Every subsequence of string a is also a subsequence of string b. Similarly, every subsequence of string b is also a subsequence of string a.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= a.length, b.length &lt;= 100</code></li>
+<li><code>a</code> and <code>b</code> consist of lower-case English letters.</li>
+</ul>
+</div></div><br><br><hr><br>***************************************<div id="title">530. Minimum Absolute Difference in BST</div>
+***************************************<div class="content__u3I1 question-content__JfgR"><div><p>Given the <code>root</code> of a Binary Search Tree (BST), return <em>the minimum absolute difference between the values of any two different nodes in the tree</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/02/05/bst1.jpg" style="width: 292px; height: 301px;"/>
+<pre><strong>Input:</strong> root = [4,2,6,1,3]
+<strong>Output:</strong> 1
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/02/05/bst2.jpg" style="width: 282px; height: 301px;"/>
+<pre><strong>Input:</strong> root = [1,0,48,null,null,12,49]
+<strong>Output:</strong> 1
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the tree is in the range <code>[2, 10<sup>4</sup>]</code>.</li>
+<li><code>0 &lt;= Node.val &lt;= 10<sup>5</sup></code></li>
+</ul>
+<p> </p>
+<p><strong>Note:</strong> This question is the same as 783: <a href="https://leetcode.com/problems/minimum-distance-between-bst-nodes/" target="_blank">https://leetcode.com/problems/minimum-distance-between-bst-nodes/</a></p>
+</div></div><br><br><hr><br>**********************<div id="title">541. Reverse String II</div>
+**********************<div class="content__u3I1 question-content__JfgR"><div><p>Given a string <code>s</code> and an integer <code>k</code>, reverse the first <code>k</code> characters for every <code>2k</code> characters counting from the start of the string.</p>
+<p>If there are fewer than <code>k</code> characters left, reverse all of them. If there are less than <code>2k</code> but greater than or equal to <code>k</code> characters, then reverse the first <code>k</code> characters and left the other as original.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "abcdefg", k = 2
+<strong>Output:</strong> "bacdfeg"
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "abcd", k = 2
+<strong>Output:</strong> "bacd"
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 10<sup>4</sup></code></li>
+<li><code>s</code> consists of only lowercase English letters.</li>
+<li><code>1 &lt;= k &lt;= 10<sup>4</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>****************************<div id="title">543. Diameter of Binary Tree</div>
+****************************<div class="content__u3I1 question-content__JfgR"><div><p>Given the <code>root</code> of a binary tree, return <em>the length of the <strong>diameter</strong> of the tree</em>.</p>
+<p>The <strong>diameter</strong> of a binary tree is the <strong>length</strong> of the longest path between any two nodes in a tree. This path may or may not pass through the <code>root</code>.</p>
+<p>The <strong>length</strong> of a path between two nodes is represented by the number of edges between them.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/03/06/diamtree.jpg" style="width: 292px; height: 302px;"/>
+<pre><strong>Input:</strong> root = [1,2,3,4,5]
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> 3 is the length of the path [4,2,1,3] or [5,2,1,3].
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> root = [1,2]
+<strong>Output:</strong> 1
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the tree is in the range <code>[1, 10<sup>4</sup>]</code>.</li>
+<li><code>-100 &lt;= Node.val &lt;= 100</code></li>
+</ul>
+</div></div><br><br><hr><br>********************************<div id="title">551. Student Attendance Record I</div>
+********************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a string <code>s</code> representing an attendance record for a student where each character signifies whether the student was absent, late, or present on that day. The record only contains the following three characters:</p>
+<ul>
+<li><code>'A'</code>: Absent.</li>
+<li><code>'L'</code>: Late.</li>
+<li><code>'P'</code>: Present.</li>
+</ul>
+<p>The student is eligible for an attendance award if they meet <strong>both</strong> of the following criteria:</p>
+<ul>
+<li>The student was absent (<code>'A'</code>) for <strong>strictly</strong> fewer than 2 days <strong>total</strong>.</li>
+<li>The student was <strong>never</strong> late (<code>'L'</code>) for 3 or more <strong>consecutive</strong> days.</li>
+</ul>
+<p>Return <code>true</code><em> if the student is eligible for an attendance award, or </em><code>false</code><em> otherwise</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "PPALLP"
+<strong>Output:</strong> true
+<strong>Explanation:</strong> The student has fewer than 2 absences and was never late 3 or more consecutive days.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "PPALLL"
+<strong>Output:</strong> false
+<strong>Explanation:</strong> The student was late 3 consecutive days in the last 3 days, so is not eligible for the award.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 1000</code></li>
+<li><code>s[i]</code> is either <code>'A'</code>, <code>'L'</code>, or <code>'P'</code>.</li>
+</ul>
+</div></div><br><br><hr><br>**********************************<div id="title">557. Reverse Words in a String III</div>
+**********************************<div class="content__u3I1 question-content__JfgR"><div><p>Given a string <code>s</code>, reverse the order of characters in each word within a sentence while still preserving whitespace and initial word order.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "Let's take LeetCode contest"
+<strong>Output:</strong> "s'teL ekat edoCteeL tsetnoc"
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "God Ding"
+<strong>Output:</strong> "doG gniD"
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 5 * 10<sup>4</sup></code></li>
+<li><code>s</code> contains printable <strong>ASCII</strong> characters.</li>
+<li><code>s</code> does not contain any leading or trailing spaces.</li>
+<li>There is <strong>at least one</strong> word in <code>s</code>.</li>
+<li>All the words in <code>s</code> are separated by a single space.</li>
+</ul>
+</div></div><br><br><hr><br>********************************<div id="title">559. Maximum Depth of N-ary Tree</div>
+********************************<div class="content__u3I1 question-content__JfgR"><div><p>Given a n-ary tree, find its maximum depth.</p>
+<p>The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.</p>
+<p><em>Nary-Tree input serialization is represented in their level order traversal, each group of children is separated by the null value (See examples).</em></p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2018/10/12/narytreeexample.png" style="width: 100%; max-width: 300px;"/></p>
+<pre><strong>Input:</strong> root = [1,null,3,2,4,null,5,6]
+<strong>Output:</strong> 3
+</pre>
+<p><strong>Example 2:</strong></p>
+<p><img alt="" src="https://assets.leetcode.com/uploads/2019/11/08/sample_4_964.png" style="width: 296px; height: 241px;"/></p>
+<pre><strong>Input:</strong> root = [1,null,2,3,4,5,null,null,6,7,null,8,null,9,10,null,null,11,null,12,null,13,null,null,14]
+<strong>Output:</strong> 5
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The total number of nodes is in the range <code>[0, 10<sup>4</sup>]</code>.</li>
+<li>The depth of the n-ary tree is less than or equal to <code>1000</code>.</li>
+</ul>
+</div></div><br><br><hr><br>**********************<div id="title">561. Array Partition I</div>
+**********************<div class="content__u3I1 question-content__JfgR"><div><p>Given an integer array <code>nums</code> of <code>2n</code> integers, group these integers into <code>n</code> pairs <code>(a<sub>1</sub>, b<sub>1</sub>), (a<sub>2</sub>, b<sub>2</sub>), ..., (a<sub>n</sub>, b<sub>n</sub>)</code> such that the sum of <code>min(a<sub>i</sub>, b<sub>i</sub>)</code> for all <code>i</code> is <strong>maximized</strong>. Return<em> the maximized sum</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [1,4,3,2]
+<strong>Output:</strong> 4
+<strong>Explanation:</strong> All possible pairings (ignoring the ordering of elements) are:
+1. (1, 4), (2, 3) -&gt; min(1, 4) + min(2, 3) = 1 + 2 = 3
+2. (1, 3), (2, 4) -&gt; min(1, 3) + min(2, 4) = 1 + 2 = 3
+3. (1, 2), (3, 4) -&gt; min(1, 2) + min(3, 4) = 1 + 3 = 4
+So the maximum possible sum is 4.</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [6,2,6,5,1,2]
+<strong>Output:</strong> 9
+<strong>Explanation:</strong> The optimal pairing is (2, 1), (2, 5), (6, 6). min(2, 1) + min(2, 5) + min(6, 6) = 1 + 2 + 6 = 9.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 10<sup>4</sup></code></li>
+<li><code>nums.length == 2 * n</code></li>
+<li><code>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>*********************<div id="title">563. Binary Tree Tilt</div>
+*********************<div class="content__u3I1 question-content__JfgR"><div><p>Given the <code>root</code> of a binary tree, return <em>the sum of every tree node's <strong>tilt</strong>.</em></p>
+<p>The <strong>tilt</strong> of a tree node is the <b>absolute difference</b> between the sum of all left subtree node <strong>values</strong> and all right subtree node <strong>values</strong>. If a node does not have a left child, then the sum of the left subtree node <strong>values</strong> is treated as <code>0</code>. The rule is similar if there the node does not have a right child.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/10/20/tilt1.jpg" style="width: 712px; height: 182px;"/>
+<pre><strong>Input:</strong> root = [1,2,3]
+<strong>Output:</strong> 1
+<strong>Explanation:</strong> 
+Tilt of node 2 : |0-0| = 0 (no children)
+Tilt of node 3 : |0-0| = 0 (no children)
+Tilt of node 1 : |2-3| = 1 (left subtree is just left child, so sum is 2; right subtree is just right child, so sum is 3)
+Sum of every tilt : 0 + 0 + 1 = 1
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/10/20/tilt2.jpg" style="width: 800px; height: 203px;"/>
+<pre><strong>Input:</strong> root = [4,2,9,3,5,null,7]
+<strong>Output:</strong> 15
+<strong>Explanation:</strong> 
+Tilt of node 3 : |0-0| = 0 (no children)
+Tilt of node 5 : |0-0| = 0 (no children)
+Tilt of node 7 : |0-0| = 0 (no children)
+Tilt of node 2 : |3-5| = 2 (left subtree is just left child, so sum is 3; right subtree is just right child, so sum is 5)
+Tilt of node 9 : |0-7| = 7 (no left child, so sum is 0; right subtree is just right child, so sum is 7)
+Tilt of node 4 : |(3+5+2)-(9+7)| = |10-16| = 6 (left subtree values are 3, 5, and 2, which sums to 10; right subtree values are 9 and 7, which sums to 16)
+Sum of every tilt : 0 + 0 + 0 + 2 + 7 + 6 = 15
+</pre>
+<p><strong>Example 3:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/10/20/tilt3.jpg" style="width: 800px; height: 293px;"/>
+<pre><strong>Input:</strong> root = [21,7,14,1,1,2,2,3,3]
+<strong>Output:</strong> 9
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the tree is in the range <code>[0, 10<sup>4</sup>]</code>.</li>
+<li><code>-1000 &lt;= Node.val &lt;= 1000</code></li>
+</ul>
+</div></div><br><br><hr><br>***********************<div id="title">566. Reshape the Matrix</div>
+***********************<div class="content__u3I1 question-content__JfgR"><div><p>In MATLAB, there is a handy function called <code>reshape</code> which can reshape an <code>m x n</code> matrix into a new one with a different size <code>r x c</code> keeping its original data.</p>
+<p>You are given an <code>m x n</code> matrix <code>mat</code> and two integers <code>r</code> and <code>c</code> representing the number of rows and the number of columns of the wanted reshaped matrix.</p>
+<p>The reshaped matrix should be filled with all the elements of the original matrix in the same row-traversing order as they were.</p>
+<p>If the <code>reshape</code> operation with given parameters is possible and legal, output the new reshaped matrix; Otherwise, output the original matrix.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/04/24/reshape1-grid.jpg" style="width: 613px; height: 173px;"/>
+<pre><strong>Input:</strong> mat = [[1,2],[3,4]], r = 1, c = 4
+<strong>Output:</strong> [[1,2,3,4]]
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/04/24/reshape2-grid.jpg" style="width: 453px; height: 173px;"/>
+<pre><strong>Input:</strong> mat = [[1,2],[3,4]], r = 2, c = 4
+<strong>Output:</strong> [[1,2],[3,4]]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>m == mat.length</code></li>
+<li><code>n == mat[i].length</code></li>
+<li><code>1 &lt;= m, n &lt;= 100</code></li>
+<li><code>-1000 &lt;= mat[i][j] &lt;= 1000</code></li>
+<li><code>1 &lt;= r, c &lt;= 300</code></li>
+</ul>
+</div></div><br><br><hr><br>****************************<div id="title">572. Subtree of Another Tree</div>
+****************************<div class="content__u3I1 question-content__JfgR"><div><p>Given the roots of two binary trees <code>root</code> and <code>subRoot</code>, return <code>true</code> if there is a subtree of <code>root</code> with the same structure and node values of<code> subRoot</code> and <code>false</code> otherwise.</p>
+<p>A subtree of a binary tree <code>tree</code> is a tree that consists of a node in <code>tree</code> and all of this node's descendants. The tree <code>tree</code> could also be considered as a subtree of itself.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/04/28/subtree1-tree.jpg" style="width: 532px; height: 400px;"/>
+<pre><strong>Input:</strong> root = [3,4,5,1,2], subRoot = [4,1,2]
+<strong>Output:</strong> true
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/04/28/subtree2-tree.jpg" style="width: 502px; height: 458px;"/>
+<pre><strong>Input:</strong> root = [3,4,5,1,2,null,null,null,null,0], subRoot = [4,1,2]
+<strong>Output:</strong> false
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the <code>root</code> tree is in the range <code>[1, 2000]</code>.</li>
+<li>The number of nodes in the <code>subRoot</code> tree is in the range <code>[1, 1000]</code>.</li>
+<li><code>-10<sup>4</sup> &lt;= root.val &lt;= 10<sup>4</sup></code></li>
+<li><code>-10<sup>4</sup> &lt;= subRoot.val &lt;= 10<sup>4</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>***********************<div id="title">575. Distribute Candies</div>
+***********************<div class="content__u3I1 question-content__JfgR"><div><p>Alice has <code>n</code> candies, where the <code>i<sup>th</sup></code> candy is of type <code>candyType[i]</code>. Alice noticed that she started to gain weight, so she visited a doctor.</p>
+<p>The doctor advised Alice to only eat <code>n / 2</code> of the candies she has (<code>n</code> is always even). Alice likes her candies very much, and she wants to eat the maximum number of different types of candies while still following the doctor's advice.</p>
+<p>Given the integer array <code>candyType</code> of length <code>n</code>, return <em>the <strong>maximum</strong> number of different types of candies she can eat if she only eats </em><code>n / 2</code><em> of them</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> candyType = [1,1,2,2,3,3]
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> Alice can only eat 6 / 2 = 3 candies. Since there are only 3 types, she can eat one of each type.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> candyType = [1,1,2,3]
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> Alice can only eat 4 / 2 = 2 candies. Whether she eats types [1,2], [1,3], or [2,3], she still can only eat 2 different types.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> candyType = [6,6,6,6]
+<strong>Output:</strong> 1
+<strong>Explanation:</strong> Alice can only eat 4 / 2 = 2 candies. Even though she can eat 2 candies, she only has 1 type.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == candyType.length</code></li>
+<li><code>2 &lt;= n &lt;= 10<sup>4</sup></code></li>
+<li><code>n</code> is even.</li>
+<li><code>-10<sup>5</sup> &lt;= candyType[i] &lt;= 10<sup>5</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>**********************************<div id="title">589. N-ary Tree Preorder Traversal</div>
+**********************************<div class="content__u3I1 question-content__JfgR"><div><p>Given the <code>root</code> of an n-ary tree, return <em>the preorder traversal of its nodes' values</em>.</p>
+<p>Nary-Tree input serialization is represented in their level order traversal. Each group of children is separated by the null value (See examples)</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<p><img src="https://assets.leetcode.com/uploads/2018/10/12/narytreeexample.png" style="width: 100%; max-width: 300px;"/></p>
+<pre><strong>Input:</strong> root = [1,null,3,2,4,null,5,6]
+<strong>Output:</strong> [1,3,5,6,2,4]
+</pre>
+<p><strong>Example 2:</strong></p>
+<p><img alt="" src="https://assets.leetcode.com/uploads/2019/11/08/sample_4_964.png" style="width: 296px; height: 241px;"/></p>
+<pre><strong>Input:</strong> root = [1,null,2,3,4,5,null,null,6,7,null,8,null,9,10,null,null,11,null,12,null,13,null,null,14]
+<strong>Output:</strong> [1,2,3,6,7,11,14,4,8,12,5,9,13,10]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the tree is in the range <code>[0, 10<sup>4</sup>]</code>.</li>
+<li><code>0 &lt;= Node.val &lt;= 10<sup>4</sup></code></li>
+<li>The height of the n-ary tree is less than or equal to <code>1000</code>.</li>
+</ul>
+<p> </p>
+<p><strong>Follow up:</strong> Recursive solution is trivial, could you do it iteratively?</p>
+</div></div><br><br><hr><br>***********************************<div id="title">590. N-ary Tree Postorder Traversal</div>
+***********************************<div class="content__u3I1 question-content__JfgR"><div><p>Given the <code>root</code> of an n-ary tree, return <em>the postorder traversal of its nodes' values</em>.</p>
+<p>Nary-Tree input serialization is represented in their level order traversal. Each group of children is separated by the null value (See examples)</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img src="https://assets.leetcode.com/uploads/2018/10/12/narytreeexample.png" style="width: 100%; max-width: 300px;"/>
+<pre><strong>Input:</strong> root = [1,null,3,2,4,null,5,6]
+<strong>Output:</strong> [5,6,3,2,4,1]
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2019/11/08/sample_4_964.png" style="width: 296px; height: 241px;"/>
+<pre><strong>Input:</strong> root = [1,null,2,3,4,5,null,null,6,7,null,8,null,9,10,null,null,11,null,12,null,13,null,null,14]
+<strong>Output:</strong> [2,6,14,11,7,3,12,8,4,13,9,10,5,1]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the tree is in the range <code>[0, 10<sup>4</sup>]</code>.</li>
+<li><code>0 &lt;= Node.val &lt;= 10<sup>4</sup></code></li>
+<li>The height of the n-ary tree is less than or equal to <code>1000</code>.</li>
+</ul>
+<p> </p>
+<p><strong>Follow up:</strong> Recursive solution is trivial, could you do it iteratively?</p>
 </div></div><br><br><hr><br>
