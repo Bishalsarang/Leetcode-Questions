@@ -3238,4 +3238,130 @@ Sum of every tilt : 0 + 0 + 0 + 2 + 7 + 6 = 15
 </ul>
 <p> </p>
 <p><strong>Follow up:</strong> Recursive solution is trivial, could you do it iteratively?</p>
+</div></div><br><br><hr><br><style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>***********************************<div id="title">594. Longest Harmonious Subsequence</div>
+***********************************<div class="content__u3I1 question-content__JfgR"><div><p>We define a harmonious array as an array where the difference between its maximum value and its minimum value is <b>exactly</b> <code>1</code>.</p>
+<p>Given an integer array <code>nums</code>, return <em>the length of its longest harmonious subsequence among all its possible subsequences</em>.</p>
+<p>A <strong>subsequence</strong> of array is a sequence that can be derived from the array by deleting some or no elements without changing the order of the remaining elements.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [1,3,2,2,5,2,3,7]
+<strong>Output:</strong> 5
+<strong>Explanation:</strong> The longest harmonious subsequence is [3,2,2,2,3].
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [1,2,3,4]
+<strong>Output:</strong> 2
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> nums = [1,1,1,1]
+<strong>Output:</strong> 0
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 2 * 10<sup>4</sup></code></li>
+<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
+</ul></div></div><br><br><hr><br>**********************<div id="title">598. Range Addition II</div>
+**********************<div class="content__u3I1 question-content__JfgR"><div><p>You are given an <code>m x n</code> matrix <code>M</code> initialized with all <code>0</code>'s and an array of operations <code>ops</code>, where <code>ops[i] = [a<sub>i</sub>, b<sub>i</sub>]</code> means <code>M[x][y]</code> should be incremented by one for all <code>0 &lt;= x &lt; a<sub>i</sub></code> and <code>0 &lt;= y &lt; b<sub>i</sub></code>.</p>
+<p>Count and return <em>the number of maximum integers in the matrix after performing all the operations</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/10/02/ex1.jpg" style="width: 750px; height: 176px;"/>
+<pre><strong>Input:</strong> m = 3, n = 3, ops = [[2,2],[3,3]]
+<strong>Output:</strong> 4
+<strong>Explanation:</strong> The maximum integer in M is 2, and there are four of it in M. So return 4.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> m = 3, n = 3, ops = [[2,2],[3,3],[3,3],[3,3],[2,2],[3,3],[3,3],[3,3],[2,2],[3,3],[3,3],[3,3]]
+<strong>Output:</strong> 4
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> m = 3, n = 3, ops = []
+<strong>Output:</strong> 9
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= m, n &lt;= 4 * 10<sup>4</sup></code></li>
+<li><code>0 &lt;= ops.length &lt;= 10<sup>4</sup></code></li>
+<li><code>ops[i].length == 2</code></li>
+<li><code>1 &lt;= a<sub>i</sub> &lt;= m</code></li>
+<li><code>1 &lt;= b<sub>i</sub> &lt;= n</code></li>
+</ul>
+</div></div><br><br><hr><br>***********************************<div id="title">599. Minimum Index Sum of Two Lists</div>
+***********************************<div class="content__u3I1 question-content__JfgR"><div><p>Suppose Andy and Doris want to choose a restaurant for dinner, and they both have a list of favorite restaurants represented by strings.</p>
+<p>You need to help them find out their <b>common interest</b> with the <b>least list index sum</b>. If there is a choice tie between answers, output all of them with no order requirement. You could assume there always exists an answer.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> list1 = ["Shogun","Tapioca Express","Burger King","KFC"], list2 = ["Piatti","The Grill at Torrey Pines","Hungry Hunter Steakhouse","Shogun"]
+<strong>Output:</strong> ["Shogun"]
+<strong>Explanation:</strong> The only restaurant they both like is "Shogun".
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> list1 = ["Shogun","Tapioca Express","Burger King","KFC"], list2 = ["KFC","Shogun","Burger King"]
+<strong>Output:</strong> ["Shogun"]
+<strong>Explanation:</strong> The restaurant they both like and have the least index sum is "Shogun" with index sum 1 (0+1).
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> list1 = ["Shogun","Tapioca Express","Burger King","KFC"], list2 = ["KFC","Burger King","Tapioca Express","Shogun"]
+<strong>Output:</strong> ["KFC","Burger King","Tapioca Express","Shogun"]
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> list1 = ["Shogun","Tapioca Express","Burger King","KFC"], list2 = ["KNN","KFC","Burger King","Tapioca Express","Shogun"]
+<strong>Output:</strong> ["KFC","Burger King","Tapioca Express","Shogun"]
+</pre>
+<p><strong>Example 5:</strong></p>
+<pre><strong>Input:</strong> list1 = ["KFC"], list2 = ["KFC"]
+<strong>Output:</strong> ["KFC"]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= list1.length, list2.length &lt;= 1000</code></li>
+<li><code>1 &lt;= list1[i].length, list2[i].length &lt;= 30</code></li>
+<li><code>list1[i]</code> and <code>list2[i]</code> consist of spaces <code>' '</code> and English letters.</li>
+<li>All the stings of <code>list1</code> are <strong>unique</strong>.</li>
+<li>All the stings of <code>list2</code> are <strong>unique</strong>.</li>
+</ul>
+</div></div><br><br><hr><br>**********************<div id="title">605. Can Place Flowers</div>
+**********************<div class="content__u3I1 question-content__JfgR"><div><p>You have a long flowerbed in which some of the plots are planted, and some are not. However, flowers cannot be planted in <strong>adjacent</strong> plots.</p>
+<p>Given an integer array <code>flowerbed</code> containing <code>0</code>'s and <code>1</code>'s, where <code>0</code> means empty and <code>1</code> means not empty, and an integer <code>n</code>, return <em>if</em> <code>n</code> new flowers can be planted in the <code>flowerbed</code> without violating the no-adjacent-flowers rule.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> flowerbed = [1,0,0,0,1], n = 1
+<strong>Output:</strong> true
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> flowerbed = [1,0,0,0,1], n = 2
+<strong>Output:</strong> false
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= flowerbed.length &lt;= 2 * 10<sup>4</sup></code></li>
+<li><code>flowerbed[i]</code> is <code>0</code> or <code>1</code>.</li>
+<li>There are no two adjacent flowers in <code>flowerbed</code>.</li>
+<li><code>0 &lt;= n &lt;= flowerbed.length</code></li>
+</ul>
+</div></div><br><br><hr><br>**************************************<div id="title">606. Construct String from Binary Tree</div>
+**************************************<div class="content__u3I1 question-content__JfgR"><div><p>Given the <code>root</code> of a binary tree, construct a string consists of parenthesis and integers from a binary tree with the preorder traversing way, and return it.</p>
+<p>Omit all the empty parenthesis pairs that do not affect the one-to-one mapping relationship between the string and the original binary tree.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/05/03/cons1-tree.jpg" style="width: 292px; height: 301px;"/>
+<pre><strong>Input:</strong> root = [1,2,3,4]
+<strong>Output:</strong> "1(2(4))(3)"
+<strong>Explanation:</strong> Originallay it needs to be "1(2(4)())(3()())", but you need to omit all the unnecessary empty parenthesis pairs. And it will be "1(2(4))(3)"
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/05/03/cons2-tree.jpg" style="width: 207px; height: 293px;"/>
+<pre><strong>Input:</strong> root = [1,2,3,null,4]
+<strong>Output:</strong> "1(2()(4))(3)"
+Explanation: Almost the same as the first example, except we cannot omit the first parenthesis pair to break the one-to-one mapping relationship between the input and the output.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the tree is in the range <code>[1, 10<sup>4</sup>]</code>.</li>
+<li><code>-1000 &lt;= Node.val &lt;= 1000</code></li>
+</ul>
 </div></div><br><br><hr><br>
