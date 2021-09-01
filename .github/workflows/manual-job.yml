@@ -3,17 +3,15 @@ name: download_letcode_manual
 on:
   workflow_dispatch:
     inputs:
-      numberOfProblems:
+      MAXIMUM_NUMBER_OF_PROBLEMS:
         description: 'Number of problems to download'     
         default: '30'
-      sleepTimePerProblemInSecond:
+      SLEEP_TIME_PER_PROBLEM_IN_SECOND:
         description: 'Number of seconds to wait after downloading each problem'  
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
       - name: Set up Python 3.7
@@ -27,9 +25,12 @@ jobs:
       - name: Generate epub and html
         run: |
           python main.py
+        env:
+          MAXIMUM_NUMBER_OF_PROBLEMS: ${{ github.event.inputs.MAXIMUM_NUMBER_OF_PROBLEMS }}
+          SLEEP_TIME_PER_PROBLEM_IN_SECOND: ${{ github.event.inputs.SLEEP_TIME_PER_PROBLEM_IN_SECOND }}
       - name: Commit and push
         run: |-
           git config --global user.email "githubaction@example.com"
           git config --global user.name "github-action"
           git diff --quiet || (git add chapters.pickle out.html track.conf "Leetcode Questions.epub" && git commit -m "Update with new problems")
-          git push origin HEAD:main
+          git push --force-with-lease
