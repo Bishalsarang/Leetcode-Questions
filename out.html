@@ -1245,4 +1245,1017 @@ AB -&gt; 28
 <li>The input must be a <strong>binary string</strong> of length <code>32</code>.</li>
 </ul>
 <p> </p>
-<strong>Follow up:</strong> If this function is called many times, how would you optimize it?</div></div><br><br><hr><br>
+<strong>Follow up:</strong> If this function is called many times, how would you optimize it?</div></div><br><br><hr><br><style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>*****************<div id="title">202. Happy Number</div>
+*****************<div class="content__u3I1 question-content__JfgR"><div><p>Write an algorithm to determine if a number <code>n</code> is happy.</p>
+<p>A <strong>happy number</strong> is a number defined by the following process:</p>
+<ul>
+<li>Starting with any positive integer, replace the number by the sum of the squares of its digits.</li>
+<li>Repeat the process until the number equals 1 (where it will stay), or it <strong>loops endlessly in a cycle</strong> which does not include 1.</li>
+<li>Those numbers for which this process <strong>ends in 1</strong> are happy.</li>
+</ul>
+<p>Return <code>true</code> <em>if</em> <code>n</code> <em>is a happy number, and</em> <code>false</code> <em>if not</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> n = 19
+<strong>Output:</strong> true
+<strong>Explanation:</strong>
+1<sup>2</sup> + 9<sup>2</sup> = 82
+8<sup>2</sup> + 2<sup>2</sup> = 68
+6<sup>2</sup> + 8<sup>2</sup> = 100
+1<sup>2</sup> + 0<sup>2</sup> + 0<sup>2</sup> = 1
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> n = 2
+<strong>Output:</strong> false
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 2<sup>31</sup> - 1</code></li>
+</ul>
+</div></div><br><br><hr><br>********************************<div id="title">203. Remove Linked List Elements</div>
+********************************<div class="content__u3I1 question-content__JfgR"><div><p>Given the <code>head</code> of a linked list and an integer <code>val</code>, remove all the nodes of the linked list that has <code>Node.val == val</code>, and return <em>the new head</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/03/06/removelinked-list.jpg" style="width: 500px; height: 142px;"/>
+<pre><strong>Input:</strong> head = [1,2,6,3,4,5,6], val = 6
+<strong>Output:</strong> [1,2,3,4,5]
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> head = [], val = 1
+<strong>Output:</strong> []
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> head = [7,7,7,7], val = 7
+<strong>Output:</strong> []
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the list is in the range <code>[0, 10<sup>4</sup>]</code>.</li>
+<li><code>1 &lt;= Node.val &lt;= 50</code></li>
+<li><code>0 &lt;= val &lt;= 50</code></li>
+</ul>
+</div></div><br><br><hr><br>*****************<div id="title">204. Count Primes</div>
+*****************<div class="content__u3I1 question-content__JfgR"><div><p>Count the number of prime numbers less than a non-negative number, <code>n</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> n = 10
+<strong>Output:</strong> 4
+<strong>Explanation:</strong> There are 4 prime numbers less than 10, they are 2, 3, 5, 7.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> n = 0
+<strong>Output:</strong> 0
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> n = 1
+<strong>Output:</strong> 0
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>0 &lt;= n &lt;= 5 * 10<sup>6</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>***********************<div id="title">205. Isomorphic Strings</div>
+***********************<div class="content__u3I1 question-content__JfgR"><div><p>Given two strings <code>s</code> and <code>t</code>, <em>determine if they are isomorphic</em>.</p>
+<p>Two strings <code>s</code> and <code>t</code> are isomorphic if the characters in <code>s</code> can be replaced to get <code>t</code>.</p>
+<p>All occurrences of a character must be replaced with another character while preserving the order of characters. No two characters may map to the same character, but a character may map to itself.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "egg", t = "add"
+<strong>Output:</strong> true
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "foo", t = "bar"
+<strong>Output:</strong> false
+</pre><p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> s = "paper", t = "title"
+<strong>Output:</strong> true
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 5 * 10<sup>4</sup></code></li>
+<li><code>t.length == s.length</code></li>
+<li><code>s</code> and <code>t</code> consist of any valid ascii character.</li>
+</ul>
+</div></div><br><br><hr><br>************************<div id="title">206. Reverse Linked List</div>
+************************<div class="content__u3I1 question-content__JfgR"><div><p>Given the <code>head</code> of a singly linked list, reverse the list, and return <em>the reversed list</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/02/19/rev1ex1.jpg" style="width: 542px; height: 222px;"/>
+<pre><strong>Input:</strong> head = [1,2,3,4,5]
+<strong>Output:</strong> [5,4,3,2,1]
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/02/19/rev1ex2.jpg" style="width: 182px; height: 222px;"/>
+<pre><strong>Input:</strong> head = [1,2]
+<strong>Output:</strong> [2,1]
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> head = []
+<strong>Output:</strong> []
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the list is the range <code>[0, 5000]</code>.</li>
+<li><code>-5000 &lt;= Node.val &lt;= 5000</code></li>
+</ul>
+<p> </p>
+<p><strong>Follow up:</strong> A linked list can be reversed either iteratively or recursively. Could you implement both?</p>
+</div></div><br><br><hr><br>***********************<div id="title">217. Contains Duplicate</div>
+***********************<div class="content__u3I1 question-content__JfgR"><div><p>Given an integer array <code>nums</code>, return <code>true</code> if any value appears <strong>at least twice</strong> in the array, and return <code>false</code> if every element is distinct.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [1,2,3,1]
+<strong>Output:</strong> true
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [1,2,3,4]
+<strong>Output:</strong> false
+</pre><p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> nums = [1,1,1,3,3,4,3,2,4,2]
+<strong>Output:</strong> true
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
+<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>**************************<div id="title">219. Contains Duplicate II</div>
+**************************<div class="content__u3I1 question-content__JfgR"><div><p>Given an integer array <code>nums</code> and an integer <code>k</code>, return <code>true</code> if there are two <strong>distinct indices</strong> <code>i</code> and <code>j</code> in the array such that <code>nums[i] == nums[j]</code> and <code>abs(i - j) &lt;= k</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [1,2,3,1], k = 3
+<strong>Output:</strong> true
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [1,0,1,1], k = 1
+<strong>Output:</strong> true
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> nums = [1,2,3,1,2,3], k = 2
+<strong>Output:</strong> false
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
+<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
+<li><code>0 &lt;= k &lt;= 10<sup>5</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>*********************************<div id="title">225. Implement Stack using Queues</div>
+*********************************<div class="content__u3I1 question-content__JfgR"><div><p>Implement a last-in-first-out (LIFO) stack using only two queues. The implemented stack should support all the functions of a normal stack (<code>push</code>, <code>top</code>, <code>pop</code>, and <code>empty</code>).</p>
+<p>Implement the <code>MyStack</code> class:</p>
+<ul>
+<li><code>void push(int x)</code> Pushes element x to the top of the stack.</li>
+<li><code>int pop()</code> Removes the element on the top of the stack and returns it.</li>
+<li><code>int top()</code> Returns the element on the top of the stack.</li>
+<li><code>boolean empty()</code> Returns <code>true</code> if the stack is empty, <code>false</code> otherwise.</li>
+</ul>
+<p><b>Notes:</b></p>
+<ul>
+<li>You must use <strong>only</strong> standard operations of a queue, which means that only <code>push to back</code>, <code>peek/pop from front</code>, <code>size</code> and <code>is empty</code> operations are valid.</li>
+<li>Depending on your language, the queue may not be supported natively. You may simulate a queue using a list or deque (double-ended queue) as long as you use only a queue's standard operations.</li>
+</ul>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input</strong>
+["MyStack", "push", "push", "top", "pop", "empty"]
+[[], [1], [2], [], [], []]
+<strong>Output</strong>
+[null, null, null, 2, 2, false]
+
+<strong>Explanation</strong>
+MyStack myStack = new MyStack();
+myStack.push(1);
+myStack.push(2);
+myStack.top(); // return 2
+myStack.pop(); // return 2
+myStack.empty(); // return False
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= x &lt;= 9</code></li>
+<li>At most <code>100</code> calls will be made to <code>push</code>, <code>pop</code>, <code>top</code>, and <code>empty</code>.</li>
+<li>All the calls to <code>pop</code> and <code>top</code> are valid.</li>
+</ul>
+<p> </p>
+<p><strong>Follow-up:</strong> Can you implement the stack using only one queue?</p>
+</div></div><br><br><hr><br>***********************<div id="title">226. Invert Binary Tree</div>
+***********************<div class="content__u3I1 question-content__JfgR"><div><p>Given the <code>root</code> of a binary tree, invert the tree, and return <em>its root</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/03/14/invert1-tree.jpg" style="width: 500px; height: 165px;"/>
+<pre><strong>Input:</strong> root = [4,2,7,1,3,6,9]
+<strong>Output:</strong> [4,7,2,9,6,3,1]
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/03/14/invert2-tree.jpg" style="width: 500px; height: 120px;"/>
+<pre><strong>Input:</strong> root = [2,1,3]
+<strong>Output:</strong> [2,3,1]
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> root = []
+<strong>Output:</strong> []
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the tree is in the range <code>[0, 100]</code>.</li>
+<li><code>-100 &lt;= Node.val &lt;= 100</code></li>
+</ul>
+</div></div><br><br><hr><br>*******************<div id="title">228. Summary Ranges</div>
+*******************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a <strong>sorted unique</strong> integer array <code>nums</code>.</p>
+<p>Return <em>the <strong>smallest sorted</strong> list of ranges that <strong>cover all the numbers in the array exactly</strong></em>. That is, each element of <code>nums</code> is covered by exactly one of the ranges, and there is no integer <code>x</code> such that <code>x</code> is in one of the ranges but not in <code>nums</code>.</p>
+<p>Each range <code>[a,b]</code> in the list should be output as:</p>
+<ul>
+<li><code>"a-&gt;b"</code> if <code>a != b</code></li>
+<li><code>"a"</code> if <code>a == b</code></li>
+</ul>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [0,1,2,4,5,7]
+<strong>Output:</strong> ["0-&gt;2","4-&gt;5","7"]
+<strong>Explanation:</strong> The ranges are:
+[0,2] --&gt; "0-&gt;2"
+[4,5] --&gt; "4-&gt;5"
+[7,7] --&gt; "7"
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [0,2,3,4,6,8,9]
+<strong>Output:</strong> ["0","2-&gt;4","6","8-&gt;9"]
+<strong>Explanation:</strong> The ranges are:
+[0,0] --&gt; "0"
+[2,4] --&gt; "2-&gt;4"
+[6,6] --&gt; "6"
+[8,9] --&gt; "8-&gt;9"
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> nums = []
+<strong>Output:</strong> []
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> nums = [-1]
+<strong>Output:</strong> ["-1"]
+</pre>
+<p><strong>Example 5:</strong></p>
+<pre><strong>Input:</strong> nums = [0]
+<strong>Output:</strong> ["0"]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>0 &lt;= nums.length &lt;= 20</code></li>
+<li><code>-2<sup>31</sup> &lt;= nums[i] &lt;= 2<sup>31</sup> - 1</code></li>
+<li>All the values of <code>nums</code> are <strong>unique</strong>.</li>
+<li><code>nums</code> is sorted in ascending order.</li>
+</ul>
+</div></div><br><br><hr><br>*****************<div id="title">231. Power of Two</div>
+*****************<div class="content__u3I1 question-content__JfgR"><div><p>Given an integer <code>n</code>, return <em><code>true</code> if it is a power of two. Otherwise, return <code>false</code></em>.</p>
+<p>An integer <code>n</code> is a power of two, if there exists an integer <code>x</code> such that <code>n == 2<sup>x</sup></code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> n = 1
+<strong>Output:</strong> true
+<strong>Explanation: </strong>2<sup>0</sup> = 1
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> n = 16
+<strong>Output:</strong> true
+<strong>Explanation: </strong>2<sup>4</sup> = 16
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> n = 3
+<strong>Output:</strong> false
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> n = 4
+<strong>Output:</strong> true
+</pre>
+<p><strong>Example 5:</strong></p>
+<pre><strong>Input:</strong> n = 5
+<strong>Output:</strong> false
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>-2<sup>31</sup> &lt;= n &lt;= 2<sup>31</sup> - 1</code></li>
+</ul>
+<p> </p>
+<strong>Follow up:</strong> Could you solve it without loops/recursion?</div></div><br><br><hr><br>*********************************<div id="title">232. Implement Queue using Stacks</div>
+*********************************<div class="content__u3I1 question-content__JfgR"><div><p>Implement a first in first out (FIFO) queue using only two stacks. The implemented queue should support all the functions of a normal queue (<code>push</code>, <code>peek</code>, <code>pop</code>, and <code>empty</code>).</p>
+<p>Implement the <code>MyQueue</code> class:</p>
+<ul>
+<li><code>void push(int x)</code> Pushes element x to the back of the queue.</li>
+<li><code>int pop()</code> Removes the element from the front of the queue and returns it.</li>
+<li><code>int peek()</code> Returns the element at the front of the queue.</li>
+<li><code>boolean empty()</code> Returns <code>true</code> if the queue is empty, <code>false</code> otherwise.</li>
+</ul>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>You must use <strong>only</strong> standard operations of a stack, which means only <code>push to top</code>, <code>peek/pop from top</code>, <code>size</code>, and <code>is empty</code> operations are valid.</li>
+<li>Depending on your language, the stack may not be supported natively. You may simulate a stack using a list or deque (double-ended queue) as long as you use only a stack's standard operations.</li>
+</ul>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input</strong>
+["MyQueue", "push", "push", "peek", "pop", "empty"]
+[[], [1], [2], [], [], []]
+<strong>Output</strong>
+[null, null, null, 1, 1, false]
+
+<strong>Explanation</strong>
+MyQueue myQueue = new MyQueue();
+myQueue.push(1); // queue is: [1]
+myQueue.push(2); // queue is: [1, 2] (leftmost is front of the queue)
+myQueue.peek(); // return 1
+myQueue.pop(); // return 1, queue is [2]
+myQueue.empty(); // return false
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= x &lt;= 9</code></li>
+<li>At most <code>100</code> calls will be made to <code>push</code>, <code>pop</code>, <code>peek</code>, and <code>empty</code>.</li>
+<li>All the calls to <code>pop</code> and <code>peek</code> are valid.</li>
+</ul>
+<p> </p>
+<p><strong>Follow-up:</strong> Can you implement the queue such that each operation is <strong><a href="https://en.wikipedia.org/wiki/Amortized_analysis" target="_blank">amortized</a></strong> <code>O(1)</code> time complexity? In other words, performing <code>n</code> operations will take overall <code>O(n)</code> time even if one of those operations may take longer.</p>
+</div></div><br><br><hr><br>***************************<div id="title">234. Palindrome Linked List</div>
+***************************<div class="content__u3I1 question-content__JfgR"><div><p>Given the <code>head</code> of a singly linked list, return <code>true</code> if it is a palindrome.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/03/03/pal1linked-list.jpg" style="width: 422px; height: 62px;"/>
+<pre><strong>Input:</strong> head = [1,2,2,1]
+<strong>Output:</strong> true
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/03/03/pal2linked-list.jpg" style="width: 182px; height: 62px;"/>
+<pre><strong>Input:</strong> head = [1,2]
+<strong>Output:</strong> false
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the list is in the range <code>[1, 10<sup>5</sup>]</code>.</li>
+<li><code>0 &lt;= Node.val &lt;= 9</code></li>
+</ul>
+<p> </p>
+<strong>Follow up:</strong> Could you do it in <code>O(n)</code> time and <code>O(1)</code> space?</div></div><br><br><hr><br>***************************************************<div id="title">235. Lowest Common Ancestor of a Binary Search Tree</div>
+***************************************************<div class="content__u3I1 question-content__JfgR"><div><p>Given a binary search tree (BST), find the lowest common ancestor (LCA) of two given nodes in the BST.</p>
+<p>According to the <a href="https://en.wikipedia.org/wiki/Lowest_common_ancestor" target="_blank">definition of LCA on Wikipedia</a>: “The lowest common ancestor is defined between two nodes <code>p</code> and <code>q</code> as the lowest node in <code>T</code> that has both <code>p</code> and <code>q</code> as descendants (where we allow <b>a node to be a descendant of itself</b>).”</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2018/12/14/binarysearchtree_improved.png" style="width: 200px; height: 190px;"/>
+<pre><strong>Input:</strong> root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 8
+<strong>Output:</strong> 6
+<strong>Explanation:</strong> The LCA of nodes 2 and 8 is 6.
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2018/12/14/binarysearchtree_improved.png" style="width: 200px; height: 190px;"/>
+<pre><strong>Input:</strong> root = [6,2,8,0,4,7,9,null,null,3,5], p = 2, q = 4
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> The LCA of nodes 2 and 4 is 2, since a node can be a descendant of itself according to the LCA definition.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> root = [2,1], p = 2, q = 1
+<strong>Output:</strong> 2
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the tree is in the range <code>[2, 10<sup>5</sup>]</code>.</li>
+<li><code>-10<sup>9</sup> &lt;= Node.val &lt;= 10<sup>9</sup></code></li>
+<li>All <code>Node.val</code> are <strong>unique</strong>.</li>
+<li><code>p != q</code></li>
+<li><code>p</code> and <code>q</code> will exist in the BST.</li>
+</ul>
+</div></div><br><br><hr><br>*********************************<div id="title">237. Delete Node in a Linked List</div>
+*********************************<div class="content__u3I1 question-content__JfgR"><div><p>Write a function to <strong>delete a node</strong> in a singly-linked list. You will <strong>not</strong> be given access to the <code>head</code> of the list, instead you will be given access to <strong>the node to be deleted</strong> directly.</p>
+<p>It is <strong>guaranteed</strong> that the node to be deleted is <strong>not a tail node</strong> in the list.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/09/01/node1.jpg" style="width: 450px; height: 322px;"/>
+<pre><strong>Input:</strong> head = [4,5,1,9], node = 5
+<strong>Output:</strong> [4,1,9]
+<strong>Explanation: </strong>You are given the second node with value 5, the linked list should become 4 -&gt; 1 -&gt; 9 after calling your function.
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/09/01/node2.jpg" style="width: 450px; height: 354px;"/>
+<pre><strong>Input:</strong> head = [4,5,1,9], node = 1
+<strong>Output:</strong> [4,5,9]
+<strong>Explanation: </strong>You are given the third node with value 1, the linked list should become 4 -&gt; 5 -&gt; 9 after calling your function.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> head = [1,2,3,4], node = 3
+<strong>Output:</strong> [1,2,4]
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> head = [0,1], node = 0
+<strong>Output:</strong> [1]
+</pre>
+<p><strong>Example 5:</strong></p>
+<pre><strong>Input:</strong> head = [-3,5,-99], node = -3
+<strong>Output:</strong> [5,-99]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of the nodes in the given list is in the range <code>[2, 1000]</code>.</li>
+<li><code>-1000 &lt;= Node.val &lt;= 1000</code></li>
+<li>The value of each node in the list is <strong>unique</strong>.</li>
+<li>The <code>node</code> to be deleted is <strong>in the list</strong> and is <strong>not a tail</strong> node</li>
+</ul>
+</div></div><br><br><hr><br>******************<div id="title">242. Valid Anagram</div>
+******************<div class="content__u3I1 question-content__JfgR"><div><p>Given two strings <code>s</code> and <code>t</code>, return <code>true</code> <em>if</em> <code>t</code> <em>is an anagram of</em> <code>s</code><em>, and</em> <code>false</code> <em>otherwise</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "anagram", t = "nagaram"
+<strong>Output:</strong> true
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "rat", t = "car"
+<strong>Output:</strong> false
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length, t.length &lt;= 5 * 10<sup>4</sup></code></li>
+<li><code>s</code> and <code>t</code> consist of lowercase English letters.</li>
+</ul>
+<p> </p>
+<p><strong>Follow up:</strong> What if the inputs contain Unicode characters? How would you adapt your solution to such a case?</p>
+</div></div><br><br><hr><br>**********************<div id="title">257. Binary Tree Paths</div>
+**********************<div class="content__u3I1 question-content__JfgR"><div><p>Given the <code>root</code> of a binary tree, return <em>all root-to-leaf paths in <strong>any order</strong></em>.</p>
+<p>A <strong>leaf</strong> is a node with no children.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/03/12/paths-tree.jpg" style="width: 207px; height: 293px;"/>
+<pre><strong>Input:</strong> root = [1,2,3,null,5]
+<strong>Output:</strong> ["1-&gt;2-&gt;5","1-&gt;3"]
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> root = [1]
+<strong>Output:</strong> ["1"]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the tree is in the range <code>[1, 100]</code>.</li>
+<li><code>-100 &lt;= Node.val &lt;= 100</code></li>
+</ul>
+</div></div><br><br><hr><br>***************<div id="title">258. Add Digits</div>
+***************<div class="content__u3I1 question-content__JfgR"><div><p>Given an integer <code>num</code>, repeatedly add all its digits until the result has only one digit, and return it.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> num = 38
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> The process is
+38 --&gt; 3 + 8 --&gt; 11
+11 --&gt; 1 + 1 --&gt; 2 
+Since 2 has only one digit, return it.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> num = 0
+<strong>Output:</strong> 0
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>0 &lt;= num &lt;= 2<sup>31</sup> - 1</code></li>
+</ul>
+<p> </p>
+<p><strong>Follow up:</strong> Could you do it without any loop/recursion in <code>O(1)</code> runtime?</p>
+</div></div><br><br><hr><br>****************<div id="title">263. Ugly Number</div>
+****************<div class="content__u3I1 question-content__JfgR"><div><p>An <strong>ugly number</strong> is a positive integer whose prime factors are limited to <code>2</code>, <code>3</code>, and <code>5</code>.</p>
+<p>Given an integer <code>n</code>, return <code>true</code> <em>if</em> <code>n</code> <em>is an <strong>ugly number</strong></em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> n = 6
+<strong>Output:</strong> true
+<strong>Explanation:</strong> 6 = 2 × 3</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> n = 8
+<strong>Output:</strong> true
+<strong>Explanation:</strong> 8 = 2 × 2 × 2
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> n = 14
+<strong>Output:</strong> false
+<strong>Explanation:</strong> 14 is not ugly since it includes the prime factor 7.
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> n = 1
+<strong>Output:</strong> true
+<strong>Explanation:</strong> 1 has no prime factors, therefore all of its prime factors are limited to 2, 3, and 5.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>-2<sup>31</sup> &lt;= n &lt;= 2<sup>31</sup> - 1</code></li>
+</ul>
+</div></div><br><br><hr><br>*******************<div id="title">268. Missing Number</div>
+*******************<div class="content__u3I1 question-content__JfgR"><div><p>Given an array <code>nums</code> containing <code>n</code> distinct numbers in the range <code>[0, n]</code>, return <em>the only number in the range that is missing from the array.</em></p>
+<p><b>Follow up:</b> Could you implement a solution using only <code>O(1)</code> extra space complexity and <code>O(n)</code> runtime complexity?</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [3,0,1]
+<strong>Output:</strong> 2
+<b>Explanation</b><strong>:</strong> n = 3 since there are 3 numbers, so all numbers are in the range [0,3]. 2 is the missing number in the range since it does not appear in nums.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [0,1]
+<strong>Output:</strong> 2
+<b>Explanation</b><strong>:</strong> n = 2 since there are 2 numbers, so all numbers are in the range [0,2]. 2 is the missing number in the range since it does not appear in nums.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> nums = [9,6,4,2,3,5,7,0,1]
+<strong>Output:</strong> 8
+<b>Explanation</b><strong>:</strong> n = 9 since there are 9 numbers, so all numbers are in the range [0,9]. 8 is the missing number in the range since it does not appear in nums.
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> nums = [0]
+<strong>Output:</strong> 1
+<b>Explanation</b><strong>:</strong> n = 1 since there is 1 number, so all numbers are in the range [0,1]. 1 is the missing number in the range since it does not appear in nums.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == nums.length</code></li>
+<li><code>1 &lt;= n &lt;= 10<sup>4</sup></code></li>
+<li><code>0 &lt;= nums[i] &lt;= n</code></li>
+<li>All the numbers of <code>nums</code> are <strong>unique</strong>.</li>
+</ul>
+</div></div><br><br><hr><br>**********************<div id="title">278. First Bad Version</div>
+**********************<div class="content__u3I1 question-content__JfgR"><div><p>You are a product manager and currently leading a team to develop a new product. Unfortunately, the latest version of your product fails the quality check. Since each version is developed based on the previous version, all the versions after a bad version are also bad.</p>
+<p>Suppose you have <code>n</code> versions <code>[1, 2, ..., n]</code> and you want to find out the first bad one, which causes all the following ones to be bad.</p>
+<p>You are given an API <code>bool isBadVersion(version)</code> which returns whether <code>version</code> is bad. Implement a function to find the first bad version. You should minimize the number of calls to the API.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> n = 5, bad = 4
+<strong>Output:</strong> 4
+<strong>Explanation:</strong>
+call isBadVersion(3) -&gt; false
+call isBadVersion(5) -&gt; true
+call isBadVersion(4) -&gt; true
+Then 4 is the first bad version.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> n = 1, bad = 1
+<strong>Output:</strong> 1
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= bad &lt;= n &lt;= 2<sup>31</sup> - 1</code></li>
+</ul>
+</div></div><br><br><hr><br>****************<div id="title">283. Move Zeroes</div>
+****************<div class="content__u3I1 question-content__JfgR"><div><p>Given an integer array <code>nums</code>, move all <code>0</code>'s to the end of it while maintaining the relative order of the non-zero elements.</p>
+<p><strong>Note</strong> that you must do this in-place without making a copy of the array.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [0,1,0,3,12]
+<strong>Output:</strong> [1,3,12,0,0]
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [0]
+<strong>Output:</strong> [0]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>
+<li><code>-2<sup>31</sup> &lt;= nums[i] &lt;= 2<sup>31</sup> - 1</code></li>
+</ul>
+<p> </p>
+<strong>Follow up:</strong> Could you minimize the total number of operations done?</div></div><br><br><hr><br>*****************<div id="title">290. Word Pattern</div>
+*****************<div class="content__u3I1 question-content__JfgR"><div><p>Given a <code>pattern</code> and a string <code>s</code>, find if <code>s</code> follows the same pattern.</p>
+<p>Here <b>follow</b> means a full match, such that there is a bijection between a letter in <code>pattern</code> and a <b>non-empty</b> word in <code>s</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> pattern = "abba", s = "dog cat cat dog"
+<strong>Output:</strong> true
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> pattern = "abba", s = "dog cat cat fish"
+<strong>Output:</strong> false
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> pattern = "aaaa", s = "dog cat cat dog"
+<strong>Output:</strong> false
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> pattern = "abba", s = "dog dog dog dog"
+<strong>Output:</strong> false
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= pattern.length &lt;= 300</code></li>
+<li><code>pattern</code> contains only lower-case English letters.</li>
+<li><code>1 &lt;= s.length &lt;= 3000</code></li>
+<li><code>s</code> contains only lower-case English letters and spaces <code>' '</code>.</li>
+<li><code>s</code> <strong>does not contain</strong> any leading or trailing spaces.</li>
+<li>All the words in <code>s</code> are separated by a <strong>single space</strong>.</li>
+</ul>
+</div></div><br><br><hr><br>*************<div id="title">292. Nim Game</div>
+*************<div class="content__u3I1 question-content__JfgR"><div><p>You are playing the following Nim Game with your friend:</p>
+<ul>
+<li>Initially, there is a heap of stones on the table.</li>
+<li>You and your friend will alternate taking turns, and <strong>you go first</strong>.</li>
+<li>On each turn, the person whose turn it is will remove 1 to 3 stones from the heap.</li>
+<li>The one who removes the last stone is the winner.</li>
+</ul>
+<p>Given <code>n</code>, the number of stones in the heap, return <code>true</code><em> if you can win the game assuming both you and your friend play optimally, otherwise return </em><code>false</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> n = 4
+<strong>Output:</strong> false
+<strong>Explanation:</strong> These are the possible outcomes:
+1. You remove 1 stone. Your friend removes 3 stones, including the last stone. Your friend wins.
+2. You remove 2 stones. Your friend removes 2 stones, including the last stone. Your friend wins.
+3. You remove 3 stones. Your friend removes the last stone. Your friend wins.
+In all outcomes, your friend wins.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> n = 1
+<strong>Output:</strong> true
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> n = 2
+<strong>Output:</strong> true
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 2<sup>31</sup> - 1</code></li>
+</ul>
+</div></div><br><br><hr><br>********************************<div id="title">303. Range Sum Query - Immutable</div>
+********************************<div class="content__u3I1 question-content__JfgR"><div><p>Given an integer array <code>nums</code>, handle multiple queries of the following type:</p>
+<ol>
+<li>Calculate the <strong>sum</strong> of the elements of <code>nums</code> between indices <code>left</code> and <code>right</code> <strong>inclusive</strong> where <code>left &lt;= right</code>.</li>
+</ol>
+<p>Implement the <code>NumArray</code> class:</p>
+<ul>
+<li><code>NumArray(int[] nums)</code> Initializes the object with the integer array <code>nums</code>.</li>
+<li><code>int sumRange(int left, int right)</code> Returns the <strong>sum</strong> of the elements of <code>nums</code> between indices <code>left</code> and <code>right</code> <strong>inclusive</strong> (i.e. <code>nums[left] + nums[left + 1] + ... + nums[right]</code>).</li>
+</ul>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input</strong>
+["NumArray", "sumRange", "sumRange", "sumRange"]
+[[[-2, 0, 3, -5, 2, -1]], [0, 2], [2, 5], [0, 5]]
+<strong>Output</strong>
+[null, 1, -1, -3]
+
+<strong>Explanation</strong>
+NumArray numArray = new NumArray([-2, 0, 3, -5, 2, -1]);
+numArray.sumRange(0, 2); // return (-2) + 0 + 3 = 1
+numArray.sumRange(2, 5); // return 3 + (-5) + 2 + (-1) = -1
+numArray.sumRange(0, 5); // return (-2) + 0 + 3 + (-5) + 2 + (-1) = -3
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>
+<li><code>-10<sup>5</sup> &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
+<li><code>0 &lt;= left &lt;= right &lt; nums.length</code></li>
+<li>At most <code>10<sup>4</sup></code> calls will be made to <code>sumRange</code>.</li>
+</ul>
+</div></div><br><br><hr><br>*******************<div id="title">326. Power of Three</div>
+*******************<div class="content__u3I1 question-content__JfgR"><div><p>Given an integer <code>n</code>, return <em><code>true</code> if it is a power of three. Otherwise, return <code>false</code></em>.</p>
+<p>An integer <code>n</code> is a power of three, if there exists an integer <code>x</code> such that <code>n == 3<sup>x</sup></code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> n = 27
+<strong>Output:</strong> true
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> n = 0
+<strong>Output:</strong> false
+</pre><p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> n = 9
+<strong>Output:</strong> true
+</pre><p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> n = 45
+<strong>Output:</strong> false
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>-2<sup>31</sup> &lt;= n &lt;= 2<sup>31</sup> - 1</code></li>
+</ul>
+<p> </p>
+<strong>Follow up:</strong> Could you solve it without loops/recursion?</div></div><br><br><hr><br>******************<div id="title">338. Counting Bits</div>
+******************<div class="content__u3I1 question-content__JfgR"><div><p>Given an integer <code>n</code>, return <em>an array </em><code>ans</code><em> of length </em><code>n + 1</code><em> such that for each </em><code>i</code><em> </em>(<code>0 &lt;= i &lt;= n</code>)<em>, </em><code>ans[i]</code><em> is the <strong>number of </strong></em><code>1</code><em><strong>'s</strong> in the binary representation of </em><code>i</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> n = 2
+<strong>Output:</strong> [0,1,1]
+<strong>Explanation:</strong>
+0 --&gt; 0
+1 --&gt; 1
+2 --&gt; 10
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> n = 5
+<strong>Output:</strong> [0,1,1,2,1,2]
+<strong>Explanation:</strong>
+0 --&gt; 0
+1 --&gt; 1
+2 --&gt; 10
+3 --&gt; 11
+4 --&gt; 100
+5 --&gt; 101
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>0 &lt;= n &lt;= 10<sup>5</sup></code></li>
+</ul>
+<p> </p>
+<p><strong>Follow up:</strong></p>
+<ul>
+<li>It is very easy to come up with a solution with a runtime of <code>O(n log n)</code>. Can you do it in linear time <code>O(n)</code> and possibly in a single pass?</li>
+<li>Can you do it without using any built-in function (i.e., like <code>__builtin_popcount</code> in C++)?</li>
+</ul>
+</div></div><br><br><hr><br>******************<div id="title">342. Power of Four</div>
+******************<div class="content__u3I1 question-content__JfgR"><div><p>Given an integer <code>n</code>, return <em><code>true</code> if it is a power of four. Otherwise, return <code>false</code></em>.</p>
+<p>An integer <code>n</code> is a power of four, if there exists an integer <code>x</code> such that <code>n == 4<sup>x</sup></code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> n = 16
+<strong>Output:</strong> true
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> n = 5
+<strong>Output:</strong> false
+</pre><p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> n = 1
+<strong>Output:</strong> true
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>-2<sup>31</sup> &lt;= n &lt;= 2<sup>31</sup> - 1</code></li>
+</ul>
+<p> </p>
+<strong>Follow up:</strong> Could you solve it without loops/recursion?</div></div><br><br><hr><br>*******************<div id="title">344. Reverse String</div>
+*******************<div class="content__u3I1 question-content__JfgR"><div><p>Write a function that reverses a string. The input string is given as an array of characters <code>s</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = ["h","e","l","l","o"]
+<strong>Output:</strong> ["o","l","l","e","h"]
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = ["H","a","n","n","a","h"]
+<strong>Output:</strong> ["h","a","n","n","a","H"]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>
+<li><code>s[i]</code> is a <a href="https://en.wikipedia.org/wiki/ASCII#Printable_characters" target="_blank">printable ascii character</a>.</li>
+</ul>
+<p> </p>
+<p><strong>Follow up:</strong> Do not allocate extra space for another array. You must do this by modifying the input array <a href="https://en.wikipedia.org/wiki/In-place_algorithm" target="_blank">in-place</a> with <code>O(1)</code> extra memory.</p>
+</div></div><br><br><hr><br>*******************************<div id="title">345. Reverse Vowels of a String</div>
+*******************************<div class="content__u3I1 question-content__JfgR"><div><p>Given a string <code>s</code>, reverse only all the vowels in the string and return it.</p>
+<p>The vowels are <code>'a'</code>, <code>'e'</code>, <code>'i'</code>, <code>'o'</code>, and <code>'u'</code>, and they can appear in both cases.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "hello"
+<strong>Output:</strong> "holle"
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "leetcode"
+<strong>Output:</strong> "leotcede"
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 3 * 10<sup>5</sup></code></li>
+<li><code>s</code> consist of <strong>printable ASCII</strong> characters.</li>
+</ul>
+</div></div><br><br><hr><br>*******************************<div id="title">349. Intersection of Two Arrays</div>
+*******************************<div class="content__u3I1 question-content__JfgR"><div><p>Given two integer arrays <code>nums1</code> and <code>nums2</code>, return <em>an array of their intersection</em>. Each element in the result must be <strong>unique</strong> and you may return the result in <strong>any order</strong>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums1 = [1,2,2,1], nums2 = [2,2]
+<strong>Output:</strong> [2]
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums1 = [4,9,5], nums2 = [9,4,9,8,4]
+<strong>Output:</strong> [9,4]
+<strong>Explanation:</strong> [4,9] is also accepted.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums1.length, nums2.length &lt;= 1000</code></li>
+<li><code>0 &lt;= nums1[i], nums2[i] &lt;= 1000</code></li>
+</ul>
+</div></div><br><br><hr><br>**********************************<div id="title">350. Intersection of Two Arrays II</div>
+**********************************<div class="content__u3I1 question-content__JfgR"><div><p>Given two integer arrays <code>nums1</code> and <code>nums2</code>, return <em>an array of their intersection</em>. Each element in the result must appear as many times as it shows in both arrays and you may return the result in <strong>any order</strong>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums1 = [1,2,2,1], nums2 = [2,2]
+<strong>Output:</strong> [2,2]
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums1 = [4,9,5], nums2 = [9,4,9,8,4]
+<strong>Output:</strong> [4,9]
+<strong>Explanation:</strong> [9,4] is also accepted.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums1.length, nums2.length &lt;= 1000</code></li>
+<li><code>0 &lt;= nums1[i], nums2[i] &lt;= 1000</code></li>
+</ul>
+<p> </p>
+<p><strong>Follow up:</strong></p>
+<ul>
+<li>What if the given array is already sorted? How would you optimize your algorithm?</li>
+<li>What if <code>nums1</code>'s size is small compared to <code>nums2</code>'s size? Which algorithm is better?</li>
+<li>What if elements of <code>nums2</code> are stored on disk, and the memory is limited such that you cannot load all elements into the memory at once?</li>
+</ul>
+</div></div><br><br><hr><br>*************************<div id="title">367. Valid Perfect Square</div>
+*************************<div class="content__u3I1 question-content__JfgR"><div><p>Given a <strong>positive</strong> integer <i>num</i>, write a function which returns True if <i>num</i> is a perfect square else False.</p>
+<p><b>Follow up:</b> <b>Do not</b> use any built-in library function such as <code>sqrt</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> num = 16
+<strong>Output:</strong> true
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> num = 14
+<strong>Output:</strong> false
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= num &lt;= 2^31 - 1</code></li>
+</ul>
+</div></div><br><br><hr><br>*********************************<div id="title">374. Guess Number Higher or Lower</div>
+*********************************<div class="content__u3I1 question-content__JfgR"><div><p>We are playing the Guess Game. The game is as follows:</p>
+<p>I pick a number from <code>1</code> to <code>n</code>. You have to guess which number I picked.</p>
+<p>Every time you guess wrong, I will tell you whether the number I picked is higher or lower than your guess.</p>
+<p>You call a pre-defined API <code>int guess(int num)</code>, which returns 3 possible results:</p>
+<ul>
+<li><code>-1</code>: The number I picked is lower than your guess (i.e. <code>pick &lt; num</code>).</li>
+<li><code>1</code>: The number I picked is higher than your guess (i.e. <code>pick &gt; num</code>).</li>
+<li><code>0</code>: The number I picked is equal to your guess (i.e. <code>pick == num</code>).</li>
+</ul>
+<p>Return <em>the number that I picked</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> n = 10, pick = 6
+<strong>Output:</strong> 6
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> n = 1, pick = 1
+<strong>Output:</strong> 1
+</pre><p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> n = 2, pick = 1
+<strong>Output:</strong> 1
+</pre><p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> n = 2, pick = 2
+<strong>Output:</strong> 2
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 2<sup>31</sup> - 1</code></li>
+<li><code>1 &lt;= pick &lt;= n</code></li>
+</ul>
+</div></div><br><br><hr><br>****************<div id="title">383. Ransom Note</div>
+****************<div class="content__u3I1 question-content__JfgR"><div><p>Given two stings <code>ransomNote</code> and <code>magazine</code>, return <code>true</code> if <code>ransomNote</code> can be constructed from <code>magazine</code> and <code>false</code> otherwise.</p>
+<p>Each letter in <code>magazine</code> can only be used once in <code>ransomNote</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> ransomNote = "a", magazine = "b"
+<strong>Output:</strong> false
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> ransomNote = "aa", magazine = "ab"
+<strong>Output:</strong> false
+</pre><p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> ransomNote = "aa", magazine = "aab"
+<strong>Output:</strong> true
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= ransomNote.length, magazine.length &lt;= 10<sup>5</sup></code></li>
+<li><code>ransomNote</code> and <code>magazine</code> consist of lowercase English letters.</li>
+</ul>
+</div></div><br><br><hr><br>***************************************<div id="title">387. First Unique Character in a String</div>
+***************************************<div class="content__u3I1 question-content__JfgR"><div><p>Given a string <code>s</code>, <em>find the first non-repeating character in it and return its index</em>. If it does not exist, return <code>-1</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "leetcode"
+<strong>Output:</strong> 0
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "loveleetcode"
+<strong>Output:</strong> 2
+</pre><p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> s = "aabb"
+<strong>Output:</strong> -1
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>
+<li><code>s</code> consists of only lowercase English letters.</li>
+</ul>
+</div></div><br><br><hr><br>************************<div id="title">389. Find the Difference</div>
+************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given two strings <code>s</code> and <code>t</code>.</p>
+<p>String <code>t</code> is generated by random shuffling string <code>s</code> and then add one more letter at a random position.</p>
+<p>Return the letter that was added to <code>t</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "abcd", t = "abcde"
+<strong>Output:</strong> "e"
+<strong>Explanation:</strong> 'e' is the letter that was added.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "", t = "y"
+<strong>Output:</strong> "y"
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> s = "a", t = "aa"
+<strong>Output:</strong> "a"
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> s = "ae", t = "aea"
+<strong>Output:</strong> "a"
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>0 &lt;= s.length &lt;= 1000</code></li>
+<li><code>t.length == s.length + 1</code></li>
+<li><code>s</code> and <code>t</code> consist of lower-case English letters.</li>
+</ul>
+</div></div><br><br><hr><br>*******************<div id="title">392. Is Subsequence</div>
+*******************<div class="content__u3I1 question-content__JfgR"><div><p>Given two strings <code>s</code> and <code>t</code>, return <code>true</code><em> if </em><code>s</code><em> is a <strong>subsequence</strong> of </em><code>t</code><em>, or </em><code>false</code><em> otherwise</em>.</p>
+<p>A <strong>subsequence</strong> of a string is a new string that is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (i.e., <code>"ace"</code> is a subsequence of <code>"<u>a</u>b<u>c</u>d<u>e</u>"</code> while <code>"aec"</code> is not).</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "abc", t = "ahbgdc"
+<strong>Output:</strong> true
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "axc", t = "ahbgdc"
+<strong>Output:</strong> false
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>0 &lt;= s.length &lt;= 100</code></li>
+<li><code>0 &lt;= t.length &lt;= 10<sup>4</sup></code></li>
+<li><code>s</code> and <code>t</code> consist only of lowercase English letters.</li>
+</ul>
+<p> </p>
+<strong>Follow up:</strong> Suppose there are lots of incoming <code>s</code>, say <code>s<sub>1</sub>, s<sub>2</sub>, ..., s<sub>k</sub></code> where <code>k &gt;= 10<sup>9</sup></code>, and you want to check one by one to see if <code>t</code> has its subsequence. In this scenario, how would you change your code?</div></div><br><br><hr><br>*****************<div id="title">401. Binary Watch</div>
+*****************<div class="content__u3I1 question-content__JfgR"><div><p>A binary watch has 4 LEDs on the top which represent the hours (0-11), and the 6 LEDs on the bottom represent the minutes (0-59). Each LED represents a zero or one, with the least significant bit on the right.</p>
+<ul>
+<li>For example, the below binary watch reads <code>"4:51"</code>.</li>
+</ul>
+<p><img alt="" src="https://assets.leetcode.com/uploads/2021/04/08/binarywatch.jpg" style="width: 500px; height: 500px;"/></p>
+<p>Given an integer <code>turnedOn</code> which represents the number of LEDs that are currently on, return <em>all possible times the watch could represent</em>. You may return the answer in <strong>any order</strong>.</p>
+<p>The hour must not contain a leading zero.</p>
+<ul>
+<li>For example, <code>"01:00"</code> is not valid. It should be <code>"1:00"</code>.</li>
+</ul>
+<p>The minute must be consist of two digits and may contain a leading zero.</p>
+<ul>
+<li>For example, <code>"10:2"</code> is not valid. It should be <code>"10:02"</code>.</li>
+</ul>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> turnedOn = 1
+<strong>Output:</strong> ["0:01","0:02","0:04","0:08","0:16","0:32","1:00","2:00","4:00","8:00"]
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> turnedOn = 9
+<strong>Output:</strong> []
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>0 &lt;= turnedOn &lt;= 10</code></li>
+</ul>
+</div></div><br><br><hr><br>***********************<div id="title">404. Sum of Left Leaves</div>
+***********************<div class="content__u3I1 question-content__JfgR"><div><p>Given the <code>root</code> of a binary tree, return the sum of all left leaves.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/04/08/leftsum-tree.jpg" style="width: 277px; height: 302px;"/>
+<pre><strong>Input:</strong> root = [3,9,20,null,null,15,7]
+<strong>Output:</strong> 24
+<strong>Explanation:</strong> There are two left leaves in the binary tree, with values 9 and 15 respectively.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> root = [1]
+<strong>Output:</strong> 0
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the tree is in the range <code>[1, 1000]</code>.</li>
+<li><code>-1000 &lt;= Node.val &lt;= 1000</code></li>
+</ul>
+</div></div><br><br><hr><br>
