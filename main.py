@@ -133,7 +133,7 @@ def main():
                 print(f"Sleeping 120 secs\n")
                 time.sleep(120)
             else:
-                print(f"Sleeping ${SLEEP_TIME_PER_PROBLEM_IN_SECOND} secs\n")
+                print(f"Sleeping {SLEEP_TIME_PER_PROBLEM_IN_SECOND} secs\n")
                 time.sleep(SLEEP_TIME_PER_PROBLEM_IN_SECOND)
 
     finally:
