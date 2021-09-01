@@ -3364,4 +3364,1408 @@ Explanation: Almost the same as the first example, except we cannot omit the fir
 <li>The number of nodes in the tree is in the range <code>[1, 10<sup>4</sup>]</code>.</li>
 <li><code>-1000 &lt;= Node.val &lt;= 1000</code></li>
 </ul>
+</div></div><br><br><hr><br><style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>***************************<div id="title">617. Merge Two Binary Trees</div>
+***************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given two binary trees <code>root1</code> and <code>root2</code>.</p>
+<p>Imagine that when you put one of them to cover the other, some nodes of the two trees are overlapped while the others are not. You need to merge the two trees into a new binary tree. The merge rule is that if two nodes overlap, then sum node values up as the new value of the merged node. Otherwise, the NOT null node will be used as the node of the new tree.</p>
+<p>Return <em>the merged tree</em>.</p>
+<p><strong>Note:</strong> The merging process must start from the root nodes of both trees.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/02/05/merge.jpg" style="width: 600px; height: 163px;"/>
+<pre><strong>Input:</strong> root1 = [1,3,2,5], root2 = [2,1,3,null,4,null,7]
+<strong>Output:</strong> [3,4,5,5,4,null,7]
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> root1 = [1], root2 = [1,2]
+<strong>Output:</strong> [2,2]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in both trees is in the range <code>[0, 2000]</code>.</li>
+<li><code>-10<sup>4</sup> &lt;= Node.val &lt;= 10<sup>4</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>*************************************<div id="title">628. Maximum Product of Three Numbers</div>
+*************************************<div class="content__u3I1 question-content__JfgR"><div><p>Given an integer array <code>nums</code>, <em>find three numbers whose product is maximum and return the maximum product</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [1,2,3]
+<strong>Output:</strong> 6
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [1,2,3,4]
+<strong>Output:</strong> 24
+</pre><p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> nums = [-1,-2,-3]
+<strong>Output:</strong> -6
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>3 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>
+<li><code>-1000 &lt;= nums[i] &lt;= 1000</code></li>
+</ul>
+</div></div><br><br><hr><br>*************************************<div id="title">637. Average of Levels in Binary Tree</div>
+*************************************<div class="content__u3I1 question-content__JfgR"><div>Given the <code>root</code> of a binary tree, return <em>the average value of the nodes on each level in the form of an array</em>. Answers within <code>10<sup>-5</sup></code> of the actual answer will be accepted.
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/03/09/avg1-tree.jpg" style="width: 277px; height: 302px;"/>
+<pre><strong>Input:</strong> root = [3,9,20,null,15,7]
+<strong>Output:</strong> [3.00000,14.50000,11.00000]
+Explanation: The average value of nodes on level 0 is 3, on level 1 is 14.5, and on level 2 is 11.
+Hence return [3, 14.5, 11].
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/03/09/avg2-tree.jpg" style="width: 292px; height: 302px;"/>
+<pre><strong>Input:</strong> root = [3,9,20,15,7]
+<strong>Output:</strong> [3.00000,14.50000,11.00000]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the tree is in the range <code>[1, 10<sup>4</sup>]</code>.</li>
+<li><code>-2<sup>31</sup> &lt;= Node.val &lt;= 2<sup>31</sup> - 1</code></li>
+</ul>
+</div></div><br><br><hr><br>*******************************<div id="title">643. Maximum Average Subarray I</div>
+*******************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given an integer array <code>nums</code> consisting of <code>n</code> elements, and an integer <code>k</code>.</p>
+<p>Find a contiguous subarray whose <strong>length is equal to</strong> <code>k</code> that has the maximum average value and return <em>this value</em>. Any answer with a calculation error less than <code>10<sup>-5</sup></code> will be accepted.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [1,12,-5,-6,50,3], k = 4
+<strong>Output:</strong> 12.75000
+<strong>Explanation:</strong> Maximum average is (12 - 5 - 6 + 50) / 4 = 51 / 4 = 12.75
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [5], k = 1
+<strong>Output:</strong> 5.00000
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == nums.length</code></li>
+<li><code>1 &lt;= k &lt;= n &lt;= 10<sup>5</sup></code></li>
+<li><code>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>*****************<div id="title">645. Set Mismatch</div>
+*****************<div class="content__u3I1 question-content__JfgR"><div><p>You have a set of integers <code>s</code>, which originally contains all the numbers from <code>1</code> to <code>n</code>. Unfortunately, due to some error, one of the numbers in <code>s</code> got duplicated to another number in the set, which results in <strong>repetition of one</strong> number and <strong>loss of another</strong> number.</p>
+<p>You are given an integer array <code>nums</code> representing the data status of this set after the error.</p>
+<p>Find the number that occurs twice and the number that is missing and return <em>them in the form of an array</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [1,2,2,4]
+<strong>Output:</strong> [2,3]
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [1,1]
+<strong>Output:</strong> [1,2]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>2 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>
+<li><code>1 &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>********************************<div id="title">653. Two Sum IV - Input is a BST</div>
+********************************<div class="content__u3I1 question-content__JfgR"><div><p>Given the <code>root</code> of a Binary Search Tree and a target number <code>k</code>, return <em><code>true</code> if there exist two elements in the BST such that their sum is equal to the given target</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/09/21/sum_tree_1.jpg" style="width: 562px; height: 322px;"/>
+<pre><strong>Input:</strong> root = [5,3,6,2,4,null,7], k = 9
+<strong>Output:</strong> true
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/09/21/sum_tree_2.jpg" style="width: 562px; height: 322px;"/>
+<pre><strong>Input:</strong> root = [5,3,6,2,4,null,7], k = 28
+<strong>Output:</strong> false
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> root = [2,1,3], k = 4
+<strong>Output:</strong> true
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> root = [2,1,3], k = 1
+<strong>Output:</strong> false
+</pre>
+<p><strong>Example 5:</strong></p>
+<pre><strong>Input:</strong> root = [2,1,3], k = 3
+<strong>Output:</strong> true
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the tree is in the range <code>[1, 10<sup>4</sup>]</code>.</li>
+<li><code>-10<sup>4</sup> &lt;= Node.val &lt;= 10<sup>4</sup></code></li>
+<li><code>root</code> is guaranteed to be a <strong>valid</strong> binary search tree.</li>
+<li><code>-10<sup>5</sup> &lt;= k &lt;= 10<sup>5</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>***************************<div id="title">657. Robot Return to Origin</div>
+***************************<div class="content__u3I1 question-content__JfgR"><div><p>There is a robot starting at the position <code>(0, 0)</code>, the origin, on a 2D plane. Given a sequence of its moves, judge if this robot <strong>ends up at </strong><code>(0, 0)</code> after it completes its moves.</p>
+<p>You are given a string <code>moves</code> that represents the move sequence of the robot where <code>moves[i]</code> represents its <code>i<sup>th</sup></code> move. Valid moves are <code>'R'</code> (right), <code>'L'</code> (left), <code>'U'</code> (up), and <code>'D'</code> (down).</p>
+<p>Return <code>true</code><em> if the robot returns to the origin after it finishes all of its moves, or </em><code>false</code><em> otherwise</em>.</p>
+<p><strong>Note</strong>: The way that the robot is "facing" is irrelevant. <code>'R'</code> will always make the robot move to the right once, <code>'L'</code> will always make it move left, etc. Also, assume that the magnitude of the robot's movement is the same for each move.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> moves = "UD"
+<strong>Output:</strong> true
+<strong>Explanation</strong>: The robot moves up once, and then down once. All moves have the same magnitude, so it ended up at the origin where it started. Therefore, we return true.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> moves = "LL"
+<strong>Output:</strong> false
+<strong>Explanation</strong>: The robot moves left twice. It ends up two "moves" to the left of the origin. We return false because it is not at the origin at the end of its moves.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> moves = "RRDD"
+<strong>Output:</strong> false
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> moves = "LDRRLRUULR"
+<strong>Output:</strong> false
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= moves.length &lt;= 2 * 10<sup>4</sup></code></li>
+<li><code>moves</code> only contains the characters <code>'U'</code>, <code>'D'</code>, <code>'L'</code> and <code>'R'</code>.</li>
+</ul>
+</div></div><br><br><hr><br>*******************<div id="title">661. Image Smoother</div>
+*******************<div class="content__u3I1 question-content__JfgR"><div><p>An <strong>image smoother</strong> is a filter of the size <code>3 x 3</code> that can be applied to each cell of an image by rounding down the average of the cell and the eight surrounding cells (i.e., the average of the nine cells in the blue smoother). If one or more of the surrounding cells of a cell is not present, we do not consider it in the average (i.e., the average of the four cells in the red smoother).</p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/05/03/smoother-grid.jpg" style="width: 493px; height: 493px;"/>
+<p>Given an <code>m x n</code> integer matrix <code>img</code> representing the grayscale of an image, return <em>the image after applying the smoother on each cell of it</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/05/03/smooth-grid.jpg" style="width: 613px; height: 253px;"/>
+<pre><strong>Input:</strong> img = [[1,1,1],[1,0,1],[1,1,1]]
+<strong>Output:</strong> [[0,0,0],[0,0,0],[0,0,0]]
+<strong>Explanation:</strong>
+For the points (0,0), (0,2), (2,0), (2,2): floor(3/4) = floor(0.75) = 0
+For the points (0,1), (1,0), (1,2), (2,1): floor(5/6) = floor(0.83333333) = 0
+For the point (1,1): floor(8/9) = floor(0.88888889) = 0
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/05/03/smooth2-grid.jpg" style="width: 613px; height: 253px;"/>
+<pre><strong>Input:</strong> img = [[100,200,100],[200,50,200],[100,200,100]]
+<strong>Output:</strong> [[137,141,137],[141,138,141],[137,141,137]]
+<strong>Explanation:</strong>
+For the points (0,0), (0,2), (2,0), (2,2): floor((100+200+200+50)/4) = floor(137.5) = 137
+For the points (0,1), (1,0), (1,2), (2,1): floor((200+200+50+200+100+100)/6) = floor(141.666667) = 141
+For the point (1,1): floor((50+200+200+200+200+100+100+100+100)/9) = floor(138.888889) = 138
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>m == img.length</code></li>
+<li><code>n == img[i].length</code></li>
+<li><code>1 &lt;= m, n &lt;= 200</code></li>
+<li><code>0 &lt;= img[i][j] &lt;= 255</code></li>
+</ul>
+</div></div><br><br><hr><br>*****************************************<div id="title">671. Second Minimum Node In a Binary Tree</div>
+*****************************************<div class="content__u3I1 question-content__JfgR"><div><p>Given a non-empty special binary tree consisting of nodes with the non-negative value, where each node in this tree has exactly <code>two</code> or <code>zero</code> sub-node. If the node has two sub-nodes, then this node's value is the smaller value among its two sub-nodes. More formally, the property <code>root.val = min(root.left.val, root.right.val)</code> always holds.</p>
+<p>Given such a binary tree, you need to output the <b>second minimum</b> value in the set made of all the nodes' value in the whole tree.</p>
+<p>If no such second minimum value exists, output -1 instead.</p>
+<p> </p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/10/15/smbt1.jpg" style="width: 431px; height: 302px;"/>
+<pre><strong>Input:</strong> root = [2,2,5,null,null,5,7]
+<strong>Output:</strong> 5
+<strong>Explanation:</strong> The smallest value is 2, the second smallest value is 5.
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/10/15/smbt2.jpg" style="width: 321px; height: 182px;"/>
+<pre><strong>Input:</strong> root = [2,2,2]
+<strong>Output:</strong> -1
+<strong>Explanation:</strong> The smallest value is 2, but there isn't any second smallest value.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the tree is in the range <code>[1, 25]</code>.</li>
+<li><code>1 &lt;= Node.val &lt;= 2<sup>31</sup> - 1</code></li>
+<li><code>root.val == min(root.left.val, root.right.val)</code> for each internal node of the tree.</li>
+</ul>
+</div></div><br><br><hr><br>**********************************************<div id="title">674. Longest Continuous Increasing Subsequence</div>
+**********************************************<div class="content__u3I1 question-content__JfgR"><div><p>Given an unsorted array of integers <code>nums</code>, return <em>the length of the longest <strong>continuous increasing subsequence</strong> (i.e. subarray)</em>. The subsequence must be <strong>strictly</strong> increasing.</p>
+<p>A <strong>continuous increasing subsequence</strong> is defined by two indices <code>l</code> and <code>r</code> (<code>l &lt; r</code>) such that it is <code>[nums[l], nums[l + 1], ..., nums[r - 1], nums[r]]</code> and for each <code>l &lt;= i &lt; r</code>, <code>nums[i] &lt; nums[i + 1]</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [1,3,5,4,7]
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> The longest continuous increasing subsequence is [1,3,5] with length 3.
+Even though [1,3,5,7] is an increasing subsequence, it is not continuous as elements 5 and 7 are separated by element
+4.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [2,2,2,2,2]
+<strong>Output:</strong> 1
+<strong>Explanation:</strong> The longest continuous increasing subsequence is [2] with length 1. Note that it must be strictly
+increasing.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>
+<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>************************<div id="title">680. Valid Palindrome II</div>
+************************<div class="content__u3I1 question-content__JfgR"><div><p>Given a string <code>s</code>, return <code>true</code> <em>if the </em><code>s</code><em> can be palindrome after deleting <strong>at most one</strong> character from it</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "aba"
+<strong>Output:</strong> true
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "abca"
+<strong>Output:</strong> true
+<strong>Explanation:</strong> You could delete the character 'c'.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> s = "abc"
+<strong>Output:</strong> false
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>
+<li><code>s</code> consists of lowercase English letters.</li>
+</ul>
+</div></div><br><br><hr><br>******************<div id="title">682. Baseball Game</div>
+******************<div class="content__u3I1 question-content__JfgR"><div><p>You are keeping score for a baseball game with strange rules. The game consists of several rounds, where the scores of past rounds may affect future rounds' scores.</p>
+<p>At the beginning of the game, you start with an empty record. You are given a list of strings <code>ops</code>, where <code>ops[i]</code> is the <code>i<sup>th</sup></code> operation you must apply to the record and is one of the following:</p>
+<ol>
+<li>An integer <code>x</code> - Record a new score of <code>x</code>.</li>
+<li><code>"+"</code> - Record a new score that is the sum of the previous two scores. It is guaranteed there will always be two previous scores.</li>
+<li><code>"D"</code> - Record a new score that is double the previous score. It is guaranteed there will always be a previous score.</li>
+<li><code>"C"</code> - Invalidate the previous score, removing it from the record. It is guaranteed there will always be a previous score.</li>
+</ol>
+<p>Return <em>the sum of all the scores on the record</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> ops = ["5","2","C","D","+"]
+<strong>Output:</strong> 30
+<strong>Explanation:</strong>
+"5" - Add 5 to the record, record is now [5].
+"2" - Add 2 to the record, record is now [5, 2].
+"C" - Invalidate and remove the previous score, record is now [5].
+"D" - Add 2 * 5 = 10 to the record, record is now [5, 10].
+"+" - Add 5 + 10 = 15 to the record, record is now [5, 10, 15].
+The total sum is 5 + 10 + 15 = 30.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> ops = ["5","-2","4","C","D","9","+","+"]
+<strong>Output:</strong> 27
+<strong>Explanation:</strong>
+"5" - Add 5 to the record, record is now [5].
+"-2" - Add -2 to the record, record is now [5, -2].
+"4" - Add 4 to the record, record is now [5, -2, 4].
+"C" - Invalidate and remove the previous score, record is now [5, -2].
+"D" - Add 2 * -2 = -4 to the record, record is now [5, -2, -4].
+"9" - Add 9 to the record, record is now [5, -2, -4, 9].
+"+" - Add -4 + 9 = 5 to the record, record is now [5, -2, -4, 9, 5].
+"+" - Add 9 + 5 = 14 to the record, record is now [5, -2, -4, 9, 5, 14].
+The total sum is 5 + -2 + -4 + 9 + 5 + 14 = 27.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> ops = ["1"]
+<strong>Output:</strong> 1
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= ops.length &lt;= 1000</code></li>
+<li><code>ops[i]</code> is <code>"C"</code>, <code>"D"</code>, <code>"+"</code>, or a string representing an integer in the range <code>[-3 * 10<sup>4</sup>, 3 * 10<sup>4</sup>]</code>.</li>
+<li>For operation <code>"+"</code>, there will always be at least two previous scores on the record.</li>
+<li>For operations <code>"C"</code> and <code>"D"</code>, there will always be at least one previous score on the record.</li>
+</ul>
+</div></div><br><br><hr><br>************************<div id="title">690. Employee Importance</div>
+************************<div class="content__u3I1 question-content__JfgR"><div><p>You have a data structure of employee information, which includes the employee's unique id, their importance value, and their direct subordinates' id.</p>
+<p>You are given an array of employees <code>employees</code> where:</p>
+<ul>
+<li><code>employees[i].id</code> is the ID of the <code>i<sup>th</sup></code> employee.</li>
+<li><code>employees[i].importance</code> is the importance value of the <code>i<sup>th</sup></code> employee.</li>
+<li><code>employees[i].subordinates</code> is a list of the IDs of the subordinates of the <code>i<sup>th</sup></code> employee.</li>
+</ul>
+<p>Given an integer <code>id</code> that represents the ID of an employee, return <em>the total importance value of this employee and all their subordinates</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/05/31/emp1-tree.jpg" style="width: 400px; height: 258px;"/>
+<pre><strong>Input:</strong> employees = [[1,5,[2,3]],[2,3,[]],[3,3,[]]], id = 1
+<strong>Output:</strong> 11
+<strong>Explanation:</strong> Employee 1 has importance value 5, and he has two direct subordinates: employee 2 and employee 3.
+They both have importance value 3.
+So the total importance value of employee 1 is 5 + 3 + 3 = 11.
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/05/31/emp2-tree.jpg" style="width: 362px; height: 361px;"/>
+<pre><strong>Input:</strong> employees = [[1,2,[5]],[5,-3,[]]], id = 5
+<strong>Output:</strong> -3
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= employees.length &lt;= 2000</code></li>
+<li><code>1 &lt;= employees[i].id &lt;= 2000</code></li>
+<li>All <code>employees[i].id</code> are <strong>unique</strong>.</li>
+<li><code>-100 &lt;= employees[i].importance &lt;= 100</code></li>
+<li>One employee has at most one direct leader and may have several subordinates.</li>
+<li><code>id</code> is guaranteed to be a valid employee id.</li>
+</ul>
+</div></div><br><br><hr><br>****************************************<div id="title">693. Binary Number with Alternating Bits</div>
+****************************************<div class="content__u3I1 question-content__JfgR"><div><p>Given a positive integer, check whether it has alternating bits: namely, if two adjacent bits will always have different values.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> n = 5
+<strong>Output:</strong> true
+<strong>Explanation:</strong> The binary representation of 5 is: 101
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> n = 7
+<strong>Output:</strong> false
+<strong>Explanation:</strong> The binary representation of 7 is: 111.</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> n = 11
+<strong>Output:</strong> false
+<strong>Explanation:</strong> The binary representation of 11 is: 1011.</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> n = 10
+<strong>Output:</strong> true
+<strong>Explanation:</strong> The binary representation of 10 is: 1010.</pre>
+<p><strong>Example 5:</strong></p>
+<pre><strong>Input:</strong> n = 3
+<strong>Output:</strong> false
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 2<sup>31</sup> - 1</code></li>
+</ul>
+</div></div><br><br><hr><br>****************************<div id="title">696. Count Binary Substrings</div>
+****************************<div class="content__u3I1 question-content__JfgR"><div><p>Give a binary string <code>s</code>, return the number of non-empty substrings that have the same number of <code>0</code>'s and <code>1</code>'s, and all the <code>0</code>'s and all the <code>1</code>'s in these substrings are grouped consecutively.</p>
+<p>Substrings that occur multiple times are counted the number of times they occur.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "00110011"
+<strong>Output:</strong> 6
+<strong>Explanation:</strong> There are 6 substrings that have equal number of consecutive 1's and 0's: "0011", "01", "1100", "10", "0011", and "01".
+Notice that some of these substrings repeat and are counted the number of times they occur.
+Also, "00110011" is not a valid substring because all the 0's (and 1's) are not grouped together.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "10101"
+<strong>Output:</strong> 4
+<strong>Explanation:</strong> There are 4 substrings: "10", "01", "10", "01" that have equal number of consecutive 1's and 0's.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>
+<li><code>s[i]</code> is either <code>'0'</code> or <code>'1'</code>.</li>
+</ul>
+</div></div><br><br><hr><br>***********************<div id="title">697. Degree of an Array</div>
+***********************<div class="content__u3I1 question-content__JfgR"><div><p>Given a non-empty array of non-negative integers <code>nums</code>, the <b>degree</b> of this array is defined as the maximum frequency of any one of its elements.</p>
+<p>Your task is to find the smallest possible length of a (contiguous) subarray of <code>nums</code>, that has the same degree as <code>nums</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [1,2,2,3,1]
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> 
+The input array has a degree of 2 because both elements 1 and 2 appear twice.
+Of the subarrays that have the same degree:
+[1, 2, 2, 3, 1], [1, 2, 2, 3], [2, 2, 3, 1], [1, 2, 2], [2, 2, 3], [2, 2]
+The shortest length is 2. So return 2.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [1,2,2,3,1,4,2]
+<strong>Output:</strong> 6
+<strong>Explanation:</strong> 
+The degree is 3 because the element 2 is repeated 3 times.
+So [2,2,3,1,4,2] is the shortest subarray, therefore returning 6.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>nums.length</code> will be between 1 and 50,000.</li>
+<li><code>nums[i]</code> will be an integer between 0 and 49,999.</li>
+</ul>
+</div></div><br><br><hr><br>***********************************<div id="title">700. Search in a Binary Search Tree</div>
+***********************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given the <code>root</code> of a binary search tree (BST) and an integer <code>val</code>.</p>
+<p>Find the node in the BST that the node's value equals <code>val</code> and return the subtree rooted with that node. If such a node does not exist, return <code>null</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/01/12/tree1.jpg" style="width: 422px; height: 302px;"/>
+<pre><strong>Input:</strong> root = [4,2,7,1,3], val = 2
+<strong>Output:</strong> [2,1,3]
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/01/12/tree2.jpg" style="width: 422px; height: 302px;"/>
+<pre><strong>Input:</strong> root = [4,2,7,1,3], val = 5
+<strong>Output:</strong> []
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the tree is in the range <code>[1, 5000]</code>.</li>
+<li><code>1 &lt;= Node.val &lt;= 10<sup>7</sup></code></li>
+<li><code>root</code> is a binary search tree.</li>
+<li><code>1 &lt;= val &lt;= 10<sup>7</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>************************************<div id="title">703. Kth Largest Element in a Stream</div>
+************************************<div class="content__u3I1 question-content__JfgR"><div><p>Design a class to find the <code>k<sup>th</sup></code> largest element in a stream. Note that it is the <code>k<sup>th</sup></code> largest element in the sorted order, not the <code>k<sup>th</sup></code> distinct element.</p>
+<p>Implement <code>KthLargest</code> class:</p>
+<ul>
+<li><code>KthLargest(int k, int[] nums)</code> Initializes the object with the integer <code>k</code> and the stream of integers <code>nums</code>.</li>
+<li><code>int add(int val)</code> Appends the integer <code>val</code> to the stream and returns the element representing the <code>k<sup>th</sup></code> largest element in the stream.</li>
+</ul>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input</strong>
+["KthLargest", "add", "add", "add", "add", "add"]
+[[3, [4, 5, 8, 2]], [3], [5], [10], [9], [4]]
+<strong>Output</strong>
+[null, 4, 5, 5, 8, 8]
+
+<strong>Explanation</strong>
+KthLargest kthLargest = new KthLargest(3, [4, 5, 8, 2]);
+kthLargest.add(3);   // return 4
+kthLargest.add(5);   // return 5
+kthLargest.add(10);  // return 5
+kthLargest.add(9);   // return 8
+kthLargest.add(4);   // return 8
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= k &lt;= 10<sup>4</sup></code></li>
+<li><code>0 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>
+<li><code>-10<sup>4</sup> &lt;= nums[i] &lt;= 10<sup>4</sup></code></li>
+<li><code>-10<sup>4</sup> &lt;= val &lt;= 10<sup>4</sup></code></li>
+<li>At most <code>10<sup>4</sup></code> calls will be made to <code>add</code>.</li>
+<li>It is guaranteed that there will be at least <code>k</code> elements in the array when you search for the <code>k<sup>th</sup></code> element.</li>
+</ul>
+</div></div><br><br><hr><br>******************<div id="title">704. Binary Search</div>
+******************<div class="content__u3I1 question-content__JfgR"><div><p>Given an array of integers <code>nums</code> which is sorted in ascending order, and an integer <code>target</code>, write a function to search <code>target</code> in <code>nums</code>. If <code>target</code> exists, then return its index. Otherwise, return <code>-1</code>.</p>
+<p>You must write an algorithm with <code>O(log n)</code> runtime complexity.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [-1,0,3,5,9,12], target = 9
+<strong>Output:</strong> 4
+<strong>Explanation:</strong> 9 exists in nums and its index is 4
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [-1,0,3,5,9,12], target = 2
+<strong>Output:</strong> -1
+<strong>Explanation:</strong> 2 does not exist in nums so return -1
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>
+<li><code>-10<sup>4</sup> &lt; nums[i], target &lt; 10<sup>4</sup></code></li>
+<li>All the integers in <code>nums</code> are <strong>unique</strong>.</li>
+<li><code>nums</code> is sorted in ascending order.</li>
+</ul>
+</div></div><br><br><hr><br>*******************<div id="title">705. Design HashSet</div>
+*******************<div class="content__u3I1 question-content__JfgR"><div><p>Design a HashSet without using any built-in hash table libraries.</p>
+<p>Implement <code>MyHashSet</code> class:</p>
+<ul>
+<li><code>void add(key)</code> Inserts the value <code>key</code> into the HashSet.</li>
+<li><code>bool contains(key)</code> Returns whether the value <code>key</code> exists in the HashSet or not.</li>
+<li><code>void remove(key)</code> Removes the value <code>key</code> in the HashSet. If <code>key</code> does not exist in the HashSet, do nothing.</li>
+</ul>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input</strong>
+["MyHashSet", "add", "add", "contains", "contains", "add", "contains", "remove", "contains"]
+[[], [1], [2], [1], [3], [2], [2], [2], [2]]
+<strong>Output</strong>
+[null, null, null, true, false, null, true, null, false]
+
+<strong>Explanation</strong>
+MyHashSet myHashSet = new MyHashSet();
+myHashSet.add(1);      // set = [1]
+myHashSet.add(2);      // set = [1, 2]
+myHashSet.contains(1); // return True
+myHashSet.contains(3); // return False, (not found)
+myHashSet.add(2);      // set = [1, 2]
+myHashSet.contains(2); // return True
+myHashSet.remove(2);   // set = [1]
+myHashSet.contains(2); // return False, (already removed)</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>0 &lt;= key &lt;= 10<sup>6</sup></code></li>
+<li>At most <code>10<sup>4</sup></code> calls will be made to <code>add</code>, <code>remove</code>, and <code>contains</code>.</li>
+</ul>
+</div></div><br><br><hr><br>*******************<div id="title">706. Design HashMap</div>
+*******************<div class="content__u3I1 question-content__JfgR"><div><p>Design a HashMap without using any built-in hash table libraries.</p>
+<p>Implement the <code>MyHashMap</code> class:</p>
+<ul>
+<li><code>MyHashMap()</code> initializes the object with an empty map.</li>
+<li><code>void put(int key, int value)</code> inserts a <code>(key, value)</code> pair into the HashMap. If the <code>key</code> already exists in the map, update the corresponding <code>value</code>.</li>
+<li><code>int get(int key)</code> returns the <code>value</code> to which the specified <code>key</code> is mapped, or <code>-1</code> if this map contains no mapping for the <code>key</code>.</li>
+<li><code>void remove(key)</code> removes the <code>key</code> and its corresponding <code>value</code> if the map contains the mapping for the <code>key</code>.</li>
+</ul>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input</strong>
+["MyHashMap", "put", "put", "get", "get", "put", "get", "remove", "get"]
+[[], [1, 1], [2, 2], [1], [3], [2, 1], [2], [2], [2]]
+<strong>Output</strong>
+[null, null, null, 1, -1, null, 1, null, -1]
+
+<strong>Explanation</strong>
+MyHashMap myHashMap = new MyHashMap();
+myHashMap.put(1, 1); // The map is now [[1,1]]
+myHashMap.put(2, 2); // The map is now [[1,1], [2,2]]
+myHashMap.get(1);    // return 1, The map is now [[1,1], [2,2]]
+myHashMap.get(3);    // return -1 (i.e., not found), The map is now [[1,1], [2,2]]
+myHashMap.put(2, 1); // The map is now [[1,1], [2,1]] (i.e., update the existing value)
+myHashMap.get(2);    // return 1, The map is now [[1,1], [2,1]]
+myHashMap.remove(2); // remove the mapping for 2, The map is now [[1,1]]
+myHashMap.get(2);    // return -1 (i.e., not found), The map is now [[1,1]]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>0 &lt;= key, value &lt;= 10<sup>6</sup></code></li>
+<li>At most <code>10<sup>4</sup></code> calls will be made to <code>put</code>, <code>get</code>, and <code>remove</code>.</li>
+</ul>
+</div></div><br><br><hr><br>******************<div id="title">709. To Lower Case</div>
+******************<div class="content__u3I1 question-content__JfgR"><div><p>Given a string <code>s</code>, return <em>the string after replacing every uppercase letter with the same lowercase letter</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "Hello"
+<strong>Output:</strong> "hello"
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "here"
+<strong>Output:</strong> "here"
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> s = "LOVELY"
+<strong>Output:</strong> "lovely"
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 100</code></li>
+<li><code>s</code> consists of printable ASCII characters.</li>
+</ul>
+</div></div><br><br><hr><br>*******************************<div id="title">717. 1-bit and 2-bit Characters</div>
+*******************************<div class="content__u3I1 question-content__JfgR"><div><p>We have two special characters:</p>
+<ul>
+<li>The first character can be represented by one bit <code>0</code>.</li>
+<li>The second character can be represented by two bits (<code>10</code> or <code>11</code>).</li>
+</ul>
+<p>Given a binary array <code>bits</code> that ends with <code>0</code>, return <code>true</code> if the last character must be a one-bit character.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> bits = [1,0,0]
+<strong>Output:</strong> true
+<strong>Explanation:</strong> The only way to decode it is two-bit character and one-bit character.
+So the last character is one-bit character.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> bits = [1,1,1,0]
+<strong>Output:</strong> false
+<strong>Explanation:</strong> The only way to decode it is two-bit character and two-bit character.
+So the last character is not one-bit character.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= bits.length &lt;= 1000</code></li>
+<li><code>bits[i]</code> is either <code>0</code> or <code>1</code>.</li>
+</ul>
+</div></div><br><br><hr><br>*********************<div id="title">724. Find Pivot Index</div>
+*********************<div class="content__u3I1 question-content__JfgR"><div><p>Given an array of integers <code>nums</code>, calculate the <strong>pivot index</strong> of this array.</p>
+<p>The <strong>pivot index</strong> is the index where the sum of all the numbers <strong>strictly</strong> to the left of the index is equal to the sum of all the numbers <strong>strictly</strong> to the index's right.</p>
+<p>If the index is on the left edge of the array, then the left sum is <code>0</code> because there are no elements to the left. This also applies to the right edge of the array.</p>
+<p>Return <em>the <strong>leftmost pivot index</strong></em>. If no such index exists, return -1.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [1,7,3,6,5,6]
+<strong>Output:</strong> 3
+<strong>Explanation:</strong>
+The pivot index is 3.
+Left sum = nums[0] + nums[1] + nums[2] = 1 + 7 + 3 = 11
+Right sum = nums[4] + nums[5] = 5 + 6 = 11
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [1,2,3]
+<strong>Output:</strong> -1
+<strong>Explanation:</strong>
+There is no index that satisfies the conditions in the problem statement.</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> nums = [2,1,-1]
+<strong>Output:</strong> 0
+<strong>Explanation:</strong>
+The pivot index is 0.
+Left sum = 0 (no elements to the left of index 0)
+Right sum = nums[1] + nums[2] = 1 + -1 = 0
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10<sup>4</sup></code></li>
+<li><code>-1000 &lt;= nums[i] &lt;= 1000</code></li>
+</ul>
+</div></div><br><br><hr><br>**************************<div id="title">728. Self Dividing Numbers</div>
+**************************<div class="content__u3I1 question-content__JfgR"><div><p>A <strong>self-dividing number</strong> is a number that is divisible by every digit it contains.</p>
+<ul>
+<li>For example, <code>128</code> is <strong>a self-dividing number</strong> because <code>128 % 1 == 0</code>, <code>128 % 2 == 0</code>, and <code>128 % 8 == 0</code>.</li>
+</ul>
+<p>A <strong>self-dividing number</strong> is not allowed to contain the digit zero.</p>
+<p>Given two integers <code>left</code> and <code>right</code>, return <em>a list of all the <strong>self-dividing numbers</strong> in the range</em> <code>[left, right]</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> left = 1, right = 22
+<strong>Output:</strong> [1,2,3,4,5,6,7,8,9,11,12,15,22]
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> left = 47, right = 85
+<strong>Output:</strong> [48,55,66,77]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= left &lt;= right &lt;= 10<sup>4</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>***************<div id="title">733. Flood Fill</div>
+***************<div class="content__u3I1 question-content__JfgR"><div><p>An image is represented by an <code>m x n</code> integer grid <code>image</code> where <code>image[i][j]</code> represents the pixel value of the image.</p>
+<p>You are also given three integers <code>sr</code>, <code>sc</code>, and <code>newColor</code>. You should perform a <strong>flood fill</strong> on the image starting from the pixel <code>image[sr][sc]</code>.</p>
+<p>To perform a <strong>flood fill</strong>, consider the starting pixel, plus any pixels connected <strong>4-directionally</strong> to the starting pixel of the same color as the starting pixel, plus any pixels connected <strong>4-directionally</strong> to those pixels (also with the same color), and so on. Replace the color of all of the aforementioned pixels with <code>newColor</code>.</p>
+<p>Return <em>the modified image after performing the flood fill</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/06/01/flood1-grid.jpg" style="width: 613px; height: 253px;"/>
+<pre><strong>Input:</strong> image = [[1,1,1],[1,1,0],[1,0,1]], sr = 1, sc = 1, newColor = 2
+<strong>Output:</strong> [[2,2,2],[2,2,0],[2,0,1]]
+<strong>Explanation:</strong> From the center of the image with position (sr, sc) = (1, 1) (i.e., the red pixel), all pixels connected by a path of the same color as the starting pixel (i.e., the blue pixels) are colored with the new color.
+Note the bottom corner is not colored 2, because it is not 4-directionally connected to the starting pixel.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> image = [[0,0,0],[0,0,0]], sr = 0, sc = 0, newColor = 2
+<strong>Output:</strong> [[2,2,2],[2,2,2]]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>m == image.length</code></li>
+<li><code>n == image[i].length</code></li>
+<li><code>1 &lt;= m, n &lt;= 50</code></li>
+<li><code>0 &lt;= image[i][j], newColor &lt; 2<sup>16</sup></code></li>
+<li><code>0 &lt;= sr &lt; m</code></li>
+<li><code>0 &lt;= sc &lt; n</code></li>
+</ul>
+</div></div><br><br><hr><br>*********************************************<div id="title">744. Find Smallest Letter Greater Than Target</div>
+*********************************************<div class="content__u3I1 question-content__JfgR"><div><p>Given a characters array <code>letters</code> that is sorted in <strong>non-decreasing</strong> order and a character <code>target</code>, return <em>the smallest character in the array that is larger than </em><code>target</code>.</p>
+<p><strong>Note</strong> that the letters wrap around.</p>
+<ul>
+<li>For example, if <code>target == 'z'</code> and <code>letters == ['a', 'b']</code>, the answer is <code>'a'</code>.</li>
+</ul>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> letters = ["c","f","j"], target = "a"
+<strong>Output:</strong> "c"
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> letters = ["c","f","j"], target = "c"
+<strong>Output:</strong> "f"
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> letters = ["c","f","j"], target = "d"
+<strong>Output:</strong> "f"
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> letters = ["c","f","j"], target = "g"
+<strong>Output:</strong> "j"
+</pre>
+<p><strong>Example 5:</strong></p>
+<pre><strong>Input:</strong> letters = ["c","f","j"], target = "j"
+<strong>Output:</strong> "c"
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>2 &lt;= letters.length &lt;= 10<sup>4</sup></code></li>
+<li><code>letters[i]</code> is a lowercase English letter.</li>
+<li><code>letters</code> is sorted in <strong>non-decreasing</strong> order.</li>
+<li><code>letters</code> contains at least two different characters.</li>
+<li><code>target</code> is a lowercase English letter.</li>
+</ul>
+</div></div><br><br><hr><br>*****************************<div id="title">746. Min Cost Climbing Stairs</div>
+*****************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given an integer array <code>cost</code> where <code>cost[i]</code> is the cost of <code>i<sup>th</sup></code> step on a staircase. Once you pay the cost, you can either climb one or two steps.</p>
+<p>You can either start from the step with index <code>0</code>, or the step with index <code>1</code>.</p>
+<p>Return <em>the minimum cost to reach the top of the floor</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> cost = [10,15,20]
+<strong>Output:</strong> 15
+<strong>Explanation:</strong> Cheapest is: start on cost[1], pay that cost, and go to the top.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> cost = [1,100,1,1,1,100,1,1,100,1]
+<strong>Output:</strong> 6
+<strong>Explanation:</strong> Cheapest is: start on cost[0], and only step on 1s, skipping cost[3].
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>2 &lt;= cost.length &lt;= 1000</code></li>
+<li><code>0 &lt;= cost[i] &lt;= 999</code></li>
+</ul>
+</div></div><br><br><hr><br>********************************************<div id="title">747. Largest Number At Least Twice of Others</div>
+********************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given an integer array <code>nums</code> where the largest integer is <strong>unique</strong>.</p>
+<p>Determine whether the largest element in the array is <strong>at least twice</strong> as much as every other number in the array. If it is, return <em>the <strong>index</strong> of the largest element, or return </em><code>-1</code><em> otherwise</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [3,6,1,0]
+<strong>Output:</strong> 1
+<strong>Explanation:</strong> 6 is the largest integer.
+For every other number in the array x, 6 is at least twice as big as x.
+The index of value 6 is 1, so we return 1.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [1,2,3,4]
+<strong>Output:</strong> -1
+<strong>Explanation:</strong> 4 is less than twice the value of 3, so we return -1.</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> nums = [1]
+<strong>Output:</strong> 0
+<strong>Explanation:</strong> 1 is trivially at least twice the value as any other number because there are no other numbers.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 50</code></li>
+<li><code>0 &lt;= nums[i] &lt;= 100</code></li>
+<li>The largest element in <code>nums</code> is unique.</li>
+</ul>
+</div></div><br><br><hr><br>*****************************<div id="title">748. Shortest Completing Word</div>
+*****************************<div class="content__u3I1 question-content__JfgR"><div><p>Given a string <code>licensePlate</code> and an array of strings <code>words</code>, find the <strong>shortest completing</strong> word in <code>words</code>.</p>
+<p>A <strong>completing</strong> word is a word that <strong>contains all the letters</strong> in <code>licensePlate</code>. <strong>Ignore numbers and spaces</strong> in <code>licensePlate</code>, and treat letters as <strong>case insensitive</strong>. If a letter appears more than once in <code>licensePlate</code>, then it must appear in the word the same number of times or more.</p>
+<p>For example, if <code>licensePlate</code><code> = "aBc 12c"</code>, then it contains letters <code>'a'</code>, <code>'b'</code> (ignoring case), and <code>'c'</code> twice. Possible <strong>completing</strong> words are <code>"abccdef"</code>, <code>"caaacab"</code>, and <code>"cbca"</code>.</p>
+<p>Return <em>the shortest <strong>completing</strong> word in </em><code>words</code><em>.</em> It is guaranteed an answer exists. If there are multiple shortest <strong>completing</strong> words, return the <strong>first</strong> one that occurs in <code>words</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> licensePlate = "1s3 PSt", words = ["step","steps","stripe","stepple"]
+<strong>Output:</strong> "steps"
+<strong>Explanation:</strong> licensePlate contains letters 's', 'p', 's' (ignoring case), and 't'.
+"step" contains 't' and 'p', but only contains 1 's'.
+"steps" contains 't', 'p', and both 's' characters.
+"stripe" is missing an 's'.
+"stepple" is missing an 's'.
+Since "steps" is the only word containing all the letters, that is the answer.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> licensePlate = "1s3 456", words = ["looks","pest","stew","show"]
+<strong>Output:</strong> "pest"
+<strong>Explanation:</strong> licensePlate only contains the letter 's'. All the words contain 's', but among these "pest", "stew", and "show" are shortest. The answer is "pest" because it is the word that appears earliest of the 3.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> licensePlate = "Ah71752", words = ["suggest","letter","of","husband","easy","education","drug","prevent","writer","old"]
+<strong>Output:</strong> "husband"
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> licensePlate = "OgEu755", words = ["enough","these","play","wide","wonder","box","arrive","money","tax","thus"]
+<strong>Output:</strong> "enough"
+</pre>
+<p><strong>Example 5:</strong></p>
+<pre><strong>Input:</strong> licensePlate = "iMSlpe4", words = ["claim","consumer","student","camera","public","never","wonder","simple","thought","use"]
+<strong>Output:</strong> "simple"
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= licensePlate.length &lt;= 7</code></li>
+<li><code>licensePlate</code> contains digits, letters (uppercase or lowercase), or space <code>' '</code>.</li>
+<li><code>1 &lt;= words.length &lt;= 1000</code></li>
+<li><code>1 &lt;= words[i].length &lt;= 15</code></li>
+<li><code>words[i]</code> consists of lower case English letters.</li>
+</ul>
+</div></div><br><br><hr><br>******************************************************<div id="title">762. Prime Number of Set Bits in Binary Representation</div>
+******************************************************<div class="content__u3I1 question-content__JfgR"><div><p>Given two integers <code>left</code> and <code>right</code>, return <em>the count of numbers in the inclusive range </em><code>[left, right]</code><em> having a prime number of set bits in their binary representation</em>.</p>
+<p>Recall that the number of set bits an integer has is the number of <code>1</code>'s present when written in binary.</p>
+<ul>
+<li>For example, <code>21</code> written in binary is <code>10101</code> which has <code>3</code> set bits.</li>
+</ul>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> left = 6, right = 10
+<strong>Output:</strong> 4
+<strong>Explanation:</strong>
+6 -&gt; 110 (2 set bits, 2 is prime)
+7 -&gt; 111 (3 set bits, 3 is prime)
+9 -&gt; 1001 (2 set bits , 2 is prime)
+10-&gt;1010 (2 set bits , 2 is prime)
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> left = 10, right = 15
+<strong>Output:</strong> 5
+<strong>Explanation:</strong>
+10 -&gt; 1010 (2 set bits, 2 is prime)
+11 -&gt; 1011 (3 set bits, 3 is prime)
+12 -&gt; 1100 (2 set bits, 2 is prime)
+13 -&gt; 1101 (3 set bits, 3 is prime)
+14 -&gt; 1110 (3 set bits, 3 is prime)
+15 -&gt; 1111 (4 set bits, 4 is not prime)
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= left &lt;= right &lt;= 10<sup>6</sup></code></li>
+<li><code>0 &lt;= right - left &lt;= 10<sup>4</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>********************<div id="title">766. Toeplitz Matrix</div>
+********************<div class="content__u3I1 question-content__JfgR"><div><p>Given an <code>m x n</code> <code>matrix</code>, return <em><code>true</code> if the matrix is Toeplitz. Otherwise, return <code>false</code>.</em></p>
+<p>A matrix is <strong>Toeplitz</strong> if every diagonal from top-left to bottom-right has the same elements.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/11/04/ex1.jpg" style="width: 322px; height: 242px;"/>
+<pre><strong>Input:</strong> matrix = [[1,2,3,4],[5,1,2,3],[9,5,1,2]]
+<strong>Output:</strong> true
+<strong>Explanation:</strong>
+In the above grid, the diagonals are:
+"[9]", "[5, 5]", "[1, 1, 1]", "[2, 2, 2]", "[3, 3]", "[4]".
+In each diagonal all elements are the same, so the answer is True.
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2020/11/04/ex2.jpg" style="width: 162px; height: 162px;"/>
+<pre><strong>Input:</strong> matrix = [[1,2],[2,2]]
+<strong>Output:</strong> false
+<strong>Explanation:</strong>
+The diagonal "[1, 2]" has different elements.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>m == matrix.length</code></li>
+<li><code>n == matrix[i].length</code></li>
+<li><code>1 &lt;= m, n &lt;= 20</code></li>
+<li><code>0 &lt;= matrix[i][j] &lt;= 99</code></li>
+</ul>
+<p> </p>
+<p><strong>Follow up:</strong></p>
+<ul>
+<li>What if the <code>matrix</code> is stored on disk, and the memory is limited such that you can only load at most one row of the matrix into the memory at once?</li>
+<li>What if the <code>matrix</code> is so large that you can only load up a partial row into the memory at once?</li>
+</ul>
+</div></div><br><br><hr><br>**********************<div id="title">771. Jewels and Stones</div>
+**********************<div class="content__u3I1 question-content__JfgR"><div><p>You're given strings <code>jewels</code> representing the types of stones that are jewels, and <code>stones</code> representing the stones you have. Each character in <code>stones</code> is a type of stone you have. You want to know how many of the stones you have are also jewels.</p>
+<p>Letters are case sensitive, so <code>"a"</code> is considered a different type of stone from <code>"A"</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> jewels = "aA", stones = "aAAbbbb"
+<strong>Output:</strong> 3
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> jewels = "z", stones = "ZZ"
+<strong>Output:</strong> 0
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= jewels.length, stones.length &lt;= 50</code></li>
+<li><code>jewels</code> and <code>stones</code> consist of only English letters.</li>
+<li>All the characters of <code>jewels</code> are <strong>unique</strong>.</li>
+</ul>
+</div></div><br><br><hr><br>***************************************<div id="title">783. Minimum Distance Between BST Nodes</div>
+***************************************<div class="content__u3I1 question-content__JfgR"><div><p>Given the <code>root</code> of a Binary Search Tree (BST), return <em>the minimum difference between the values of any two different nodes in the tree</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/02/05/bst1.jpg" style="width: 292px; height: 301px;"/>
+<pre><strong>Input:</strong> root = [4,2,6,1,3]
+<strong>Output:</strong> 1
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/02/05/bst2.jpg" style="width: 282px; height: 301px;"/>
+<pre><strong>Input:</strong> root = [1,0,48,null,null,12,49]
+<strong>Output:</strong> 1
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the tree is in the range <code>[2, 100]</code>.</li>
+<li><code>0 &lt;= Node.val &lt;= 10<sup>5</sup></code></li>
+</ul>
+<p> </p>
+<p><strong>Note:</strong> This question is the same as 530: <a href="https://leetcode.com/problems/minimum-absolute-difference-in-bst/" target="_blank">https://leetcode.com/problems/minimum-absolute-difference-in-bst/</a></p>
+</div></div><br><br><hr><br>******************<div id="title">796. Rotate String</div>
+******************<div class="content__u3I1 question-content__JfgR"><div><p>Given two strings <code>s</code> and <code>goal</code>, return <code>true</code> <em>if and only if</em> <code>s</code> <em>can become</em> <code>goal</code> <em>after some number of <strong>shifts</strong> on</em> <code>s</code>.</p>
+<p>A <strong>shift</strong> on <code>s</code> consists of moving the leftmost character of <code>s</code> to the rightmost position.</p>
+<ul>
+<li>For example, if <code>s = "abcde"</code>, then it will be <code>"bcdea"</code> after one shift.</li>
+</ul>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "abcde", goal = "cdeab"
+<strong>Output:</strong> true
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "abcde", goal = "abced"
+<strong>Output:</strong> false
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length, goal.length &lt;= 100</code></li>
+<li><code>s</code> and <code>goal</code> consist of lowercase English letters.</li>
+</ul>
+</div></div><br><br><hr><br>****************************<div id="title">804. Unique Morse Code Words</div>
+****************************<div class="content__u3I1 question-content__JfgR"><div><p>International Morse Code defines a standard encoding where each letter is mapped to a series of dots and dashes, as follows:</p>
+<ul>
+<li><code>'a'</code> maps to <code>".-"</code>,</li>
+<li><code>'b'</code> maps to <code>"-..."</code>,</li>
+<li><code>'c'</code> maps to <code>"-.-."</code>, and so on.</li>
+</ul>
+<p>For convenience, the full table for the <code>26</code> letters of the English alphabet is given below:</p>
+<pre>[".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]</pre>
+<p>Given an array of strings <code>words</code> where each word can be written as a concatenation of the Morse code of each letter.</p>
+<ul>
+<li>For example, <code>"cab"</code> can be written as <code>"-.-..--..."</code>, which is the concatenation of <code>"-.-."</code>, <code>".-"</code>, and <code>"-..."</code>. We will call such a concatenation the <strong>transformation</strong> of a word.</li>
+</ul>
+<p>Return <em>the number of different <strong>transformations</strong> among all words we have</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> words = ["gin","zen","gig","msg"]
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> The transformation of each word is:
+"gin" -&gt; "--...-."
+"zen" -&gt; "--...-."
+"gig" -&gt; "--...--."
+"msg" -&gt; "--...--."
+There are 2 different transformations: "--...-." and "--...--.".
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> words = ["a"]
+<strong>Output:</strong> 1
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= words.length &lt;= 100</code></li>
+<li><code>1 &lt;= words[i].length &lt;= 12</code></li>
+<li><code>words[i]</code> consists of lowercase English letters.</li>
+</ul>
+</div></div><br><br><hr><br>************************************<div id="title">806. Number of Lines To Write String</div>
+************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a string <code>s</code> of lowercase English letters and an array <code>widths</code> denoting <strong>how many pixels wide</strong> each lowercase English letter is. Specifically, <code>widths[0]</code> is the width of <code>'a'</code>, <code>widths[1]</code> is the width of <code>'b'</code>, and so on.</p>
+<p>You are trying to write <code>s</code> across several lines, where <strong>each line is no longer than </strong><code>100</code><strong> pixels</strong>. Starting at the beginning of <code>s</code>, write as many letters on the first line such that the total width does not exceed <code>100</code> pixels. Then, from where you stopped in <code>s</code>, continue writing as many letters as you can on the second line. Continue this process until you have written all of <code>s</code>.</p>
+<p>Return <em>an array </em><code>result</code><em> of length 2 where:</em></p>
+<ul>
+<li><code>result[0]</code><em> is the total number of lines.</em></li>
+<li><code>result[1]</code><em> is the width of the last line in pixels.</em></li>
+</ul>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> widths = [10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10], s = "abcdefghijklmnopqrstuvwxyz"
+<strong>Output:</strong> [3,60]
+<strong>Explanation:</strong> You can write s as follows:
+abcdefghij  // 100 pixels wide
+klmnopqrst  // 100 pixels wide
+uvwxyz      // 60 pixels wide
+There are a total of 3 lines, and the last line is 60 pixels wide.</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> widths = [4,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10,10], s = "bbbcccdddaaa"
+<strong>Output:</strong> [2,4]
+<strong>Explanation:</strong> You can write s as follows:
+bbbcccdddaa  // 98 pixels wide
+a            // 4 pixels wide
+There are a total of 2 lines, and the last line is 4 pixels wide.</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>widths.length == 26</code></li>
+<li><code>2 &lt;= widths[i] &lt;= 10</code></li>
+<li><code>1 &lt;= s.length &lt;= 1000</code></li>
+<li><code>s</code> contains only lowercase English letters.</li>
+</ul>
+</div></div><br><br><hr><br>**************************<div id="title">812. Largest Triangle Area</div>
+**************************<div class="content__u3I1 question-content__JfgR"><div><p>Given an array of points on the <strong>X-Y</strong> plane <code>points</code> where <code>points[i] = [x<sub>i</sub>, y<sub>i</sub>]</code>, return <em>the area of the largest triangle that can be formed by any three different points</em>. Answers within <code>10<sup>-5</sup></code> of the actual answer will be accepted.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://s3-lc-upload.s3.amazonaws.com/uploads/2018/04/04/1027.png" style="height: 369px; width: 450px;"/>
+<pre><strong>Input:</strong> points = [[0,0],[0,1],[1,0],[0,2],[2,0]]
+<strong>Output:</strong> 2.00000
+<strong>Explanation:</strong> The five points are shown in the above figure. The red triangle is the largest.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> points = [[1,0],[0,0],[0,1]]
+<strong>Output:</strong> 0.50000
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>3 &lt;= points.length &lt;= 50</code></li>
+<li><code>-50 &lt;= x<sub>i</sub>, y<sub>i</sub> &lt;= 50</code></li>
+<li>All the given points are <strong>unique</strong>.</li>
+</ul>
+</div></div><br><br><hr><br>*********************<div id="title">819. Most Common Word</div>
+*********************<div class="content__u3I1 question-content__JfgR"><div><p>Given a string <code>paragraph</code> and a string array of the banned words <code>banned</code>, return <em>the most frequent word that is not banned</em>. It is <strong>guaranteed</strong> there is <strong>at least one word</strong> that is not banned, and that the answer is <strong>unique</strong>.</p>
+<p>The words in <code>paragraph</code> are <strong>case-insensitive</strong> and the answer should be returned in <strong>lowercase</strong>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> paragraph = "Bob hit a ball, the hit BALL flew far after it was hit.", banned = ["hit"]
+<strong>Output:</strong> "ball"
+<strong>Explanation:</strong> 
+"hit" occurs 3 times, but it is a banned word.
+"ball" occurs twice (and no other word does), so it is the most frequent non-banned word in the paragraph. 
+Note that words in the paragraph are not case sensitive,
+that punctuation is ignored (even if adjacent to words, such as "ball,"), 
+and that "hit" isn't the answer even though it occurs more because it is banned.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> paragraph = "a.", banned = []
+<strong>Output:</strong> "a"
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= paragraph.length &lt;= 1000</code></li>
+<li>paragraph consists of English letters, space <code>' '</code>, or one of the symbols: <code>"!?',;."</code>.</li>
+<li><code>0 &lt;= banned.length &lt;= 100</code></li>
+<li><code>1 &lt;= banned[i].length &lt;= 10</code></li>
+<li><code>banned[i]</code> consists of only lowercase English letters.</li>
+</ul>
+</div></div><br><br><hr><br>*************************************<div id="title">821. Shortest Distance to a Character</div>
+*************************************<div class="content__u3I1 question-content__JfgR"><div><p>Given a string <code>s</code> and a character <code>c</code> that occurs in <code>s</code>, return <em>an array of integers </em><code>answer</code><em> where </em><code>answer.length == s.length</code><em> and </em><code>answer[i]</code><em> is the <strong>distance</strong> from index </em><code>i</code><em> to the <strong>closest</strong> occurrence of character </em><code>c</code><em> in </em><code>s</code>.</p>
+<p>The <strong>distance</strong> between two indices <code>i</code> and <code>j</code> is <code>abs(i - j)</code>, where <code>abs</code> is the absolute value function.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "loveleetcode", c = "e"
+<strong>Output:</strong> [3,2,1,0,1,0,0,1,2,2,1,0]
+<strong>Explanation:</strong> The character 'e' appears at indices 3, 5, 6, and 11 (0-indexed).
+The closest occurrence of 'e' for index 0 is at index 3, so the distance is abs(0 - 3) = 3.
+The closest occurrence of 'e' for index 1 is at index 3, so the distance is abs(1 - 3) = 2.
+For index 4, there is a tie between the 'e' at index 3 and the 'e' at index 5, but the distance is still the same: abs(4 - 3) == abs(4 - 5) = 1.
+The closest occurrence of 'e' for index 8 is at index 6, so the distance is abs(8 - 6) = 2.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "aaab", c = "b"
+<strong>Output:</strong> [3,2,1,0]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 10<sup>4</sup></code></li>
+<li><code>s[i]</code> and <code>c</code> are lowercase English letters.</li>
+<li>It is guaranteed that <code>c</code> occurs at least once in <code>s</code>.</li>
+</ul>
+</div></div><br><br><hr><br>***************<div id="title">824. Goat Latin</div>
+***************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a string <code>sentence</code> that consist of words separated by spaces. Each word consists of lowercase and uppercase letters only.</p>
+<p>We would like to convert the sentence to "Goat Latin" (a made-up language similar to Pig Latin.) The rules of Goat Latin are as follows:</p>
+<ul>
+<li>If a word begins with a vowel (<code>'a'</code>, <code>'e'</code>, <code>'i'</code>, <code>'o'</code>, or <code>'u'</code>), append <code>"ma"</code> to the end of the word.
+
+	<ul>
+<li>For example, the word <code>"apple"</code> becomes <code>"applema"</code>.</li>
+</ul>
+</li>
+<li>If a word begins with a consonant (i.e., not a vowel), remove the first letter and append it to the end, then add <code>"ma"</code>.
+	<ul>
+<li>For example, the word <code>"goat"</code> becomes <code>"oatgma"</code>.</li>
+</ul>
+</li>
+<li>Add one letter <code>'a'</code> to the end of each word per its word index in the sentence, starting with <code>1</code>.
+	<ul>
+<li>For example, the first word gets <code>"a"</code> added to the end, the second word gets <code>"aa"</code> added to the end, and so on.</li>
+</ul>
+</li>
+</ul>
+<p>Return<em> the final sentence representing the conversion from sentence to Goat Latin</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> sentence = "I speak Goat Latin"
+<strong>Output:</strong> "Imaa peaksmaaa oatGmaaaa atinLmaaaaa"
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> sentence = "The quick brown fox jumped over the lazy dog"
+<strong>Output:</strong> "heTmaa uickqmaaa rownbmaaaa oxfmaaaaa umpedjmaaaaaa overmaaaaaaa hetmaaaaaaaa azylmaaaaaaaaa ogdmaaaaaaaaaa"
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= sentence.length &lt;= 150</code></li>
+<li><code>sentence</code> consists of English letters and spaces.</li>
+<li><code>sentence</code> has no leading or trailing spaces.</li>
+<li>All the words in <code>sentence</code> are separated by a single space.</li>
+</ul>
+</div></div><br><br><hr><br>******************************<div id="title">830. Positions of Large Groups</div>
+******************************<div class="content__u3I1 question-content__JfgR"><div><p>In a string <code><font face="monospace">s</font></code> of lowercase letters, these letters form consecutive groups of the same character.</p>
+<p>For example, a string like <code>s = "abbxxxxzyy"</code> has the groups <code>"a"</code>, <code>"bb"</code>, <code>"xxxx"</code>, <code>"z"</code>, and <code>"yy"</code>.</p>
+<p>A group is identified by an interval <code>[start, end]</code>, where <code>start</code> and <code>end</code> denote the start and end indices (inclusive) of the group. In the above example, <code>"xxxx"</code> has the interval <code>[3,6]</code>.</p>
+<p>A group is considered <strong>large</strong> if it has 3 or more characters.</p>
+<p>Return <em>the intervals of every <strong>large</strong> group sorted in <strong>increasing order by start index</strong></em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "abbxxxxzzy"
+<strong>Output:</strong> [[3,6]]
+<strong>Explanation</strong>: <code>"xxxx" is the only </code>large group with start index 3 and end index 6.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "abc"
+<strong>Output:</strong> []
+<strong>Explanation</strong>: We have groups "a", "b", and "c", none of which are large groups.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> s = "abcdddeeeeaabbbcd"
+<strong>Output:</strong> [[3,5],[6,9],[12,14]]
+<strong>Explanation</strong>: The large groups are "ddd", "eeee", and "bbb".
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> s = "aba"
+<strong>Output:</strong> []
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 1000</code></li>
+<li><code>s</code> contains lower-case English letters only.</li>
+</ul>
+</div></div><br><br><hr><br>**********************<div id="title">832. Flipping an Image</div>
+**********************<div class="content__u3I1 question-content__JfgR"><div><p>Given an <code>n x n</code> binary matrix <code>image</code>, flip the image <strong>horizontally</strong>, then invert it, and return <em>the resulting image</em>.</p>
+<p>To flip an image horizontally means that each row of the image is reversed.</p>
+<ul>
+<li>For example, flipping <code>[1,1,0]</code> horizontally results in <code>[0,1,1]</code>.</li>
+</ul>
+<p>To invert an image means that each <code>0</code> is replaced by <code>1</code>, and each <code>1</code> is replaced by <code>0</code>.</p>
+<ul>
+<li>For example, inverting <code>[0,1,1]</code> results in <code>[1,0,0]</code>.</li>
+</ul>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> image = [[1,1,0],[1,0,1],[0,0,0]]
+<strong>Output:</strong> [[1,0,0],[0,1,0],[1,1,1]]
+<strong>Explanation:</strong> First reverse each row: [[0,1,1],[1,0,1],[0,0,0]].
+Then, invert the image: [[1,0,0],[0,1,0],[1,1,1]]
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> image = [[1,1,0,0],[1,0,0,1],[0,1,1,1],[1,0,1,0]]
+<strong>Output:</strong> [[1,1,0,0],[0,1,1,0],[0,0,0,1],[1,0,1,0]]
+<strong>Explanation:</strong> First reverse each row: [[0,0,1,1],[1,0,0,1],[1,1,1,0],[0,1,0,1]].
+Then invert the image: [[1,1,0,0],[0,1,1,0],[0,0,0,1],[1,0,1,0]]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == image.length</code></li>
+<li><code>n == image[i].length</code></li>
+<li><code>1 &lt;= n &lt;= 20</code></li>
+<li><code>images[i][j]</code> is either <code>0</code> or <code>1</code>.</li>
+</ul>
+</div></div><br><br><hr><br>**********************<div id="title">836. Rectangle Overlap</div>
+**********************<div class="content__u3I1 question-content__JfgR"><div><p>An axis-aligned rectangle is represented as a list <code>[x1, y1, x2, y2]</code>, where <code>(x1, y1)</code> is the coordinate of its bottom-left corner, and <code>(x2, y2)</code> is the coordinate of its top-right corner. Its top and bottom edges are parallel to the X-axis, and its left and right edges are parallel to the Y-axis.</p>
+<p>Two rectangles overlap if the area of their intersection is <strong>positive</strong>. To be clear, two rectangles that only touch at the corner or edges do not overlap.</p>
+<p>Given two axis-aligned rectangles <code>rec1</code> and <code>rec2</code>, return <code>true</code><em> if they overlap, otherwise return </em><code>false</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> rec1 = [0,0,2,2], rec2 = [1,1,3,3]
+<strong>Output:</strong> true
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> rec1 = [0,0,1,1], rec2 = [1,0,2,1]
+<strong>Output:</strong> false
+</pre><p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> rec1 = [0,0,1,1], rec2 = [2,2,3,3]
+<strong>Output:</strong> false
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>rect1.length == 4</code></li>
+<li><code>rect2.length == 4</code></li>
+<li><code>-10<sup>9</sup> &lt;= rec1[i], rec2[i] &lt;= 10<sup>9</sup></code></li>
+<li><code>rec1</code> and <code>rec2</code> represent a valid rectangle with a non-zero area.</li>
+</ul>
+</div></div><br><br><hr><br>*****************************<div id="title">844. Backspace String Compare</div>
+*****************************<div class="content__u3I1 question-content__JfgR"><div><p>Given two strings <code>s</code> and <code>t</code>, return <code>true</code> <em>if they are equal when both are typed into empty text editors</em>. <code>'#'</code> means a backspace character.</p>
+<p>Note that after backspacing an empty text, the text will continue empty.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "ab#c", t = "ad#c"
+<strong>Output:</strong> true
+<strong>Explanation:</strong> Both s and t become "ac".
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "ab##", t = "c#d#"
+<strong>Output:</strong> true
+<strong>Explanation:</strong> Both s and t become "".
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> s = "a##c", t = "#a#c"
+<strong>Output:</strong> true
+<strong>Explanation:</strong> Both s and t become "c".
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> s = "a#c", t = "b"
+<strong>Output:</strong> false
+<strong>Explanation:</strong> s becomes "c" while t becomes "b".
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code><span>1 &lt;= s.length, t.length &lt;= 200</span></code></li>
+<li><span><code>s</code> and <code>t</code> only contain lowercase letters and <code>'#'</code> characters.</span></li>
+</ul>
+<p> </p>
+<p><strong>Follow up:</strong> Can you solve it in <code>O(n)</code> time and <code>O(1)</code> space?</p>
+</div></div><br><br><hr><br>***********************************<div id="title">852. Peak Index in a Mountain Array</div>
+***********************************<div class="content__u3I1 question-content__JfgR"><div><p>Let's call an array <code>arr</code> a <strong>mountain</strong> if the following properties hold:</p>
+<ul>
+<li><code>arr.length &gt;= 3</code></li>
+<li>There exists some <code>i</code> with <code>0 &lt; i &lt; arr.length - 1</code> such that:
+	<ul>
+<li><code>arr[0] &lt; arr[1] &lt; ... arr[i-1] &lt; arr[i] </code></li>
+<li><code>arr[i] &gt; arr[i+1] &gt; ... &gt; arr[arr.length - 1]</code></li>
+</ul>
+</li>
+</ul>
+<p>Given an integer array <code>arr</code> that is <strong>guaranteed</strong> to be a mountain, return any <code>i</code> such that <code>arr[0] &lt; arr[1] &lt; ... arr[i - 1] &lt; arr[i] &gt; arr[i + 1] &gt; ... &gt; arr[arr.length - 1]</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> arr = [0,1,0]
+<strong>Output:</strong> 1
+</pre><p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> arr = [0,2,1,0]
+<strong>Output:</strong> 1
+</pre><p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> arr = [0,10,5,2]
+<strong>Output:</strong> 1
+</pre><p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> arr = [3,4,5,1]
+<strong>Output:</strong> 2
+</pre><p><strong>Example 5:</strong></p>
+<pre><strong>Input:</strong> arr = [24,69,100,99,79,78,67,36,26,19]
+<strong>Output:</strong> 2
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>3 &lt;= arr.length &lt;= 10<sup>4</sup></code></li>
+<li><code>0 &lt;= arr[i] &lt;= 10<sup>6</sup></code></li>
+<li><code>arr</code> is <strong>guaranteed</strong> to be a mountain array.</li>
+</ul>
+<p> </p>
+<strong>Follow up:</strong> Finding the <code>O(n)</code> is straightforward, could you find an <code>O(log(n))</code> solution?</div></div><br><br><hr><br>******************<div id="title">859. Buddy Strings</div>
+******************<div class="content__u3I1 question-content__JfgR"><div><p>Given two strings <code>s</code> and <code>goal</code>, return <code>true</code><em> if you can swap two letters in </em><code>s</code><em> so the result is equal to </em><code>goal</code><em>, otherwise, return </em><code>false</code><em>.</em></p>
+<p>Swapping letters is defined as taking two indices <code>i</code> and <code>j</code> (0-indexed) such that <code>i != j</code> and swapping the characters at <code>s[i]</code> and <code>s[j]</code>.</p>
+<ul>
+<li>For example, swapping at indices <code>0</code> and <code>2</code> in <code>"abcd"</code> results in <code>"cbad"</code>.</li>
+</ul>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "ab", goal = "ba"
+<strong>Output:</strong> true
+<strong>Explanation:</strong> You can swap s[0] = 'a' and s[1] = 'b' to get "ba", which is equal to goal.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "ab", goal = "ab"
+<strong>Output:</strong> false
+<strong>Explanation:</strong> The only letters you can swap are s[0] = 'a' and s[1] = 'b', which results in "ba" != goal.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> s = "aa", goal = "aa"
+<strong>Output:</strong> true
+<strong>Explanation:</strong> You can swap s[0] = 'a' and s[1] = 'a' to get "aa", which is equal to goal.
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> s = "aaaaaaabc", goal = "aaaaaaacb"
+<strong>Output:</strong> true
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length, goal.length &lt;= 2 * 10<sup>4</sup></code></li>
+<li><code>s</code> and <code>goal</code> consist of lowercase letters.</li>
+</ul>
+</div></div><br><br><hr><br>********************<div id="title">860. Lemonade Change</div>
+********************<div class="content__u3I1 question-content__JfgR"><div><p>At a lemonade stand, each lemonade costs <code>$5</code>. Customers are standing in a queue to buy from you, and order one at a time (in the order specified by bills). Each customer will only buy one lemonade and pay with either a <code>$5</code>, <code>$10</code>, or <code>$20</code> bill. You must provide the correct change to each customer so that the net transaction is that the customer pays <code>$5</code>.</p>
+<p>Note that you don't have any change in hand at first.</p>
+<p>Given an integer array <code>bills</code> where <code>bills[i]</code> is the bill the <code>i<sup>th</sup></code> customer pays, return <code>true</code> <em>if you can provide every customer with correct change, or</em> <code>false</code> <em>otherwise</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> bills = [5,5,5,10,20]
+<strong>Output:</strong> true
+<strong>Explanation:</strong> 
+From the first 3 customers, we collect three $5 bills in order.
+From the fourth customer, we collect a $10 bill and give back a $5.
+From the fifth customer, we give a $10 bill and a $5 bill.
+Since all customers got correct change, we output true.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> bills = [5,5,10,10,20]
+<strong>Output:</strong> false
+<strong>Explanation:</strong> 
+From the first two customers in order, we collect two $5 bills.
+For the next two customers in order, we collect a $10 bill and give back a $5 bill.
+For the last customer, we can not give change of $15 back because we only have two $10 bills.
+Since not every customer received correct change, the answer is false.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> bills = [5,5,10]
+<strong>Output:</strong> true
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> bills = [10,10]
+<strong>Output:</strong> false
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= bills.length &lt;= 10<sup>5</sup></code></li>
+<li><code>bills[i]</code> is either <code>5</code>, <code>10</code>, or <code>20</code>.</li>
+</ul>
+</div></div><br><br><hr><br>*********************<div id="title">867. Transpose Matrix</div>
+*********************<div class="content__u3I1 question-content__JfgR"><div><p>Given a 2D integer array <code>matrix</code>, return <em>the <strong>transpose</strong> of</em> <code>matrix</code>.</p>
+<p>The <strong>transpose</strong> of a matrix is the matrix flipped over its main diagonal, switching the matrix's row and column indices.</p>
+<p><img alt="" src="https://assets.leetcode.com/uploads/2021/02/10/hint_transpose.png" style="width: 600px; height: 197px;"/></p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> matrix = [[1,2,3],[4,5,6],[7,8,9]]
+<strong>Output:</strong> [[1,4,7],[2,5,8],[3,6,9]]
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> matrix = [[1,2,3],[4,5,6]]
+<strong>Output:</strong> [[1,4],[2,5],[3,6]]
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>m == matrix.length</code></li>
+<li><code>n == matrix[i].length</code></li>
+<li><code>1 &lt;= m, n &lt;= 1000</code></li>
+<li><code>1 &lt;= m * n &lt;= 10<sup>5</sup></code></li>
+<li><code>-10<sup>9</sup> &lt;= matrix[i][j] &lt;= 10<sup>9</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>***************<div id="title">868. Binary Gap</div>
+***************<div class="content__u3I1 question-content__JfgR"><div><p>Given a positive integer <code>n</code>, find and return <em>the <strong>longest distance</strong> between any two <strong>adjacent</strong> </em><code>1</code><em>'s in the binary representation of </em><code>n</code><em>. If there are no two adjacent </em><code>1</code><em>'s, return </em><code>0</code><em>.</em></p>
+<p>Two <code>1</code>'s are <strong>adjacent</strong> if there are only <code>0</code>'s separating them (possibly no <code>0</code>'s). The <b>distance</b> between two <code>1</code>'s is the absolute difference between their bit positions. For example, the two <code>1</code>'s in <code>"1001"</code> have a distance of 3.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> n = 22
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> 22 in binary is "10110".
+The first adjacent pair of 1's is "<u>1</u>0<u>1</u>10" with a distance of 2.
+The second adjacent pair of 1's is "10<u>11</u>0" with a distance of 1.
+The answer is the largest of these two distances, which is 2.
+Note that "<u>1</u>01<u>1</u>0" is not a valid pair since there is a 1 separating the two 1's underlined.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> n = 5
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> 5 in binary is "101".
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> n = 6
+<strong>Output:</strong> 1
+<strong>Explanation:</strong> 6 in binary is "110".
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> n = 8
+<strong>Output:</strong> 0
+<strong>Explanation:</strong> 8 in binary is "1000".
+There aren't any adjacent pairs of 1's in the binary representation of 8, so we return 0.
+</pre>
+<p><strong>Example 5:</strong></p>
+<pre><strong>Input:</strong> n = 1
+<strong>Output:</strong> 0
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 10<sup>9</sup></code></li>
+</ul>
 </div></div><br><br><hr><br>
