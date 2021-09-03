@@ -96,10 +96,6 @@ def main():
     algorithms_problems_json = requests.get(ALGORITHMS_ENDPOINT_URL).content
     algorithms_problems_json = json.loads(algorithms_problems_json)
 
-    styles_str = "<style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>"
-    with open("out.html", "ab") as f:
-        f.write(styles_str.encode(encoding="utf-8"))
-
     # List to store question_title_slug
     links = []
     for child in algorithms_problems_json["stat_status_pairs"]:
@@ -113,6 +109,15 @@ def main():
             links.append(
                 (question__title_slug, difficulty, frontend_question_id, question__title, question__article__slug))
 
+
+    
+    has_new_problems = (completed_upto != len(links) - 1)
+    if has_new_problems:
+        styles_str = "<style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>"
+        
+        with open("out.html", "ab") as f:
+            f.write(styles_str.encode(encoding="utf-8"))
+    
     # Sort by difficulty follwed by problem id in ascending order
     links = sorted(links, key=lambda x: (x[1], x[2]))
     downloaded_now = 0
@@ -141,8 +146,11 @@ def main():
         driver.quit()
 
     try:
-        epub_writer.write("Leetcode Questions.epub", "Leetcode Questions", "Anonymous", chapters)
-        print(Back.GREEN + "All operations successful")
+        if has_new_problems:
+            epub_writer.write("Leetcode Questions.epub", "Leetcode Questions", "Anonymous", chapters)
+            print(Back.GREEN + "All operations successful")
+        else:
+            print(Back.GREEN + "No new problems found. Exiting")
     except Exception as e:
         print(Back.RED + f"Error making epub {e}")
 
