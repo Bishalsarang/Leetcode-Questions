@@ -47317,4 +47317,165 @@ The lexicographically smallest subsequence among them is "eet".
 <li><code>s</code> consists of lowercase English letters.</li>
 <li><code>letter</code> is a lowercase English letter, and appears in <code>s</code> at least <code>repetition</code> times.</li>
 </ul>
+</div></div><br><br><hr><br><style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>***************************************************<div id="title">2019. The Score of Students Solving Math Expression</div>
+***************************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a string <code>s</code> that contains digits <code>0-9</code>, addition symbols <code>'+'</code>, and multiplication symbols <code>'*'</code> <strong>only</strong>, representing a <strong>valid</strong> math expression of <strong>single digit numbers</strong> (e.g., <code>3+5*2</code>). This expression was given to <code>n</code> elementary school students. The students were instructed to get the answer of the expression by following this <strong>order of operations</strong>:</p>
+<ol>
+<li>Compute <strong>multiplication</strong>, reading from <strong>left to right</strong>; Then,</li>
+<li>Compute <strong>addition</strong>, reading from <strong>left to right</strong>.</li>
+</ol>
+<p>You are given an integer array <code>answers</code> of length <code>n</code>, which are the submitted answers of the students in no particular order. You are asked to grade the <code>answers</code>, by following these <strong>rules</strong>:</p>
+<ul>
+<li>If an answer <strong>equals</strong> the correct answer of the expression, this student will be rewarded <code>5</code> points;</li>
+<li>Otherwise, if the answer <strong>could be interpreted</strong> as if the student applied the operators <strong>in the wrong order</strong> but had <strong>correct arithmetic</strong>, this student will be rewarded <code>2</code> points;</li>
+<li>Otherwise, this student will be rewarded <code>0</code> points.</li>
+</ul>
+<p>Return <em>the sum of the points of the students</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/09/17/student_solving_math.png" style="width: 678px; height: 109px;"/>
+<pre><strong>Input:</strong> s = "7+3*1*2", answers = [20,13,42]
+<strong>Output:</strong> 7
+<strong>Explanation:</strong> As illustrated above, the correct answer of the expression is 13, therefore one student is rewarded 5 points: [20,<u><strong>13</strong></u>,42]
+A student might have applied the operators in this wrong order: ((7+3)*1)*2 = 20. Therefore one student is rewarded 2 points: [<u><strong>20</strong></u>,13,42]
+The points for the students are: [2,5,0]. The sum of the points is 2+5+0=7.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "3+5*2", answers = [13,0,10,13,13,16,16]
+<strong>Output:</strong> 19
+<strong>Explanation:</strong> The correct answer of the expression is 13, therefore three students are rewarded 5 points each: [<strong><u>13</u></strong>,0,10,<strong><u>13</u></strong>,<strong><u>13</u></strong>,16,16]
+A student might have applied the operators in this wrong order: ((3+5)*2 = 16. Therefore two students are rewarded 2 points: [13,0,10,13,13,<strong><u>16</u></strong>,<strong><u>16</u></strong>]
+The points for the students are: [5,0,0,5,5,2,2]. The sum of the points is 5+0+0+5+5+2+2=19.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> s = "6+0*1", answers = [12,9,6,4,8,6]
+<strong>Output:</strong> 10
+<strong>Explanation:</strong> The correct answer of the expression is 6.
+If a student had incorrectly done (6+0)*1, the answer would also be 6.
+By the rules of grading, the students will still be rewarded 5 points (as they got the correct answer), not 2 points.
+The points for the students are: [0,0,5,0,0,5]. The sum of the points is 10.
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> s = "1+2*3+4", answers = [13,21,11,15]
+<strong>Output:</strong> 11
+<strong>Explanation:</strong> The correct answer of the expression is 11.
+Every other student was rewarded 2 points because they could have applied the operators as follows:
+- ((1+2)*3)+4 = 13
+- (1+2)*(3+4) = 21
+- 1+(2*(3+4)) = 15
+The points for the students are: [2,2,5,2]. The sum of the points is 11.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>3 &lt;= s.length &lt;= 31</code></li>
+<li><code>s</code> represents a valid expression that contains only digits <code>0-9</code>, <code>'+'</code>, and <code>'*'</code> only.</li>
+<li>All the integer operands in the expression are in the <strong>inclusive</strong> range <code>[0, 9]</code>.</li>
+<li><code>1 &lt;=</code> The count of all operators (<code>'+'</code> and <code>'*'</code>) in the math expression <code>&lt;= 15</code></li>
+<li>Test data are generated such that the correct answer of the expression is in the range of <code>[0, 1000]</code>.</li>
+<li><code>n == answers.length</code></li>
+<li><code>1 &lt;= n &lt;= 10<sup>4</sup></code></li>
+<li><code>0 &lt;= answers[i] &lt;= 1000</code></li>
+</ul>
+</div></div><br><br><hr><br>**************************************************<div id="title">2025. Maximum Number of Ways to Partition an Array</div>
+**************************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code> of length <code>n</code>. The number of ways to <strong>partition</strong> <code>nums</code> is the number of <code>pivot</code> indices that satisfy both conditions:</p>
+<ul>
+<li><code>1 &lt;= pivot &lt; n</code></li>
+<li><code>nums[0] + nums[1] + ... + nums[pivot - 1] == nums[pivot] + nums[pivot + 1] + ... + nums[n - 1]</code></li>
+</ul>
+<p>You are also given an integer <code>k</code>. You can choose to change the value of <strong>one</strong> element of <code>nums</code> to <code>k</code>, or to leave the array <strong>unchanged</strong>.</p>
+<p>Return <em>the <strong>maximum</strong> possible number of ways to <strong>partition</strong> </em><code>nums</code><em> to satisfy both conditions after changing <strong>at most</strong> one element</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [2,-1,2], k = 3
+<strong>Output:</strong> 1
+<strong>Explanation:</strong> One optimal approach is to change nums[0] to k. The array becomes [<strong><u>3</u></strong>,-1,2].
+There is one way to partition the array:
+- For pivot = 2, we have the partition [3,-1 | 2]: 3 + -1 == 2.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [0,0,0], k = 1
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> The optimal approach is to leave the array unchanged.
+There are two ways to partition the array:
+- For pivot = 1, we have the partition [0 | 0,0]: 0 == 0 + 0.
+- For pivot = 2, we have the partition [0,0 | 0]: 0 + 0 == 0.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> nums = [22,4,-25,-20,-15,15,-16,7,19,-10,0,-13,-14], k = -33
+<strong>Output:</strong> 4
+<strong>Explanation:</strong> One optimal approach is to change nums[2] to k. The array becomes [22,4,<u><strong>-33</strong></u>,-20,-15,15,-16,7,19,-10,0,-13,-14].
+There are four ways to partition the array.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == nums.length</code></li>
+<li><code>2 &lt;= n &lt;= 10<sup>5</sup></code></li>
+<li><code>-10<sup>5</sup> &lt;= k, nums[i] &lt;= 10<sup>5</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>****************************************************************<div id="title">2030. Smallest K-Length Subsequence With Occurrences of a Letter</div>
+****************************************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a string <code>s</code>, an integer <code>k</code>, a letter <code>letter</code>, and an integer <code>repetition</code>.</p>
+<p>Return <em>the <strong>lexicographically smallest</strong> subsequence of</em> <code>s</code><em> of length</em> <code>k</code> <em>that has the letter</em> <code>letter</code> <em>appear <strong>at least</strong></em> <code>repetition</code> <em>times</em>. The test cases are generated so that the <code>letter</code> appears in <code>s</code> <strong>at least</strong> <code>repetition</code> times.</p>
+<p>A <strong>subsequence</strong> is a string that can be derived from another string by deleting some or no characters without changing the order of the remaining characters.</p>
+<p>A string <code>a</code> is <strong>lexicographically smaller</strong> than a string <code>b</code> if in the first position where <code>a</code> and <code>b</code> differ, string <code>a</code> has a letter that appears earlier in the alphabet than the corresponding letter in <code>b</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "leet", k = 3, letter = "e", repetition = 1
+<strong>Output:</strong> "eet"
+<strong>Explanation:</strong> There are four subsequences of length 3 that have the letter 'e' appear at least 1 time:
+- "lee" (from "<strong><u>lee</u></strong>t")
+- "let" (from "<strong><u>le</u></strong>e<u><strong>t</strong></u>")
+- "let" (from "<u><strong>l</strong></u>e<u><strong>et</strong></u>")
+- "eet" (from "l<u><strong>eet</strong></u>")
+The lexicographically smallest subsequence among them is "eet".
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="example-2" src="https://assets.leetcode.com/uploads/2021/09/13/smallest-k-length-subsequence.png" style="width: 339px; height: 67px;"/>
+<pre><strong>Input:</strong> s = "leetcode", k = 4, letter = "e", repetition = 2
+<strong>Output:</strong> "ecde"
+<strong>Explanation:</strong> "ecde" is the lexicographically smallest subsequence of length 4 that has the letter "e" appear at least 2 times.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> s = "bb", k = 2, letter = "b", repetition = 2
+<strong>Output:</strong> "bb"
+<strong>Explanation:</strong> "bb" is the only subsequence of length 2 that has the letter "b" appear at least 2 times.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= repetition &lt;= k &lt;= s.length &lt;= 5 * 10<sup>4</sup></code></li>
+<li><code>s</code> consists of lowercase English letters.</li>
+<li><code>letter</code> is a lowercase English letter, and appears in <code>s</code> at least <code>repetition</code> times.</li>
+</ul>
+</div></div><br><br><hr><br>****************************************************************<div id="title">2035. Partition Array Into Two Arrays to Minimize Sum Difference</div>
+****************************************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given an integer array <code>nums</code> of <code>2 * n</code> integers. You need to partition <code>nums</code> into <strong>two</strong> arrays of length <code>n</code> to <strong>minimize the absolute difference</strong> of the <strong>sums</strong> of the arrays. To partition <code>nums</code>, put each element of <code>nums</code> into <strong>one</strong> of the two arrays.</p>
+<p>Return <em>the <strong>minimum</strong> possible absolute difference</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="example-1" src="https://assets.leetcode.com/uploads/2021/10/02/ex1.png" style="width: 240px; height: 106px;"/>
+<pre><strong>Input:</strong> nums = [3,9,7,3]
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> One optimal partition is: [3,9] and [7,3].
+The absolute difference between the sums of the arrays is abs((3 + 9) - (7 + 3)) = 2.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [-36,36]
+<strong>Output:</strong> 72
+<strong>Explanation:</strong> One optimal partition is: [-36] and [36].
+The absolute difference between the sums of the arrays is abs((-36) - (36)) = 72.
+</pre>
+<p><strong>Example 3:</strong></p>
+<img alt="example-3" src="https://assets.leetcode.com/uploads/2021/10/02/ex3.png" style="width: 316px; height: 106px;"/>
+<pre><strong>Input:</strong> nums = [2,-1,0,4,-2,-9]
+<strong>Output:</strong> 0
+<strong>Explanation:</strong> One optimal partition is: [2,4,-9] and [-1,0,-2].
+The absolute difference between the sums of the arrays is abs((2 + 4 + -9) - (-1 + 0 + -2)) = 0.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 15</code></li>
+<li><code>nums.length == 2 * n</code></li>
+<li><code>-10<sup>7</sup> &lt;= nums[i] &lt;= 10<sup>7</sup></code></li>
+</ul>
 </div></div><br><br><hr><br>
