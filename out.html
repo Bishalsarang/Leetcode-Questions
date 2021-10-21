@@ -47478,4 +47478,334 @@ The absolute difference between the sums of the arrays is abs((2 + 4 + -9) - (-1
 <li><code>nums.length == 2 * n</code></li>
 <li><code>-10<sup>7</sup> &lt;= nums[i] &lt;= 10<sup>7</sup></code></li>
 </ul>
+</div></div><br><br><hr><br><style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>***********************************************************<div id="title">2009. Minimum Number of Operations to Make Array Continuous</div>
+***********************************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given an integer array <code>nums</code>. In one operation, you can replace <strong>any</strong> element in <code>nums</code> with <strong>any</strong> integer.</p>
+<p><code>nums</code> is considered <strong>continuous</strong> if both of the following conditions are fulfilled:</p>
+<ul>
+<li>All elements in <code>nums</code> are <strong>unique</strong>.</li>
+<li>The difference between the <strong>maximum</strong> element and the <strong>minimum</strong> element in <code>nums</code> equals <code>nums.length - 1</code>.</li>
+</ul>
+<p>For example, <code>nums = [4, 2, 5, 3]</code> is <strong>continuous</strong>, but <code>nums = [1, 2, 3, 5, 6]</code> is <strong>not continuous</strong>.</p>
+<p>Return <em>the <strong>minimum</strong> number of operations to make </em><code>nums</code><em> </em><strong><em>continuous</em></strong>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [4,2,5,3]
+<strong>Output:</strong> 0
+<strong>Explanation:</strong> nums is already continuous.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [1,2,3,5,6]
+<strong>Output:</strong> 1
+<strong>Explanation:</strong> One possible solution is to change the last element to 4.
+The resulting array is [1,2,3,5,4], which is continuous.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> nums = [1,10,100,1000]
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> One possible solution is to:
+- Change the second element to 2.
+- Change the third element to 3.
+- Change the fourth element to 4.
+The resulting array is [1,2,3,4], which is continuous.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>******************************************<div id="title">2014. Longest Subsequence Repeated k Times</div>
+******************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a string <code>s</code> of length <code>n</code>, and an integer <code>k</code>. You are tasked to find the <strong>longest subsequence repeated</strong> <code>k</code> times in string <code>s</code>.</p>
+<p>A <strong>subsequence</strong> is a string that can be derived from another string by deleting some or no characters without changing the order of the remaining characters.</p>
+<p>A subsequence <code>seq</code> is <strong>repeated</strong> <code>k</code> times in the string <code>s</code> if <code>seq * k</code> is a subsequence of <code>s</code>, where <code>seq * k</code> represents a string constructed by concatenating <code>seq</code> <code>k</code> times.</p>
+<ul>
+<li>For example, <code>"bba"</code> is repeated <code>2</code> times in the string <code>"bababcba"</code>, because the string <code>"bbabba"</code>, constructed by concatenating <code>"bba"</code> <code>2</code> times, is a subsequence of the string <code>"<strong><u>b</u></strong>a<strong><u>bab</u></strong>c<strong><u>ba</u></strong>"</code>.</li>
+</ul>
+<p>Return <em>the <strong>longest subsequence repeated</strong> </em><code>k</code><em> times in string </em><code>s</code><em>. If multiple such subsequences are found, return the <strong>lexicographically largest</strong> one. If there is no such subsequence, return an <strong>empty</strong> string</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="example 1" src="https://assets.leetcode.com/uploads/2021/08/30/longest-subsequence-repeat-k-times.png" style="width: 457px; height: 99px;"/>
+<pre><strong>Input:</strong> s = "letsleetcode", k = 2
+<strong>Output:</strong> "let"
+<strong>Explanation:</strong> There are two longest subsequences repeated 2 times: "let" and "ete".
+"let" is the lexicographically largest one.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "bb", k = 2
+<strong>Output:</strong> "b"
+<strong>Explanation:</strong> The longest subsequence repeated 2 times is "b".
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> s = "ab", k = 2
+<strong>Output:</strong> ""
+<strong>Explanation:</strong> There is no subsequence repeated 2 times. Empty string is returned.
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> s = "bbabbabbbbabaababab", k = 3
+<strong>Output:</strong> "bbbb"
+<strong>Explanation:</strong> The longest subsequence "bbbb" is repeated 3 times in "<u>bb</u>a<u>bb</u>a<u>bbbb</u>a<u>b</u>aa<u>b</u>a<u>b</u>a<u>b</u>".
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == s.length</code></li>
+<li><code>2 &lt;= n, k &lt;= 2000</code></li>
+<li><code>2 &lt;= n &lt; k * 8</code></li>
+<li><code>s</code> consists of lowercase English letters.</li>
+</ul>
+</div></div><br><br><hr><br>***************************************************<div id="title">2019. The Score of Students Solving Math Expression</div>
+***************************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a string <code>s</code> that contains digits <code>0-9</code>, addition symbols <code>'+'</code>, and multiplication symbols <code>'*'</code> <strong>only</strong>, representing a <strong>valid</strong> math expression of <strong>single digit numbers</strong> (e.g., <code>3+5*2</code>). This expression was given to <code>n</code> elementary school students. The students were instructed to get the answer of the expression by following this <strong>order of operations</strong>:</p>
+<ol>
+<li>Compute <strong>multiplication</strong>, reading from <strong>left to right</strong>; Then,</li>
+<li>Compute <strong>addition</strong>, reading from <strong>left to right</strong>.</li>
+</ol>
+<p>You are given an integer array <code>answers</code> of length <code>n</code>, which are the submitted answers of the students in no particular order. You are asked to grade the <code>answers</code>, by following these <strong>rules</strong>:</p>
+<ul>
+<li>If an answer <strong>equals</strong> the correct answer of the expression, this student will be rewarded <code>5</code> points;</li>
+<li>Otherwise, if the answer <strong>could be interpreted</strong> as if the student applied the operators <strong>in the wrong order</strong> but had <strong>correct arithmetic</strong>, this student will be rewarded <code>2</code> points;</li>
+<li>Otherwise, this student will be rewarded <code>0</code> points.</li>
+</ul>
+<p>Return <em>the sum of the points of the students</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/09/17/student_solving_math.png" style="width: 678px; height: 109px;"/>
+<pre><strong>Input:</strong> s = "7+3*1*2", answers = [20,13,42]
+<strong>Output:</strong> 7
+<strong>Explanation:</strong> As illustrated above, the correct answer of the expression is 13, therefore one student is rewarded 5 points: [20,<u><strong>13</strong></u>,42]
+A student might have applied the operators in this wrong order: ((7+3)*1)*2 = 20. Therefore one student is rewarded 2 points: [<u><strong>20</strong></u>,13,42]
+The points for the students are: [2,5,0]. The sum of the points is 2+5+0=7.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "3+5*2", answers = [13,0,10,13,13,16,16]
+<strong>Output:</strong> 19
+<strong>Explanation:</strong> The correct answer of the expression is 13, therefore three students are rewarded 5 points each: [<strong><u>13</u></strong>,0,10,<strong><u>13</u></strong>,<strong><u>13</u></strong>,16,16]
+A student might have applied the operators in this wrong order: ((3+5)*2 = 16. Therefore two students are rewarded 2 points: [13,0,10,13,13,<strong><u>16</u></strong>,<strong><u>16</u></strong>]
+The points for the students are: [5,0,0,5,5,2,2]. The sum of the points is 5+0+0+5+5+2+2=19.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> s = "6+0*1", answers = [12,9,6,4,8,6]
+<strong>Output:</strong> 10
+<strong>Explanation:</strong> The correct answer of the expression is 6.
+If a student had incorrectly done (6+0)*1, the answer would also be 6.
+By the rules of grading, the students will still be rewarded 5 points (as they got the correct answer), not 2 points.
+The points for the students are: [0,0,5,0,0,5]. The sum of the points is 10.
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> s = "1+2*3+4", answers = [13,21,11,15]
+<strong>Output:</strong> 11
+<strong>Explanation:</strong> The correct answer of the expression is 11.
+Every other student was rewarded 2 points because they could have applied the operators as follows:
+- ((1+2)*3)+4 = 13
+- (1+2)*(3+4) = 21
+- 1+(2*(3+4)) = 15
+The points for the students are: [2,2,5,2]. The sum of the points is 11.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>3 &lt;= s.length &lt;= 31</code></li>
+<li><code>s</code> represents a valid expression that contains only digits <code>0-9</code>, <code>'+'</code>, and <code>'*'</code> only.</li>
+<li>All the integer operands in the expression are in the <strong>inclusive</strong> range <code>[0, 9]</code>.</li>
+<li><code>1 &lt;=</code> The count of all operators (<code>'+'</code> and <code>'*'</code>) in the math expression <code>&lt;= 15</code></li>
+<li>Test data are generated such that the correct answer of the expression is in the range of <code>[0, 1000]</code>.</li>
+<li><code>n == answers.length</code></li>
+<li><code>1 &lt;= n &lt;= 10<sup>4</sup></code></li>
+<li><code>0 &lt;= answers[i] &lt;= 1000</code></li>
+</ul>
+</div></div><br><br><hr><br>**************************************************<div id="title">2025. Maximum Number of Ways to Partition an Array</div>
+**************************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code> of length <code>n</code>. The number of ways to <strong>partition</strong> <code>nums</code> is the number of <code>pivot</code> indices that satisfy both conditions:</p>
+<ul>
+<li><code>1 &lt;= pivot &lt; n</code></li>
+<li><code>nums[0] + nums[1] + ... + nums[pivot - 1] == nums[pivot] + nums[pivot + 1] + ... + nums[n - 1]</code></li>
+</ul>
+<p>You are also given an integer <code>k</code>. You can choose to change the value of <strong>one</strong> element of <code>nums</code> to <code>k</code>, or to leave the array <strong>unchanged</strong>.</p>
+<p>Return <em>the <strong>maximum</strong> possible number of ways to <strong>partition</strong> </em><code>nums</code><em> to satisfy both conditions after changing <strong>at most</strong> one element</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [2,-1,2], k = 3
+<strong>Output:</strong> 1
+<strong>Explanation:</strong> One optimal approach is to change nums[0] to k. The array becomes [<strong><u>3</u></strong>,-1,2].
+There is one way to partition the array:
+- For pivot = 2, we have the partition [3,-1 | 2]: 3 + -1 == 2.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [0,0,0], k = 1
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> The optimal approach is to leave the array unchanged.
+There are two ways to partition the array:
+- For pivot = 1, we have the partition [0 | 0,0]: 0 == 0 + 0.
+- For pivot = 2, we have the partition [0,0 | 0]: 0 + 0 == 0.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> nums = [22,4,-25,-20,-15,15,-16,7,19,-10,0,-13,-14], k = -33
+<strong>Output:</strong> 4
+<strong>Explanation:</strong> One optimal approach is to change nums[2] to k. The array becomes [22,4,<u><strong>-33</strong></u>,-20,-15,15,-16,7,19,-10,0,-13,-14].
+There are four ways to partition the array.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == nums.length</code></li>
+<li><code>2 &lt;= n &lt;= 10<sup>5</sup></code></li>
+<li><code>-10<sup>5</sup> &lt;= k, nums[i] &lt;= 10<sup>5</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>****************************************************************<div id="title">2030. Smallest K-Length Subsequence With Occurrences of a Letter</div>
+****************************************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a string <code>s</code>, an integer <code>k</code>, a letter <code>letter</code>, and an integer <code>repetition</code>.</p>
+<p>Return <em>the <strong>lexicographically smallest</strong> subsequence of</em> <code>s</code><em> of length</em> <code>k</code> <em>that has the letter</em> <code>letter</code> <em>appear <strong>at least</strong></em> <code>repetition</code> <em>times</em>. The test cases are generated so that the <code>letter</code> appears in <code>s</code> <strong>at least</strong> <code>repetition</code> times.</p>
+<p>A <strong>subsequence</strong> is a string that can be derived from another string by deleting some or no characters without changing the order of the remaining characters.</p>
+<p>A string <code>a</code> is <strong>lexicographically smaller</strong> than a string <code>b</code> if in the first position where <code>a</code> and <code>b</code> differ, string <code>a</code> has a letter that appears earlier in the alphabet than the corresponding letter in <code>b</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "leet", k = 3, letter = "e", repetition = 1
+<strong>Output:</strong> "eet"
+<strong>Explanation:</strong> There are four subsequences of length 3 that have the letter 'e' appear at least 1 time:
+- "lee" (from "<strong><u>lee</u></strong>t")
+- "let" (from "<strong><u>le</u></strong>e<u><strong>t</strong></u>")
+- "let" (from "<u><strong>l</strong></u>e<u><strong>et</strong></u>")
+- "eet" (from "l<u><strong>eet</strong></u>")
+The lexicographically smallest subsequence among them is "eet".
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="example-2" src="https://assets.leetcode.com/uploads/2021/09/13/smallest-k-length-subsequence.png" style="width: 339px; height: 67px;"/>
+<pre><strong>Input:</strong> s = "leetcode", k = 4, letter = "e", repetition = 2
+<strong>Output:</strong> "ecde"
+<strong>Explanation:</strong> "ecde" is the lexicographically smallest subsequence of length 4 that has the letter "e" appear at least 2 times.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> s = "bb", k = 2, letter = "b", repetition = 2
+<strong>Output:</strong> "bb"
+<strong>Explanation:</strong> "bb" is the only subsequence of length 2 that has the letter "b" appear at least 2 times.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= repetition &lt;= k &lt;= s.length &lt;= 5 * 10<sup>4</sup></code></li>
+<li><code>s</code> consists of lowercase English letters.</li>
+<li><code>letter</code> is a lowercase English letter, and appears in <code>s</code> at least <code>repetition</code> times.</li>
+</ul>
+</div></div><br><br><hr><br>****************************************************************<div id="title">2035. Partition Array Into Two Arrays to Minimize Sum Difference</div>
+****************************************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given an integer array <code>nums</code> of <code>2 * n</code> integers. You need to partition <code>nums</code> into <strong>two</strong> arrays of length <code>n</code> to <strong>minimize the absolute difference</strong> of the <strong>sums</strong> of the arrays. To partition <code>nums</code>, put each element of <code>nums</code> into <strong>one</strong> of the two arrays.</p>
+<p>Return <em>the <strong>minimum</strong> possible absolute difference</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="example-1" src="https://assets.leetcode.com/uploads/2021/10/02/ex1.png" style="width: 240px; height: 106px;"/>
+<pre><strong>Input:</strong> nums = [3,9,7,3]
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> One optimal partition is: [3,9] and [7,3].
+The absolute difference between the sums of the arrays is abs((3 + 9) - (7 + 3)) = 2.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [-36,36]
+<strong>Output:</strong> 72
+<strong>Explanation:</strong> One optimal partition is: [-36] and [36].
+The absolute difference between the sums of the arrays is abs((-36) - (36)) = 72.
+</pre>
+<p><strong>Example 3:</strong></p>
+<img alt="example-3" src="https://assets.leetcode.com/uploads/2021/10/02/ex3.png" style="width: 316px; height: 106px;"/>
+<pre><strong>Input:</strong> nums = [2,-1,0,4,-2,-9]
+<strong>Output:</strong> 0
+<strong>Explanation:</strong> One optimal partition is: [2,4,-9] and [-1,0,-2].
+The absolute difference between the sums of the arrays is abs((2 + 4 + -9) - (-1 + 0 + -2)) = 0.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 15</code></li>
+<li><code>nums.length == 2 * n</code></li>
+<li><code>-10<sup>7</sup> &lt;= nums[i] &lt;= 10<sup>7</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>***********************************************<div id="title">2040. Kth Smallest Product of Two Sorted Arrays</div>
+***********************************************<div class="content__u3I1 question-content__JfgR"><div>Given two <strong>sorted 0-indexed</strong> integer arrays <code>nums1</code> and <code>nums2</code> as well as an integer <code>k</code>, return <em>the </em><code>k<sup>th</sup></code><em> (<strong>1-based</strong>) smallest product of </em><code>nums1[i] * nums2[j]</code><em> where </em><code>0 &lt;= i &lt; nums1.length</code><em> and </em><code>0 &lt;= j &lt; nums2.length</code>.
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums1 = [2,5], nums2 = [3,4], k = 2
+<strong>Output:</strong> 8
+<strong>Explanation:</strong> The 2 smallest products are:
+- nums1[0] * nums2[0] = 2 * 3 = 6
+- nums1[0] * nums2[1] = 2 * 4 = 8
+The 2<sup>nd</sup> smallest product is 8.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums1 = [-4,-2,0,3], nums2 = [2,4], k = 6
+<strong>Output:</strong> 0
+<strong>Explanation:</strong> The 6 smallest products are:
+- nums1[0] * nums2[1] = (-4) * 4 = -16
+- nums1[0] * nums2[0] = (-4) * 2 = -8
+- nums1[1] * nums2[1] = (-2) * 4 = -8
+- nums1[1] * nums2[0] = (-2) * 2 = -4
+- nums1[2] * nums2[0] = 0 * 2 = 0
+- nums1[2] * nums2[1] = 0 * 4 = 0
+The 6<sup>th</sup> smallest product is 0.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> nums1 = [-2,-1,0,1,2], nums2 = [-3,-1,2,4,5], k = 3
+<strong>Output:</strong> -6
+<strong>Explanation:</strong> The 3 smallest products are:
+- nums1[0] * nums2[4] = (-2) * 5 = -10
+- nums1[0] * nums2[3] = (-2) * 4 = -8
+- nums1[4] * nums2[0] = 2 * (-3) = -6
+The 3<sup>rd</sup> smallest product is -6.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums1.length, nums2.length &lt;= 5 * 10<sup>4</sup></code></li>
+<li><code>-10<sup>5</sup> &lt;= nums1[i], nums2[j] &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= k &lt;= nums1.length * nums2.length</code></li>
+<li><code>nums1</code> and <code>nums2</code> are sorted.</li>
+</ul>
+</div></div><br><br><hr><br>**********************************************<div id="title">2045. Second Minimum Time to Reach Destination</div>
+**********************************************<div class="content__u3I1 question-content__JfgR"><div><p>A city is represented as a <strong>bi-directional connected</strong> graph with <code>n</code> vertices where each vertex is labeled from <code>1</code> to <code>n</code> (<strong>inclusive</strong>). The edges in the graph are represented as a 2D integer array <code>edges</code>, where each <code>edges[i] = [u<sub>i</sub>, v<sub>i</sub>]</code> denotes a bi-directional edge between vertex <code>u<sub>i</sub></code> and vertex <code>v<sub>i</sub></code>. Every vertex pair is connected by <strong>at most one</strong> edge, and no vertex has an edge to itself. The time taken to traverse any edge is <code>time</code> minutes.</p>
+<p>Each vertex has a traffic signal which changes its color from <strong>green</strong> to <strong>red</strong> and vice versa every <code>change</code> minutes. All signals change <strong>at the same time</strong>. You can enter a vertex at <strong>any time</strong>, but can leave a vertex <strong>only when the signal is green</strong>. You <strong>cannot wait </strong>at a vertex if the signal is <strong>green</strong>.</p>
+<p>The <strong>second minimum value</strong> is defined as the smallest value<strong> strictly larger </strong>than the minimum value.</p>
+<ul>
+<li>For example the second minimum value of <code>[2, 3, 4]</code> is <code>3</code>, and the second minimum value of <code>[2, 2, 4]</code> is <code>4</code>.</li>
+</ul>
+<p>Given <code>n</code>, <code>edges</code>, <code>time</code>, and <code>change</code>, return <em>the <strong>second minimum time</strong> it will take to go from vertex </em><code>1</code><em> to vertex </em><code>n</code>.</p>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>You can go through any vertex <strong>any</strong> number of times, <strong>including</strong> <code>1</code> and <code>n</code>.</li>
+<li>You can assume that when the journey <strong>starts</strong>, all signals have just turned <strong>green</strong>.</li>
+</ul>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/09/29/e1.png" style="width: 200px; height: 250px;"/>        <img alt="" src="https://assets.leetcode.com/uploads/2021/09/29/e2.png" style="width: 200px; height: 250px;"/>
+<pre><strong>Input:</strong> n = 5, edges = [[1,2],[1,3],[1,4],[3,4],[4,5]], time = 3, change = 5
+<strong>Output:</strong> 13
+<strong>Explanation:</strong>
+The figure on the left shows the given graph.
+The blue path in the figure on the right is the minimum time path.
+The time taken is:
+- Start at 1, time elapsed=0
+- 1 -&gt; 4: 3 minutes, time elapsed=3
+- 4 -&gt; 5: 3 minutes, time elapsed=6
+Hence the minimum time needed is 6 minutes.
+
+The red path shows the path to get the second minimum time.
+- Start at 1, time elapsed=0
+- 1 -&gt; 3: 3 minutes, time elapsed=3
+- 3 -&gt; 4: 3 minutes, time elapsed=6
+- Wait at 4 for 4 minutes, time elapsed=10
+- 4 -&gt; 5: 3 minutes, time elapsed=13
+Hence the second minimum time is 13 minutes.      
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/09/29/eg2.png" style="width: 225px; height: 50px;"/>
+<pre><strong>Input:</strong> n = 2, edges = [[1,2]], time = 3, change = 2
+<strong>Output:</strong> 11
+<strong>Explanation:</strong>
+The minimum time path is 1 -&gt; 2 with time = 3 minutes.
+The second minimum time path is 1 -&gt; 2 -&gt; 1 -&gt; 2 with time = 11 minutes.</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>2 &lt;= n &lt;= 10<sup>4</sup></code></li>
+<li><code>n - 1 &lt;= edges.length &lt;= min(2 * 10<sup>4</sup>, n * (n - 1) / 2)</code></li>
+<li><code>edges[i].length == 2</code></li>
+<li><code>1 &lt;= u<sub>i</sub>, v<sub>i</sub> &lt;= n</code></li>
+<li><code>u<sub>i</sub> != v<sub>i</sub></code></li>
+<li>There are no duplicate edges.</li>
+<li>Each vertex can be reached directly or indirectly from every other vertex.</li>
+<li><code>1 &lt;= time, change &lt;= 10<sup>3</sup></code></li>
+</ul>
 </div></div><br><br><hr><br>
