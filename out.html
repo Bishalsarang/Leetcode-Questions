@@ -48360,4 +48360,243 @@ Of the 288 move combinations, 281 are valid.
 <li><code>s1</code> and <code>s2</code> consist of digits <code>1-9</code> (inclusive), and lowercase English letters only.</li>
 <li>The number of consecutive digits in <code>s1</code> and <code>s2</code> does not exceed <code>3</code>.</li>
 </ul>
+</div></div><br><br><hr><br><style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>**************************<div id="title">2050. Parallel Courses III</div>
+**************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given an integer <code>n</code>, which indicates that there are <code>n</code> courses labeled from <code>1</code> to <code>n</code>. You are also given a 2D integer array <code>relations</code> where <code>relations[j] = [prevCourse<sub>j</sub>, nextCourse<sub>j</sub>]</code> denotes that course <code>prevCourse<sub>j</sub></code> has to be completed <strong>before</strong> course <code>nextCourse<sub>j</sub></code> (prerequisite relationship). Furthermore, you are given a <strong>0-indexed</strong> integer array <code>time</code> where <code>time[i]</code> denotes how many <strong>months</strong> it takes to complete the <code>(i+1)<sup>th</sup></code> course.</p>
+<p>You must find the <strong>minimum</strong> number of months needed to complete all the courses following these rules:</p>
+<ul>
+<li>You may start taking a course at <strong>any time</strong> if the prerequisites are met.</li>
+<li><strong>Any number of courses</strong> can be taken at the <strong>same time</strong>.</li>
+</ul>
+<p>Return <em>the <strong>minimum</strong> number of months needed to complete all the courses</em>.</p>
+<p><strong>Note:</strong> The test cases are generated such that it is possible to complete every course (i.e., the graph is a directed acyclic graph).</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<strong><img alt="" src="https://assets.leetcode.com/uploads/2021/10/07/ex1.png" style="width: 392px; height: 232px;"/></strong>
+<pre><strong>Input:</strong> n = 3, relations = [[1,3],[2,3]], time = [3,2,5]
+<strong>Output:</strong> 8
+<strong>Explanation:</strong> The figure above represents the given graph and the time required to complete each course. 
+We start course 1 and course 2 simultaneously at month 0.
+Course 1 takes 3 months and course 2 takes 2 months to complete respectively.
+Thus, the earliest time we can start course 3 is at month 3, and the total time required is 3 + 5 = 8 months.
+</pre>
+<p><strong>Example 2:</strong></p>
+<strong><img alt="" src="https://assets.leetcode.com/uploads/2021/10/07/ex2.png" style="width: 500px; height: 365px;"/></strong>
+<pre><strong>Input:</strong> n = 5, relations = [[1,5],[2,5],[3,5],[3,4],[4,5]], time = [1,2,3,4,5]
+<strong>Output:</strong> 12
+<strong>Explanation:</strong> The figure above represents the given graph and the time required to complete each course.
+You can start courses 1, 2, and 3 at month 0.
+You can complete them after 1, 2, and 3 months respectively.
+Course 4 can be taken only after course 3 is completed, i.e., after 3 months. It is completed after 3 + 4 = 7 months.
+Course 5 can be taken only after courses 1, 2, 3, and 4 have been completed, i.e., after max(1,2,3,7) = 7 months.
+Thus, the minimum time needed to complete all the courses is 7 + 5 = 12 months.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 5 * 10<sup>4</sup></code></li>
+<li><code>0 &lt;= relations.length &lt;= min(n * (n - 1) / 2, 5 * 10<sup>4</sup>)</code></li>
+<li><code>relations[j].length == 2</code></li>
+<li><code>1 &lt;= prevCourse<sub>j</sub>, nextCourse<sub>j</sub> &lt;= n</code></li>
+<li><code>prevCourse<sub>j</sub> != nextCourse<sub>j</sub></code></li>
+<li>All the pairs <code>[prevCourse<sub>j</sub>, nextCourse<sub>j</sub>]</code> are <strong>unique</strong>.</li>
+<li><code>time.length == n</code></li>
+<li><code>1 &lt;= time[i] &lt;= 10<sup>4</sup></code></li>
+<li>The given graph is a directed acyclic graph.</li>
+</ul>
+</div></div><br><br><hr><br>*****************************************************<div id="title">2056. Number of Valid Move Combinations On Chessboard</div>
+*****************************************************<div class="content__u3I1 question-content__JfgR"><div><p>There is an <code>8 x 8</code> chessboard containing <code>n</code> pieces (rooks, queens, or bishops). You are given a string array <code>pieces</code> of length <code>n</code>, where <code>pieces[i]</code> describes the type (rook, queen, or bishop) of the <code>i<sup>th</sup></code> piece. In addition, you are given a 2D integer array <code>positions</code> also of length <code>n</code>, where <code>positions[i] = [r<sub>i</sub>, c<sub>i</sub>]</code> indicates that the <code>i<sup>th</sup></code> piece is currently at the <strong>1-based</strong> coordinate <code>(r<sub>i</sub>, c<sub>i</sub>)</code> on the chessboard.</p>
+<p>When making a <strong>move</strong> for a piece, you choose a <strong>destination</strong> square that the piece will travel toward and stop on.</p>
+<ul>
+<li>A rook can only travel <strong>horizontally or vertically</strong> from <code>(r, c)</code> to the direction of <code>(r+1, c)</code>, <code>(r-1, c)</code>, <code>(r, c+1)</code>, or <code>(r, c-1)</code>.</li>
+<li>A queen can only travel <strong>horizontally, vertically, or diagonally</strong> from <code>(r, c)</code> to the direction of <code>(r+1, c)</code>, <code>(r-1, c)</code>, <code>(r, c+1)</code>, <code>(r, c-1)</code>, <code>(r+1, c+1)</code>, <code>(r+1, c-1)</code>, <code>(r-1, c+1)</code>, <code>(r-1, c-1)</code>.</li>
+<li>A bishop can only travel <strong>diagonally</strong> from <code>(r, c)</code> to the direction of <code>(r+1, c+1)</code>, <code>(r+1, c-1)</code>, <code>(r-1, c+1)</code>, <code>(r-1, c-1)</code>.</li>
+</ul>
+<p>You must make a <strong>move</strong> for every piece on the board simultaneously. A <strong>move combination</strong> consists of all the <strong>moves</strong> performed on all the given pieces. Every second, each piece will instantaneously travel <strong>one square</strong> towards their destination if they are not already at it. All pieces start traveling at the <code>0<sup>th</sup></code> second. A move combination is <strong>invalid</strong> if, at a given time, <strong>two or more</strong> pieces occupy the same square.</p>
+<p>Return <em>the number of <strong>valid</strong> move combinations</em>​​​​​.</p>
+<p><strong>Notes:</strong></p>
+<ul>
+<li><strong>No two pieces</strong> will start in the<strong> same</strong> square.</li>
+<li>You may choose the square a piece is already on as its <strong>destination</strong>.</li>
+<li>If two pieces are <strong>directly adjacent</strong> to each other, it is valid for them to <strong>move past each other</strong> and swap positions in one second.</li>
+</ul>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/09/23/a1.png" style="width: 215px; height: 215px;"/>
+<pre><strong>Input:</strong> pieces = ["rook"], positions = [[1,1]]
+<strong>Output:</strong> 15
+<strong>Explanation:</strong> The image above shows the possible squares the piece can move to.
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/09/23/a2.png" style="width: 215px; height: 215px;"/>
+<pre><strong>Input:</strong> pieces = ["queen"], positions = [[1,1]]
+<strong>Output:</strong> 22
+<strong>Explanation:</strong> The image above shows the possible squares the piece can move to.
+</pre>
+<p><strong>Example 3:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/09/23/a3.png" style="width: 214px; height: 215px;"/>
+<pre><strong>Input:</strong> pieces = ["bishop"], positions = [[4,3]]
+<strong>Output:</strong> 12
+<strong>Explanation:</strong> The image above shows the possible squares the piece can move to.
+</pre>
+<p><strong>Example 4:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/09/23/a4.png" style="width: 216px; height: 219px;"/>
+<pre><strong>Input:</strong> pieces = ["rook","rook"], positions = [[1,1],[8,8]]
+<strong>Output:</strong> 223
+<strong>Explanation:</strong> There are 15 moves for each rook which results in 15 * 15 = 225 move combinations.
+However, there are two invalid move combinations:
+- Move both rooks to (8, 1), where they collide.
+- Move both rooks to (1, 8), where they collide.
+Thus there are 225 - 2 = 223 valid move combinations.
+Note that there are two valid move combinations that would result in one rook at (1, 8) and the other at (8, 1).
+Even though the board state is the same, these two move combinations are considered different since the moves themselves are different.
+</pre>
+<p><strong>Example 5:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/09/23/a5.png" style="width: 214px; height: 213px;"/>
+<pre><strong>Input:</strong> pieces = ["queen","bishop"], positions = [[5,7],[3,4]]
+<strong>Output:</strong> 281
+<strong>Explanation:</strong> There are 12 * 24 = 288 move combinations.
+However, there are several invalid move combinations:
+- If the queen stops at (6, 7), it blocks the bishop from moving to (6, 7) or (7, 8).
+- If the queen stops at (5, 6), it blocks the bishop from moving to (5, 6), (6, 7), or (7, 8).
+- If the bishop stops at (5, 2), it blocks the queen from moving to (5, 2) or (5, 1).
+Of the 288 move combinations, 281 are valid.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == pieces.length </code></li>
+<li><code>n == positions.length</code></li>
+<li><code>1 &lt;= n &lt;= 4</code></li>
+<li><code>pieces</code> only contains the strings <code>"rook"</code>, <code>"queen"</code>, and <code>"bishop"</code>.</li>
+<li>There will be at most one queen on the chessboard.</li>
+<li><code>1 &lt;= x<sub>i</sub>, y<sub>i</sub> &lt;= 8</code></li>
+<li>Each <code>positions[i]</code> is distinct.</li>
+</ul>
+</div></div><br><br><hr><br>******************************************************************<div id="title">2060. Check if an Original String Exists Given Two Encoded Strings</div>
+******************************************************************<div class="content__u3I1 question-content__JfgR"><div><p>An original string, consisting of lowercase English letters, can be encoded by the following steps:</p>
+<ul>
+<li>Arbitrarily <strong>split</strong> it into a <strong>sequence</strong> of some number of <strong>non-empty</strong> substrings.</li>
+<li>Arbitrarily choose some elements (possibly none) of the sequence, and <strong>replace</strong> each with <strong>its length</strong> (as a numeric string).</li>
+<li><strong>Concatenate</strong> the sequence as the encoded string.</li>
+</ul>
+<p>For example, <strong>one way</strong> to encode an original string <code>"abcdefghijklmnop"</code> might be:</p>
+<ul>
+<li>Split it as a sequence: <code>["ab", "cdefghijklmn", "o", "p"]</code>.</li>
+<li>Choose the second and third elements to be replaced by their lengths, respectively. The sequence becomes <code>["ab", "12", "1", "p"]</code>.</li>
+<li>Concatenate the elements of the sequence to get the encoded string: <code>"ab121p"</code>.</li>
+</ul>
+<p>Given two encoded strings <code>s1</code> and <code>s2</code>, consisting of lowercase English letters and digits <code>1-9</code> (inclusive), return <code>true</code><em> if there exists an original string that could be encoded as <strong>both</strong> </em><code>s1</code><em> and </em><code>s2</code><em>. Otherwise, return </em><code>false</code>.</p>
+<p><strong>Note</strong>: The test cases are generated such that the number of consecutive digits in <code>s1</code> and <code>s2</code> does not exceed <code>3</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s1 = "internationalization", s2 = "i18n"
+<strong>Output:</strong> true
+<strong>Explanation:</strong> It is possible that "internationalization" was the original string.
+- "internationalization" 
+  -&gt; Split:       ["internationalization"]
+  -&gt; Do not replace any element
+  -&gt; Concatenate:  "internationalization", which is s1.
+- "internationalization"
+  -&gt; Split:       ["i", "nternationalizatio", "n"]
+  -&gt; Replace:     ["i", "18",                 "n"]
+  -&gt; Concatenate:  "i18n", which is s2
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s1 = "l123e", s2 = "44"
+<strong>Output:</strong> true
+<strong>Explanation:</strong> It is possible that "leetcode" was the original string.
+- "leetcode" 
+  -&gt; Split:      ["l", "e", "et", "cod", "e"]
+  -&gt; Replace:    ["l", "1", "2",  "3",   "e"]
+  -&gt; Concatenate: "l123e", which is s1.
+- "leetcode" 
+  -&gt; Split:      ["leet", "code"]
+  -&gt; Replace:    ["4",    "4"]
+  -&gt; Concatenate: "44", which is s2.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> s1 = "a5b", s2 = "c5b"
+<strong>Output:</strong> false
+<strong>Explanation:</strong> It is impossible.
+- The original string encoded as s1 must start with the letter 'a'.
+- The original string encoded as s2 must start with the letter 'c'.
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> s1 = "112s", s2 = "g841"
+<strong>Output:</strong> true
+<strong>Explanation:</strong> It is possible that "gaaaaaaaaaaaas" was the original string
+- "gaaaaaaaaaaaas"
+  -&gt; Split:      ["g", "aaaaaaaaaaaa", "s"]
+  -&gt; Replace:    ["1", "12",           "s"]
+  -&gt; Concatenate: "112s", which is s1.
+- "gaaaaaaaaaaaas"
+  -&gt; Split:      ["g", "aaaaaaaa", "aaaa", "s"]
+  -&gt; Replace:    ["g", "8",        "4",    "1"]
+  -&gt; Concatenate: "g841", which is s2.
+</pre>
+<p><strong>Example 5:</strong></p>
+<pre><strong>Input:</strong> s1 = "ab", s2 = "a2"
+<strong>Output:</strong> false
+<strong>Explanation:</strong> It is impossible.
+- The original string encoded as s1 has two letters.
+- The original string encoded as s2 has three letters.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s1.length, s2.length &lt;= 40</code></li>
+<li><code>s1</code> and <code>s2</code> consist of digits <code>1-9</code> (inclusive), and lowercase English letters only.</li>
+<li>The number of consecutive digits in <code>s1</code> and <code>s2</code> does not exceed <code>3</code>.</li>
+</ul>
+</div></div><br><br><hr><br>*************************************<div id="title">2065. Maximum Path Quality of a Graph</div>
+*************************************<div class="content__u3I1 question-content__JfgR"><div><p>There is an <strong>undirected</strong> graph with <code>n</code> nodes numbered from <code>0</code> to <code>n - 1</code> (<strong>inclusive</strong>). You are given a <strong>0-indexed</strong> integer array <code>values</code> where <code>values[i]</code> is the <strong>value </strong>of the <code>i<sup>th</sup></code> node. You are also given a <strong>0-indexed</strong> 2D integer array <code>edges</code>, where each <code>edges[j] = [u<sub>j</sub>, v<sub>j</sub>, time<sub>j</sub>]</code> indicates that there is an undirected edge between the nodes <code>u<sub>j</sub></code> and <code>v<sub>j</sub></code>,<sub> </sub>and it takes <code>time<sub>j</sub></code> seconds to travel between the two nodes. Finally, you are given an integer <code>maxTime</code>.</p>
+<p>A <strong>valid</strong> <strong>path</strong> in the graph is any path that starts at node <code>0</code>, ends at node <code>0</code>, and takes <strong>at most</strong> <code>maxTime</code> seconds to complete. You may visit the same node multiple times. The <strong>quality</strong> of a valid path is the <strong>sum</strong> of the values of the <strong>unique nodes</strong> visited in the path (each node's value is added <strong>at most once</strong> to the sum).</p>
+<p>Return <em>the <strong>maximum</strong> quality of a valid path</em>.</p>
+<p><strong>Note:</strong> There are <strong>at most four</strong> edges connected to each node.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/10/19/ex1drawio.png" style="width: 269px; height: 170px;"/>
+<pre><strong>Input:</strong> values = [0,32,10,43], edges = [[0,1,10],[1,2,15],[0,3,10]], maxTime = 49
+<strong>Output:</strong> 75
+<strong>Explanation:</strong>
+One possible path is 0 -&gt; 1 -&gt; 0 -&gt; 3 -&gt; 0. The total time taken is 10 + 10 + 10 + 10 = 40 &lt;= 49.
+The nodes visited are 0, 1, and 3, giving a maximal path quality of 0 + 32 + 43 = 75.
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/10/19/ex2drawio.png" style="width: 269px; height: 170px;"/>
+<pre><strong>Input:</strong> values = [5,10,15,20], edges = [[0,1,10],[1,2,10],[0,3,10]], maxTime = 30
+<strong>Output:</strong> 25
+<strong>Explanation:</strong>
+One possible path is 0 -&gt; 3 -&gt; 0. The total time taken is 10 + 10 = 20 &lt;= 30.
+The nodes visited are 0 and 3, giving a maximal path quality of 5 + 20 = 25.
+</pre>
+<p><strong>Example 3:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/10/19/ex31drawio.png" style="width: 236px; height: 170px;"/>
+<pre><strong>Input:</strong> values = [1,2,3,4], edges = [[0,1,10],[1,2,11],[2,3,12],[1,3,13]], maxTime = 50
+<strong>Output:</strong> 7
+<strong>Explanation:</strong>
+One possible path is 0 -&gt; 1 -&gt; 3 -&gt; 1 -&gt; 0. The total time taken is 10 + 13 + 13 + 10 = 46 &lt;= 50.
+The nodes visited are 0, 1, and 3, giving a maximal path quality of 1 + 2 + 4 = 7.</pre>
+<p><strong>Example 4:</strong></p>
+<p><strong><img alt="" src="https://assets.leetcode.com/uploads/2021/10/21/ex4drawio.png" style="width: 270px; height: 71px;"/></strong></p>
+<pre><strong>Input:</strong> values = [0,1,2], edges = [[1,2,10]], maxTime = 10
+<strong>Output:</strong> 0
+<strong>Explanation:</strong> 
+The only path is 0. The total time taken is 0.
+The only node visited is 0, giving a maximal path quality of 0.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == values.length</code></li>
+<li><code>1 &lt;= n &lt;= 1000</code></li>
+<li><code>0 &lt;= values[i] &lt;= 10<sup>8</sup></code></li>
+<li><code>0 &lt;= edges.length &lt;= 2000</code></li>
+<li><code>edges[j].length == 3 </code></li>
+<li><code>0 &lt;= u<sub>j </sub>&lt; v<sub>j</sub> &lt;= n - 1</code></li>
+<li><code>10 &lt;= time<sub>j</sub>, maxTime &lt;= 100</code></li>
+<li>All the pairs <code>[u<sub>j</sub>, v<sub>j</sub>]</code> are <strong>unique</strong>.</li>
+<li>There are <strong>at most four</strong> edges connected to each node.</li>
+<li>The graph may not be connected.</li>
+</ul>
 </div></div><br><br><hr><br>
