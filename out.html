@@ -48599,4 +48599,432 @@ The only node visited is 0, giving a maximal path quality of 0.
 <li>There are <strong>at most four</strong> edges connected to each node.</li>
 <li>The graph may not be connected.</li>
 </ul>
+</div></div><br><br><hr><br><style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>***********************************************<div id="title">2040. Kth Smallest Product of Two Sorted Arrays</div>
+***********************************************<div class="content__u3I1 question-content__JfgR"><div>Given two <strong>sorted 0-indexed</strong> integer arrays <code>nums1</code> and <code>nums2</code> as well as an integer <code>k</code>, return <em>the </em><code>k<sup>th</sup></code><em> (<strong>1-based</strong>) smallest product of </em><code>nums1[i] * nums2[j]</code><em> where </em><code>0 &lt;= i &lt; nums1.length</code><em> and </em><code>0 &lt;= j &lt; nums2.length</code>.
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums1 = [2,5], nums2 = [3,4], k = 2
+<strong>Output:</strong> 8
+<strong>Explanation:</strong> The 2 smallest products are:
+- nums1[0] * nums2[0] = 2 * 3 = 6
+- nums1[0] * nums2[1] = 2 * 4 = 8
+The 2<sup>nd</sup> smallest product is 8.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums1 = [-4,-2,0,3], nums2 = [2,4], k = 6
+<strong>Output:</strong> 0
+<strong>Explanation:</strong> The 6 smallest products are:
+- nums1[0] * nums2[1] = (-4) * 4 = -16
+- nums1[0] * nums2[0] = (-4) * 2 = -8
+- nums1[1] * nums2[1] = (-2) * 4 = -8
+- nums1[1] * nums2[0] = (-2) * 2 = -4
+- nums1[2] * nums2[0] = 0 * 2 = 0
+- nums1[2] * nums2[1] = 0 * 4 = 0
+The 6<sup>th</sup> smallest product is 0.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> nums1 = [-2,-1,0,1,2], nums2 = [-3,-1,2,4,5], k = 3
+<strong>Output:</strong> -6
+<strong>Explanation:</strong> The 3 smallest products are:
+- nums1[0] * nums2[4] = (-2) * 5 = -10
+- nums1[0] * nums2[3] = (-2) * 4 = -8
+- nums1[4] * nums2[0] = 2 * (-3) = -6
+The 3<sup>rd</sup> smallest product is -6.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums1.length, nums2.length &lt;= 5 * 10<sup>4</sup></code></li>
+<li><code>-10<sup>5</sup> &lt;= nums1[i], nums2[j] &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= k &lt;= nums1.length * nums2.length</code></li>
+<li><code>nums1</code> and <code>nums2</code> are sorted.</li>
+</ul>
+</div></div><br><br><hr><br>**********************************************<div id="title">2045. Second Minimum Time to Reach Destination</div>
+**********************************************<div class="content__u3I1 question-content__JfgR"><div><p>A city is represented as a <strong>bi-directional connected</strong> graph with <code>n</code> vertices where each vertex is labeled from <code>1</code> to <code>n</code> (<strong>inclusive</strong>). The edges in the graph are represented as a 2D integer array <code>edges</code>, where each <code>edges[i] = [u<sub>i</sub>, v<sub>i</sub>]</code> denotes a bi-directional edge between vertex <code>u<sub>i</sub></code> and vertex <code>v<sub>i</sub></code>. Every vertex pair is connected by <strong>at most one</strong> edge, and no vertex has an edge to itself. The time taken to traverse any edge is <code>time</code> minutes.</p>
+<p>Each vertex has a traffic signal which changes its color from <strong>green</strong> to <strong>red</strong> and vice versa every <code>change</code> minutes. All signals change <strong>at the same time</strong>. You can enter a vertex at <strong>any time</strong>, but can leave a vertex <strong>only when the signal is green</strong>. You <strong>cannot wait </strong>at a vertex if the signal is <strong>green</strong>.</p>
+<p>The <strong>second minimum value</strong> is defined as the smallest value<strong> strictly larger </strong>than the minimum value.</p>
+<ul>
+<li>For example the second minimum value of <code>[2, 3, 4]</code> is <code>3</code>, and the second minimum value of <code>[2, 2, 4]</code> is <code>4</code>.</li>
+</ul>
+<p>Given <code>n</code>, <code>edges</code>, <code>time</code>, and <code>change</code>, return <em>the <strong>second minimum time</strong> it will take to go from vertex </em><code>1</code><em> to vertex </em><code>n</code>.</p>
+<p><strong>Notes:</strong></p>
+<ul>
+<li>You can go through any vertex <strong>any</strong> number of times, <strong>including</strong> <code>1</code> and <code>n</code>.</li>
+<li>You can assume that when the journey <strong>starts</strong>, all signals have just turned <strong>green</strong>.</li>
+</ul>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/09/29/e1.png" style="width: 200px; height: 250px;"/>        <img alt="" src="https://assets.leetcode.com/uploads/2021/09/29/e2.png" style="width: 200px; height: 250px;"/>
+<pre><strong>Input:</strong> n = 5, edges = [[1,2],[1,3],[1,4],[3,4],[4,5]], time = 3, change = 5
+<strong>Output:</strong> 13
+<strong>Explanation:</strong>
+The figure on the left shows the given graph.
+The blue path in the figure on the right is the minimum time path.
+The time taken is:
+- Start at 1, time elapsed=0
+- 1 -&gt; 4: 3 minutes, time elapsed=3
+- 4 -&gt; 5: 3 minutes, time elapsed=6
+Hence the minimum time needed is 6 minutes.
+
+The red path shows the path to get the second minimum time.
+- Start at 1, time elapsed=0
+- 1 -&gt; 3: 3 minutes, time elapsed=3
+- 3 -&gt; 4: 3 minutes, time elapsed=6
+- Wait at 4 for 4 minutes, time elapsed=10
+- 4 -&gt; 5: 3 minutes, time elapsed=13
+Hence the second minimum time is 13 minutes.      
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/09/29/eg2.png" style="width: 225px; height: 50px;"/>
+<pre><strong>Input:</strong> n = 2, edges = [[1,2]], time = 3, change = 2
+<strong>Output:</strong> 11
+<strong>Explanation:</strong>
+The minimum time path is 1 -&gt; 2 with time = 3 minutes.
+The second minimum time path is 1 -&gt; 2 -&gt; 1 -&gt; 2 with time = 11 minutes.</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>2 &lt;= n &lt;= 10<sup>4</sup></code></li>
+<li><code>n - 1 &lt;= edges.length &lt;= min(2 * 10<sup>4</sup>, n * (n - 1) / 2)</code></li>
+<li><code>edges[i].length == 2</code></li>
+<li><code>1 &lt;= u<sub>i</sub>, v<sub>i</sub> &lt;= n</code></li>
+<li><code>u<sub>i</sub> != v<sub>i</sub></code></li>
+<li>There are no duplicate edges.</li>
+<li>Each vertex can be reached directly or indirectly from every other vertex.</li>
+<li><code>1 &lt;= time, change &lt;= 10<sup>3</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>**************************<div id="title">2050. Parallel Courses III</div>
+**************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given an integer <code>n</code>, which indicates that there are <code>n</code> courses labeled from <code>1</code> to <code>n</code>. You are also given a 2D integer array <code>relations</code> where <code>relations[j] = [prevCourse<sub>j</sub>, nextCourse<sub>j</sub>]</code> denotes that course <code>prevCourse<sub>j</sub></code> has to be completed <strong>before</strong> course <code>nextCourse<sub>j</sub></code> (prerequisite relationship). Furthermore, you are given a <strong>0-indexed</strong> integer array <code>time</code> where <code>time[i]</code> denotes how many <strong>months</strong> it takes to complete the <code>(i+1)<sup>th</sup></code> course.</p>
+<p>You must find the <strong>minimum</strong> number of months needed to complete all the courses following these rules:</p>
+<ul>
+<li>You may start taking a course at <strong>any time</strong> if the prerequisites are met.</li>
+<li><strong>Any number of courses</strong> can be taken at the <strong>same time</strong>.</li>
+</ul>
+<p>Return <em>the <strong>minimum</strong> number of months needed to complete all the courses</em>.</p>
+<p><strong>Note:</strong> The test cases are generated such that it is possible to complete every course (i.e., the graph is a directed acyclic graph).</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<strong><img alt="" src="https://assets.leetcode.com/uploads/2021/10/07/ex1.png" style="width: 392px; height: 232px;"/></strong>
+<pre><strong>Input:</strong> n = 3, relations = [[1,3],[2,3]], time = [3,2,5]
+<strong>Output:</strong> 8
+<strong>Explanation:</strong> The figure above represents the given graph and the time required to complete each course. 
+We start course 1 and course 2 simultaneously at month 0.
+Course 1 takes 3 months and course 2 takes 2 months to complete respectively.
+Thus, the earliest time we can start course 3 is at month 3, and the total time required is 3 + 5 = 8 months.
+</pre>
+<p><strong>Example 2:</strong></p>
+<strong><img alt="" src="https://assets.leetcode.com/uploads/2021/10/07/ex2.png" style="width: 500px; height: 365px;"/></strong>
+<pre><strong>Input:</strong> n = 5, relations = [[1,5],[2,5],[3,5],[3,4],[4,5]], time = [1,2,3,4,5]
+<strong>Output:</strong> 12
+<strong>Explanation:</strong> The figure above represents the given graph and the time required to complete each course.
+You can start courses 1, 2, and 3 at month 0.
+You can complete them after 1, 2, and 3 months respectively.
+Course 4 can be taken only after course 3 is completed, i.e., after 3 months. It is completed after 3 + 4 = 7 months.
+Course 5 can be taken only after courses 1, 2, 3, and 4 have been completed, i.e., after max(1,2,3,7) = 7 months.
+Thus, the minimum time needed to complete all the courses is 7 + 5 = 12 months.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 5 * 10<sup>4</sup></code></li>
+<li><code>0 &lt;= relations.length &lt;= min(n * (n - 1) / 2, 5 * 10<sup>4</sup>)</code></li>
+<li><code>relations[j].length == 2</code></li>
+<li><code>1 &lt;= prevCourse<sub>j</sub>, nextCourse<sub>j</sub> &lt;= n</code></li>
+<li><code>prevCourse<sub>j</sub> != nextCourse<sub>j</sub></code></li>
+<li>All the pairs <code>[prevCourse<sub>j</sub>, nextCourse<sub>j</sub>]</code> are <strong>unique</strong>.</li>
+<li><code>time.length == n</code></li>
+<li><code>1 &lt;= time[i] &lt;= 10<sup>4</sup></code></li>
+<li>The given graph is a directed acyclic graph.</li>
+</ul>
+</div></div><br><br><hr><br>*****************************************************<div id="title">2056. Number of Valid Move Combinations On Chessboard</div>
+*****************************************************<div class="content__u3I1 question-content__JfgR"><div><p>There is an <code>8 x 8</code> chessboard containing <code>n</code> pieces (rooks, queens, or bishops). You are given a string array <code>pieces</code> of length <code>n</code>, where <code>pieces[i]</code> describes the type (rook, queen, or bishop) of the <code>i<sup>th</sup></code> piece. In addition, you are given a 2D integer array <code>positions</code> also of length <code>n</code>, where <code>positions[i] = [r<sub>i</sub>, c<sub>i</sub>]</code> indicates that the <code>i<sup>th</sup></code> piece is currently at the <strong>1-based</strong> coordinate <code>(r<sub>i</sub>, c<sub>i</sub>)</code> on the chessboard.</p>
+<p>When making a <strong>move</strong> for a piece, you choose a <strong>destination</strong> square that the piece will travel toward and stop on.</p>
+<ul>
+<li>A rook can only travel <strong>horizontally or vertically</strong> from <code>(r, c)</code> to the direction of <code>(r+1, c)</code>, <code>(r-1, c)</code>, <code>(r, c+1)</code>, or <code>(r, c-1)</code>.</li>
+<li>A queen can only travel <strong>horizontally, vertically, or diagonally</strong> from <code>(r, c)</code> to the direction of <code>(r+1, c)</code>, <code>(r-1, c)</code>, <code>(r, c+1)</code>, <code>(r, c-1)</code>, <code>(r+1, c+1)</code>, <code>(r+1, c-1)</code>, <code>(r-1, c+1)</code>, <code>(r-1, c-1)</code>.</li>
+<li>A bishop can only travel <strong>diagonally</strong> from <code>(r, c)</code> to the direction of <code>(r+1, c+1)</code>, <code>(r+1, c-1)</code>, <code>(r-1, c+1)</code>, <code>(r-1, c-1)</code>.</li>
+</ul>
+<p>You must make a <strong>move</strong> for every piece on the board simultaneously. A <strong>move combination</strong> consists of all the <strong>moves</strong> performed on all the given pieces. Every second, each piece will instantaneously travel <strong>one square</strong> towards their destination if they are not already at it. All pieces start traveling at the <code>0<sup>th</sup></code> second. A move combination is <strong>invalid</strong> if, at a given time, <strong>two or more</strong> pieces occupy the same square.</p>
+<p>Return <em>the number of <strong>valid</strong> move combinations</em>​​​​​.</p>
+<p><strong>Notes:</strong></p>
+<ul>
+<li><strong>No two pieces</strong> will start in the<strong> same</strong> square.</li>
+<li>You may choose the square a piece is already on as its <strong>destination</strong>.</li>
+<li>If two pieces are <strong>directly adjacent</strong> to each other, it is valid for them to <strong>move past each other</strong> and swap positions in one second.</li>
+</ul>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/09/23/a1.png" style="width: 215px; height: 215px;"/>
+<pre><strong>Input:</strong> pieces = ["rook"], positions = [[1,1]]
+<strong>Output:</strong> 15
+<strong>Explanation:</strong> The image above shows the possible squares the piece can move to.
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/09/23/a2.png" style="width: 215px; height: 215px;"/>
+<pre><strong>Input:</strong> pieces = ["queen"], positions = [[1,1]]
+<strong>Output:</strong> 22
+<strong>Explanation:</strong> The image above shows the possible squares the piece can move to.
+</pre>
+<p><strong>Example 3:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/09/23/a3.png" style="width: 214px; height: 215px;"/>
+<pre><strong>Input:</strong> pieces = ["bishop"], positions = [[4,3]]
+<strong>Output:</strong> 12
+<strong>Explanation:</strong> The image above shows the possible squares the piece can move to.
+</pre>
+<p><strong>Example 4:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/09/23/a4.png" style="width: 216px; height: 219px;"/>
+<pre><strong>Input:</strong> pieces = ["rook","rook"], positions = [[1,1],[8,8]]
+<strong>Output:</strong> 223
+<strong>Explanation:</strong> There are 15 moves for each rook which results in 15 * 15 = 225 move combinations.
+However, there are two invalid move combinations:
+- Move both rooks to (8, 1), where they collide.
+- Move both rooks to (1, 8), where they collide.
+Thus there are 225 - 2 = 223 valid move combinations.
+Note that there are two valid move combinations that would result in one rook at (1, 8) and the other at (8, 1).
+Even though the board state is the same, these two move combinations are considered different since the moves themselves are different.
+</pre>
+<p><strong>Example 5:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/09/23/a5.png" style="width: 214px; height: 213px;"/>
+<pre><strong>Input:</strong> pieces = ["queen","bishop"], positions = [[5,7],[3,4]]
+<strong>Output:</strong> 281
+<strong>Explanation:</strong> There are 12 * 24 = 288 move combinations.
+However, there are several invalid move combinations:
+- If the queen stops at (6, 7), it blocks the bishop from moving to (6, 7) or (7, 8).
+- If the queen stops at (5, 6), it blocks the bishop from moving to (5, 6), (6, 7), or (7, 8).
+- If the bishop stops at (5, 2), it blocks the queen from moving to (5, 2) or (5, 1).
+Of the 288 move combinations, 281 are valid.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == pieces.length </code></li>
+<li><code>n == positions.length</code></li>
+<li><code>1 &lt;= n &lt;= 4</code></li>
+<li><code>pieces</code> only contains the strings <code>"rook"</code>, <code>"queen"</code>, and <code>"bishop"</code>.</li>
+<li>There will be at most one queen on the chessboard.</li>
+<li><code>1 &lt;= x<sub>i</sub>, y<sub>i</sub> &lt;= 8</code></li>
+<li>Each <code>positions[i]</code> is distinct.</li>
+</ul>
+</div></div><br><br><hr><br>******************************************************************<div id="title">2060. Check if an Original String Exists Given Two Encoded Strings</div>
+******************************************************************<div class="content__u3I1 question-content__JfgR"><div><p>An original string, consisting of lowercase English letters, can be encoded by the following steps:</p>
+<ul>
+<li>Arbitrarily <strong>split</strong> it into a <strong>sequence</strong> of some number of <strong>non-empty</strong> substrings.</li>
+<li>Arbitrarily choose some elements (possibly none) of the sequence, and <strong>replace</strong> each with <strong>its length</strong> (as a numeric string).</li>
+<li><strong>Concatenate</strong> the sequence as the encoded string.</li>
+</ul>
+<p>For example, <strong>one way</strong> to encode an original string <code>"abcdefghijklmnop"</code> might be:</p>
+<ul>
+<li>Split it as a sequence: <code>["ab", "cdefghijklmn", "o", "p"]</code>.</li>
+<li>Choose the second and third elements to be replaced by their lengths, respectively. The sequence becomes <code>["ab", "12", "1", "p"]</code>.</li>
+<li>Concatenate the elements of the sequence to get the encoded string: <code>"ab121p"</code>.</li>
+</ul>
+<p>Given two encoded strings <code>s1</code> and <code>s2</code>, consisting of lowercase English letters and digits <code>1-9</code> (inclusive), return <code>true</code><em> if there exists an original string that could be encoded as <strong>both</strong> </em><code>s1</code><em> and </em><code>s2</code><em>. Otherwise, return </em><code>false</code>.</p>
+<p><strong>Note</strong>: The test cases are generated such that the number of consecutive digits in <code>s1</code> and <code>s2</code> does not exceed <code>3</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s1 = "internationalization", s2 = "i18n"
+<strong>Output:</strong> true
+<strong>Explanation:</strong> It is possible that "internationalization" was the original string.
+- "internationalization" 
+  -&gt; Split:       ["internationalization"]
+  -&gt; Do not replace any element
+  -&gt; Concatenate:  "internationalization", which is s1.
+- "internationalization"
+  -&gt; Split:       ["i", "nternationalizatio", "n"]
+  -&gt; Replace:     ["i", "18",                 "n"]
+  -&gt; Concatenate:  "i18n", which is s2
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s1 = "l123e", s2 = "44"
+<strong>Output:</strong> true
+<strong>Explanation:</strong> It is possible that "leetcode" was the original string.
+- "leetcode" 
+  -&gt; Split:      ["l", "e", "et", "cod", "e"]
+  -&gt; Replace:    ["l", "1", "2",  "3",   "e"]
+  -&gt; Concatenate: "l123e", which is s1.
+- "leetcode" 
+  -&gt; Split:      ["leet", "code"]
+  -&gt; Replace:    ["4",    "4"]
+  -&gt; Concatenate: "44", which is s2.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> s1 = "a5b", s2 = "c5b"
+<strong>Output:</strong> false
+<strong>Explanation:</strong> It is impossible.
+- The original string encoded as s1 must start with the letter 'a'.
+- The original string encoded as s2 must start with the letter 'c'.
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> s1 = "112s", s2 = "g841"
+<strong>Output:</strong> true
+<strong>Explanation:</strong> It is possible that "gaaaaaaaaaaaas" was the original string
+- "gaaaaaaaaaaaas"
+  -&gt; Split:      ["g", "aaaaaaaaaaaa", "s"]
+  -&gt; Replace:    ["1", "12",           "s"]
+  -&gt; Concatenate: "112s", which is s1.
+- "gaaaaaaaaaaaas"
+  -&gt; Split:      ["g", "aaaaaaaa", "aaaa", "s"]
+  -&gt; Replace:    ["g", "8",        "4",    "1"]
+  -&gt; Concatenate: "g841", which is s2.
+</pre>
+<p><strong>Example 5:</strong></p>
+<pre><strong>Input:</strong> s1 = "ab", s2 = "a2"
+<strong>Output:</strong> false
+<strong>Explanation:</strong> It is impossible.
+- The original string encoded as s1 has two letters.
+- The original string encoded as s2 has three letters.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s1.length, s2.length &lt;= 40</code></li>
+<li><code>s1</code> and <code>s2</code> consist of digits <code>1-9</code> (inclusive), and lowercase English letters only.</li>
+<li>The number of consecutive digits in <code>s1</code> and <code>s2</code> does not exceed <code>3</code>.</li>
+</ul>
+</div></div><br><br><hr><br>*************************************<div id="title">2065. Maximum Path Quality of a Graph</div>
+*************************************<div class="content__u3I1 question-content__JfgR"><div><p>There is an <strong>undirected</strong> graph with <code>n</code> nodes numbered from <code>0</code> to <code>n - 1</code> (<strong>inclusive</strong>). You are given a <strong>0-indexed</strong> integer array <code>values</code> where <code>values[i]</code> is the <strong>value </strong>of the <code>i<sup>th</sup></code> node. You are also given a <strong>0-indexed</strong> 2D integer array <code>edges</code>, where each <code>edges[j] = [u<sub>j</sub>, v<sub>j</sub>, time<sub>j</sub>]</code> indicates that there is an undirected edge between the nodes <code>u<sub>j</sub></code> and <code>v<sub>j</sub></code>,<sub> </sub>and it takes <code>time<sub>j</sub></code> seconds to travel between the two nodes. Finally, you are given an integer <code>maxTime</code>.</p>
+<p>A <strong>valid</strong> <strong>path</strong> in the graph is any path that starts at node <code>0</code>, ends at node <code>0</code>, and takes <strong>at most</strong> <code>maxTime</code> seconds to complete. You may visit the same node multiple times. The <strong>quality</strong> of a valid path is the <strong>sum</strong> of the values of the <strong>unique nodes</strong> visited in the path (each node's value is added <strong>at most once</strong> to the sum).</p>
+<p>Return <em>the <strong>maximum</strong> quality of a valid path</em>.</p>
+<p><strong>Note:</strong> There are <strong>at most four</strong> edges connected to each node.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/10/19/ex1drawio.png" style="width: 269px; height: 170px;"/>
+<pre><strong>Input:</strong> values = [0,32,10,43], edges = [[0,1,10],[1,2,15],[0,3,10]], maxTime = 49
+<strong>Output:</strong> 75
+<strong>Explanation:</strong>
+One possible path is 0 -&gt; 1 -&gt; 0 -&gt; 3 -&gt; 0. The total time taken is 10 + 10 + 10 + 10 = 40 &lt;= 49.
+The nodes visited are 0, 1, and 3, giving a maximal path quality of 0 + 32 + 43 = 75.
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/10/19/ex2drawio.png" style="width: 269px; height: 170px;"/>
+<pre><strong>Input:</strong> values = [5,10,15,20], edges = [[0,1,10],[1,2,10],[0,3,10]], maxTime = 30
+<strong>Output:</strong> 25
+<strong>Explanation:</strong>
+One possible path is 0 -&gt; 3 -&gt; 0. The total time taken is 10 + 10 = 20 &lt;= 30.
+The nodes visited are 0 and 3, giving a maximal path quality of 5 + 20 = 25.
+</pre>
+<p><strong>Example 3:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/10/19/ex31drawio.png" style="width: 236px; height: 170px;"/>
+<pre><strong>Input:</strong> values = [1,2,3,4], edges = [[0,1,10],[1,2,11],[2,3,12],[1,3,13]], maxTime = 50
+<strong>Output:</strong> 7
+<strong>Explanation:</strong>
+One possible path is 0 -&gt; 1 -&gt; 3 -&gt; 1 -&gt; 0. The total time taken is 10 + 13 + 13 + 10 = 46 &lt;= 50.
+The nodes visited are 0, 1, and 3, giving a maximal path quality of 1 + 2 + 4 = 7.</pre>
+<p><strong>Example 4:</strong></p>
+<p><strong><img alt="" src="https://assets.leetcode.com/uploads/2021/10/21/ex4drawio.png" style="width: 270px; height: 71px;"/></strong></p>
+<pre><strong>Input:</strong> values = [0,1,2], edges = [[1,2,10]], maxTime = 10
+<strong>Output:</strong> 0
+<strong>Explanation:</strong> 
+The only path is 0. The total time taken is 0.
+The only node visited is 0, giving a maximal path quality of 0.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == values.length</code></li>
+<li><code>1 &lt;= n &lt;= 1000</code></li>
+<li><code>0 &lt;= values[i] &lt;= 10<sup>8</sup></code></li>
+<li><code>0 &lt;= edges.length &lt;= 2000</code></li>
+<li><code>edges[j].length == 3 </code></li>
+<li><code>0 &lt;= u<sub>j </sub>&lt; v<sub>j</sub> &lt;= n - 1</code></li>
+<li><code>10 &lt;= time<sub>j</sub>, maxTime &lt;= 100</code></li>
+<li>All the pairs <code>[u<sub>j</sub>, v<sub>j</sub>]</code> are <strong>unique</strong>.</li>
+<li>There are <strong>at most four</strong> edges connected to each node.</li>
+<li>The graph may not be connected.</li>
+</ul>
+</div></div><br><br><hr><br>********************************************<div id="title">2071. Maximum Number of Tasks You Can Assign</div>
+********************************************<div class="content__u3I1 question-content__JfgR"><div><p>You have <code>n</code> tasks and <code>m</code> workers. Each task has a strength requirement stored in a <strong>0-indexed</strong> integer array <code>tasks</code>, with the <code>i<sup>th</sup></code> task requiring <code>tasks[i]</code> strength to complete. The strength of each worker is stored in a <strong>0-indexed</strong> integer array <code>workers</code>, with the <code>j<sup>th</sup></code> worker having <code>workers[j]</code> strength. Each worker can only be assigned to a <strong>single</strong> task and must have a strength <strong>greater than or equal</strong> to the task's strength requirement (i.e., <code>workers[j] &gt;= tasks[i]</code>).</p>
+<p>Additionally, you have <code>pills</code> magical pills that will <strong>increase a worker's strength</strong> by <code>strength</code>. You can decide which workers receive the magical pills, however, you may only give each worker <strong>at most one</strong> magical pill.</p>
+<p>Given the <strong>0-indexed </strong>integer arrays <code>tasks</code> and <code>workers</code> and the integers <code>pills</code> and <code>strength</code>, return <em>the <strong>maximum</strong> number of tasks that can be completed.</em></p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> tasks = [<u><strong>3</strong></u>,<u><strong>2</strong></u>,<u><strong>1</strong></u>], workers = [<u><strong>0</strong></u>,<u><strong>3</strong></u>,<u><strong>3</strong></u>], pills = 1, strength = 1
+<strong>Output:</strong> 3
+<strong>Explanation:</strong>
+We can assign the magical pill and tasks as follows:
+- Give the magical pill to worker 0.
+- Assign worker 0 to task 2 (0 + 1 &gt;= 1)
+- Assign worker 1 to task 1 (3 &gt;= 2)
+- Assign worker 2 to task 0 (3 &gt;= 3)
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> tasks = [<u><strong>5</strong></u>,4], workers = [<u><strong>0</strong></u>,0,0], pills = 1, strength = 5
+<strong>Output:</strong> 1
+<strong>Explanation:</strong>
+We can assign the magical pill and tasks as follows:
+- Give the magical pill to worker 0.
+- Assign worker 0 to task 0 (0 + 5 &gt;= 5)
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> tasks = [<u><strong>10</strong></u>,<u><strong>15</strong></u>,30], workers = [<u><strong>0</strong></u>,<u><strong>10</strong></u>,10,10,10], pills = 3, strength = 10
+<strong>Output:</strong> 2
+<strong>Explanation:</strong>
+We can assign the magical pills and tasks as follows:
+- Give the magical pill to worker 0 and worker 1.
+- Assign worker 0 to task 0 (0 + 10 &gt;= 10)
+- Assign worker 1 to task 1 (10 + 10 &gt;= 15)
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> tasks = [<u><strong>5</strong></u>,9,<u><strong>8</strong></u>,<u><strong>5</strong></u>,9], workers = [1,<strong><u>6</u></strong>,<u><strong>4</strong></u>,2,<u><strong>6</strong></u>], pills = 1, strength = 5
+<strong>Output:</strong> 3
+<strong>Explanation:</strong>
+We can assign the magical pill and tasks as follows:
+- Give the magical pill to worker 2.
+- Assign worker 1 to task 0 (6 &gt;= 5)
+- Assign worker 2 to task 2 (4 + 5 &gt;= 8)
+- Assign worker 4 to task 3 (6 &gt;= 5)
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == tasks.length</code></li>
+<li><code>m == workers.length</code></li>
+<li><code>1 &lt;= n, m &lt;= 5 * 10<sup>4</sup></code></li>
+<li><code>0 &lt;= pills &lt;= m</code></li>
+<li><code>0 &lt;= tasks[i], workers[j], strength &lt;= 10<sup>9</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>****************************************<div id="title">2076. Process Restricted Friend Requests</div>
+****************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given an integer <code>n</code> indicating the number of people in a network. Each person is labeled from <code>0</code> to <code>n - 1</code>.</p>
+<p>You are also given a <strong>0-indexed</strong> 2D integer array <code>restrictions</code>, where <code>restrictions[i] = [x<sub>i</sub>, y<sub>i</sub>]</code> means that person <code>x<sub>i</sub></code> and person <code>y<sub>i</sub></code> <strong>cannot </strong>become <strong>friends</strong>,<strong> </strong>either <strong>directly</strong> or <strong>indirectly</strong> through other people.</p>
+<p>Initially, no one is friends with each other. You are given a list of friend requests as a <strong>0-indexed</strong> 2D integer array <code>requests</code>, where <code>requests[j] = [u<sub>j</sub>, v<sub>j</sub>]</code> is a friend request between person <code>u<sub>j</sub></code> and person <code>v<sub>j</sub></code>.</p>
+<p>A friend request is <strong>successful </strong>if <code>u<sub>j</sub></code> and <code>v<sub>j</sub></code> can be <strong>friends</strong>. Each friend request is processed in the given order (i.e., <code>requests[j]</code> occurs before <code>requests[j + 1]</code>), and upon a successful request, <code>u<sub>j</sub></code> and <code>v<sub>j</sub></code> <strong>become direct friends</strong> for all future friend requests.</p>
+<p>Return <em>a <strong>boolean array</strong> </em><code>result</code>,<em> where each </em><code>result[j]</code><em> is </em><code>true</code><em> if the </em><code>j<sup>th</sup></code><em> friend request is <strong>successful</strong> or </em><code>false</code><em> if it is not</em>.</p>
+<p><strong>Note:</strong> If <code>u<sub>j</sub></code> and <code>v<sub>j</sub></code> are already direct friends, the request is still <strong>successful</strong>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> n = 3, restrictions = [[0,1]], requests = [[0,2],[2,1]]
+<strong>Output:</strong> [true,false]
+<strong>Explanation:
+</strong>Request 0: Person 0 and person 2 can be friends, so they become direct friends. 
+Request 1: Person 2 and person 1 cannot be friends since person 0 and person 1 would be indirect friends (1--2--0).
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> n = 3, restrictions = [[0,1]], requests = [[1,2],[0,2]]
+<strong>Output:</strong> [true,false]
+<strong>Explanation:
+</strong>Request 0: Person 1 and person 2 can be friends, so they become direct friends.
+Request 1: Person 0 and person 2 cannot be friends since person 0 and person 1 would be indirect friends (0--2--1).
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> n = 5, restrictions = [[0,1],[1,2],[2,3]], requests = [[0,4],[1,2],[3,1],[3,4]]
+<strong>Output:</strong> [true,false,true,false]
+<strong>Explanation:
+</strong>Request 0: Person 0 and person 4 can be friends, so they become direct friends.
+Request 1: Person 1 and person 2 cannot be friends since they are directly restricted.
+Request 2: Person 3 and person 1 can be friends, so they become direct friends.
+Request 3: Person 3 and person 4 cannot be friends since person 0 and person 1 would be indirect friends (0--4--3--1).
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>2 &lt;= n &lt;= 1000</code></li>
+<li><code>0 &lt;= restrictions.length &lt;= 1000</code></li>
+<li><code>restrictions[i].length == 2</code></li>
+<li><code>0 &lt;= x<sub>i</sub>, y<sub>i</sub> &lt;= n - 1</code></li>
+<li><code>x<sub>i</sub> != y<sub>i</sub></code></li>
+<li><code>1 &lt;= requests.length &lt;= 1000</code></li>
+<li><code>requests[j].length == 2</code></li>
+<li><code>0 &lt;= u<sub>j</sub>, v<sub>j</sub> &lt;= n - 1</code></li>
+<li><code>u<sub>j</sub> != v<sub>j</sub></code></li>
+</ul>
 </div></div><br><br><hr><br>
