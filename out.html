@@ -49672,4 +49672,404 @@ Thus, people 0, 1, 2, and 3 know the secret after all the meetings.
 <li><code>1 &lt;= time<sub>i</sub> &lt;= 10<sup>5</sup></code></li>
 <li><code>1 &lt;= firstPerson &lt;= n - 1</code></li>
 </ul>
+</div></div><br><br><hr><br><style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>********************************************<div id="title">2071. Maximum Number of Tasks You Can Assign</div>
+********************************************<div class="content__u3I1 question-content__JfgR"><div><p>You have <code>n</code> tasks and <code>m</code> workers. Each task has a strength requirement stored in a <strong>0-indexed</strong> integer array <code>tasks</code>, with the <code>i<sup>th</sup></code> task requiring <code>tasks[i]</code> strength to complete. The strength of each worker is stored in a <strong>0-indexed</strong> integer array <code>workers</code>, with the <code>j<sup>th</sup></code> worker having <code>workers[j]</code> strength. Each worker can only be assigned to a <strong>single</strong> task and must have a strength <strong>greater than or equal</strong> to the task's strength requirement (i.e., <code>workers[j] &gt;= tasks[i]</code>).</p>
+<p>Additionally, you have <code>pills</code> magical pills that will <strong>increase a worker's strength</strong> by <code>strength</code>. You can decide which workers receive the magical pills, however, you may only give each worker <strong>at most one</strong> magical pill.</p>
+<p>Given the <strong>0-indexed </strong>integer arrays <code>tasks</code> and <code>workers</code> and the integers <code>pills</code> and <code>strength</code>, return <em>the <strong>maximum</strong> number of tasks that can be completed.</em></p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> tasks = [<u><strong>3</strong></u>,<u><strong>2</strong></u>,<u><strong>1</strong></u>], workers = [<u><strong>0</strong></u>,<u><strong>3</strong></u>,<u><strong>3</strong></u>], pills = 1, strength = 1
+<strong>Output:</strong> 3
+<strong>Explanation:</strong>
+We can assign the magical pill and tasks as follows:
+- Give the magical pill to worker 0.
+- Assign worker 0 to task 2 (0 + 1 &gt;= 1)
+- Assign worker 1 to task 1 (3 &gt;= 2)
+- Assign worker 2 to task 0 (3 &gt;= 3)
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> tasks = [<u><strong>5</strong></u>,4], workers = [<u><strong>0</strong></u>,0,0], pills = 1, strength = 5
+<strong>Output:</strong> 1
+<strong>Explanation:</strong>
+We can assign the magical pill and tasks as follows:
+- Give the magical pill to worker 0.
+- Assign worker 0 to task 0 (0 + 5 &gt;= 5)
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> tasks = [<u><strong>10</strong></u>,<u><strong>15</strong></u>,30], workers = [<u><strong>0</strong></u>,<u><strong>10</strong></u>,10,10,10], pills = 3, strength = 10
+<strong>Output:</strong> 2
+<strong>Explanation:</strong>
+We can assign the magical pills and tasks as follows:
+- Give the magical pill to worker 0 and worker 1.
+- Assign worker 0 to task 0 (0 + 10 &gt;= 10)
+- Assign worker 1 to task 1 (10 + 10 &gt;= 15)
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> tasks = [<u><strong>5</strong></u>,9,<u><strong>8</strong></u>,<u><strong>5</strong></u>,9], workers = [1,<strong><u>6</u></strong>,<u><strong>4</strong></u>,2,<u><strong>6</strong></u>], pills = 1, strength = 5
+<strong>Output:</strong> 3
+<strong>Explanation:</strong>
+We can assign the magical pill and tasks as follows:
+- Give the magical pill to worker 2.
+- Assign worker 1 to task 0 (6 &gt;= 5)
+- Assign worker 2 to task 2 (4 + 5 &gt;= 8)
+- Assign worker 4 to task 3 (6 &gt;= 5)
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == tasks.length</code></li>
+<li><code>m == workers.length</code></li>
+<li><code>1 &lt;= n, m &lt;= 5 * 10<sup>4</sup></code></li>
+<li><code>0 &lt;= pills &lt;= m</code></li>
+<li><code>0 &lt;= tasks[i], workers[j], strength &lt;= 10<sup>9</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>****************************************<div id="title">2076. Process Restricted Friend Requests</div>
+****************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given an integer <code>n</code> indicating the number of people in a network. Each person is labeled from <code>0</code> to <code>n - 1</code>.</p>
+<p>You are also given a <strong>0-indexed</strong> 2D integer array <code>restrictions</code>, where <code>restrictions[i] = [x<sub>i</sub>, y<sub>i</sub>]</code> means that person <code>x<sub>i</sub></code> and person <code>y<sub>i</sub></code> <strong>cannot </strong>become <strong>friends</strong>,<strong> </strong>either <strong>directly</strong> or <strong>indirectly</strong> through other people.</p>
+<p>Initially, no one is friends with each other. You are given a list of friend requests as a <strong>0-indexed</strong> 2D integer array <code>requests</code>, where <code>requests[j] = [u<sub>j</sub>, v<sub>j</sub>]</code> is a friend request between person <code>u<sub>j</sub></code> and person <code>v<sub>j</sub></code>.</p>
+<p>A friend request is <strong>successful </strong>if <code>u<sub>j</sub></code> and <code>v<sub>j</sub></code> can be <strong>friends</strong>. Each friend request is processed in the given order (i.e., <code>requests[j]</code> occurs before <code>requests[j + 1]</code>), and upon a successful request, <code>u<sub>j</sub></code> and <code>v<sub>j</sub></code> <strong>become direct friends</strong> for all future friend requests.</p>
+<p>Return <em>a <strong>boolean array</strong> </em><code>result</code>,<em> where each </em><code>result[j]</code><em> is </em><code>true</code><em> if the </em><code>j<sup>th</sup></code><em> friend request is <strong>successful</strong> or </em><code>false</code><em> if it is not</em>.</p>
+<p><strong>Note:</strong> If <code>u<sub>j</sub></code> and <code>v<sub>j</sub></code> are already direct friends, the request is still <strong>successful</strong>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> n = 3, restrictions = [[0,1]], requests = [[0,2],[2,1]]
+<strong>Output:</strong> [true,false]
+<strong>Explanation:
+</strong>Request 0: Person 0 and person 2 can be friends, so they become direct friends. 
+Request 1: Person 2 and person 1 cannot be friends since person 0 and person 1 would be indirect friends (1--2--0).
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> n = 3, restrictions = [[0,1]], requests = [[1,2],[0,2]]
+<strong>Output:</strong> [true,false]
+<strong>Explanation:
+</strong>Request 0: Person 1 and person 2 can be friends, so they become direct friends.
+Request 1: Person 0 and person 2 cannot be friends since person 0 and person 1 would be indirect friends (0--2--1).
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> n = 5, restrictions = [[0,1],[1,2],[2,3]], requests = [[0,4],[1,2],[3,1],[3,4]]
+<strong>Output:</strong> [true,false,true,false]
+<strong>Explanation:
+</strong>Request 0: Person 0 and person 4 can be friends, so they become direct friends.
+Request 1: Person 1 and person 2 cannot be friends since they are directly restricted.
+Request 2: Person 3 and person 1 can be friends, so they become direct friends.
+Request 3: Person 3 and person 4 cannot be friends since person 0 and person 1 would be indirect friends (0--4--3--1).
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>2 &lt;= n &lt;= 1000</code></li>
+<li><code>0 &lt;= restrictions.length &lt;= 1000</code></li>
+<li><code>restrictions[i].length == 2</code></li>
+<li><code>0 &lt;= x<sub>i</sub>, y<sub>i</sub> &lt;= n - 1</code></li>
+<li><code>x<sub>i</sub> != y<sub>i</sub></code></li>
+<li><code>1 &lt;= requests.length &lt;= 1000</code></li>
+<li><code>requests[j].length == 2</code></li>
+<li><code>0 &lt;= u<sub>j</sub>, v<sub>j</sub> &lt;= n - 1</code></li>
+<li><code>u<sub>j</sub> != v<sub>j</sub></code></li>
+</ul>
+</div></div><br><br><hr><br>*****************************<div id="title">2081. Sum of k-Mirror Numbers</div>
+*****************************<div class="content__u3I1 question-content__JfgR"><div><p>A <strong>k-mirror number</strong> is a <strong>positive</strong> integer <strong>without leading zeros</strong> that reads the same both forward and backward in base-10 <strong>as well as</strong> in base-k.</p>
+<ul>
+<li>For example, <code>9</code> is a 2-mirror number. The representation of <code>9</code> in base-10 and base-2 are <code>9</code> and <code>1001</code> respectively, which read the same both forward and backward.</li>
+<li>On the contrary, <code>4</code> is not a 2-mirror number. The representation of <code>4</code> in base-2 is <code>100</code>, which does not read the same both forward and backward.</li>
+</ul>
+<p>Given the base <code>k</code> and the number <code>n</code>, return <em>the <strong>sum</strong> of the</em> <code>n</code> <em><strong>smallest</strong> k-mirror numbers</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> k = 2, n = 5
+<strong>Output:</strong> 25
+<strong>Explanation:
+</strong>The 5 smallest 2-mirror numbers and their representations in base-2 are listed as follows:
+  base-10    base-2
+    1          1
+    3          11
+    5          101
+    7          111
+    9          1001
+Their sum = 1 + 3 + 5 + 7 + 9 = 25. 
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> k = 3, n = 7
+<strong>Output:</strong> 499
+<strong>Explanation:
+</strong>The 7 smallest 3-mirror numbers are and their representations in base-3 are listed as follows:
+  base-10    base-3
+    1          1
+    2          2
+    4          11
+    8          22
+    121        11111
+    151        12121
+    212        21212
+Their sum = 1 + 2 + 4 + 8 + 121 + 151 + 212 = 499.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> k = 7, n = 17
+<strong>Output:</strong> 20379000
+<strong>Explanation:</strong> The 17 smallest 7-mirror numbers are:
+1, 2, 3, 4, 5, 6, 8, 121, 171, 242, 292, 16561, 65656, 2137312, 4602064, 6597956, 6958596
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>2 &lt;= k &lt;= 9</code></li>
+<li><code>1 &lt;= n &lt;= 30</code></li>
+</ul>
+</div></div><br><br><hr><br>**************************************<div id="title">2088. Count Fertile Pyramids in a Land</div>
+**************************************<div class="content__u3I1 question-content__JfgR"><div><p>A farmer has a <strong>rectangular grid</strong> of land with <code>m</code> rows and <code>n</code> columns that can be divided into unit cells. Each cell is either <strong>fertile</strong> (represented by a <code>1</code>) or <strong>barren</strong> (represented by a <code>0</code>). All cells outside the grid are considered barren.</p>
+<p>A <strong>pyramidal plot</strong> of land can be defined as a set of cells with the following criteria:</p>
+<ol>
+<li>The number of cells in the set has to be <strong>greater than </strong><code>1</code> and all cells must be <strong>fertile</strong>.</li>
+<li>The <strong>apex</strong> of a pyramid is the <strong>topmost</strong> cell of the pyramid. The <strong>height</strong> of a pyramid is the number of rows it covers. Let <code>(r, c)</code> be the apex of the pyramid, and its height be <code>h</code>. Then, the plot comprises of cells <code>(i, j)</code> where <code>r &lt;= i &lt;= r + h - 1</code> <strong>and</strong> <code>c - (i - r) &lt;= j &lt;= c + (i - r)</code>.</li>
+</ol>
+<p>An <strong>inverse pyramidal plot</strong> of land can be defined as a set of cells with similar criteria:</p>
+<ol>
+<li>The number of cells in the set has to be <strong>greater than </strong><code>1</code> and all cells must be <strong>fertile</strong>.</li>
+<li>The <strong>apex</strong> of an inverse pyramid is the <strong>bottommost</strong> cell of the inverse pyramid. The <strong>height</strong> of an inverse pyramid is the number of rows it covers. Let <code>(r, c)</code> be the apex of the pyramid, and its height be <code>h</code>. Then, the plot comprises of cells <code>(i, j)</code> where <code>r - h + 1 &lt;= i &lt;= r</code> <strong>and</strong> <code>c - (r - i) &lt;= j &lt;= c + (r - i)</code>.</li>
+</ol>
+<p>Some examples of valid and invalid pyramidal (and inverse pyramidal) plots are shown below. Black cells indicate fertile cells.</p>
+<img src="https://assets.leetcode.com/uploads/2021/11/08/image.png" style="width: 700px; height: 156px;"/>
+<p>Given a <strong>0-indexed</strong> <code>m x n</code> binary matrix <code>grid</code> representing the farmland, return <em>the <strong>total number</strong> of pyramidal and inverse pyramidal plots that can be found in</em> <code>grid</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/10/23/eg11.png" style="width: 200px; height: 102px;"/> <img alt="" src="https://assets.leetcode.com/uploads/2021/10/23/exa12.png" style="width: 200px; height: 102px;"/> <img alt="" src="https://assets.leetcode.com/uploads/2021/10/23/exa13.png" style="width: 200px; height: 102px;"/>
+<pre><strong>Input:</strong> grid = [[0,1,1,0],[1,1,1,1]]
+<strong>Output:</strong> 2
+<strong>Explanation:</strong>
+The 2 possible pyramidal plots are shown in blue and red respectively.
+There are no inverse pyramidal plots in this grid. 
+Hence total number of pyramidal and inverse pyramidal plots is 2 + 0 = 2.
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/10/23/eg21.png" style="width: 180px; height: 122px;"/> <img alt="" src="https://assets.leetcode.com/uploads/2021/10/23/exa22.png" style="width: 180px; height: 122px;"/> <img alt="" src="https://assets.leetcode.com/uploads/2021/10/23/exa23.png" style="width: 180px; height: 122px;"/>
+<pre><strong>Input:</strong> grid = [[1,1,1],[1,1,1]]
+<strong>Output:</strong> 2
+<strong>Explanation:</strong>
+The pyramidal plot is shown in blue, and the inverse pyramidal plot is shown in red. 
+Hence the total number of plots is 1 + 1 = 2.
+</pre>
+<p><strong>Example 3:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/10/23/eg3.png" style="width: 149px; height: 150px;"/>
+<pre><strong>Input:</strong> grid = [[1,0,1],[0,0,0],[1,0,1]]
+<strong>Output:</strong> 0
+<strong>Explanation:</strong>
+There are no pyramidal or inverse pyramidal plots in the grid.
+</pre>
+<p><strong>Example 4:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/10/23/eg41.png" style="width: 180px; height: 144px;"/> <img alt="" src="https://assets.leetcode.com/uploads/2021/10/23/eg42.png" style="width: 180px; height: 144px;"/> <img alt="" src="https://assets.leetcode.com/uploads/2021/10/23/eg43.png" style="width: 180px; height: 144px;"/> <img alt="" src="https://assets.leetcode.com/uploads/2021/10/23/eg44.png" style="width: 180px; height: 144px;"/>
+<pre><strong>Input:</strong> grid = [[1,1,1,1,0],[1,1,1,1,1],[1,1,1,1,1],[0,1,0,0,1]]
+<strong>Output:</strong> 13
+<strong>Explanation:</strong>
+There are 7 pyramidal plots, 3 of which are shown in the 2nd and 3rd figures.
+There are 6 inverse pyramidal plots, 2 of which are shown in the last figure.
+The total number of plots is 7 + 6 = 13.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>m == grid.length</code></li>
+<li><code>n == grid[i].length</code></li>
+<li><code>1 &lt;= m, n &lt;= 1000</code></li>
+<li><code>1 &lt;= m * n &lt;= 10<sup>5</sup></code></li>
+<li><code>grid[i][j]</code> is either <code>0</code> or <code>1</code>.</li>
+</ul>
+</div></div><br><br><hr><br>*********************************<div id="title">2092. Find All People With Secret</div>
+*********************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given an integer <code>n</code> indicating there are <code>n</code> people numbered from <code>0</code> to <code>n - 1</code>. You are also given a <strong>0-indexed</strong> 2D integer array <code>meetings</code> where <code>meetings[i] = [x<sub>i</sub>, y<sub>i</sub>, time<sub>i</sub>]</code> indicates that person <code>x<sub>i</sub></code> and person <code>y<sub>i</sub></code> have a meeting at <code>time<sub>i</sub></code>. A person may attend <strong>multiple meetings</strong> at the same time. Finally, you are given an integer <code>firstPerson</code>.</p>
+<p>Person <code>0</code> has a <strong>secret</strong> and initially shares the secret with a person <code>firstPerson</code> at time <code>0</code>. This secret is then shared every time a meeting takes place with a person that has the secret. More formally, for every meeting, if a person <code>x<sub>i</sub></code> has the secret at <code>time<sub>i</sub></code>, then they will share the secret with person <code>y<sub>i</sub></code>, and vice versa.</p>
+<p>The secrets are shared <strong>instantaneously</strong>. That is, a person may receive the secret and share it with people in other meetings within the same time frame.</p>
+<p>Return <em>a list of all the people that have the secret after all the meetings have taken place. </em>You may return the answer in <strong>any order</strong>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> n = 6, meetings = [[1,2,5],[2,3,8],[1,5,10]], firstPerson = 1
+<strong>Output:</strong> [0,1,2,3,5]
+<strong>Explanation:
+</strong>At time 0, person 0 shares the secret with person 1.
+At time 5, person 1 shares the secret with person 2.
+At time 8, person 2 shares the secret with person 3.
+At time 10, person 1 shares the secret with person 5.​​​​
+Thus, people 0, 1, 2, 3, and 5 know the secret after all the meetings.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> n = 4, meetings = [[3,1,3],[1,2,2],[0,3,3]], firstPerson = 3
+<strong>Output:</strong> [0,1,3]
+<strong>Explanation:</strong>
+At time 0, person 0 shares the secret with person 3.
+At time 2, neither person 1 nor person 2 know the secret.
+At time 3, person 3 shares the secret with person 0 and person 1.
+Thus, people 0, 1, and 3 know the secret after all the meetings.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> n = 5, meetings = [[3,4,2],[1,2,1],[2,3,1]], firstPerson = 1
+<strong>Output:</strong> [0,1,2,3,4]
+<strong>Explanation:</strong>
+At time 0, person 0 shares the secret with person 1.
+At time 1, person 1 shares the secret with person 2, and person 2 shares the secret with person 3.
+Note that person 2 can share the secret at the same time as receiving it.
+At time 2, person 3 shares the secret with person 4.
+Thus, people 0, 1, 2, 3, and 4 know the secret after all the meetings.
+</pre>
+<p><strong>Example 4:</strong></p>
+<pre><strong>Input:</strong> n = 6, meetings = [[0,2,1],[1,3,1],[4,5,1]], firstPerson = 1
+<strong>Output:</strong> [0,1,2,3]
+<strong>Explanation:</strong>
+At time 0, person 0 shares the secret with person 1.
+At time 1, person 0 shares the secret with person 2, and person 1 shares the secret with person 3.
+Thus, people 0, 1, 2, and 3 know the secret after all the meetings.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>2 &lt;= n &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= meetings.length &lt;= 10<sup>5</sup></code></li>
+<li><code>meetings[i].length == 3</code></li>
+<li><code>0 &lt;= x<sub>i</sub>, y<sub>i </sub>&lt;= n - 1</code></li>
+<li><code>x<sub>i</sub> != y<sub>i</sub></code></li>
+<li><code>1 &lt;= time<sub>i</sub> &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= firstPerson &lt;= n - 1</code></li>
+</ul>
+</div></div><br><br><hr><br>********************************<div id="title">2097. Valid Arrangement of Pairs</div>
+********************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a <strong>0-indexed</strong> 2D integer array <code>pairs</code> where <code>pairs[i] = [start<sub>i</sub>, end<sub>i</sub>]</code>. An arrangement of <code>pairs</code> is <strong>valid</strong> if for every index <code>i</code> where <code>1 &lt;= i &lt; pairs.length</code>, we have <code>end<sub>i-1</sub> == start<sub>i</sub></code>.</p>
+<p>Return <em><strong>any</strong> valid arrangement of </em><code>pairs</code>.</p>
+<p><strong>Note:</strong> The inputs will be generated such that there exists a valid arrangement of <code>pairs</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> pairs = [[5,1],[4,5],[11,9],[9,4]]
+<strong>Output:</strong> [[11,9],[9,4],[4,5],[5,1]]
+<strong>Explanation:
+</strong>This is a valid arrangement since end<sub>i-1</sub> always equals start<sub>i</sub>.
+end<sub>0</sub> = 9 == 9 = start<sub>1</sub> 
+end<sub>1</sub> = 4 == 4 = start<sub>2</sub>
+end<sub>2</sub> = 5 == 5 = start<sub>3</sub>
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> pairs = [[1,3],[3,2],[2,1]]
+<strong>Output:</strong> [[1,3],[3,2],[2,1]]
+<strong>Explanation:</strong>
+This is a valid arrangement since end<sub>i-1</sub> always equals start<sub>i</sub>.
+end<sub>0</sub> = 3 == 3 = start<sub>1</sub>
+end<sub>1</sub> = 2 == 2 = start<sub>2</sub>
+The arrangements [[2,1],[1,3],[3,2]] and [[3,2],[2,1],[1,3]] are also valid.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> pairs = [[1,2],[1,3],[2,1]]
+<strong>Output:</strong> [[1,2],[2,1],[1,3]]
+<strong>Explanation:</strong>
+This is a valid arrangement since end<sub>i-1</sub> always equals start<sub>i</sub>.
+end<sub>0</sub> = 2 == 2 = start<sub>1</sub>
+end<sub>1</sub> = 1 == 1 = start<sub>2</sub>
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= pairs.length &lt;= 10<sup>5</sup></code></li>
+<li><code>pairs[i].length == 2</code></li>
+<li><code>0 &lt;= start<sub>i</sub>, end<sub>i</sub> &lt;= 10<sup>9</sup></code></li>
+<li><code>start<sub>i</sub> != end<sub>i</sub></code></li>
+<li>No two pairs are exactly the same.</li>
+<li>There <strong>exists</strong> a valid arrangement of <code>pairs</code>.</li>
+</ul>
+</div></div><br><br><hr><br>***************************************<div id="title">2102. Sequentially Ordinal Rank Tracker</div>
+***************************************<div class="content__u3I1 question-content__JfgR"><div><p>A scenic location is represented by its <code>name</code> and attractiveness <code>score</code>, where <code>name</code> is a <strong>unique</strong> string among all locations and <code>score</code> is an integer. Locations can be ranked from the best to the worst. The <strong>higher</strong> the score, the better the location. If the scores of two locations are equal, then the location with the <strong>lexicographically smaller</strong> name is better.</p>
+<p>You are building a system that tracks the ranking of locations with the system initially starting with no locations. It supports:</p>
+<ul>
+<li><strong>Adding</strong> scenic locations, <strong>one at a time</strong>.</li>
+<li><strong>Querying</strong> the <code>i<sup>th</sup></code> <strong>best</strong> location of <strong>all locations already added</strong>, where <code>i</code> is the number of times the system has been queried (including the current query).
+	<ul>
+<li>For example, when the system is queried for the <code>4<sup>th</sup></code> time, it returns the <code>4<sup>th</sup></code> best location of all locations already added.</li>
+</ul>
+</li>
+</ul>
+<p>Note that the test data are generated so that <strong>at any time</strong>, the number of queries <strong>does not exceed</strong> the number of locations added to the system.</p>
+<p>Implement the <code>SORTracker</code> class:</p>
+<ul>
+<li><code>SORTracker()</code> Initializes the tracker system.</li>
+<li><code>void add(string name, int score)</code> Adds a scenic location with <code>name</code> and <code>score</code> to the system.</li>
+<li><code>string get()</code> Queries and returns the <code>i<sup>th</sup></code> best location, where <code>i</code> is the number of times this method has been invoked (including this invocation).</li>
+</ul>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input</strong>
+["SORTracker", "add", "add", "get", "add", "get", "add", "get", "add", "get", "add", "get", "get"]
+[[], ["bradford", 2], ["branford", 3], [], ["alps", 2], [], ["orland", 2], [], ["orlando", 3], [], ["alpine", 2], [], []]
+<strong>Output</strong>
+[null, null, null, "branford", null, "alps", null, "bradford", null, "bradford", null, "bradford", "orland"]
+
+<strong>Explanation</strong>
+SORTracker tracker = new SORTracker(); // Initialize the tracker system.
+tracker.add("bradford", 2); // Add location with name="bradford" and score=2 to the system.
+tracker.add("branford", 3); // Add location with name="branford" and score=3 to the system.
+tracker.get();              // The sorted locations, from best to worst, are: branford, bradford.
+                            // Note that branford precedes bradford due to its <strong>higher score</strong> (3 &gt; 2).
+                            // This is the 1<sup>st</sup> time get() is called, so return the best location: "branford".
+tracker.add("alps", 2);     // Add location with name="alps" and score=2 to the system.
+tracker.get();              // Sorted locations: branford, alps, bradford.
+                            // Note that alps precedes bradford even though they have the same score (2).
+                            // This is because "alps" is <strong>lexicographically smaller</strong> than "bradford".
+                            // Return the 2<sup>nd</sup> best location "alps", as it is the 2<sup>nd</sup> time get() is called.
+tracker.add("orland", 2);   // Add location with name="orland" and score=2 to the system.
+tracker.get();              // Sorted locations: branford, alps, bradford, orland.
+                            // Return "bradford", as it is the 3<sup>rd</sup> time get() is called.
+tracker.add("orlando", 3);  // Add location with name="orlando" and score=3 to the system.
+tracker.get();              // Sorted locations: branford, orlando, alps, bradford, orland.
+                            // Return "bradford".
+tracker.add("alpine", 2);   // Add location with name="alpine" and score=2 to the system.
+tracker.get();              // Sorted locations: branford, orlando, alpine, alps, bradford, orland.
+                            // Return "bradford".
+tracker.get();              // Sorted locations: branford, orlando, alpine, alps, bradford, orland.
+                            // Return "orland".
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>name</code> consists of lowercase English letters, and is unique among all locations.</li>
+<li><code>1 &lt;= name.length &lt;= 10</code></li>
+<li><code>1 &lt;= score &lt;= 10<sup>5</sup></code></li>
+<li>At any time, the number of calls to <code>get</code> does not exceed the number of calls to <code>add</code>.</li>
+<li>At most <code>4 * 10<sup>4</sup></code> calls <strong>in total</strong> will be made to <code>add</code> and <code>get</code>.</li>
+</ul>
+</div></div><br><br><hr><br>****************************************************<div id="title">2106. Maximum Fruits Harvested After at Most K Steps</div>
+****************************************************<div class="content__u3I1 question-content__JfgR"><div><p>Fruits are available at some positions on an infinite x-axis. You are given a 2D integer array <code>fruits</code> where <code>fruits[i] = [position<sub>i</sub>, amount<sub>i</sub>]</code> depicts <code>amount<sub>i</sub></code> fruits at the position <code>position<sub>i</sub></code>. <code>fruits</code> is already <strong>sorted</strong> by <code>position<sub>i</sub></code> in <strong>ascending order</strong>, and each <code>position<sub>i</sub></code> is <strong>unique</strong>.</p>
+<p>You are also given an integer <code>startPos</code> and an integer <code>k</code>. Initially, you are at the position <code>startPos</code>. From any position, you can either walk to the <strong>left or right</strong>. It takes <strong>one step</strong> to move <strong>one unit</strong> on the x-axis, and you can walk <strong>at most</strong> <code>k</code> steps in total. For every position you reach, you harvest all the fruits at that position, and the fruits will disappear from that position.</p>
+<p>Return <em>the <strong>maximum total number</strong> of fruits you can harvest</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/11/21/1.png" style="width: 472px; height: 115px;"/>
+<pre><strong>Input:</strong> fruits = [[2,8],[6,3],[8,6]], startPos = 5, k = 4
+<strong>Output:</strong> 9
+<strong>Explanation:</strong> 
+The optimal way is to:
+- Move right to position 6 and harvest 3 fruits
+- Move right to position 8 and harvest 6 fruits
+You moved 3 steps and harvested 3 + 6 = 9 fruits in total.
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/11/21/2.png" style="width: 512px; height: 129px;"/>
+<pre><strong>Input:</strong> fruits = [[0,9],[4,1],[5,7],[6,2],[7,4],[10,9]], startPos = 5, k = 4
+<strong>Output:</strong> 14
+<strong>Explanation:</strong> 
+You can move at most k = 4 steps, so you cannot reach position 0 nor 10.
+The optimal way is to:
+- Harvest the 7 fruits at the starting position 5
+- Move left to position 4 and harvest 1 fruit
+- Move right to position 6 and harvest 2 fruits
+- Move right to position 7 and harvest 4 fruits
+You moved 1 + 3 = 4 steps and harvested 7 + 1 + 2 + 4 = 14 fruits in total.
+</pre>
+<p><strong>Example 3:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/11/21/3.png" style="width: 476px; height: 100px;"/>
+<pre><strong>Input:</strong> fruits = [[0,3],[6,4],[8,5]], startPos = 3, k = 2
+<strong>Output:</strong> 0
+<strong>Explanation:</strong>
+You can move at most k = 2 steps and cannot reach any position with fruits.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= fruits.length &lt;= 10<sup>5</sup></code></li>
+<li><code>fruits[i].length == 2</code></li>
+<li><code>0 &lt;= startPos, position<sub>i</sub> &lt;= 2 * 10<sup>5</sup></code></li>
+<li><code>position<sub>i-1</sub> &lt; position<sub>i</sub></code> for any <code>i &gt; 0</code> (<strong>0-indexed</strong>)</li>
+<li><code>1 &lt;= amount<sub>i</sub> &lt;= 10<sup>4</sup></code></li>
+<li><code>0 &lt;= k &lt;= 2 * 10<sup>5</sup></code></li>
+</ul>
 </div></div><br><br><hr><br>
