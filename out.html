@@ -50855,4 +50855,187 @@ The only possible combination is arr = [220] and k = 215. Using them, we get low
 <li><code>1 &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
 <li>The test cases are generated such that there exists <strong>at least one</strong> valid array <code>arr</code>.</li>
 </ul>
+</div></div><br><br><hr><br><style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>*******************************************************<div id="title">2111. Minimum Operations to Make the Array K-Increasing</div>
+*******************************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a <strong>0-indexed</strong> array <code>arr</code> consisting of <code>n</code> positive integers, and a positive integer <code>k</code>.</p>
+<p>The array <code>arr</code> is called <strong>K-increasing</strong> if <code>arr[i-k] &lt;= arr[i]</code> holds for every index <code>i</code>, where <code>k &lt;= i &lt;= n-1</code>.</p>
+<ul>
+<li>For example, <code>arr = [4, 1, 5, 2, 6, 2]</code> is K-increasing for <code>k = 2</code> because:
+
+	<ul>
+<li><code>arr[0] &lt;= arr[2] (4 &lt;= 5)</code></li>
+<li><code>arr[1] &lt;= arr[3] (1 &lt;= 2)</code></li>
+<li><code>arr[2] &lt;= arr[4] (5 &lt;= 6)</code></li>
+<li><code>arr[3] &lt;= arr[5] (2 &lt;= 2)</code></li>
+</ul>
+</li>
+<li>However, the same <code>arr</code> is not K-increasing for <code>k = 1</code> (because <code>arr[0] &gt; arr[1]</code>) or <code>k = 3</code> (because <code>arr[0] &gt; arr[3]</code>).</li>
+</ul>
+<p>In one <strong>operation</strong>, you can choose an index <code>i</code> and <strong>change</strong> <code>arr[i]</code> into <strong>any</strong> positive integer.</p>
+<p>Return <em>the <strong>minimum number of operations</strong> required to make the array K-increasing for the given </em><code>k</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> arr = [5,4,3,2,1], k = 1
+<strong>Output:</strong> 4
+<strong>Explanation:
+</strong>For k = 1, the resultant array has to be non-decreasing.
+Some of the K-increasing arrays that can be formed are [5,<u><strong>6</strong></u>,<u><strong>7</strong></u>,<u><strong>8</strong></u>,<u><strong>9</strong></u>], [<u><strong>1</strong></u>,<u><strong>1</strong></u>,<u><strong>1</strong></u>,<u><strong>1</strong></u>,1], [<u><strong>2</strong></u>,<u><strong>2</strong></u>,3,<u><strong>4</strong></u>,<u><strong>4</strong></u>]. All of them require 4 operations.
+It is suboptimal to change the array to, for example, [<u><strong>6</strong></u>,<u><strong>7</strong></u>,<u><strong>8</strong></u>,<u><strong>9</strong></u>,<u><strong>10</strong></u>] because it would take 5 operations.
+It can be shown that we cannot make the array K-increasing in less than 4 operations.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> arr = [4,1,5,2,6,2], k = 2
+<strong>Output:</strong> 0
+<strong>Explanation:</strong>
+This is the same example as the one in the problem description.
+Here, for every index i where 2 &lt;= i &lt;= 5, arr[i-2] &lt;=<b> </b>arr[i].
+Since the given array is already K-increasing, we do not need to perform any operations.</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> arr = [4,1,5,2,6,2], k = 3
+<strong>Output:</strong> 2
+<strong>Explanation:</strong>
+Indices 3 and 5 are the only ones not satisfying arr[i-3] &lt;= arr[i] for 3 &lt;= i &lt;= 5.
+One of the ways we can make the array K-increasing is by changing arr[3] to 4 and arr[5] to 5.
+The array will now be [4,1,5,<u><strong>4</strong></u>,6,<u><strong>5</strong></u>].
+Note that there can be other ways to make the array K-increasing, but none of them require less than 2 operations.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= arr.length &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= arr[i], k &lt;= arr.length</code></li>
+</ul>
+</div></div><br><br><hr><br>*****************************************<div id="title">2117. Abbreviating the Product of a Range</div>
+*****************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given two positive integers <code>left</code> and <code>right</code> with <code>left &lt;= right</code>. Calculate the <strong>product</strong> of all integers in the <strong>inclusive</strong> range <code>[left, right]</code>.</p>
+<p>Since the product may be very large, you will <strong>abbreviate</strong> it following these steps:</p>
+<ol>
+<li>Count all <strong>trailing</strong> zeros in the product and <strong>remove</strong> them. Let us denote this count as <code>C</code>.
+
+	<ul>
+<li>For example, there are <code>3</code> trailing zeros in <code>1000</code>, and there are <code>0</code> trailing zeros in <code>546</code>.</li>
+</ul>
+</li>
+<li>Denote the remaining number of digits in the product as <code>d</code>. If <code>d &gt; 10</code>, then express the product as <code>&lt;pre&gt;...&lt;suf&gt;</code> where <code>&lt;pre&gt;</code> denotes the <strong>first</strong> <code>5</code> digits of the product, and <code>&lt;suf&gt;</code> denotes the <strong>last</strong> <code>5</code> digits of the product <strong>after</strong> removing all trailing zeros. If <code>d &lt;= 10</code>, we keep it unchanged.
+	<ul>
+<li>For example, we express <code>1234567654321</code> as <code>12345...54321</code>, but <code>1234567</code> is represented as <code>1234567</code>.</li>
+</ul>
+</li>
+<li>Finally, represent the product as a <strong>string</strong> <code>"&lt;pre&gt;...&lt;suf&gt;eC"</code>.
+	<ul>
+<li>For example, <code>12345678987600000</code> will be represented as <code>"12345...89876e5"</code>.</li>
+</ul>
+</li>
+</ol>
+<p>Return <em>a string denoting the <strong>abbreviated product</strong> of all integers in the <strong>inclusive</strong> range</em> <code>[left, right]</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> left = 1, right = 4
+<strong>Output:</strong> "24e0"
+<strong>Explanation:</strong> The product is 1 × 2 × 3 × 4 = 24.
+There are no trailing zeros, so 24 remains the same. The abbreviation will end with "e0".
+Since the number of digits is 2, which is less than 10, we do not have to abbreviate it further.
+Thus, the final representation is "24e0".
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> left = 2, right = 11
+<strong>Output:</strong> "399168e2"
+<strong>Explanation:</strong> The product is 39916800.
+There are 2 trailing zeros, which we remove to get 399168. The abbreviation will end with "e2".
+The number of digits after removing the trailing zeros is 6, so we do not abbreviate it further.
+Hence, the abbreviated product is "399168e2".
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> left = 371, right = 375
+<strong>Output:</strong> "7219856259e3"
+<strong>Explanation:</strong> The product is 7219856259000.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= left &lt;= right &lt;= 10<sup>4</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>********************************<div id="title">2122. Recover the Original Array</div>
+********************************<div class="content__u3I1 question-content__JfgR"><div><p>Alice had a <strong>0-indexed</strong> array <code>arr</code> consisting of <code>n</code> <strong>positive</strong> integers. She chose an arbitrary <strong>positive integer</strong> <code>k</code> and created two new <strong>0-indexed</strong> integer arrays <code>lower</code> and <code>higher</code> in the following manner:</p>
+<ol>
+<li><code>lower[i] = arr[i] - k</code>, for every index <code>i</code> where <code>0 &lt;= i &lt; n</code></li>
+<li><code>higher[i] = arr[i] + k</code>, for every index <code>i</code> where <code>0 &lt;= i &lt; n</code></li>
+</ol>
+<p>Unfortunately, Alice lost all three arrays. However, she remembers the integers that were present in the arrays <code>lower</code> and <code>higher</code>, but not the array each integer belonged to. Help Alice and recover the original array.</p>
+<p>Given an array <code>nums</code> consisting of <code>2n</code> integers, where <strong>exactly</strong> <code>n</code> of the integers were present in <code>lower</code> and the remaining in <code>higher</code>, return <em>the <strong>original</strong> array</em> <code>arr</code>. In case the answer is not unique, return <em><strong>any</strong> valid array</em>.</p>
+<p><strong>Note:</strong> The test cases are generated such that there exists <strong>at least one</strong> valid array <code>arr</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [2,10,6,4,8,12]
+<strong>Output:</strong> [3,7,11]
+<strong>Explanation:</strong>
+If arr = [3,7,11] and k = 1, we get lower = [2,6,10] and higher = [4,8,12].
+Combining lower and higher gives us [2,6,10,4,8,12], which is a permutation of nums.
+Another valid possibility is that arr = [5,7,9] and k = 3. In that case, lower = [2,4,6] and higher = [8,10,12]. 
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [1,1,3,3]
+<strong>Output:</strong> [2,2]
+<strong>Explanation:</strong>
+If arr = [2,2] and k = 1, we get lower = [1,1] and higher = [3,3].
+Combining lower and higher gives us [1,1,3,3], which is equal to nums.
+Note that arr cannot be [1,3] because in that case, the only possible way to obtain [1,1,3,3] is with k = 0.
+This is invalid since k must be positive.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> nums = [5,435]
+<strong>Output:</strong> [220]
+<strong>Explanation:</strong>
+The only possible combination is arr = [220] and k = 215. Using them, we get lower = [5] and higher = [435].
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>2 * n == nums.length</code></li>
+<li><code>1 &lt;= n &lt;= 1000</code></li>
+<li><code>1 &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
+<li>The test cases are generated such that there exists <strong>at least one</strong> valid array <code>arr</code>.</li>
+</ul>
+</div></div><br><br><hr><br>**************************************************<div id="title">2127. Maximum Employees to Be Invited to a Meeting</div>
+**************************************************<div class="content__u3I1 question-content__JfgR"><div><p>A company is organizing a meeting and has a list of <code>n</code> employees, waiting to be invited. They have arranged for a large <strong>circular</strong> table, capable of seating <strong>any number</strong> of employees.</p>
+<p>The employees are numbered from <code>0</code> to <code>n - 1</code>. Each employee has a <strong>favorite</strong> person and they will attend the meeting <strong>only if</strong> they can sit next to their favorite person at the table. The favorite person of an employee is <strong>not</strong> themself.</p>
+<p>Given a <strong>0-indexed</strong> integer array <code>favorite</code>, where <code>favorite[i]</code> denotes the favorite person of the <code>i<sup>th</sup></code> employee, return <em>the <strong>maximum number of employees</strong> that can be invited to the meeting</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/12/14/ex1.png" style="width: 236px; height: 195px;"/>
+<pre><strong>Input:</strong> favorite = [2,2,1,2]
+<strong>Output:</strong> 3
+<strong>Explanation:</strong>
+The above figure shows how the company can invite employees 0, 1, and 2, and seat them at the round table.
+All employees cannot be invited because employee 2 cannot sit beside employees 0, 1, and 3, simultaneously.
+Note that the company can also invite employees 1, 2, and 3, and give them their desired seats.
+The maximum number of employees that can be invited to the meeting is 3. 
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> favorite = [1,2,0]
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> 
+Each employee is the favorite person of at least one other employee, and the only way the company can invite them is if they invite every employee.
+The seating arrangement will be the same as that in the figure given in example 1:
+- Employee 0 will sit between employees 2 and 1.
+- Employee 1 will sit between employees 0 and 2.
+- Employee 2 will sit between employees 1 and 0.
+The maximum number of employees that can be invited to the meeting is 3.
+</pre>
+<p><strong>Example 3:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/12/14/ex2.png" style="width: 219px; height: 220px;"/>
+<pre><strong>Input:</strong> favorite = [3,0,1,4,1]
+<strong>Output:</strong> 4
+<strong>Explanation:</strong>
+The above figure shows how the company will invite employees 0, 1, 3, and 4, and seat them at the round table.
+Employee 2 cannot be invited because the two spots next to their favorite employee 1 are taken.
+So the company leaves them out of the meeting.
+The maximum number of employees that can be invited to the meeting is 4.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == favorite.length</code></li>
+<li><code>2 &lt;= n &lt;= 10<sup>5</sup></code></li>
+<li><code>0 &lt;= favorite[i] &lt;= n - 1</code></li>
+<li><code>favorite[i] != i</code></li>
+</ul>
 </div></div><br><br><hr><br>
