@@ -51405,4 +51405,162 @@ Thus, on day 2, all the seeds are blooming.
 <li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>
 <li><code>1 &lt;= plantTime[i], growTime[i] &lt;= 10<sup>4</sup></code></li>
 </ul>
+</div></div><br><br><hr><br><style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>**************************************************<div id="title">2127. Maximum Employees to Be Invited to a Meeting</div>
+**************************************************<div class="content__u3I1 question-content__JfgR"><div><p>A company is organizing a meeting and has a list of <code>n</code> employees, waiting to be invited. They have arranged for a large <strong>circular</strong> table, capable of seating <strong>any number</strong> of employees.</p>
+<p>The employees are numbered from <code>0</code> to <code>n - 1</code>. Each employee has a <strong>favorite</strong> person and they will attend the meeting <strong>only if</strong> they can sit next to their favorite person at the table. The favorite person of an employee is <strong>not</strong> themself.</p>
+<p>Given a <strong>0-indexed</strong> integer array <code>favorite</code>, where <code>favorite[i]</code> denotes the favorite person of the <code>i<sup>th</sup></code> employee, return <em>the <strong>maximum number of employees</strong> that can be invited to the meeting</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/12/14/ex1.png" style="width: 236px; height: 195px;"/>
+<pre><strong>Input:</strong> favorite = [2,2,1,2]
+<strong>Output:</strong> 3
+<strong>Explanation:</strong>
+The above figure shows how the company can invite employees 0, 1, and 2, and seat them at the round table.
+All employees cannot be invited because employee 2 cannot sit beside employees 0, 1, and 3, simultaneously.
+Note that the company can also invite employees 1, 2, and 3, and give them their desired seats.
+The maximum number of employees that can be invited to the meeting is 3. 
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> favorite = [1,2,0]
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> 
+Each employee is the favorite person of at least one other employee, and the only way the company can invite them is if they invite every employee.
+The seating arrangement will be the same as that in the figure given in example 1:
+- Employee 0 will sit between employees 2 and 1.
+- Employee 1 will sit between employees 0 and 2.
+- Employee 2 will sit between employees 1 and 0.
+The maximum number of employees that can be invited to the meeting is 3.
+</pre>
+<p><strong>Example 3:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/12/14/ex2.png" style="width: 219px; height: 220px;"/>
+<pre><strong>Input:</strong> favorite = [3,0,1,4,1]
+<strong>Output:</strong> 4
+<strong>Explanation:</strong>
+The above figure shows how the company will invite employees 0, 1, 3, and 4, and seat them at the round table.
+Employee 2 cannot be invited because the two spots next to their favorite employee 1 are taken.
+So the company leaves them out of the meeting.
+The maximum number of employees that can be invited to the meeting is 4.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == favorite.length</code></li>
+<li><code>2 &lt;= n &lt;= 10<sup>5</sup></code></li>
+<li><code>0 &lt;= favorite[i] &lt;= n - 1</code></li>
+<li><code>favorite[i] != i</code></li>
+</ul>
+</div></div><br><br><hr><br>***********************<div id="title">2132. Stamping the Grid</div>
+***********************<div class="content__u3I1 question-content__JfgR"><div><p>You are given an <code>m x n</code> binary matrix <code>grid</code> where each cell is either <code>0</code> (empty) or <code>1</code> (occupied).</p>
+<p>You are then given stamps of size <code>stampHeight x stampWidth</code>. We want to fit the stamps such that they follow the given <strong>restrictions</strong> and <strong>requirements</strong>:</p>
+<ol>
+<li>Cover all the <strong>empty</strong> cells.</li>
+<li>Do not cover any of the <strong>occupied</strong> cells.</li>
+<li>We can put as <strong>many</strong> stamps as we want.</li>
+<li>Stamps can <strong>overlap</strong> with each other.</li>
+<li>Stamps are not allowed to be <strong>rotated</strong>.</li>
+<li>Stamps must stay completely <strong>inside</strong> the grid.</li>
+</ol>
+<p>Return <code>true</code> <em>if it is possible to fit the stamps while following the given restrictions and requirements. Otherwise, return</em> <code>false</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/11/03/ex1.png" style="width: 180px; height: 237px;"/>
+<pre><strong>Input:</strong> grid = [[1,0,0,0],[1,0,0,0],[1,0,0,0],[1,0,0,0],[1,0,0,0]], stampHeight = 4, stampWidth = 3
+<strong>Output:</strong> true
+<strong>Explanation:</strong> We have two overlapping stamps (labeled 1 and 2 in the image) that are able to cover all the empty cells.
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/11/03/ex2.png" style="width: 170px; height: 179px;"/>
+<pre><strong>Input:</strong> grid = [[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1]], stampHeight = 2, stampWidth = 2 
+<strong>Output:</strong> false 
+<strong>Explanation:</strong> There is no way to fit the stamps onto all the empty cells without the stamps going outside the grid.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>m == grid.length</code></li>
+<li><code>n == grid[r].length</code></li>
+<li><code>1 &lt;= m, n &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= m * n &lt;= 2 * 10<sup>5</sup></code></li>
+<li><code>grid[r][c]</code> is either <code>0</code> or <code>1</code>.</li>
+<li><code>1 &lt;= stampHeight, stampWidth &lt;= 10<sup>5</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>*****************************************<div id="title">2136. Earliest Possible Day of Full Bloom</div>
+*****************************************<div class="content__u3I1 question-content__JfgR"><div><p>You have <code>n</code> flower seeds. Every seed must be planted first before it can begin to grow, then bloom. Planting a seed takes time and so does the growth of a seed. You are given two <strong>0-indexed</strong> integer arrays <code>plantTime</code> and <code>growTime</code>, of length <code>n</code> each:</p>
+<ul>
+<li><code>plantTime[i]</code> is the number of <strong>full days</strong> it takes you to <strong>plant</strong> the <code>i<sup>th</sup></code> seed. Every day, you can work on planting exactly one seed. You <strong>do not</strong> have to work on planting the same seed on consecutive days, but the planting of a seed is not complete <strong>until</strong> you have worked <code>plantTime[i]</code> days on planting it in total.</li>
+<li><code>growTime[i]</code> is the number of <strong>full days</strong> it takes the <code>i<sup>th</sup></code> seed to grow after being completely planted. <strong>After</strong> the last day of its growth, the flower <strong>blooms</strong> and stays bloomed forever.</li>
+</ul>
+<p>From the beginning of day <code>0</code>, you can plant the seeds in <strong>any</strong> order.</p>
+<p>Return <em>the <strong>earliest</strong> possible day where <strong>all</strong> seeds are blooming</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/12/21/1.png" style="width: 453px; height: 149px;"/>
+<pre><strong>Input:</strong> plantTime = [1,4,3], growTime = [2,3,1]
+<strong>Output:</strong> 9
+<strong>Explanation:</strong> The grayed out pots represent planting days, colored pots represent growing days, and the flower represents the day it blooms.
+One optimal way is:
+On day 0, plant the 0<sup>th</sup> seed. The seed grows for 2 full days and blooms on day 3.
+On days 1, 2, 3, and 4, plant the 1<sup>st</sup> seed. The seed grows for 3 full days and blooms on day 8.
+On days 5, 6, and 7, plant the 2<sup>nd</sup> seed. The seed grows for 1 full day and blooms on day 9.
+Thus, on day 9, all the seeds are blooming.
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/12/21/2.png" style="width: 454px; height: 184px;"/>
+<pre><strong>Input:</strong> plantTime = [1,2,3,2], growTime = [2,1,2,1]
+<strong>Output:</strong> 9
+<strong>Explanation:</strong> The grayed out pots represent planting days, colored pots represent growing days, and the flower represents the day it blooms.
+One optimal way is:
+On day 1, plant the 0<sup>th</sup> seed. The seed grows for 2 full days and blooms on day 4.
+On days 0 and 3, plant the 1<sup>st</sup> seed. The seed grows for 1 full day and blooms on day 5.
+On days 2, 4, and 5, plant the 2<sup>nd</sup> seed. The seed grows for 2 full days and blooms on day 8.
+On days 6 and 7, plant the 3<sup>rd</sup> seed. The seed grows for 1 full day and blooms on day 9.
+Thus, on day 9, all the seeds are blooming.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> plantTime = [1], growTime = [1]
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> On day 0, plant the 0<sup>th</sup> seed. The seed grows for 1 full day and blooms on day 2.
+Thus, on day 2, all the seeds are blooming.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == plantTime.length == growTime.length</code></li>
+<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= plantTime[i], growTime[i] &lt;= 10<sup>4</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>*****************************************<div id="title">2141. Maximum Running Time of N Computers</div>
+*****************************************<div class="content__u3I1 question-content__JfgR"><div><p>You have <code>n</code> computers. You are given the integer <code>n</code> and a <strong>0-indexed</strong> integer array <code>batteries</code> where the <code>i<sup>th</sup></code> battery can <strong>run</strong> a computer for <code>batteries[i]</code> minutes. You are interested in running <strong>all</strong> <code>n</code> computers <strong>simultaneously</strong> using the given batteries.</p>
+<p>Initially, you can insert <strong>at most one battery</strong> into each computer. After that and at any integer time moment, you can remove a battery from a computer and insert another battery <strong>any number of times</strong>. The inserted battery can be a totally new battery or a battery from another computer. You may assume that the removing and inserting processes take no time.</p>
+<p>Note that the batteries cannot be recharged.</p>
+<p>Return <em>the <strong>maximum</strong> number of minutes you can run all the </em><code>n</code><em> computers simultaneously.</em></p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/01/06/example1-fit.png" style="width: 762px; height: 150px;"/>
+<pre><strong>Input:</strong> n = 2, batteries = [3,3,3]
+<strong>Output:</strong> 4
+<strong>Explanation:</strong> 
+Initially, insert battery 0 into the first computer and battery 1 into the second computer.
+After two minutes, remove battery 1 from the second computer and insert battery 2 instead. Note that battery 1 can still run for one minute.
+At the end of the third minute, battery 0 is drained, and you need to remove it from the first computer and insert battery 1 instead.
+By the end of the fourth minute, battery 1 is also drained, and the first computer is no longer running.
+We can run the two computers simultaneously for at most 4 minutes, so we return 4.
+
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/01/06/example2.png" style="width: 629px; height: 150px;"/>
+<pre><strong>Input:</strong> n = 2, batteries = [1,1,1,1]
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> 
+Initially, insert battery 0 into the first computer and battery 2 into the second computer. 
+After one minute, battery 0 and battery 2 are drained so you need to remove them and insert battery 1 into the first computer and battery 3 into the second computer. 
+After another minute, battery 1 and battery 3 are also drained so the first and second computers are no longer running.
+We can run the two computers simultaneously for at most 2 minutes, so we return 2.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= batteries.length &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= batteries[i] &lt;= 10<sup>9</sup></code></li>
+</ul>
 </div></div><br><br><hr><br>
