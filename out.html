@@ -51893,4 +51893,189 @@ Note that there is more than one way to arrive at this conclusion.
 <li><code>statements[i][j]</code> is either <code>0</code>, <code>1</code>, or <code>2</code>.</li>
 <li><code>statements[i][i] == 2</code></li>
 </ul>
+</div></div><br><br><hr><br><style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>*****************************************<div id="title">2141. Maximum Running Time of N Computers</div>
+*****************************************<div class="content__u3I1 question-content__JfgR"><div><p>You have <code>n</code> computers. You are given the integer <code>n</code> and a <strong>0-indexed</strong> integer array <code>batteries</code> where the <code>i<sup>th</sup></code> battery can <strong>run</strong> a computer for <code>batteries[i]</code> minutes. You are interested in running <strong>all</strong> <code>n</code> computers <strong>simultaneously</strong> using the given batteries.</p>
+<p>Initially, you can insert <strong>at most one battery</strong> into each computer. After that and at any integer time moment, you can remove a battery from a computer and insert another battery <strong>any number of times</strong>. The inserted battery can be a totally new battery or a battery from another computer. You may assume that the removing and inserting processes take no time.</p>
+<p>Note that the batteries cannot be recharged.</p>
+<p>Return <em>the <strong>maximum</strong> number of minutes you can run all the </em><code>n</code><em> computers simultaneously.</em></p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/01/06/example1-fit.png" style="width: 762px; height: 150px;"/>
+<pre><strong>Input:</strong> n = 2, batteries = [3,3,3]
+<strong>Output:</strong> 4
+<strong>Explanation:</strong> 
+Initially, insert battery 0 into the first computer and battery 1 into the second computer.
+After two minutes, remove battery 1 from the second computer and insert battery 2 instead. Note that battery 1 can still run for one minute.
+At the end of the third minute, battery 0 is drained, and you need to remove it from the first computer and insert battery 1 instead.
+By the end of the fourth minute, battery 1 is also drained, and the first computer is no longer running.
+We can run the two computers simultaneously for at most 4 minutes, so we return 4.
+
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/01/06/example2.png" style="width: 629px; height: 150px;"/>
+<pre><strong>Input:</strong> n = 2, batteries = [1,1,1,1]
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> 
+Initially, insert battery 0 into the first computer and battery 2 into the second computer. 
+After one minute, battery 0 and battery 2 are drained so you need to remove them and insert battery 1 into the first computer and battery 3 into the second computer. 
+After another minute, battery 1 and battery 3 are also drained so the first and second computers are no longer running.
+We can run the two computers simultaneously for at most 2 minutes, so we return 2.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= batteries.length &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= batteries[i] &lt;= 10<sup>9</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>**********************************************<div id="title">2147. Number of Ways to Divide a Long Corridor</div>
+**********************************************<div class="content__u3I1 question-content__JfgR"><div><p>Along a long library corridor, there is a line of seats and decorative plants. You are given a <strong>0-indexed</strong> string <code>corridor</code> of length <code>n</code> consisting of letters <code>'S'</code> and <code>'P'</code> where each <code>'S'</code> represents a seat and each <code>'P'</code> represents a plant.</p>
+<p>One room divider has <strong>already</strong> been installed to the left of index <code>0</code>, and <strong>another</strong> to the right of index <code>n - 1</code>. Additional room dividers can be installed. For each position between indices <code>i - 1</code> and <code>i</code> (<code>1 &lt;= i &lt;= n - 1</code>), at most one divider can be installed.</p>
+<p>Divide the corridor into non-overlapping sections, where each section has <strong>exactly two seats</strong> with any number of plants. There may be multiple ways to perform the division. Two ways are <strong>different</strong> if there is a position with a room divider installed in the first way but not in the second way.</p>
+<p>Return <em>the number of ways to divide the corridor</em>. Since the answer may be very large, return it <strong>modulo</strong> <code>10<sup>9</sup> + 7</code>. If there is no way, return <code>0</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/12/04/1.png" style="width: 410px; height: 199px;"/>
+<pre><strong>Input:</strong> corridor = "SSPPSPS"
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> There are 3 different ways to divide the corridor.
+The black bars in the above image indicate the two room dividers already installed.
+Note that in each of the ways, <strong>each</strong> section has exactly <strong>two</strong> seats.
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/12/04/2.png" style="width: 357px; height: 68px;"/>
+<pre><strong>Input:</strong> corridor = "PPSPSP"
+<strong>Output:</strong> 1
+<strong>Explanation:</strong> There is only 1 way to divide the corridor, by not installing any additional dividers.
+Installing any would create some section that does not have exactly two seats.
+</pre>
+<p><strong>Example 3:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2021/12/12/3.png" style="width: 115px; height: 68px;"/>
+<pre><strong>Input:</strong> corridor = "S"
+<strong>Output:</strong> 0
+<strong>Explanation:</strong> There is no way to divide the corridor because there will always be a section that does not have exactly two seats.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == corridor.length</code></li>
+<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>
+<li><code>corridor[i]</code> is either <code>'S'</code> or <code>'P'</code>.</li>
+</ul>
+</div></div><br><br><hr><br>*********************************************<div id="title">2151. Maximum Good People Based on Statements</div>
+*********************************************<div class="content__u3I1 question-content__JfgR"><div><p>There are two types of persons:</p>
+<ul>
+<li>The <strong>good person</strong>: The person who always tells the truth.</li>
+<li>The <strong>bad person</strong>: The person who might tell the truth and might lie.</li>
+</ul>
+<p>You are given a <strong>0-indexed</strong> 2D integer array <code>statements</code> of size <code>n x n</code> that represents the statements made by <code>n</code> people about each other. More specifically, <code>statements[i][j]</code> could be one of the following:</p>
+<ul>
+<li><code>0</code> which represents a statement made by person <code>i</code> that person <code>j</code> is a <strong>bad</strong> person.</li>
+<li><code>1</code> which represents a statement made by person <code>i</code> that person <code>j</code> is a <strong>good</strong> person.</li>
+<li><code>2</code> represents that <strong>no statement</strong> is made by person <code>i</code> about person <code>j</code>.</li>
+</ul>
+<p>Additionally, no person ever makes a statement about themselves. Formally, we have that <code>statements[i][i] = 2</code> for all <code>0 &lt;= i &lt; n</code>.</p>
+<p>Return <em>the <strong>maximum</strong> number of people who can be <strong>good</strong> based on the statements made by the </em><code>n</code><em> people</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/01/15/logic1.jpg" style="width: 600px; height: 262px;"/>
+<pre><strong>Input:</strong> statements = [[2,1,2],[1,2,2],[2,0,2]]
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> Each person makes a single statement.
+- Person 0 states that person 1 is good.
+- Person 1 states that person 0 is good.
+- Person 2 states that person 1 is bad.
+Let's take person 2 as the key.
+- Assuming that person 2 is a good person:
+    - Based on the statement made by person 2, person 1 is a bad person.
+    - Now we know for sure that person 1 is bad and person 2 is good.
+    - Based on the statement made by person 1, and since person 1 is bad, they could be:
+        - telling the truth. There will be a contradiction in this case and this assumption is invalid.
+        - lying. In this case, person 0 is also a bad person and lied in their statement.
+    - <strong>Following that person 2 is a good person, there will be only one good person in the group</strong>.
+- Assuming that person 2 is a bad person:
+    - Based on the statement made by person 2, and since person 2 is bad, they could be:
+        - telling the truth. Following this scenario, person 0 and 1 are both bad as explained before.
+            - <strong>Following that person 2 is bad but told the truth, there will be no good persons in the group</strong>.
+        - lying. In this case person 1 is a good person.
+            - Since person 1 is a good person, person 0 is also a good person.
+            - <strong>Following that person 2 is bad and lied, there will be two good persons in the group</strong>.
+We can see that at most 2 persons are good in the best case, so we return 2.
+Note that there is more than one way to arrive at this conclusion.
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/01/15/logic2.jpg" style="width: 600px; height: 262px;"/>
+<pre><strong>Input:</strong> statements = [[2,0],[0,2]]
+<strong>Output:</strong> 1
+<strong>Explanation:</strong> Each person makes a single statement.
+- Person 0 states that person 1 is bad.
+- Person 1 states that person 0 is bad.
+Let's take person 0 as the key.
+- Assuming that person 0 is a good person:
+    - Based on the statement made by person 0, person 1 is a bad person and was lying.
+    - <strong>Following that person 0 is a good person, there will be only one good person in the group</strong>.
+- Assuming that person 0 is a bad person:
+    - Based on the statement made by person 0, and since person 0 is bad, they could be:
+        - telling the truth. Following this scenario, person 0 and 1 are both bad.
+            - <strong>Following that person 0 is bad but told the truth, there will be no good persons in the group</strong>.
+        - lying. In this case person 1 is a good person.
+            - <strong>Following that person 0 is bad and lied, there will be only one good person in the group</strong>.
+We can see that at most, one person is good in the best case, so we return 1.
+Note that there is more than one way to arrive at this conclusion.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == statements.length == statements[i].length</code></li>
+<li><code>2 &lt;= n &lt;= 15</code></li>
+<li><code>statements[i][j]</code> is either <code>0</code>, <code>1</code>, or <code>2</code>.</li>
+<li><code>statements[i][i] == 2</code></li>
+</ul>
+</div></div><br><br><hr><br>***********************<div id="title">2157. Groups of Strings</div>
+***********************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a <strong>0-indexed</strong> array of strings <code>words</code>. Each string consists of <strong>lowercase English letters</strong> only. No letter occurs more than once in any string of <code>words</code>.</p>
+<p>Two strings <code>s1</code> and <code>s2</code> are said to be <strong>connected</strong> if the set of letters of <code>s2</code> can be obtained from the set of letters of <code>s1</code> by any <strong>one</strong> of the following operations:</p>
+<ul>
+<li>Adding exactly one letter to the set of the letters of <code>s1</code>.</li>
+<li>Deleting exactly one letter from the set of the letters of <code>s1</code>.</li>
+<li>Replacing exactly one letter from the set of the letters of <code>s1</code> with any letter, <strong>including</strong> itself.</li>
+</ul>
+<p>The array <code>words</code> can be divided into one or more non-intersecting <strong>groups</strong>. A string belongs to a group if any <strong>one</strong> of the following is true:</p>
+<ul>
+<li>It is connected to <strong>at least one</strong> other string of the group.</li>
+<li>It is the <strong>only</strong> string present in the group.</li>
+</ul>
+<p>Note that the strings in <code>words</code> should be grouped in such a manner that a string belonging to a group cannot be connected to a string present in any other group. It can be proved that such an arrangement is always unique.</p>
+<p>Return <em>an array</em> <code>ans</code> <em>of size</em> <code>2</code> <em>where:</em></p>
+<ul>
+<li><code>ans[0]</code> <em>is the <strong>total number</strong> of groups</em> <code>words</code> <em>can be divided into, and</em></li>
+<li><code>ans[1]</code> <em>is the <strong>size of the largest</strong> group</em>.</li>
+</ul>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> words = ["a","b","ab","cde"]
+<strong>Output:</strong> [2,3]
+<strong>Explanation:</strong>
+- words[0] can be used to obtain words[1] (by replacing 'a' with 'b'), and words[2] (by adding 'b'). So words[0] is connected to words[1] and words[2].
+- words[1] can be used to obtain words[0] (by replacing 'b' with 'a'), and words[2] (by adding 'a'). So words[1] is connected to words[0] and words[2].
+- words[2] can be used to obtain words[0] (by deleting 'b'), and words[1] (by deleting 'a'). So words[2] is connected to words[0] and words[1].
+- words[3] is not connected to any string in words.
+Thus, words can be divided into 2 groups ["a","b","ab"] and ["cde"]. The size of the largest group is 3.  
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> words = ["a","ab","abc"]
+<strong>Output:</strong> [1,3]
+<strong>Explanation:</strong>
+- words[0] is connected to words[1].
+- words[1] is connected to words[0] and words[2].
+- words[2] is connected to words[1].
+Since all strings are connected to each other, they should be grouped together.
+Thus, the size of the largest group is 3.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= words.length &lt;= 2 * 10<sup>4</sup></code></li>
+<li><code>1 &lt;= words[i].length &lt;= 26</code></li>
+<li><code>words[i]</code> consists of lowercase English letters only.</li>
+<li>No letter occurs more than once in <code>words[i]</code>.</li>
+</ul>
 </div></div><br><br><hr><br>
