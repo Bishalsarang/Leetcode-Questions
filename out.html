@@ -52610,4 +52610,150 @@ Note that slots 2, 5, 6, and 8 are empty which is permitted.
 <li><code>1 &lt;= n &lt;= 2 * numSlots</code></li>
 <li><code>1 &lt;= nums[i] &lt;= 15</code></li>
 </ul>
+</div></div><br><br><hr><br><style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>**********************************************************<div id="title">2163. Minimum Difference in Sums After Removal of Elements</div>
+**********************************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code> consisting of <code>3 * n</code> elements.</p>
+<p>You are allowed to remove any <strong>subsequence</strong> of elements of size <strong>exactly</strong> <code>n</code> from <code>nums</code>. The remaining <code>2 * n</code> elements will be divided into two <strong>equal</strong> parts:</p>
+<ul>
+<li>The first <code>n</code> elements belonging to the first part and their sum is <code>sum<sub>first</sub></code>.</li>
+<li>The next <code>n</code> elements belonging to the second part and their sum is <code>sum<sub>second</sub></code>.</li>
+</ul>
+<p>The <strong>difference in sums</strong> of the two parts is denoted as <code>sum<sub>first</sub> - sum<sub>second</sub></code>.</p>
+<ul>
+<li>For example, if <code>sum<sub>first</sub> = 3</code> and <code>sum<sub>second</sub> = 2</code>, their difference is <code>1</code>.</li>
+<li>Similarly, if <code>sum<sub>first</sub> = 2</code> and <code>sum<sub>second</sub> = 3</code>, their difference is <code>-1</code>.</li>
+</ul>
+<p>Return <em>the <strong>minimum difference</strong> possible between the sums of the two parts after the removal of </em><code>n</code><em> elements</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [3,1,2]
+<strong>Output:</strong> -1
+<strong>Explanation:</strong> Here, nums has 3 elements, so n = 1. 
+Thus we have to remove 1 element from nums and divide the array into two equal parts.
+- If we remove nums[0] = 3, the array will be [1,2]. The difference in sums of the two parts will be 1 - 2 = -1.
+- If we remove nums[1] = 1, the array will be [3,2]. The difference in sums of the two parts will be 3 - 2 = 1.
+- If we remove nums[2] = 2, the array will be [3,1]. The difference in sums of the two parts will be 3 - 1 = 2.
+The minimum difference between sums of the two parts is min(-1,1,2) = -1. 
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [7,9,5,8,1,3]
+<strong>Output:</strong> 1
+<strong>Explanation:</strong> Here n = 2. So we must remove 2 elements and divide the remaining array into two parts containing two elements each.
+If we remove nums[2] = 5 and nums[3] = 8, the resultant array will be [7,9,1,3]. The difference in sums will be (7+9) - (1+3) = 12.
+To obtain the minimum difference, we should remove nums[1] = 9 and nums[4] = 1. The resultant array becomes [7,5,8,3]. The difference in sums of the two parts is (7+5) - (8+3) = 1.
+It can be shown that it is not possible to obtain a difference smaller than 1.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>nums.length == 3 * n</code></li>
+<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>**************************************************************<div id="title">2167. Minimum Time to Remove All Cars Containing Illegal Goods</div>
+**************************************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a <strong>0-indexed</strong> binary string <code>s</code> which represents a sequence of train cars. <code>s[i] = '0'</code> denotes that the <code>i<sup>th</sup></code> car does <strong>not</strong> contain illegal goods and <code>s[i] = '1'</code> denotes that the <code>i<sup>th</sup></code> car does contain illegal goods.</p>
+<p>As the train conductor, you would like to get rid of all the cars containing illegal goods. You can do any of the following three operations <strong>any</strong> number of times:</p>
+<ol>
+<li>Remove a train car from the <strong>left</strong> end (i.e., remove <code>s[0]</code>) which takes 1 unit of time.</li>
+<li>Remove a train car from the <strong>right</strong> end (i.e., remove <code>s[s.length - 1]</code>) which takes 1 unit of time.</li>
+<li>Remove a train car from <strong>anywhere</strong> in the sequence which takes 2 units of time.</li>
+</ol>
+<p>Return <em>the <strong>minimum</strong> time to remove all the cars containing illegal goods</em>.</p>
+<p>Note that an empty sequence of cars is considered to have no cars containing illegal goods.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "<strong><u>11</u></strong>00<strong><u>1</u></strong>0<strong><u>1</u></strong>"
+<strong>Output:</strong> 5
+<strong>Explanation:</strong> 
+One way to remove all the cars containing illegal goods from the sequence is to
+- remove a car from the left end 2 times. Time taken is 2 * 1 = 2.
+- remove a car from the right end. Time taken is 1.
+- remove the car containing illegal goods found in the middle. Time taken is 2.
+This obtains a total time of 2 + 1 + 2 = 5. 
+
+An alternative way is to
+- remove a car from the left end 2 times. Time taken is 2 * 1 = 2.
+- remove a car from the right end 3 times. Time taken is 3 * 1 = 3.
+This also obtains a total time of 2 + 3 = 5.
+
+5 is the minimum time taken to remove all the cars containing illegal goods. 
+There are no other ways to remove them with less time.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "00<strong><u>1</u></strong>0"
+<strong>Output:</strong> 2
+<strong>Explanation:</strong>
+One way to remove all the cars containing illegal goods from the sequence is to
+- remove a car from the left end 3 times. Time taken is 3 * 1 = 3.
+This obtains a total time of 3.
+
+Another way to remove all the cars containing illegal goods from the sequence is to
+- remove the car containing illegal goods found in the middle. Time taken is 2.
+This obtains a total time of 2.
+
+Another way to remove all the cars containing illegal goods from the sequence is to 
+- remove a car from the right end 2 times. Time taken is 2 * 1 = 2. 
+This obtains a total time of 2.
+
+2 is the minimum time taken to remove all the cars containing illegal goods. 
+There are no other ways to remove them with less time.</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 2 * 10<sup>5</sup></code></li>
+<li><code>s[i]</code> is either <code>'0'</code> or <code>'1'</code>.</li>
+</ul>
+</div></div><br><br><hr><br>******************************<div id="title">2172. Maximum AND Sum of Array</div>
+******************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given an integer array <code>nums</code> of length <code>n</code> and an integer <code>numSlots</code> such that <code>2 * numSlots &gt;= n</code>. There are <code>numSlots</code> slots numbered from <code>1</code> to <code>numSlots</code>.</p>
+<p>You have to place all <code>n</code> integers into the slots such that each slot contains at <strong>most</strong> two numbers. The <strong>AND sum</strong> of a given placement is the sum of the <strong>bitwise</strong> <code>AND</code> of every number with its respective slot number.</p>
+<ul>
+<li>For example, the <strong>AND sum</strong> of placing the numbers <code>[1, 3]</code> into slot <u><code>1</code></u> and <code>[4, 6]</code> into slot <u><code>2</code></u> is equal to <code>(1 AND <u>1</u>) + (3 AND <u>1</u>) + (4 AND <u>2</u>) + (6 AND <u>2</u>) = 1 + 1 + 0 + 2 = 4</code>.</li>
+</ul>
+<p>Return <em>the maximum possible <strong>AND sum</strong> of </em><code>nums</code><em> given </em><code>numSlots</code><em> slots.</em></p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [1,2,3,4,5,6], numSlots = 3
+<strong>Output:</strong> 9
+<strong>Explanation:</strong> One possible placement is [1, 4] into slot <u>1</u>, [2, 6] into slot <u>2</u>, and [3, 5] into slot <u>3</u>. 
+This gives the maximum AND sum of (1 AND <u>1</u>) + (4 AND <u>1</u>) + (2 AND <u>2</u>) + (6 AND <u>2</u>) + (3 AND <u>3</u>) + (5 AND <u>3</u>) = 1 + 0 + 2 + 2 + 3 + 1 = 9.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [1,3,10,4,7,1], numSlots = 9
+<strong>Output:</strong> 24
+<strong>Explanation:</strong> One possible placement is [1, 1] into slot <u>1</u>, [3] into slot <u>3</u>, [4] into slot <u>4</u>, [7] into slot <u>7</u>, and [10] into slot <u>9</u>.
+This gives the maximum AND sum of (1 AND <u>1</u>) + (1 AND <u>1</u>) + (3 AND <u>3</u>) + (4 AND <u>4</u>) + (7 AND <u>7</u>) + (10 AND <u>9</u>) = 1 + 1 + 3 + 4 + 7 + 8 = 24.
+Note that slots 2, 5, 6, and 8 are empty which is permitted.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == nums.length</code></li>
+<li><code>1 &lt;= numSlots &lt;= 9</code></li>
+<li><code>1 &lt;= n &lt;= 2 * numSlots</code></li>
+<li><code>1 &lt;= nums[i] &lt;= 15</code></li>
+</ul>
+</div></div><br><br><hr><br>*************************************<div id="title">2179. Count Good Triplets in an Array</div>
+*************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given two <strong>0-indexed</strong> arrays <code>nums1</code> and <code>nums2</code> of length <code>n</code>, both of which are <strong>permutations</strong> of <code>[0, 1, ..., n - 1]</code>.</p>
+<p>A <strong>good triplet</strong> is a set of <code>3</code> <strong>distinct</strong> values which are present in <strong>increasing order</strong> by position both in <code>nums1</code> and <code>nums2</code>. In other words, if we consider <code>pos1<sub>v</sub></code> as the index of the value <code>v</code> in <code>nums1</code> and <code>pos2<sub>v</sub></code> as the index of the value <code>v</code> in <code>nums2</code>, then a good triplet will be a set <code>(x, y, z)</code> where <code>0 &lt;= x, y, z &lt;= n - 1</code>, such that <code>pos1<sub>x</sub> &lt; pos1<sub>y</sub> &lt; pos1<sub>z</sub></code> and <code>pos2<sub>x</sub> &lt; pos2<sub>y</sub> &lt; pos2<sub>z</sub></code>.</p>
+<p>Return <em>the <strong>total number</strong> of good triplets</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums1 = [2,0,1,3], nums2 = [0,1,2,3]
+<strong>Output:</strong> 1
+<strong>Explanation:</strong> 
+There are 4 triplets (x,y,z) such that pos1<sub>x</sub> &lt; pos1<sub>y</sub> &lt; pos1<sub>z</sub>. They are (2,0,1), (2,0,3), (2,1,3), and (0,1,3). 
+Out of those triplets, only the triplet (0,1,3) satisfies pos2<sub>x</sub> &lt; pos2<sub>y</sub> &lt; pos2<sub>z</sub>. Hence, there is only 1 good triplet.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums1 = [4,0,1,3,2], nums2 = [4,1,0,2,3]
+<strong>Output:</strong> 4
+<strong>Explanation:</strong> The 4 good triplets are (4,0,3), (4,0,2), (4,1,3), and (4,1,2).
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == nums1.length == nums2.length</code></li>
+<li><code>3 &lt;= n &lt;= 10<sup>5</sup></code></li>
+<li><code>0 &lt;= nums1[i], nums2[i] &lt;= n - 1</code></li>
+<li><code>nums1</code> and <code>nums2</code> are permutations of <code>[0, 1, ..., n - 1]</code>.</li>
+</ul>
 </div></div><br><br><hr><br>
