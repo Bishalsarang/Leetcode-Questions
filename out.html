@@ -53012,4 +53012,128 @@ The minimum time to complete the race is 25 seconds.
 <li><code>2 &lt;= r<sub>i</sub> &lt;= 10<sup>5</sup></code></li>
 <li><code>1 &lt;= numLaps &lt;= 1000</code></li>
 </ul>
+</div></div><br><br><hr><br><style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>*************************************<div id="title">2179. Count Good Triplets in an Array</div>
+*************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given two <strong>0-indexed</strong> arrays <code>nums1</code> and <code>nums2</code> of length <code>n</code>, both of which are <strong>permutations</strong> of <code>[0, 1, ..., n - 1]</code>.</p>
+<p>A <strong>good triplet</strong> is a set of <code>3</code> <strong>distinct</strong> values which are present in <strong>increasing order</strong> by position both in <code>nums1</code> and <code>nums2</code>. In other words, if we consider <code>pos1<sub>v</sub></code> as the index of the value <code>v</code> in <code>nums1</code> and <code>pos2<sub>v</sub></code> as the index of the value <code>v</code> in <code>nums2</code>, then a good triplet will be a set <code>(x, y, z)</code> where <code>0 &lt;= x, y, z &lt;= n - 1</code>, such that <code>pos1<sub>x</sub> &lt; pos1<sub>y</sub> &lt; pos1<sub>z</sub></code> and <code>pos2<sub>x</sub> &lt; pos2<sub>y</sub> &lt; pos2<sub>z</sub></code>.</p>
+<p>Return <em>the <strong>total number</strong> of good triplets</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums1 = [2,0,1,3], nums2 = [0,1,2,3]
+<strong>Output:</strong> 1
+<strong>Explanation:</strong> 
+There are 4 triplets (x,y,z) such that pos1<sub>x</sub> &lt; pos1<sub>y</sub> &lt; pos1<sub>z</sub>. They are (2,0,1), (2,0,3), (2,1,3), and (0,1,3). 
+Out of those triplets, only the triplet (0,1,3) satisfies pos2<sub>x</sub> &lt; pos2<sub>y</sub> &lt; pos2<sub>z</sub>. Hence, there is only 1 good triplet.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums1 = [4,0,1,3,2], nums2 = [4,1,0,2,3]
+<strong>Output:</strong> 4
+<strong>Explanation:</strong> The 4 good triplets are (4,0,3), (4,0,2), (4,1,3), and (4,1,2).
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == nums1.length == nums2.length</code></li>
+<li><code>3 &lt;= n &lt;= 10<sup>5</sup></code></li>
+<li><code>0 &lt;= nums1[i], nums2[i] &lt;= n - 1</code></li>
+<li><code>nums1</code> and <code>nums2</code> are permutations of <code>[0, 1, ..., n - 1]</code>.</li>
+</ul>
+</div></div><br><br><hr><br>**************************************<div id="title">2183. Count Array Pairs Divisible by K</div>
+**************************************<div class="content__u3I1 question-content__JfgR"><div><p>Given a <strong>0-indexed</strong> integer array <code>nums</code> of length <code>n</code> and an integer <code>k</code>, return <em>the <strong>number of pairs</strong></em> <code>(i, j)</code> <em>such that:</em></p>
+<ul>
+<li><code>0 &lt;= i &lt; j &lt;= n - 1</code> <em>and</em></li>
+<li><code>nums[i] * nums[j]</code> <em>is divisible by</em> <code>k</code>.</li>
+</ul>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [1,2,3,4,5], k = 2
+<strong>Output:</strong> 7
+<strong>Explanation:</strong> 
+The 7 pairs of indices whose corresponding products are divisible by 2 are
+(0, 1), (0, 3), (1, 2), (1, 3), (1, 4), (2, 3), and (3, 4).
+Their products are 2, 4, 6, 8, 10, 12, and 20 respectively.
+Other pairs such as (0, 2) and (2, 4) have products 3 and 15 respectively, which are not divisible by 2.    
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [1,2,3,4], k = 5
+<strong>Output:</strong> 0
+<strong>Explanation:</strong> There does not exist any pair of indices whose corresponding product is divisible by 5.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= nums[i], k &lt;= 10<sup>5</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>*************************************<div id="title">2188. Minimum Time to Finish the Race</div>
+*************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a <strong>0-indexed</strong> 2D integer array <code>tires</code> where <code>tires[i] = [f<sub>i</sub>, r<sub>i</sub>]</code> indicates that the <code>i<sup>th</sup></code> tire can finish its <code>x<sup>th</sup></code> successive lap in <code>f<sub>i</sub> * r<sub>i</sub><sup>(x-1)</sup></code> seconds.</p>
+<ul>
+<li>For example, if <code>f<sub>i</sub> = 3</code> and <code>r<sub>i</sub> = 2</code>, then the tire would finish its <code>1<sup>st</sup></code> lap in <code>3</code> seconds, its <code>2<sup>nd</sup></code> lap in <code>3 * 2 = 6</code> seconds, its <code>3<sup>rd</sup></code> lap in <code>3 * 2<sup>2</sup> = 12</code> seconds, etc.</li>
+</ul>
+<p>You are also given an integer <code>changeTime</code> and an integer <code>numLaps</code>.</p>
+<p>The race consists of <code>numLaps</code> laps and you may start the race with <strong>any</strong> tire. You have an <strong>unlimited</strong> supply of each tire and after every lap, you may <strong>change</strong> to any given tire (including the current tire type) if you wait <code>changeTime</code> seconds.</p>
+<p>Return<em> the <strong>minimum</strong> time to finish the race.</em></p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> tires = [[2,3],[3,4]], changeTime = 5, numLaps = 4
+<strong>Output:</strong> 21
+<strong>Explanation:</strong> 
+Lap 1: Start with tire 0 and finish the lap in 2 seconds.
+Lap 2: Continue with tire 0 and finish the lap in 2 * 3 = 6 seconds.
+Lap 3: Change tires to a new tire 0 for 5 seconds and then finish the lap in another 2 seconds.
+Lap 4: Continue with tire 0 and finish the lap in 2 * 3 = 6 seconds.
+Total time = 2 + 6 + 5 + 2 + 6 = 21 seconds.
+The minimum time to complete the race is 21 seconds.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> tires = [[1,10],[2,2],[3,4]], changeTime = 6, numLaps = 5
+<strong>Output:</strong> 25
+<strong>Explanation:</strong> 
+Lap 1: Start with tire 1 and finish the lap in 2 seconds.
+Lap 2: Continue with tire 1 and finish the lap in 2 * 2 = 4 seconds.
+Lap 3: Change tires to a new tire 1 for 6 seconds and then finish the lap in another 2 seconds.
+Lap 4: Continue with tire 1 and finish the lap in 2 * 2 = 4 seconds.
+Lap 5: Change tires to tire 0 for 6 seconds then finish the lap in another 1 second.
+Total time = 2 + 4 + 6 + 2 + 4 + 6 + 1 = 25 seconds.
+The minimum time to complete the race is 25 seconds. 
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= tires.length &lt;= 10<sup>5</sup></code></li>
+<li><code>tires[i].length == 2</code></li>
+<li><code>1 &lt;= f<sub>i</sub>, changeTime &lt;= 10<sup>5</sup></code></li>
+<li><code>2 &lt;= r<sub>i</sub> &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= numLaps &lt;= 1000</code></li>
+</ul>
+</div></div><br><br><hr><br>************************************************<div id="title">2193. Minimum Number of Moves to Make Palindrome</div>
+************************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a string <code>s</code> consisting only of lowercase English letters.</p>
+<p>In one <strong>move</strong>, you can select any two <strong>adjacent</strong> characters of <code>s</code> and swap them.</p>
+<p>Return <em>the <strong>minimum number of moves</strong> needed to make</em> <code>s</code> <em>a palindrome</em>.</p>
+<p><strong>Note</strong> that the input will be generated such that <code>s</code> can always be converted to a palindrome.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "aabb"
+<strong>Output:</strong> 2
+<strong>Explanation:</strong>
+We can obtain two palindromes from s, "abba" and "baab". 
+- We can obtain "abba" from s in 2 moves: "a<u><strong>ab</strong></u>b" -&gt; "ab<u><strong>ab</strong></u>" -&gt; "abba".
+- We can obtain "baab" from s in 2 moves: "a<u><strong>ab</strong></u>b" -&gt; "<u><strong>ab</strong></u>ab" -&gt; "baab".
+Thus, the minimum number of moves needed to make s a palindrome is 2.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "letelt"
+<strong>Output:</strong> 2
+<strong>Explanation:</strong>
+One of the palindromes we can obtain from s in 2 moves is "lettel".
+One of the ways we can obtain it is "lete<u><strong>lt</strong></u>" -&gt; "let<u><strong>et</strong></u>l" -&gt; "lettel".
+Other palindromes such as "tleelt" can also be obtained in 2 moves.
+It can be shown that it is not possible to obtain a palindrome in less than 2 moves.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 2000</code></li>
+<li><code>s</code> consists only of lowercase English letters.</li>
+<li><code>s</code> can be converted to a palindrome using a finite number of moves.</li>
+</ul>
 </div></div><br><br><hr><br>
