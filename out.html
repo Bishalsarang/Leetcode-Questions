@@ -53277,4 +53277,153 @@ Note that there are other ways to obtain the same resultant array.
 <li><code>1 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
 <li>The test cases are generated such that the values in the final array are <strong>less than or equal</strong> to <code>10<sup>8</sup></code>.</li>
 </ul>
+</div></div><br><br><hr><br><style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>*************************************<div id="title">2188. Minimum Time to Finish the Race</div>
+*************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a <strong>0-indexed</strong> 2D integer array <code>tires</code> where <code>tires[i] = [f<sub>i</sub>, r<sub>i</sub>]</code> indicates that the <code>i<sup>th</sup></code> tire can finish its <code>x<sup>th</sup></code> successive lap in <code>f<sub>i</sub> * r<sub>i</sub><sup>(x-1)</sup></code> seconds.</p>
+<ul>
+<li>For example, if <code>f<sub>i</sub> = 3</code> and <code>r<sub>i</sub> = 2</code>, then the tire would finish its <code>1<sup>st</sup></code> lap in <code>3</code> seconds, its <code>2<sup>nd</sup></code> lap in <code>3 * 2 = 6</code> seconds, its <code>3<sup>rd</sup></code> lap in <code>3 * 2<sup>2</sup> = 12</code> seconds, etc.</li>
+</ul>
+<p>You are also given an integer <code>changeTime</code> and an integer <code>numLaps</code>.</p>
+<p>The race consists of <code>numLaps</code> laps and you may start the race with <strong>any</strong> tire. You have an <strong>unlimited</strong> supply of each tire and after every lap, you may <strong>change</strong> to any given tire (including the current tire type) if you wait <code>changeTime</code> seconds.</p>
+<p>Return<em> the <strong>minimum</strong> time to finish the race.</em></p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> tires = [[2,3],[3,4]], changeTime = 5, numLaps = 4
+<strong>Output:</strong> 21
+<strong>Explanation:</strong> 
+Lap 1: Start with tire 0 and finish the lap in 2 seconds.
+Lap 2: Continue with tire 0 and finish the lap in 2 * 3 = 6 seconds.
+Lap 3: Change tires to a new tire 0 for 5 seconds and then finish the lap in another 2 seconds.
+Lap 4: Continue with tire 0 and finish the lap in 2 * 3 = 6 seconds.
+Total time = 2 + 6 + 5 + 2 + 6 = 21 seconds.
+The minimum time to complete the race is 21 seconds.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> tires = [[1,10],[2,2],[3,4]], changeTime = 6, numLaps = 5
+<strong>Output:</strong> 25
+<strong>Explanation:</strong> 
+Lap 1: Start with tire 1 and finish the lap in 2 seconds.
+Lap 2: Continue with tire 1 and finish the lap in 2 * 2 = 4 seconds.
+Lap 3: Change tires to a new tire 1 for 6 seconds and then finish the lap in another 2 seconds.
+Lap 4: Continue with tire 1 and finish the lap in 2 * 2 = 4 seconds.
+Lap 5: Change tires to tire 0 for 6 seconds then finish the lap in another 1 second.
+Total time = 2 + 4 + 6 + 2 + 4 + 6 + 1 = 25 seconds.
+The minimum time to complete the race is 25 seconds. 
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= tires.length &lt;= 10<sup>5</sup></code></li>
+<li><code>tires[i].length == 2</code></li>
+<li><code>1 &lt;= f<sub>i</sub>, changeTime &lt;= 10<sup>5</sup></code></li>
+<li><code>2 &lt;= r<sub>i</sub> &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= numLaps &lt;= 1000</code></li>
+</ul>
+</div></div><br><br><hr><br>************************************************<div id="title">2193. Minimum Number of Moves to Make Palindrome</div>
+************************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a string <code>s</code> consisting only of lowercase English letters.</p>
+<p>In one <strong>move</strong>, you can select any two <strong>adjacent</strong> characters of <code>s</code> and swap them.</p>
+<p>Return <em>the <strong>minimum number of moves</strong> needed to make</em> <code>s</code> <em>a palindrome</em>.</p>
+<p><strong>Note</strong> that the input will be generated such that <code>s</code> can always be converted to a palindrome.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "aabb"
+<strong>Output:</strong> 2
+<strong>Explanation:</strong>
+We can obtain two palindromes from s, "abba" and "baab". 
+- We can obtain "abba" from s in 2 moves: "a<u><strong>ab</strong></u>b" -&gt; "ab<u><strong>ab</strong></u>" -&gt; "abba".
+- We can obtain "baab" from s in 2 moves: "a<u><strong>ab</strong></u>b" -&gt; "<u><strong>ab</strong></u>ab" -&gt; "baab".
+Thus, the minimum number of moves needed to make s a palindrome is 2.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "letelt"
+<strong>Output:</strong> 2
+<strong>Explanation:</strong>
+One of the palindromes we can obtain from s in 2 moves is "lettel".
+One of the ways we can obtain it is "lete<u><strong>lt</strong></u>" -&gt; "let<u><strong>et</strong></u>l" -&gt; "lettel".
+Other palindromes such as "tleelt" can also be obtained in 2 moves.
+It can be shown that it is not possible to obtain a palindrome in less than 2 moves.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 2000</code></li>
+<li><code>s</code> consists only of lowercase English letters.</li>
+<li><code>s</code> can be converted to a palindrome using a finite number of moves.</li>
+</ul>
+</div></div><br><br><hr><br>******************************************<div id="title">2197. Replace Non-Coprime Numbers in Array</div>
+******************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given an array of integers <code>nums</code>. Perform the following steps:</p>
+<ol>
+<li>Find <strong>any</strong> two <strong>adjacent</strong> numbers in <code>nums</code> that are <strong>non-coprime</strong>.</li>
+<li>If no such numbers are found, <strong>stop</strong> the process.</li>
+<li>Otherwise, delete the two numbers and <strong>replace</strong> them with their <strong>LCM (Least Common Multiple)</strong>.</li>
+<li><strong>Repeat</strong> this process as long as you keep finding two adjacent non-coprime numbers.</li>
+</ol>
+<p>Return <em>the <strong>final</strong> modified array.</em> It can be shown that replacing adjacent non-coprime numbers in <strong>any</strong> arbitrary order will lead to the same result.</p>
+<p>The test cases are generated such that the values in the final array are <strong>less than or equal</strong> to <code>10<sup>8</sup></code>.</p>
+<p>Two values <code>x</code> and <code>y</code> are <strong>non-coprime</strong> if <code>GCD(x, y) &gt; 1</code> where <code>GCD(x, y)</code> is the <strong>Greatest Common Divisor</strong> of <code>x</code> and <code>y</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [6,4,3,2,7,6,2]
+<strong>Output:</strong> [12,7,6]
+<strong>Explanation:</strong> 
+- (6, 4) are non-coprime with LCM(6, 4) = 12. Now, nums = [<strong><u>12</u></strong>,3,2,7,6,2].
+- (12, 3) are non-coprime with LCM(12, 3) = 12. Now, nums = [<strong><u>12</u></strong>,2,7,6,2].
+- (12, 2) are non-coprime with LCM(12, 2) = 12. Now, nums = [<strong><u>12</u></strong>,7,6,2].
+- (6, 2) are non-coprime with LCM(6, 2) = 6. Now, nums = [12,7,<u><strong>6</strong></u>].
+There are no more adjacent non-coprime numbers in nums.
+Thus, the final modified array is [12,7,6].
+Note that there are other ways to obtain the same resultant array.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [2,2,1,1,3,3,3]
+<strong>Output:</strong> [2,1,1,3]
+<strong>Explanation:</strong> 
+- (3, 3) are non-coprime with LCM(3, 3) = 3. Now, nums = [2,2,1,1,<u><strong>3</strong></u>,3].
+- (3, 3) are non-coprime with LCM(3, 3) = 3. Now, nums = [2,2,1,1,<u><strong>3</strong></u>].
+- (2, 2) are non-coprime with LCM(2, 2) = 2. Now, nums = [<u><strong>2</strong></u>,1,1,3].
+There are no more adjacent non-coprime numbers in nums.
+Thus, the final modified array is [2,1,1,3].
+Note that there are other ways to obtain the same resultant array.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
+<li>The test cases are generated such that the values in the final array are <strong>less than or equal</strong> to <code>10<sup>8</sup></code>.</li>
+</ul>
+</div></div><br><br><hr><br>*******************************************************<div id="title">2203. Minimum Weighted Subgraph With the Required Paths</div>
+*******************************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given an integer <code>n</code> denoting the number of nodes of a <strong>weighted directed</strong> graph. The nodes are numbered from <code>0</code> to <code>n - 1</code>.</p>
+<p>You are also given a 2D integer array <code>edges</code> where <code>edges[i] = [from<sub>i</sub>, to<sub>i</sub>, weight<sub>i</sub>]</code> denotes that there exists a <strong>directed</strong> edge from <code>from<sub>i</sub></code> to <code>to<sub>i</sub></code> with weight <code>weight<sub>i</sub></code>.</p>
+<p>Lastly, you are given three <strong>distinct</strong> integers <code>src1</code>, <code>src2</code>, and <code>dest</code> denoting three distinct nodes of the graph.</p>
+<p>Return <em>the <strong>minimum weight</strong> of a subgraph of the graph such that it is <strong>possible</strong> to reach</em> <code>dest</code> <em>from both</em> <code>src1</code> <em>and</em> <code>src2</code> <em>via a set of edges of this subgraph</em>. In case such a subgraph does not exist, return <code>-1</code>.</p>
+<p>A <strong>subgraph</strong> is a graph whose vertices and edges are subsets of the original graph. The <strong>weight</strong> of a subgraph is the sum of weights of its constituent edges.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/02/17/example1drawio.png" style="width: 263px; height: 250px;"/>
+<pre><strong>Input:</strong> n = 6, edges = [[0,2,2],[0,5,6],[1,0,3],[1,4,5],[2,1,1],[2,3,3],[2,3,4],[3,4,2],[4,5,1]], src1 = 0, src2 = 1, dest = 5
+<strong>Output:</strong> 9
+<strong>Explanation:</strong>
+The above figure represents the input graph.
+The blue edges represent one of the subgraphs that yield the optimal answer.
+Note that the subgraph [[1,0,3],[0,5,6]] also yields the optimal answer. It is not possible to get a subgraph with less weight satisfying all the constraints.
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/02/17/example2-1drawio.png" style="width: 350px; height: 51px;"/>
+<pre><strong>Input:</strong> n = 3, edges = [[0,1,1],[2,1,1]], src1 = 0, src2 = 1, dest = 2
+<strong>Output:</strong> -1
+<strong>Explanation:</strong>
+The above figure represents the input graph.
+It can be seen that there does not exist any path from node 1 to node 2, hence there are no subgraphs satisfying all the constraints.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>3 &lt;= n &lt;= 10<sup>5</sup></code></li>
+<li><code>0 &lt;= edges.length &lt;= 10<sup>5</sup></code></li>
+<li><code>edges[i].length == 3</code></li>
+<li><code>0 &lt;= from<sub>i</sub>, to<sub>i</sub>, src1, src2, dest &lt;= n - 1</code></li>
+<li><code>from<sub>i</sub> != to<sub>i</sub></code></li>
+<li><code>src1</code>, <code>src2</code>, and <code>dest</code> are pairwise distinct.</li>
+<li><code>1 &lt;= weight[i] &lt;= 10<sup>5</sup></code></li>
+</ul>
 </div></div><br><br><hr><br>
