@@ -53566,4 +53566,146 @@ Note that the carpets are able to overlap one another.
 <li><code>floor[i]</code> is either <code>'0'</code> or <code>'1'</code>.</li>
 <li><code>1 &lt;= numCarpets &lt;= 1000</code></li>
 </ul>
+</div></div><br><br><hr><br><style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>******************************************<div id="title">2197. Replace Non-Coprime Numbers in Array</div>
+******************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given an array of integers <code>nums</code>. Perform the following steps:</p>
+<ol>
+<li>Find <strong>any</strong> two <strong>adjacent</strong> numbers in <code>nums</code> that are <strong>non-coprime</strong>.</li>
+<li>If no such numbers are found, <strong>stop</strong> the process.</li>
+<li>Otherwise, delete the two numbers and <strong>replace</strong> them with their <strong>LCM (Least Common Multiple)</strong>.</li>
+<li><strong>Repeat</strong> this process as long as you keep finding two adjacent non-coprime numbers.</li>
+</ol>
+<p>Return <em>the <strong>final</strong> modified array.</em> It can be shown that replacing adjacent non-coprime numbers in <strong>any</strong> arbitrary order will lead to the same result.</p>
+<p>The test cases are generated such that the values in the final array are <strong>less than or equal</strong> to <code>10<sup>8</sup></code>.</p>
+<p>Two values <code>x</code> and <code>y</code> are <strong>non-coprime</strong> if <code>GCD(x, y) &gt; 1</code> where <code>GCD(x, y)</code> is the <strong>Greatest Common Divisor</strong> of <code>x</code> and <code>y</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [6,4,3,2,7,6,2]
+<strong>Output:</strong> [12,7,6]
+<strong>Explanation:</strong> 
+- (6, 4) are non-coprime with LCM(6, 4) = 12. Now, nums = [<strong><u>12</u></strong>,3,2,7,6,2].
+- (12, 3) are non-coprime with LCM(12, 3) = 12. Now, nums = [<strong><u>12</u></strong>,2,7,6,2].
+- (12, 2) are non-coprime with LCM(12, 2) = 12. Now, nums = [<strong><u>12</u></strong>,7,6,2].
+- (6, 2) are non-coprime with LCM(6, 2) = 6. Now, nums = [12,7,<u><strong>6</strong></u>].
+There are no more adjacent non-coprime numbers in nums.
+Thus, the final modified array is [12,7,6].
+Note that there are other ways to obtain the same resultant array.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [2,2,1,1,3,3,3]
+<strong>Output:</strong> [2,1,1,3]
+<strong>Explanation:</strong> 
+- (3, 3) are non-coprime with LCM(3, 3) = 3. Now, nums = [2,2,1,1,<u><strong>3</strong></u>,3].
+- (3, 3) are non-coprime with LCM(3, 3) = 3. Now, nums = [2,2,1,1,<u><strong>3</strong></u>].
+- (2, 2) are non-coprime with LCM(2, 2) = 2. Now, nums = [<u><strong>2</strong></u>,1,1,3].
+There are no more adjacent non-coprime numbers in nums.
+Thus, the final modified array is [2,1,1,3].
+Note that there are other ways to obtain the same resultant array.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
+<li>The test cases are generated such that the values in the final array are <strong>less than or equal</strong> to <code>10<sup>8</sup></code>.</li>
+</ul>
+</div></div><br><br><hr><br>*******************************************************<div id="title">2203. Minimum Weighted Subgraph With the Required Paths</div>
+*******************************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given an integer <code>n</code> denoting the number of nodes of a <strong>weighted directed</strong> graph. The nodes are numbered from <code>0</code> to <code>n - 1</code>.</p>
+<p>You are also given a 2D integer array <code>edges</code> where <code>edges[i] = [from<sub>i</sub>, to<sub>i</sub>, weight<sub>i</sub>]</code> denotes that there exists a <strong>directed</strong> edge from <code>from<sub>i</sub></code> to <code>to<sub>i</sub></code> with weight <code>weight<sub>i</sub></code>.</p>
+<p>Lastly, you are given three <strong>distinct</strong> integers <code>src1</code>, <code>src2</code>, and <code>dest</code> denoting three distinct nodes of the graph.</p>
+<p>Return <em>the <strong>minimum weight</strong> of a subgraph of the graph such that it is <strong>possible</strong> to reach</em> <code>dest</code> <em>from both</em> <code>src1</code> <em>and</em> <code>src2</code> <em>via a set of edges of this subgraph</em>. In case such a subgraph does not exist, return <code>-1</code>.</p>
+<p>A <strong>subgraph</strong> is a graph whose vertices and edges are subsets of the original graph. The <strong>weight</strong> of a subgraph is the sum of weights of its constituent edges.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/02/17/example1drawio.png" style="width: 263px; height: 250px;"/>
+<pre><strong>Input:</strong> n = 6, edges = [[0,2,2],[0,5,6],[1,0,3],[1,4,5],[2,1,1],[2,3,3],[2,3,4],[3,4,2],[4,5,1]], src1 = 0, src2 = 1, dest = 5
+<strong>Output:</strong> 9
+<strong>Explanation:</strong>
+The above figure represents the input graph.
+The blue edges represent one of the subgraphs that yield the optimal answer.
+Note that the subgraph [[1,0,3],[0,5,6]] also yields the optimal answer. It is not possible to get a subgraph with less weight satisfying all the constraints.
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/02/17/example2-1drawio.png" style="width: 350px; height: 51px;"/>
+<pre><strong>Input:</strong> n = 3, edges = [[0,1,1],[2,1,1]], src1 = 0, src2 = 1, dest = 2
+<strong>Output:</strong> -1
+<strong>Explanation:</strong>
+The above figure represents the input graph.
+It can be seen that there does not exist any path from node 1 to node 2, hence there are no subgraphs satisfying all the constraints.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>3 &lt;= n &lt;= 10<sup>5</sup></code></li>
+<li><code>0 &lt;= edges.length &lt;= 10<sup>5</sup></code></li>
+<li><code>edges[i].length == 3</code></li>
+<li><code>0 &lt;= from<sub>i</sub>, to<sub>i</sub>, src1, src2, dest &lt;= n - 1</code></li>
+<li><code>from<sub>i</sub> != to<sub>i</sub></code></li>
+<li><code>src1</code>, <code>src2</code>, and <code>dest</code> are pairwise distinct.</li>
+<li><code>1 &lt;= weight[i] &lt;= 10<sup>5</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>*****************************************************<div id="title">2209. Minimum White Tiles After Covering With Carpets</div>
+*****************************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a <strong>0-indexed binary</strong> string <code>floor</code>, which represents the colors of tiles on a floor:</p>
+<ul>
+<li><code>floor[i] = '0'</code> denotes that the <code>i<sup>th</sup></code> tile of the floor is colored <strong>black</strong>.</li>
+<li>On the other hand, <code>floor[i] = '1'</code> denotes that the <code>i<sup>th</sup></code> tile of the floor is colored <strong>white</strong>.</li>
+</ul>
+<p>You are also given <code>numCarpets</code> and <code>carpetLen</code>. You have <code>numCarpets</code> <strong>black</strong> carpets, each of length <code>carpetLen</code> tiles. Cover the tiles with the given carpets such that the number of <strong>white</strong> tiles still visible is <strong>minimum</strong>. Carpets may overlap one another.</p>
+<p>Return <em>the <strong>minimum</strong> number of white tiles still visible.</em></p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/02/10/ex1-1.png" style="width: 400px; height: 73px;"/>
+<pre><strong>Input:</strong> floor = "10110101", numCarpets = 2, carpetLen = 2
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> 
+The figure above shows one way of covering the tiles with the carpets such that only 2 white tiles are visible.
+No other way of covering the tiles with the carpets can leave less than 2 white tiles visible.
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/02/10/ex2.png" style="width: 353px; height: 123px;"/>
+<pre><strong>Input:</strong> floor = "11111", numCarpets = 2, carpetLen = 3
+<strong>Output:</strong> 0
+<strong>Explanation:</strong> 
+The figure above shows one way of covering the tiles with the carpets such that no white tiles are visible.
+Note that the carpets are able to overlap one another.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= carpetLen &lt;= floor.length &lt;= 1000</code></li>
+<li><code>floor[i]</code> is either <code>'0'</code> or <code>'1'</code>.</li>
+<li><code>1 &lt;= numCarpets &lt;= 1000</code></li>
+</ul>
+</div></div><br><br><hr><br>**************************************************<div id="title">2213. Longest Substring of One Repeating Character</div>
+**************************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a <strong>0-indexed</strong> string <code>s</code>. You are also given a <strong>0-indexed</strong> string <code>queryCharacters</code> of length <code>k</code> and a <strong>0-indexed</strong> array of integer <strong>indices</strong> <code>queryIndices</code> of length <code>k</code>, both of which are used to describe <code>k</code> queries.</p>
+<p>The <code>i<sup>th</sup></code> query updates the character in <code>s</code> at index <code>queryIndices[i]</code> to the character <code>queryCharacters[i]</code>.</p>
+<p>Return <em>an array</em> <code>lengths</code> <em>of length </em><code>k</code><em> where</em> <code>lengths[i]</code> <em>is the <strong>length</strong> of the <strong>longest substring</strong> of </em><code>s</code><em> consisting of <strong>only one repeating</strong> character <strong>after</strong> the</em> <code>i<sup>th</sup></code> <em>query</em><em> is performed.</em></p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "babacc", queryCharacters = "bcb", queryIndices = [1,3,3]
+<strong>Output:</strong> [3,3,4]
+<strong>Explanation:</strong> 
+- 1<sup>st</sup> query updates s = "<u>b<strong>b</strong>b</u>acc". The longest substring consisting of one repeating character is "bbb" with length 3.
+- 2<sup>nd</sup> query updates s = "bbb<u><strong>c</strong>cc</u>". 
+  The longest substring consisting of one repeating character can be "bbb" or "ccc" with length 3.
+- 3<sup>rd</sup> query updates s = "<u>bbb<strong>b</strong></u>cc". The longest substring consisting of one repeating character is "bbbb" with length 4.
+Thus, we return [3,3,4].
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "abyzz", queryCharacters = "aa", queryIndices = [2,1]
+<strong>Output:</strong> [2,3]
+<strong>Explanation:</strong>
+- 1<sup>st</sup> query updates s = "ab<strong>a</strong><u>zz</u>". The longest substring consisting of one repeating character is "zz" with length 2.
+- 2<sup>nd</sup> query updates s = "<u>a<strong>a</strong>a</u>zz". The longest substring consisting of one repeating character is "aaa" with length 3.
+Thus, we return [2,3].
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>
+<li><code>s</code> consists of lowercase English letters.</li>
+<li><code>k == queryCharacters.length == queryIndices.length</code></li>
+<li><code>1 &lt;= k &lt;= 10<sup>5</sup></code></li>
+<li><code>queryCharacters</code> consists of lowercase English letters.</li>
+<li><code>0 &lt;= queryIndices[i] &lt; s.length</code></li>
+</ul>
 </div></div><br><br><hr><br>
