@@ -54119,4 +54119,228 @@ encrypter.decrypt("eizfeiam"); // return 2.
 <li><code>keys</code>, <code>values[i]</code>, <code>dictionary[i]</code>, <code>word1</code>, and <code>word2</code> only contain lowercase English letters.</li>
 <li>At most <code>200</code> calls will be made to <code>encrypt</code> and <code>decrypt</code> <strong>in total</strong>.</li>
 </ul>
+</div></div><br><br><hr><br><style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>*****************************************************<div id="title">2209. Minimum White Tiles After Covering With Carpets</div>
+*****************************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a <strong>0-indexed binary</strong> string <code>floor</code>, which represents the colors of tiles on a floor:</p>
+<ul>
+<li><code>floor[i] = '0'</code> denotes that the <code>i<sup>th</sup></code> tile of the floor is colored <strong>black</strong>.</li>
+<li>On the other hand, <code>floor[i] = '1'</code> denotes that the <code>i<sup>th</sup></code> tile of the floor is colored <strong>white</strong>.</li>
+</ul>
+<p>You are also given <code>numCarpets</code> and <code>carpetLen</code>. You have <code>numCarpets</code> <strong>black</strong> carpets, each of length <code>carpetLen</code> tiles. Cover the tiles with the given carpets such that the number of <strong>white</strong> tiles still visible is <strong>minimum</strong>. Carpets may overlap one another.</p>
+<p>Return <em>the <strong>minimum</strong> number of white tiles still visible.</em></p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/02/10/ex1-1.png" style="width: 400px; height: 73px;"/>
+<pre><strong>Input:</strong> floor = "10110101", numCarpets = 2, carpetLen = 2
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> 
+The figure above shows one way of covering the tiles with the carpets such that only 2 white tiles are visible.
+No other way of covering the tiles with the carpets can leave less than 2 white tiles visible.
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/02/10/ex2.png" style="width: 353px; height: 123px;"/>
+<pre><strong>Input:</strong> floor = "11111", numCarpets = 2, carpetLen = 3
+<strong>Output:</strong> 0
+<strong>Explanation:</strong> 
+The figure above shows one way of covering the tiles with the carpets such that no white tiles are visible.
+Note that the carpets are able to overlap one another.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= carpetLen &lt;= floor.length &lt;= 1000</code></li>
+<li><code>floor[i]</code> is either <code>'0'</code> or <code>'1'</code>.</li>
+<li><code>1 &lt;= numCarpets &lt;= 1000</code></li>
+</ul>
+</div></div><br><br><hr><br>**************************************************<div id="title">2213. Longest Substring of One Repeating Character</div>
+**************************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a <strong>0-indexed</strong> string <code>s</code>. You are also given a <strong>0-indexed</strong> string <code>queryCharacters</code> of length <code>k</code> and a <strong>0-indexed</strong> array of integer <strong>indices</strong> <code>queryIndices</code> of length <code>k</code>, both of which are used to describe <code>k</code> queries.</p>
+<p>The <code>i<sup>th</sup></code> query updates the character in <code>s</code> at index <code>queryIndices[i]</code> to the character <code>queryCharacters[i]</code>.</p>
+<p>Return <em>an array</em> <code>lengths</code> <em>of length </em><code>k</code><em> where</em> <code>lengths[i]</code> <em>is the <strong>length</strong> of the <strong>longest substring</strong> of </em><code>s</code><em> consisting of <strong>only one repeating</strong> character <strong>after</strong> the</em> <code>i<sup>th</sup></code> <em>query</em><em> is performed.</em></p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "babacc", queryCharacters = "bcb", queryIndices = [1,3,3]
+<strong>Output:</strong> [3,3,4]
+<strong>Explanation:</strong> 
+- 1<sup>st</sup> query updates s = "<u>b<strong>b</strong>b</u>acc". The longest substring consisting of one repeating character is "bbb" with length 3.
+- 2<sup>nd</sup> query updates s = "bbb<u><strong>c</strong>cc</u>". 
+  The longest substring consisting of one repeating character can be "bbb" or "ccc" with length 3.
+- 3<sup>rd</sup> query updates s = "<u>bbb<strong>b</strong></u>cc". The longest substring consisting of one repeating character is "bbbb" with length 4.
+Thus, we return [3,3,4].
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "abyzz", queryCharacters = "aa", queryIndices = [2,1]
+<strong>Output:</strong> [2,3]
+<strong>Explanation:</strong>
+- 1<sup>st</sup> query updates s = "ab<strong>a</strong><u>zz</u>". The longest substring consisting of one repeating character is "zz" with length 2.
+- 2<sup>nd</sup> query updates s = "<u>a<strong>a</strong>a</u>zz". The longest substring consisting of one repeating character is "aaa" with length 3.
+Thus, we return [2,3].
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>
+<li><code>s</code> consists of lowercase English letters.</li>
+<li><code>k == queryCharacters.length == queryIndices.length</code></li>
+<li><code>1 &lt;= k &lt;= 10<sup>5</sup></code></li>
+<li><code>queryCharacters</code> consists of lowercase English letters.</li>
+<li><code>0 &lt;= queryIndices[i] &lt; s.length</code></li>
+</ul>
+</div></div><br><br><hr><br>*****************************************<div id="title">2218. Maximum Value of K Coins From Piles</div>
+*****************************************<div class="content__u3I1 question-content__JfgR"><div><p>There are <code>n</code> <strong>piles</strong> of coins on a table. Each pile consists of a <strong>positive number</strong> of coins of assorted denominations.</p>
+<p>In one move, you can choose any coin on <strong>top</strong> of any pile, remove it, and add it to your wallet.</p>
+<p>Given a list <code>piles</code>, where <code>piles[i]</code> is a list of integers denoting the composition of the <code>i<sup>th</sup></code> pile from <strong>top to bottom</strong>, and a positive integer <code>k</code>, return <em>the <strong>maximum total value</strong> of coins you can have in your wallet if you choose <strong>exactly</strong></em> <code>k</code> <em>coins optimally</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2019/11/09/e1.png" style="width: 600px; height: 243px;"/>
+<pre><strong>Input:</strong> piles = [[1,100,3],[7,8,9]], k = 2
+<strong>Output:</strong> 101
+<strong>Explanation:</strong>
+The above diagram shows the different ways we can choose k coins.
+The maximum total we can obtain is 101.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> piles = [[100],[100],[100],[100],[100],[100],[1,1,1,1,1,1,700]], k = 7
+<strong>Output:</strong> 706
+<strong>Explanation:
+</strong>The maximum total can be obtained if we choose all coins from the last pile.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == piles.length</code></li>
+<li><code>1 &lt;= n &lt;= 1000</code></li>
+<li><code>1 &lt;= piles[i][j] &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= k &lt;= sum(piles[i].length) &lt;= 2000</code></li>
+</ul>
+</div></div><br><br><hr><br>************************************<div id="title">2223. Sum of Scores of Built Strings</div>
+************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are <strong>building</strong> a string <code>s</code> of length <code>n</code> <strong>one</strong> character at a time, <strong>prepending</strong> each new character to the <strong>front</strong> of the string. The strings are labeled from <code>1</code> to <code>n</code>, where the string with length <code>i</code> is labeled <code>s<sub>i</sub></code>.</p>
+<ul>
+<li>For example, for <code>s = "abaca"</code>, <code>s<sub>1</sub> == "a"</code>, <code>s<sub>2</sub> == "ca"</code>, <code>s<sub>3</sub> == "aca"</code>, etc.</li>
+</ul>
+<p>The <strong>score</strong> of <code>s<sub>i</sub></code> is the length of the <strong>longest common prefix</strong> between <code>s<sub>i</sub></code> and <code>s<sub>n</sub></code> (Note that <code>s == s<sub>n</sub></code>).</p>
+<p>Given the final string <code>s</code>, return<em> the <strong>sum</strong> of the <strong>score</strong> of every </em><code>s<sub>i</sub></code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "babab"
+<strong>Output:</strong> 9
+<strong>Explanation:</strong>
+For s<sub>1</sub> == "b", the longest common prefix is "b" which has a score of 1.
+For s<sub>2</sub> == "ab", there is no common prefix so the score is 0.
+For s<sub>3</sub> == "bab", the longest common prefix is "bab" which has a score of 3.
+For s<sub>4</sub> == "abab", there is no common prefix so the score is 0.
+For s<sub>5</sub> == "babab", the longest common prefix is "babab" which has a score of 5.
+The sum of the scores is 1 + 0 + 3 + 0 + 5 = 9, so we return 9.</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "azbazbzaz"
+<strong>Output:</strong> 14
+<strong>Explanation:</strong> 
+For s<sub>2</sub> == "az", the longest common prefix is "az" which has a score of 2.
+For s<sub>6</sub> == "azbzaz", the longest common prefix is "azb" which has a score of 3.
+For s<sub>9</sub> == "azbazbzaz", the longest common prefix is "azbazbzaz" which has a score of 9.
+For all other s<sub>i</sub>, the score is 0.
+The sum of the scores is 2 + 3 + 9 = 14, so we return 14.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>
+<li><code>s</code> consists of lowercase English letters.</li>
+</ul>
+</div></div><br><br><hr><br>*********************************<div id="title">2227. Encrypt and Decrypt Strings</div>
+*********************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a character array <code>keys</code> containing <strong>unique</strong> characters and a string array <code>values</code> containing strings of length 2. You are also given another string array <code>dictionary</code> that contains all permitted original strings after decryption. You should implement a data structure that can encrypt or decrypt a <strong>0-indexed</strong> string.</p>
+<p>A string is <strong>encrypted</strong> with the following process:</p>
+<ol>
+<li>For each character <code>c</code> in the string, we find the index <code>i</code> satisfying <code>keys[i] == c</code> in <code>keys</code>.</li>
+<li>Replace <code>c</code> with <code>values[i]</code> in the string.</li>
+</ol>
+<p>Note that in case a character of the string is <strong>not present</strong> in <code>keys</code>, the encryption process cannot be carried out, and an empty string <code>""</code> is returned.</p>
+<p>A string is <strong>decrypted</strong> with the following process:</p>
+<ol>
+<li>For each substring <code>s</code> of length 2 occurring at an even index in the string, we find an <code>i</code> such that <code>values[i] == s</code>. If there are multiple valid <code>i</code>, we choose <strong>any</strong> one of them. This means a string could have multiple possible strings it can decrypt to.</li>
+<li>Replace <code>s</code> with <code>keys[i]</code> in the string.</li>
+</ol>
+<p>Implement the <code>Encrypter</code> class:</p>
+<ul>
+<li><code>Encrypter(char[] keys, String[] values, String[] dictionary)</code> Initializes the <code>Encrypter</code> class with <code>keys, values</code>, and <code>dictionary</code>.</li>
+<li><code>String encrypt(String word1)</code> Encrypts <code>word1</code> with the encryption process described above and returns the encrypted string.</li>
+<li><code>int decrypt(String word2)</code> Returns the number of possible strings <code>word2</code> could decrypt to that also appear in <code>dictionary</code>.</li>
+</ul>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input</strong>
+["Encrypter", "encrypt", "decrypt"]
+[[['a', 'b', 'c', 'd'], ["ei", "zf", "ei", "am"], ["abcd", "acbd", "adbc", "badc", "dacb", "cadb", "cbda", "abad"]], ["abcd"], ["eizfeiam"]]
+<strong>Output</strong>
+[null, "eizfeiam", 2]
+
+<strong>Explanation</strong>
+Encrypter encrypter = new Encrypter([['a', 'b', 'c', 'd'], ["ei", "zf", "ei", "am"], ["abcd", "acbd", "adbc", "badc", "dacb", "cadb", "cbda", "abad"]);
+encrypter.encrypt("abcd"); // return "eizfeiam". 
+                           // 'a' maps to "ei", 'b' maps to "zf", 'c' maps to "ei", and 'd' maps to "am".
+encrypter.decrypt("eizfeiam"); // return 2. 
+                              // "ei" can map to 'a' or 'c', "zf" maps to 'b', and "am" maps to 'd'. 
+                              // Thus, the possible strings after decryption are "abad", "cbad", "abcd", and "cbcd". 
+                              // 2 of those strings, "abad" and "abcd", appear in dictionary, so the answer is 2.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= keys.length == values.length &lt;= 26</code></li>
+<li><code>values[i].length == 2</code></li>
+<li><code>1 &lt;= dictionary.length &lt;= 100</code></li>
+<li><code>1 &lt;= dictionary[i].length &lt;= 100</code></li>
+<li>All <code>keys[i]</code> and <code>dictionary[i]</code> are <strong>unique</strong>.</li>
+<li><code>1 &lt;= word1.length &lt;= 2000</code></li>
+<li><code>1 &lt;= word2.length &lt;= 200</code></li>
+<li>All <code>word1[i]</code> appear in <code>keys</code>.</li>
+<li><code>word2.length</code> is even.</li>
+<li><code>keys</code>, <code>values[i]</code>, <code>dictionary[i]</code>, <code>word1</code>, and <code>word2</code> only contain lowercase English letters.</li>
+<li>At most <code>200</code> calls will be made to <code>encrypt</code> and <code>decrypt</code> <strong>in total</strong>.</li>
+</ul>
+</div></div><br><br><hr><br>*****************************************<div id="title">2234. Maximum Total Beauty of the Gardens</div>
+*****************************************<div class="content__u3I1 question-content__JfgR"><div><p>Alice is a caretaker of <code>n</code> gardens and she wants to plant flowers to maximize the total beauty of all her gardens.</p>
+<p>You are given a <strong>0-indexed</strong> integer array <code>flowers</code> of size <code>n</code>, where <code>flowers[i]</code> is the number of flowers already planted in the <code>i<sup>th</sup></code> garden. Flowers that are already planted <strong>cannot</strong> be removed. You are then given another integer <code>newFlowers</code>, which is the <strong>maximum</strong> number of flowers that Alice can additionally plant. You are also given the integers <code>target</code>, <code>full</code>, and <code>partial</code>.</p>
+<p>A garden is considered <strong>complete</strong> if it has <strong>at least</strong> <code>target</code> flowers. The <strong>total beauty</strong> of the gardens is then determined as the <strong>sum</strong> of the following:</p>
+<ul>
+<li>The number of <strong>complete</strong> gardens multiplied by <code>full</code>.</li>
+<li>The <strong>minimum</strong> number of flowers in any of the <strong>incomplete</strong> gardens multiplied by <code>partial</code>. If there are no incomplete gardens, then this value will be <code>0</code>.</li>
+</ul>
+<p>Return <em>the <strong>maximum</strong> total beauty that Alice can obtain after planting at most </em><code>newFlowers</code><em> flowers.</em></p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> flowers = [1,3,1,1], newFlowers = 7, target = 6, full = 12, partial = 1
+<strong>Output:</strong> 14
+<strong>Explanation:</strong> Alice can plant
+- 2 flowers in the 0<sup>th</sup> garden
+- 3 flowers in the 1<sup>st</sup> garden
+- 1 flower in the 2<sup>nd</sup> garden
+- 1 flower in the 3<sup>rd</sup> garden
+The gardens will then be [3,6,2,2]. She planted a total of 2 + 3 + 1 + 1 = 7 flowers.
+There is 1 garden that is complete.
+The minimum number of flowers in the incomplete gardens is 2.
+Thus, the total beauty is 1 * 12 + 2 * 1 = 12 + 2 = 14.
+No other way of planting flowers can obtain a total beauty higher than 14.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> flowers = [2,4,5,3], newFlowers = 10, target = 5, full = 2, partial = 6
+<strong>Output:</strong> 30
+<strong>Explanation:</strong> Alice can plant
+- 3 flowers in the 0<sup>th</sup> garden
+- 0 flowers in the 1<sup>st</sup> garden
+- 0 flowers in the 2<sup>nd</sup> garden
+- 2 flowers in the 3<sup>rd</sup> garden
+The gardens will then be [5,4,5,5]. She planted a total of 3 + 0 + 0 + 2 = 5 flowers.
+There are 3 gardens that are complete.
+The minimum number of flowers in the incomplete gardens is 4.
+Thus, the total beauty is 3 * 2 + 4 * 6 = 6 + 24 = 30.
+No other way of planting flowers can obtain a total beauty higher than 30.
+Note that Alice could make all the gardens complete but in this case, she would obtain a lower total beauty.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= flowers.length &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= flowers[i], target &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= newFlowers &lt;= 10<sup>10</sup></code></li>
+<li><code>1 &lt;= full, partial &lt;= 10<sup>5</sup></code></li>
+</ul>
 </div></div><br><br><hr><br>
