@@ -54777,4 +54777,311 @@ For each person, we return the number of flowers in full bloom during their arri
 <li><code>1 &lt;= persons.length &lt;= 5 * 10<sup>4</sup></code></li>
 <li><code>1 &lt;= persons[i] &lt;= 10<sup>9</sup></code></li>
 </ul>
+</div></div><br><br><hr><br><style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>************************************<div id="title">2223. Sum of Scores of Built Strings</div>
+************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are <strong>building</strong> a string <code>s</code> of length <code>n</code> <strong>one</strong> character at a time, <strong>prepending</strong> each new character to the <strong>front</strong> of the string. The strings are labeled from <code>1</code> to <code>n</code>, where the string with length <code>i</code> is labeled <code>s<sub>i</sub></code>.</p>
+<ul>
+<li>For example, for <code>s = "abaca"</code>, <code>s<sub>1</sub> == "a"</code>, <code>s<sub>2</sub> == "ca"</code>, <code>s<sub>3</sub> == "aca"</code>, etc.</li>
+</ul>
+<p>The <strong>score</strong> of <code>s<sub>i</sub></code> is the length of the <strong>longest common prefix</strong> between <code>s<sub>i</sub></code> and <code>s<sub>n</sub></code> (Note that <code>s == s<sub>n</sub></code>).</p>
+<p>Given the final string <code>s</code>, return<em> the <strong>sum</strong> of the <strong>score</strong> of every </em><code>s<sub>i</sub></code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "babab"
+<strong>Output:</strong> 9
+<strong>Explanation:</strong>
+For s<sub>1</sub> == "b", the longest common prefix is "b" which has a score of 1.
+For s<sub>2</sub> == "ab", there is no common prefix so the score is 0.
+For s<sub>3</sub> == "bab", the longest common prefix is "bab" which has a score of 3.
+For s<sub>4</sub> == "abab", there is no common prefix so the score is 0.
+For s<sub>5</sub> == "babab", the longest common prefix is "babab" which has a score of 5.
+The sum of the scores is 1 + 0 + 3 + 0 + 5 = 9, so we return 9.</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "azbazbzaz"
+<strong>Output:</strong> 14
+<strong>Explanation:</strong> 
+For s<sub>2</sub> == "az", the longest common prefix is "az" which has a score of 2.
+For s<sub>6</sub> == "azbzaz", the longest common prefix is "azb" which has a score of 3.
+For s<sub>9</sub> == "azbazbzaz", the longest common prefix is "azbazbzaz" which has a score of 9.
+For all other s<sub>i</sub>, the score is 0.
+The sum of the scores is 2 + 3 + 9 = 14, so we return 14.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>
+<li><code>s</code> consists of lowercase English letters.</li>
+</ul>
+</div></div><br><br><hr><br>*********************************<div id="title">2227. Encrypt and Decrypt Strings</div>
+*********************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a character array <code>keys</code> containing <strong>unique</strong> characters and a string array <code>values</code> containing strings of length 2. You are also given another string array <code>dictionary</code> that contains all permitted original strings after decryption. You should implement a data structure that can encrypt or decrypt a <strong>0-indexed</strong> string.</p>
+<p>A string is <strong>encrypted</strong> with the following process:</p>
+<ol>
+<li>For each character <code>c</code> in the string, we find the index <code>i</code> satisfying <code>keys[i] == c</code> in <code>keys</code>.</li>
+<li>Replace <code>c</code> with <code>values[i]</code> in the string.</li>
+</ol>
+<p>Note that in case a character of the string is <strong>not present</strong> in <code>keys</code>, the encryption process cannot be carried out, and an empty string <code>""</code> is returned.</p>
+<p>A string is <strong>decrypted</strong> with the following process:</p>
+<ol>
+<li>For each substring <code>s</code> of length 2 occurring at an even index in the string, we find an <code>i</code> such that <code>values[i] == s</code>. If there are multiple valid <code>i</code>, we choose <strong>any</strong> one of them. This means a string could have multiple possible strings it can decrypt to.</li>
+<li>Replace <code>s</code> with <code>keys[i]</code> in the string.</li>
+</ol>
+<p>Implement the <code>Encrypter</code> class:</p>
+<ul>
+<li><code>Encrypter(char[] keys, String[] values, String[] dictionary)</code> Initializes the <code>Encrypter</code> class with <code>keys, values</code>, and <code>dictionary</code>.</li>
+<li><code>String encrypt(String word1)</code> Encrypts <code>word1</code> with the encryption process described above and returns the encrypted string.</li>
+<li><code>int decrypt(String word2)</code> Returns the number of possible strings <code>word2</code> could decrypt to that also appear in <code>dictionary</code>.</li>
+</ul>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input</strong>
+["Encrypter", "encrypt", "decrypt"]
+[[['a', 'b', 'c', 'd'], ["ei", "zf", "ei", "am"], ["abcd", "acbd", "adbc", "badc", "dacb", "cadb", "cbda", "abad"]], ["abcd"], ["eizfeiam"]]
+<strong>Output</strong>
+[null, "eizfeiam", 2]
+
+<strong>Explanation</strong>
+Encrypter encrypter = new Encrypter([['a', 'b', 'c', 'd'], ["ei", "zf", "ei", "am"], ["abcd", "acbd", "adbc", "badc", "dacb", "cadb", "cbda", "abad"]);
+encrypter.encrypt("abcd"); // return "eizfeiam". 
+                           // 'a' maps to "ei", 'b' maps to "zf", 'c' maps to "ei", and 'd' maps to "am".
+encrypter.decrypt("eizfeiam"); // return 2. 
+                              // "ei" can map to 'a' or 'c', "zf" maps to 'b', and "am" maps to 'd'. 
+                              // Thus, the possible strings after decryption are "abad", "cbad", "abcd", and "cbcd". 
+                              // 2 of those strings, "abad" and "abcd", appear in dictionary, so the answer is 2.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= keys.length == values.length &lt;= 26</code></li>
+<li><code>values[i].length == 2</code></li>
+<li><code>1 &lt;= dictionary.length &lt;= 100</code></li>
+<li><code>1 &lt;= dictionary[i].length &lt;= 100</code></li>
+<li>All <code>keys[i]</code> and <code>dictionary[i]</code> are <strong>unique</strong>.</li>
+<li><code>1 &lt;= word1.length &lt;= 2000</code></li>
+<li><code>1 &lt;= word2.length &lt;= 200</code></li>
+<li>All <code>word1[i]</code> appear in <code>keys</code>.</li>
+<li><code>word2.length</code> is even.</li>
+<li><code>keys</code>, <code>values[i]</code>, <code>dictionary[i]</code>, <code>word1</code>, and <code>word2</code> only contain lowercase English letters.</li>
+<li>At most <code>200</code> calls will be made to <code>encrypt</code> and <code>decrypt</code> <strong>in total</strong>.</li>
+</ul>
+</div></div><br><br><hr><br>*****************************************<div id="title">2234. Maximum Total Beauty of the Gardens</div>
+*****************************************<div class="content__u3I1 question-content__JfgR"><div><p>Alice is a caretaker of <code>n</code> gardens and she wants to plant flowers to maximize the total beauty of all her gardens.</p>
+<p>You are given a <strong>0-indexed</strong> integer array <code>flowers</code> of size <code>n</code>, where <code>flowers[i]</code> is the number of flowers already planted in the <code>i<sup>th</sup></code> garden. Flowers that are already planted <strong>cannot</strong> be removed. You are then given another integer <code>newFlowers</code>, which is the <strong>maximum</strong> number of flowers that Alice can additionally plant. You are also given the integers <code>target</code>, <code>full</code>, and <code>partial</code>.</p>
+<p>A garden is considered <strong>complete</strong> if it has <strong>at least</strong> <code>target</code> flowers. The <strong>total beauty</strong> of the gardens is then determined as the <strong>sum</strong> of the following:</p>
+<ul>
+<li>The number of <strong>complete</strong> gardens multiplied by <code>full</code>.</li>
+<li>The <strong>minimum</strong> number of flowers in any of the <strong>incomplete</strong> gardens multiplied by <code>partial</code>. If there are no incomplete gardens, then this value will be <code>0</code>.</li>
+</ul>
+<p>Return <em>the <strong>maximum</strong> total beauty that Alice can obtain after planting at most </em><code>newFlowers</code><em> flowers.</em></p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> flowers = [1,3,1,1], newFlowers = 7, target = 6, full = 12, partial = 1
+<strong>Output:</strong> 14
+<strong>Explanation:</strong> Alice can plant
+- 2 flowers in the 0<sup>th</sup> garden
+- 3 flowers in the 1<sup>st</sup> garden
+- 1 flower in the 2<sup>nd</sup> garden
+- 1 flower in the 3<sup>rd</sup> garden
+The gardens will then be [3,6,2,2]. She planted a total of 2 + 3 + 1 + 1 = 7 flowers.
+There is 1 garden that is complete.
+The minimum number of flowers in the incomplete gardens is 2.
+Thus, the total beauty is 1 * 12 + 2 * 1 = 12 + 2 = 14.
+No other way of planting flowers can obtain a total beauty higher than 14.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> flowers = [2,4,5,3], newFlowers = 10, target = 5, full = 2, partial = 6
+<strong>Output:</strong> 30
+<strong>Explanation:</strong> Alice can plant
+- 3 flowers in the 0<sup>th</sup> garden
+- 0 flowers in the 1<sup>st</sup> garden
+- 0 flowers in the 2<sup>nd</sup> garden
+- 2 flowers in the 3<sup>rd</sup> garden
+The gardens will then be [5,4,5,5]. She planted a total of 3 + 0 + 0 + 2 = 5 flowers.
+There are 3 gardens that are complete.
+The minimum number of flowers in the incomplete gardens is 4.
+Thus, the total beauty is 3 * 2 + 4 * 6 = 6 + 24 = 30.
+No other way of planting flowers can obtain a total beauty higher than 30.
+Note that Alice could make all the gardens complete but in this case, she would obtain a lower total beauty.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= flowers.length &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= flowers[i], target &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= newFlowers &lt;= 10<sup>10</sup></code></li>
+<li><code>1 &lt;= full, partial &lt;= 10<sup>5</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>**************************************<div id="title">2242. Maximum Score of a Node Sequence</div>
+**************************************<div class="content__u3I1 question-content__JfgR"><div><p>There is an <strong>undirected</strong> graph with <code>n</code> nodes, numbered from <code>0</code> to <code>n - 1</code>.</p>
+<p>You are given a <strong>0-indexed</strong> integer array <code>scores</code> of length <code>n</code> where <code>scores[i]</code> denotes the score of node <code>i</code>. You are also given a 2D integer array <code>edges</code> where <code>edges[i] = [a<sub>i</sub>, b<sub>i</sub>]</code> denotes that there exists an <strong>undirected</strong> edge connecting nodes <code>a<sub>i</sub></code> and <code>b<sub>i</sub></code>.</p>
+<p>A node sequence is <b>valid</b> if it meets the following conditions:</p>
+<ul>
+<li>There is an edge connecting every pair of <strong>adjacent</strong> nodes in the sequence.</li>
+<li>No node appears more than once in the sequence.</li>
+</ul>
+<p>The score of a node sequence is defined as the <strong>sum</strong> of the scores of the nodes in the sequence.</p>
+<p>Return <em>the <strong>maximum score</strong> of a valid node sequence with a length of </em><code>4</code><em>. </em>If no such sequence exists, return<em> </em><code>-1</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/04/15/ex1new3.png" style="width: 290px; height: 215px;"/>
+<pre><strong>Input:</strong> scores = [5,2,9,8,4], edges = [[0,1],[1,2],[2,3],[0,2],[1,3],[2,4]]
+<strong>Output:</strong> 24
+<strong>Explanation:</strong> The figure above shows the graph and the chosen node sequence [0,1,2,3].
+The score of the node sequence is 5 + 2 + 9 + 8 = 24.
+It can be shown that no other node sequence has a score of more than 24.
+Note that the sequences [3,1,2,0] and [1,0,2,3] are also valid and have a score of 24.
+The sequence [0,3,2,4] is not valid since no edge connects nodes 0 and 3.
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/03/17/ex2.png" style="width: 333px; height: 151px;"/>
+<pre><strong>Input:</strong> scores = [9,20,6,4,11,12], edges = [[0,3],[5,3],[2,4],[1,3]]
+<strong>Output:</strong> -1
+<strong>Explanation:</strong> The figure above shows the graph.
+There are no valid node sequences of length 4, so we return -1.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == scores.length</code></li>
+<li><code>4 &lt;= n &lt;= 5 * 10<sup>4</sup></code></li>
+<li><code>1 &lt;= scores[i] &lt;= 10<sup>8</sup></code></li>
+<li><code>0 &lt;= edges.length &lt;= 5 * 10<sup>4</sup></code></li>
+<li><code>edges[i].length == 2</code></li>
+<li><code>0 &lt;= a<sub>i</sub>, b<sub>i</sub> &lt;= n - 1</code></li>
+<li><code>a<sub>i</sub> != b<sub>i</sub></code></li>
+<li>There are no duplicate edges.</li>
+</ul>
+</div></div><br><br><hr><br>*****************************************************<div id="title">2246. Longest Path With Different Adjacent Characters</div>
+*****************************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a <strong>tree</strong> (i.e. a connected, undirected graph that has no cycles) <strong>rooted</strong> at node <code>0</code> consisting of <code>n</code> nodes numbered from <code>0</code> to <code>n - 1</code>. The tree is represented by a <strong>0-indexed</strong> array <code>parent</code> of size <code>n</code>, where <code>parent[i]</code> is the parent of node <code>i</code>. Since node <code>0</code> is the root, <code>parent[0] == -1</code>.</p>
+<p>You are also given a string <code>s</code> of length <code>n</code>, where <code>s[i]</code> is the character assigned to node <code>i</code>.</p>
+<p>Return <em>the length of the <strong>longest path</strong> in the tree such that no pair of <strong>adjacent</strong> nodes on the path have the same character assigned to them.</em></p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/03/25/testingdrawio.png" style="width: 201px; height: 241px;"/>
+<pre><strong>Input:</strong> parent = [-1,0,0,1,1,2], s = "abacbe"
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> The longest path where each two adjacent nodes have different characters in the tree is the path: 0 -&gt; 1 -&gt; 3. The length of this path is 3, so 3 is returned.
+It can be proven that there is no longer path that satisfies the conditions. 
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/03/25/graph2drawio.png" style="width: 201px; height: 221px;"/>
+<pre><strong>Input:</strong> parent = [-1,0,0,0], s = "aabc"
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> The longest path where each two adjacent nodes have different characters is the path: 2 -&gt; 0 -&gt; 3. The length of this path is 3, so 3 is returned.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == parent.length == s.length</code></li>
+<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>
+<li><code>0 &lt;= parent[i] &lt;= n - 1</code> for all <code>i &gt;= 1</code></li>
+<li><code>parent[0] == -1</code></li>
+<li><code>parent</code> represents a valid tree.</li>
+<li><code>s</code> consists of only lowercase English letters.</li>
+</ul>
+</div></div><br><br><hr><br>*************************************<div id="title">2251. Number of Flowers in Full Bloom</div>
+*************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a <strong>0-indexed</strong> 2D integer array <code>flowers</code>, where <code>flowers[i] = [start<sub>i</sub>, end<sub>i</sub>]</code> means the <code>i<sup>th</sup></code> flower will be in <strong>full bloom</strong> from <code>start<sub>i</sub></code> to <code>end<sub>i</sub></code> (<strong>inclusive</strong>). You are also given a <strong>0-indexed</strong> integer array <code>persons</code> of size <code>n</code>, where <code>persons[i]</code> is the time that the <code>i<sup>th</sup></code> person will arrive to see the flowers.</p>
+<p>Return <em>an integer array </em><code>answer</code><em> of size </em><code>n</code><em>, where </em><code>answer[i]</code><em> is the <strong>number</strong> of flowers that are in full bloom when the </em><code>i<sup>th</sup></code><em> person arrives.</em></p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/03/02/ex1new.jpg" style="width: 550px; height: 216px;"/>
+<pre><strong>Input:</strong> flowers = [[1,6],[3,7],[9,12],[4,13]], persons = [2,3,7,11]
+<strong>Output:</strong> [1,2,2,2]
+<strong>Explanation: </strong>The figure above shows the times when the flowers are in full bloom and when the people arrive.
+For each person, we return the number of flowers in full bloom during their arrival.
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/03/02/ex2new.jpg" style="width: 450px; height: 195px;"/>
+<pre><strong>Input:</strong> flowers = [[1,10],[3,3]], persons = [3,3,2]
+<strong>Output:</strong> [2,2,1]
+<strong>Explanation:</strong> The figure above shows the times when the flowers are in full bloom and when the people arrive.
+For each person, we return the number of flowers in full bloom during their arrival.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= flowers.length &lt;= 5 * 10<sup>4</sup></code></li>
+<li><code>flowers[i].length == 2</code></li>
+<li><code>1 &lt;= start<sub>i</sub> &lt;= end<sub>i</sub> &lt;= 10<sup>9</sup></code></li>
+<li><code>1 &lt;= persons.length &lt;= 5 * 10<sup>4</sup></code></li>
+<li><code>1 &lt;= persons[i] &lt;= 10<sup>9</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>*******************************<div id="title">2258. Escape the Spreading Fire</div>
+*******************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a <strong>0-indexed</strong> 2D integer array <code>grid</code> of size <code>m x n</code> which represents a field. Each cell has one of three values:</p>
+<ul>
+<li><code>0</code> represents grass,</li>
+<li><code>1</code> represents fire,</li>
+<li><code>2</code> represents a wall that you and fire cannot pass through.</li>
+</ul>
+<p>You are situated in the top-left cell, <code>(0, 0)</code>, and you want to travel to the safehouse at the bottom-right cell, <code>(m - 1, n - 1)</code>. Every minute, you may move to an <strong>adjacent</strong> grass cell. <strong>After</strong> your move, every fire cell will spread to all <strong>adjacent</strong> cells that are not walls.</p>
+<p>Return <em>the <strong>maximum</strong> number of minutes that you can stay in your initial position before moving while still safely reaching the safehouse</em>. If this is impossible, return <code>-1</code>. If you can <strong>always</strong> reach the safehouse regardless of the minutes stayed, return <code>10<sup>9</sup></code>.</p>
+<p>Note that even if the fire spreads to the safehouse immediately after you have reached it, it will be counted as safely reaching the safehouse.</p>
+<p>A cell is <strong>adjacent</strong> to another cell if the former is directly north, east, south, or west of the latter (i.e., their sides are touching).</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/03/10/ex1new.jpg" style="width: 650px; height: 404px;"/>
+<pre><strong>Input:</strong> grid = [[0,2,0,0,0,0,0],[0,0,0,2,2,1,0],[0,2,0,0,1,2,0],[0,0,2,2,2,0,2],[0,0,0,0,0,0,0]]
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> The figure above shows the scenario where you stay in the initial position for 3 minutes.
+You will still be able to safely reach the safehouse.
+Staying for more than 3 minutes will not allow you to safely reach the safehouse.</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/03/10/ex2new2.jpg" style="width: 515px; height: 150px;"/>
+<pre><strong>Input:</strong> grid = [[0,0,0,0],[0,1,2,0],[0,2,0,0]]
+<strong>Output:</strong> -1
+<strong>Explanation:</strong> The figure above shows the scenario where you immediately move towards the safehouse.
+Fire will spread to any cell you move towards and it is impossible to safely reach the safehouse.
+Thus, -1 is returned.
+</pre>
+<p><strong>Example 3:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/03/10/ex3new.jpg" style="width: 174px; height: 150px;"/>
+<pre><strong>Input:</strong> grid = [[0,0,0],[2,2,0],[1,2,0]]
+<strong>Output:</strong> 1000000000
+<strong>Explanation:</strong> The figure above shows the initial grid.
+Notice that the fire is contained by walls and you will always be able to safely reach the safehouse.
+Thus, 10<sup>9</sup> is returned.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>m == grid.length</code></li>
+<li><code>n == grid[i].length</code></li>
+<li><code>2 &lt;= m, n &lt;= 300</code></li>
+<li><code>4 &lt;= m * n &lt;= 2 * 10<sup>4</sup></code></li>
+<li><code>grid[i][j]</code> is either <code>0</code>, <code>1</code>, or <code>2</code>.</li>
+<li><code>grid[0][0] == grid[m - 1][n - 1] == 0</code></li>
+</ul>
+</div></div><br><br><hr><br>******************************<div id="title">2262. Total Appeal of A String</div>
+******************************<div class="content__u3I1 question-content__JfgR"><div><p>The <b>appeal</b> of a string is the number of <strong>distinct</strong> characters found in the string.</p>
+<ul>
+<li>For example, the appeal of <code>"abbca"</code> is <code>3</code> because it has <code>3</code> distinct characters: <code>'a'</code>, <code>'b'</code>, and <code>'c'</code>.</li>
+</ul>
+<p>Given a string <code>s</code>, return <em>the <strong>total appeal of all of its <strong>substrings</strong>.</strong></em></p>
+<p>A <strong>substring</strong> is a contiguous sequence of characters within a string.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "abbca"
+<strong>Output:</strong> 28
+<strong>Explanation:</strong> The following are the substrings of "abbca":
+- Substrings of length 1: "a", "b", "b", "c", "a" have an appeal of 1, 1, 1, 1, and 1 respectively. The sum is 5.
+- Substrings of length 2: "ab", "bb", "bc", "ca" have an appeal of 2, 1, 2, and 2 respectively. The sum is 7.
+- Substrings of length 3: "abb", "bbc", "bca" have an appeal of 2, 2, and 3 respectively. The sum is 7.
+- Substrings of length 4: "abbc", "bbca" have an appeal of 3 and 3 respectively. The sum is 6.
+- Substrings of length 5: "abbca" has an appeal of 3. The sum is 3.
+The total sum is 5 + 7 + 7 + 6 + 3 = 28.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "code"
+<strong>Output:</strong> 20
+<strong>Explanation:</strong> The following are the substrings of "code":
+- Substrings of length 1: "c", "o", "d", "e" have an appeal of 1, 1, 1, and 1 respectively. The sum is 4.
+- Substrings of length 2: "co", "od", "de" have an appeal of 2, 2, and 2 respectively. The sum is 6.
+- Substrings of length 3: "cod", "ode" have an appeal of 3 and 3 respectively. The sum is 6.
+- Substrings of length 4: "code" has an appeal of 4. The sum is 4.
+The total sum is 4 + 6 + 6 + 4 = 20.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>
+<li><code>s</code> consists of lowercase English letters.</li>
+</ul>
 </div></div><br><br><hr><br>
