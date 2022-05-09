@@ -55084,4 +55084,150 @@ The total sum is 4 + 6 + 6 + 4 = 20.
 <li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>
 <li><code>s</code> consists of lowercase English letters.</li>
 </ul>
+</div></div><br><br><hr><br><style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>*************************************<div id="title">2251. Number of Flowers in Full Bloom</div>
+*************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a <strong>0-indexed</strong> 2D integer array <code>flowers</code>, where <code>flowers[i] = [start<sub>i</sub>, end<sub>i</sub>]</code> means the <code>i<sup>th</sup></code> flower will be in <strong>full bloom</strong> from <code>start<sub>i</sub></code> to <code>end<sub>i</sub></code> (<strong>inclusive</strong>). You are also given a <strong>0-indexed</strong> integer array <code>persons</code> of size <code>n</code>, where <code>persons[i]</code> is the time that the <code>i<sup>th</sup></code> person will arrive to see the flowers.</p>
+<p>Return <em>an integer array </em><code>answer</code><em> of size </em><code>n</code><em>, where </em><code>answer[i]</code><em> is the <strong>number</strong> of flowers that are in full bloom when the </em><code>i<sup>th</sup></code><em> person arrives.</em></p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/03/02/ex1new.jpg" style="width: 550px; height: 216px;"/>
+<pre><strong>Input:</strong> flowers = [[1,6],[3,7],[9,12],[4,13]], persons = [2,3,7,11]
+<strong>Output:</strong> [1,2,2,2]
+<strong>Explanation: </strong>The figure above shows the times when the flowers are in full bloom and when the people arrive.
+For each person, we return the number of flowers in full bloom during their arrival.
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/03/02/ex2new.jpg" style="width: 450px; height: 195px;"/>
+<pre><strong>Input:</strong> flowers = [[1,10],[3,3]], persons = [3,3,2]
+<strong>Output:</strong> [2,2,1]
+<strong>Explanation:</strong> The figure above shows the times when the flowers are in full bloom and when the people arrive.
+For each person, we return the number of flowers in full bloom during their arrival.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= flowers.length &lt;= 5 * 10<sup>4</sup></code></li>
+<li><code>flowers[i].length == 2</code></li>
+<li><code>1 &lt;= start<sub>i</sub> &lt;= end<sub>i</sub> &lt;= 10<sup>9</sup></code></li>
+<li><code>1 &lt;= persons.length &lt;= 5 * 10<sup>4</sup></code></li>
+<li><code>1 &lt;= persons[i] &lt;= 10<sup>9</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>*******************************<div id="title">2258. Escape the Spreading Fire</div>
+*******************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a <strong>0-indexed</strong> 2D integer array <code>grid</code> of size <code>m x n</code> which represents a field. Each cell has one of three values:</p>
+<ul>
+<li><code>0</code> represents grass,</li>
+<li><code>1</code> represents fire,</li>
+<li><code>2</code> represents a wall that you and fire cannot pass through.</li>
+</ul>
+<p>You are situated in the top-left cell, <code>(0, 0)</code>, and you want to travel to the safehouse at the bottom-right cell, <code>(m - 1, n - 1)</code>. Every minute, you may move to an <strong>adjacent</strong> grass cell. <strong>After</strong> your move, every fire cell will spread to all <strong>adjacent</strong> cells that are not walls.</p>
+<p>Return <em>the <strong>maximum</strong> number of minutes that you can stay in your initial position before moving while still safely reaching the safehouse</em>. If this is impossible, return <code>-1</code>. If you can <strong>always</strong> reach the safehouse regardless of the minutes stayed, return <code>10<sup>9</sup></code>.</p>
+<p>Note that even if the fire spreads to the safehouse immediately after you have reached it, it will be counted as safely reaching the safehouse.</p>
+<p>A cell is <strong>adjacent</strong> to another cell if the former is directly north, east, south, or west of the latter (i.e., their sides are touching).</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/03/10/ex1new.jpg" style="width: 650px; height: 404px;"/>
+<pre><strong>Input:</strong> grid = [[0,2,0,0,0,0,0],[0,0,0,2,2,1,0],[0,2,0,0,1,2,0],[0,0,2,2,2,0,2],[0,0,0,0,0,0,0]]
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> The figure above shows the scenario where you stay in the initial position for 3 minutes.
+You will still be able to safely reach the safehouse.
+Staying for more than 3 minutes will not allow you to safely reach the safehouse.</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/03/10/ex2new2.jpg" style="width: 515px; height: 150px;"/>
+<pre><strong>Input:</strong> grid = [[0,0,0,0],[0,1,2,0],[0,2,0,0]]
+<strong>Output:</strong> -1
+<strong>Explanation:</strong> The figure above shows the scenario where you immediately move towards the safehouse.
+Fire will spread to any cell you move towards and it is impossible to safely reach the safehouse.
+Thus, -1 is returned.
+</pre>
+<p><strong>Example 3:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/03/10/ex3new.jpg" style="width: 174px; height: 150px;"/>
+<pre><strong>Input:</strong> grid = [[0,0,0],[2,2,0],[1,2,0]]
+<strong>Output:</strong> 1000000000
+<strong>Explanation:</strong> The figure above shows the initial grid.
+Notice that the fire is contained by walls and you will always be able to safely reach the safehouse.
+Thus, 10<sup>9</sup> is returned.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>m == grid.length</code></li>
+<li><code>n == grid[i].length</code></li>
+<li><code>2 &lt;= m, n &lt;= 300</code></li>
+<li><code>4 &lt;= m * n &lt;= 2 * 10<sup>4</sup></code></li>
+<li><code>grid[i][j]</code> is either <code>0</code>, <code>1</code>, or <code>2</code>.</li>
+<li><code>grid[0][0] == grid[m - 1][n - 1] == 0</code></li>
+</ul>
+</div></div><br><br><hr><br>******************************<div id="title">2262. Total Appeal of A String</div>
+******************************<div class="content__u3I1 question-content__JfgR"><div><p>The <b>appeal</b> of a string is the number of <strong>distinct</strong> characters found in the string.</p>
+<ul>
+<li>For example, the appeal of <code>"abbca"</code> is <code>3</code> because it has <code>3</code> distinct characters: <code>'a'</code>, <code>'b'</code>, and <code>'c'</code>.</li>
+</ul>
+<p>Given a string <code>s</code>, return <em>the <strong>total appeal of all of its <strong>substrings</strong>.</strong></em></p>
+<p>A <strong>substring</strong> is a contiguous sequence of characters within a string.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "abbca"
+<strong>Output:</strong> 28
+<strong>Explanation:</strong> The following are the substrings of "abbca":
+- Substrings of length 1: "a", "b", "b", "c", "a" have an appeal of 1, 1, 1, 1, and 1 respectively. The sum is 5.
+- Substrings of length 2: "ab", "bb", "bc", "ca" have an appeal of 2, 1, 2, and 2 respectively. The sum is 7.
+- Substrings of length 3: "abb", "bbc", "bca" have an appeal of 2, 2, and 3 respectively. The sum is 7.
+- Substrings of length 4: "abbc", "bbca" have an appeal of 3 and 3 respectively. The sum is 6.
+- Substrings of length 5: "abbca" has an appeal of 3. The sum is 3.
+The total sum is 5 + 7 + 7 + 6 + 3 = 28.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "code"
+<strong>Output:</strong> 20
+<strong>Explanation:</strong> The following are the substrings of "code":
+- Substrings of length 1: "c", "o", "d", "e" have an appeal of 1, 1, 1, and 1 respectively. The sum is 4.
+- Substrings of length 2: "co", "od", "de" have an appeal of 2, 2, and 2 respectively. The sum is 6.
+- Substrings of length 3: "cod", "ode" have an appeal of 3 and 3 respectively. The sum is 6.
+- Substrings of length 4: "code" has an appeal of 4. The sum is 4.
+The total sum is 4 + 6 + 6 + 4 = 20.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>
+<li><code>s</code> consists of lowercase English letters.</li>
+</ul>
+</div></div><br><br><hr><br>********************************************************<div id="title">2267.  Check if There Is a Valid Parentheses String Path</div>
+********************************************************<div class="content__u3I1 question-content__JfgR"><div><p>A parentheses string is a <strong>non-empty</strong> string consisting only of <code>'('</code> and <code>')'</code>. It is <strong>valid</strong> if <strong>any</strong> of the following conditions is <strong>true</strong>:</p>
+<ul>
+<li>It is <code>()</code>.</li>
+<li>It can be written as <code>AB</code> (<code>A</code> concatenated with <code>B</code>), where <code>A</code> and <code>B</code> are valid parentheses strings.</li>
+<li>It can be written as <code>(A)</code>, where <code>A</code> is a valid parentheses string.</li>
+</ul>
+<p>You are given an <code>m x n</code> matrix of parentheses <code>grid</code>. A <strong>valid parentheses string path</strong> in the grid is a path satisfying <strong>all</strong> of the following conditions:</p>
+<ul>
+<li>The path starts from the upper left cell <code>(0, 0)</code>.</li>
+<li>The path ends at the bottom-right cell <code>(m - 1, n - 1)</code>.</li>
+<li>The path only ever moves <strong>down</strong> or <strong>right</strong>.</li>
+<li>The resulting parentheses string formed by the path is <strong>valid</strong>.</li>
+</ul>
+<p>Return <code>true</code> <em>if there exists a <strong>valid parentheses string path</strong> in the grid.</em> Otherwise, return <code>false</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/03/15/example1drawio.png" style="width: 521px; height: 300px;"/>
+<pre><strong>Input:</strong> grid = [["(","(","("],[")","(",")"],["(","(",")"],["(","(",")"]]
+<strong>Output:</strong> true
+<strong>Explanation:</strong> The above diagram shows two possible paths that form valid parentheses strings.
+The first path shown results in the valid parentheses string "()(())".
+The second path shown results in the valid parentheses string "((()))".
+Note that there may be other valid parentheses string paths.
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/03/15/example2drawio.png" style="width: 165px; height: 165px;"/>
+<pre><strong>Input:</strong> grid = [[")",")"],["(","("]]
+<strong>Output:</strong> false
+<strong>Explanation:</strong> The two possible paths form the parentheses strings "))(" and ")((". Since neither of them are valid parentheses strings, we return false.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>m == grid.length</code></li>
+<li><code>n == grid[i].length</code></li>
+<li><code>1 &lt;= m, n &lt;= 100</code></li>
+<li><code>grid[i][j]</code> is either <code>'('</code> or <code>')'</code>.</li>
+</ul>
 </div></div><br><br><hr><br>
