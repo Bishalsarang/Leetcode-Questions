@@ -55514,4 +55514,157 @@ countIntervals.count();    // return 8
 <li>At most <code>10<sup>5</sup></code> calls <strong>in total</strong> will be made to <code>add</code> and <code>count</code>.</li>
 <li>At least <strong>one</strong> call will be made to <code>count</code>.</li>
 </ul>
+</div></div><br><br><hr><br><style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>********************************************************<div id="title">2267.  Check if There Is a Valid Parentheses String Path</div>
+********************************************************<div class="content__u3I1 question-content__JfgR"><div><p>A parentheses string is a <strong>non-empty</strong> string consisting only of <code>'('</code> and <code>')'</code>. It is <strong>valid</strong> if <strong>any</strong> of the following conditions is <strong>true</strong>:</p>
+<ul>
+<li>It is <code>()</code>.</li>
+<li>It can be written as <code>AB</code> (<code>A</code> concatenated with <code>B</code>), where <code>A</code> and <code>B</code> are valid parentheses strings.</li>
+<li>It can be written as <code>(A)</code>, where <code>A</code> is a valid parentheses string.</li>
+</ul>
+<p>You are given an <code>m x n</code> matrix of parentheses <code>grid</code>. A <strong>valid parentheses string path</strong> in the grid is a path satisfying <strong>all</strong> of the following conditions:</p>
+<ul>
+<li>The path starts from the upper left cell <code>(0, 0)</code>.</li>
+<li>The path ends at the bottom-right cell <code>(m - 1, n - 1)</code>.</li>
+<li>The path only ever moves <strong>down</strong> or <strong>right</strong>.</li>
+<li>The resulting parentheses string formed by the path is <strong>valid</strong>.</li>
+</ul>
+<p>Return <code>true</code> <em>if there exists a <strong>valid parentheses string path</strong> in the grid.</em> Otherwise, return <code>false</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/03/15/example1drawio.png" style="width: 521px; height: 300px;"/>
+<pre><strong>Input:</strong> grid = [["(","(","("],[")","(",")"],["(","(",")"],["(","(",")"]]
+<strong>Output:</strong> true
+<strong>Explanation:</strong> The above diagram shows two possible paths that form valid parentheses strings.
+The first path shown results in the valid parentheses string "()(())".
+The second path shown results in the valid parentheses string "((()))".
+Note that there may be other valid parentheses string paths.
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/03/15/example2drawio.png" style="width: 165px; height: 165px;"/>
+<pre><strong>Input:</strong> grid = [[")",")"],["(","("]]
+<strong>Output:</strong> false
+<strong>Explanation:</strong> The two possible paths form the parentheses strings "))(" and ")((". Since neither of them are valid parentheses strings, we return false.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>m == grid.length</code></li>
+<li><code>n == grid[i].length</code></li>
+<li><code>1 &lt;= m, n &lt;= 100</code></li>
+<li><code>grid[i][j]</code> is either <code>'('</code> or <code>')'</code>.</li>
+</ul>
+</div></div><br><br><hr><br>*************************************<div id="title">2272. Substring With Largest Variance</div>
+*************************************<div class="content__u3I1 question-content__JfgR"><div><p>The <strong>variance</strong> of a string is defined as the largest difference between the number of occurrences of <strong>any</strong> <code>2</code> characters present in the string. Note the two characters may or may not be the same.</p>
+<p>Given a string <code>s</code> consisting of lowercase English letters only, return <em>the <strong>largest variance</strong> possible among all <strong>substrings</strong> of</em> <code>s</code>.</p>
+<p>A <strong>substring</strong> is a contiguous sequence of characters within a string.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "aababbb"
+<strong>Output:</strong> 3
+<strong>Explanation:</strong>
+All possible variances along with their respective substrings are listed below:
+- Variance 0 for substrings "a", "aa", "ab", "abab", "aababb", "ba", "b", "bb", and "bbb".
+- Variance 1 for substrings "aab", "aba", "abb", "aabab", "ababb", "aababbb", and "bab".
+- Variance 2 for substrings "aaba", "ababbb", "abbb", and "babb".
+- Variance 3 for substring "babbb".
+Since the largest possible variance is 3, we return it.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "abcde"
+<strong>Output:</strong> 0
+<strong>Explanation:</strong>
+No letter occurs more than once in s, so the variance of every substring is 0.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 10<sup>4</sup></code></li>
+<li><code>s</code> consists of lowercase English letters.</li>
+</ul>
+</div></div><br><br><hr><br>*********************************<div id="title">2276. Count Integers in Intervals</div>
+*********************************<div class="content__u3I1 question-content__JfgR"><div><p>Given an <strong>empty</strong> set of intervals, implement a data structure that can:</p>
+<ul>
+<li><strong>Add</strong> an interval to the set of intervals.</li>
+<li><strong>Count</strong> the number of integers that are present in <strong>at least one</strong> interval.</li>
+</ul>
+<p>Implement the <code>CountIntervals</code> class:</p>
+<ul>
+<li><code>CountIntervals()</code> Initializes the object with an empty set of intervals.</li>
+<li><code>void add(int left, int right)</code> Adds the interval <code>[left, right]</code> to the set of intervals.</li>
+<li><code>int count()</code> Returns the number of integers that are present in <strong>at least one</strong> interval.</li>
+</ul>
+<p><strong>Note</strong> that an interval <code>[left, right]</code> denotes all the integers <code>x</code> where <code>left &lt;= x &lt;= right</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input</strong>
+["CountIntervals", "add", "add", "count", "add", "count"]
+[[], [2, 3], [7, 10], [], [5, 8], []]
+<strong>Output</strong>
+[null, null, null, 6, null, 8]
+
+<strong>Explanation</strong>
+CountIntervals countIntervals = new CountIntervals(); // initialize the object with an empty set of intervals. 
+countIntervals.add(2, 3);  // add [2, 3] to the set of intervals.
+countIntervals.add(7, 10); // add [7, 10] to the set of intervals.
+countIntervals.count();    // return 6
+                           // the integers 2 and 3 are present in the interval [2, 3].
+                           // the integers 7, 8, 9, and 10 are present in the interval [7, 10].
+countIntervals.add(5, 8);  // add [5, 8] to the set of intervals.
+countIntervals.count();    // return 8
+                           // the integers 2 and 3 are present in the interval [2, 3].
+                           // the integers 5 and 6 are present in the interval [5, 8].
+                           // the integers 7 and 8 are present in the intervals [5, 8] and [7, 10].
+                           // the integers 9 and 10 are present in the interval [7, 10].
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= left &lt;= right &lt;= 10<sup>9</sup></code></li>
+<li>At most <code>10<sup>5</sup></code> calls <strong>in total</strong> will be made to <code>add</code> and <code>count</code>.</li>
+<li>At least <strong>one</strong> call will be made to <code>count</code>.</li>
+</ul>
+</div></div><br><br><hr><br>**************************************<div id="title">2281. Sum of Total Strength of Wizards</div>
+**************************************<div class="content__u3I1 question-content__JfgR"><div><p>As the ruler of a kingdom, you have an army of wizards at your command.</p>
+<p>You are given a <strong>0-indexed</strong> integer array <code>strength</code>, where <code>strength[i]</code> denotes the strength of the <code>i<sup>th</sup></code> wizard. For a <strong>contiguous</strong> group of wizards (i.e. the wizards' strengths form a <strong>subarray</strong> of <code>strength</code>), the <strong>total strength</strong> is defined as the <strong>product</strong> of the following two values:</p>
+<ul>
+<li>The strength of the <strong>weakest</strong> wizard in the group.</li>
+<li>The <strong>total</strong> of all the individual strengths of the wizards in the group.</li>
+</ul>
+<p>Return <em>the <strong>sum</strong> of the total strengths of <strong>all</strong> contiguous groups of wizards</em>. Since the answer may be very large, return it <strong>modulo</strong> <code>10<sup>9</sup> + 7</code>.</p>
+<p>A <strong>subarray</strong> is a contiguous <strong>non-empty</strong> sequence of elements within an array.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> strength = [1,3,1,2]
+<strong>Output:</strong> 44
+<strong>Explanation:</strong> The following are all the contiguous groups of wizards:
+- [1] from [<u><strong>1</strong></u>,3,1,2] has a total strength of min([1]) * sum([1]) = 1 * 1 = 1
+- [3] from [1,<u><strong>3</strong></u>,1,2] has a total strength of min([3]) * sum([3]) = 3 * 3 = 9
+- [1] from [1,3,<u><strong>1</strong></u>,2] has a total strength of min([1]) * sum([1]) = 1 * 1 = 1
+- [2] from [1,3,1,<u><strong>2</strong></u>] has a total strength of min([2]) * sum([2]) = 2 * 2 = 4
+- [1,3] from [<u><strong>1,3</strong></u>,1,2] has a total strength of min([1,3]) * sum([1,3]) = 1 * 4 = 4
+- [3,1] from [1,<u><strong>3,1</strong></u>,2] has a total strength of min([3,1]) * sum([3,1]) = 1 * 4 = 4
+- [1,2] from [1,3,<u><strong>1,2</strong></u>] has a total strength of min([1,2]) * sum([1,2]) = 1 * 3 = 3
+- [1,3,1] from [<u><strong>1,3,1</strong></u>,2] has a total strength of min([1,3,1]) * sum([1,3,1]) = 1 * 5 = 5
+- [3,1,2] from [1,<u><strong>3,1,2</strong></u>] has a total strength of min([3,1,2]) * sum([3,1,2]) = 1 * 6 = 6
+- [1,3,1,2] from [<u><strong>1,3,1,2</strong></u>] has a total strength of min([1,3,1,2]) * sum([1,3,1,2]) = 1 * 7 = 7
+The sum of all the total strengths is 1 + 9 + 1 + 4 + 4 + 4 + 3 + 5 + 6 + 7 = 44.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> strength = [5,4,6]
+<strong>Output:</strong> 213
+<strong>Explanation:</strong> The following are all the contiguous groups of wizards: 
+- [5] from [<u><strong>5</strong></u>,4,6] has a total strength of min([5]) * sum([5]) = 5 * 5 = 25
+- [4] from [5,<u><strong>4</strong></u>,6] has a total strength of min([4]) * sum([4]) = 4 * 4 = 16
+- [6] from [5,4,<u><strong>6</strong></u>] has a total strength of min([6]) * sum([6]) = 6 * 6 = 36
+- [5,4] from [<u><strong>5,4</strong></u>,6] has a total strength of min([5,4]) * sum([5,4]) = 4 * 9 = 36
+- [4,6] from [5,<u><strong>4,6</strong></u>] has a total strength of min([4,6]) * sum([4,6]) = 4 * 10 = 40
+- [5,4,6] from [<u><strong>5,4,6</strong></u>] has a total strength of min([5,4,6]) * sum([5,4,6]) = 4 * 15 = 60
+The sum of all the total strengths is 25 + 16 + 36 + 36 + 40 + 60 = 213.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= strength.length &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= strength[i] &lt;= 10<sup>9</sup></code></li>
+</ul>
 </div></div><br><br><hr><br>
