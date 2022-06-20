@@ -56474,4 +56474,150 @@ The following are some examples of invalid selections:
 <li><code>ideas[i]</code> consists of lowercase English letters.</li>
 <li>All the strings in <code>ideas</code> are <strong>unique</strong>.</li>
 </ul>
+</div></div><br><br><hr><br><style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>***************************************<div id="title">2301. Match Substring After Replacement</div>
+***************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given two strings <code>s</code> and <code>sub</code>. You are also given a 2D character array <code>mappings</code> where <code>mappings[i] = [old<sub>i</sub>, new<sub>i</sub>]</code> indicates that you may <strong>replace</strong> any number of <code>old<sub>i</sub></code> characters of <code>sub</code> with <code>new<sub>i</sub></code>. Each character in <code>sub</code> <strong>cannot</strong> be replaced more than once.</p>
+<p>Return <code>true</code><em> if it is possible to make </em><code>sub</code><em> a substring of </em><code>s</code><em> by replacing zero or more characters according to </em><code>mappings</code>. Otherwise, return <code>false</code>.</p>
+<p>A <strong>substring</strong> is a contiguous non-empty sequence of characters within a string.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "fool3e7bar", sub = "leet", mappings = [["e","3"],["t","7"],["t","8"]]
+<strong>Output:</strong> true
+<strong>Explanation:</strong> Replace the first 'e' in sub with '3' and 't' in sub with '7'.
+Now sub = "l3e7" is a substring of s, so we return true.</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "fooleetbar", sub = "f00l", mappings = [["o","0"]]
+<strong>Output:</strong> false
+<strong>Explanation:</strong> The string "f00l" is not a substring of s and no replacements can be made.
+Note that we cannot replace '0' with 'o'.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> s = "Fool33tbaR", sub = "leetd", mappings = [["e","3"],["t","7"],["t","8"],["d","b"],["p","b"]]
+<strong>Output:</strong> true
+<strong>Explanation:</strong> Replace the first and second 'e' in sub with '3' and 'd' in sub with 'b'.
+Now sub = "l33tb" is a substring of s, so we return true.
+
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= sub.length &lt;= s.length &lt;= 5000</code></li>
+<li><code>0 &lt;= mappings.length &lt;= 1000</code></li>
+<li><code>mappings[i].length == 2</code></li>
+<li><code>old<sub>i</sub> != new<sub>i</sub></code></li>
+<li><code>s</code> and <code>sub</code> consist of uppercase and lowercase English letters and digits.</li>
+<li><code>old<sub>i</sub></code> and <code>new<sub>i</sub></code> are either uppercase or lowercase English letters or digits.</li>
+</ul>
+</div></div><br><br><hr><br>********************************************<div id="title">2302. Count Subarrays With Score Less Than K</div>
+********************************************<div class="content__u3I1 question-content__JfgR"><div><p>The <strong>score</strong> of an array is defined as the <strong>product</strong> of its sum and its length.</p>
+<ul>
+<li>For example, the score of <code>[1, 2, 3, 4, 5]</code> is <code>(1 + 2 + 3 + 4 + 5) * 5 = 75</code>.</li>
+</ul>
+<p>Given a positive integer array <code>nums</code> and an integer <code>k</code>, return <em>the <strong>number of non-empty subarrays</strong> of</em> <code>nums</code> <em>whose score is <strong>strictly less</strong> than</em> <code>k</code>.</p>
+<p>A <strong>subarray</strong> is a contiguous sequence of elements within an array.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [2,1,4,3,5], k = 10
+<strong>Output:</strong> 6
+<strong>Explanation:</strong>
+The 6 subarrays having scores less than 10 are:
+- [2] with score 2 * 1 = 2.
+- [1] with score 1 * 1 = 1.
+- [4] with score 4 * 1 = 4.
+- [3] with score 3 * 1 = 3. 
+- [5] with score 5 * 1 = 5.
+- [2,1] with score (2 + 1) * 2 = 6.
+Note that subarrays such as [1,4] and [4,3,5] are not considered because their scores are 10 and 36 respectively, while we need scores strictly less than 10.</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [1,1,1], k = 5
+<strong>Output:</strong> 5
+<strong>Explanation:</strong>
+Every subarray except [1,1,1] has a score less than 5.
+[1,1,1] has a score (1 + 1 + 1) * 3 = 9, which is greater than 5.
+Thus, there are 5 subarrays having scores less than 5.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= k &lt;= 10<sup>15</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>**********************<div id="title">2306. Naming a Company</div>
+**********************<div class="content__u3I1 question-content__JfgR"><div><p>You are given an array of strings <code>ideas</code> that represents a list of names to be used in the process of naming a company. The process of naming a company is as follows:</p>
+<ol>
+<li>Choose 2 <strong>distinct</strong> names from <code>ideas</code>, call them <code>idea<sub>A</sub></code> and <code>idea<sub>B</sub></code>.</li>
+<li>Swap the first letters of <code>idea<sub>A</sub></code> and <code>idea<sub>B</sub></code> with each other.</li>
+<li>If <strong>both</strong> of the new names are not found in the original <code>ideas</code>, then the name <code>idea<sub>A</sub> idea<sub>B</sub></code> (the <strong>concatenation</strong> of <code>idea<sub>A</sub></code> and <code>idea<sub>B</sub></code>, separated by a space) is a valid company name.</li>
+<li>Otherwise, it is not a valid name.</li>
+</ol>
+<p>Return <em>the number of <strong>distinct</strong> valid names for the company</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> ideas = ["coffee","donuts","time","toffee"]
+<strong>Output:</strong> 6
+<strong>Explanation:</strong> The following selections are valid:
+- ("coffee", "donuts"): The company name created is "doffee conuts".
+- ("donuts", "coffee"): The company name created is "conuts doffee".
+- ("donuts", "time"): The company name created is "tonuts dime".
+- ("donuts", "toffee"): The company name created is "tonuts doffee".
+- ("time", "donuts"): The company name created is "dime tonuts".
+- ("toffee", "donuts"): The company name created is "doffee tonuts".
+Therefore, there are a total of 6 distinct company names.
+
+The following are some examples of invalid selections:
+- ("coffee", "time"): The name "toffee" formed after swapping already exists in the original array.
+- ("time", "toffee"): Both names are still the same after swapping and exist in the original array.
+- ("coffee", "toffee"): Both names formed after swapping already exist in the original array.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> ideas = ["lack","back"]
+<strong>Output:</strong> 0
+<strong>Explanation:</strong> There are no valid selections. Therefore, 0 is returned.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>2 &lt;= ideas.length &lt;= 5 * 10<sup>4</sup></code></li>
+<li><code>1 &lt;= ideas[i].length &lt;= 10</code></li>
+<li><code>ideas[i]</code> consists of lowercase English letters.</li>
+<li>All the strings in <code>ideas</code> are <strong>unique</strong>.</li>
+</ul>
+</div></div><br><br><hr><br>****************************<div id="title">2312. Selling Pieces of Wood</div>
+****************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given two integers <code>m</code> and <code>n</code> that represent the height and width of a rectangular piece of wood. You are also given a 2D integer array <code>prices</code>, where <code>prices[i] = [h<sub>i</sub>, w<sub>i</sub>, price<sub>i</sub>]</code> indicates you can sell a rectangular piece of wood of height <code>h<sub>i</sub></code> and width <code>w<sub>i</sub></code> for <code>price<sub>i</sub></code> dollars.</p>
+<p>To cut a piece of wood, you must make a vertical or horizontal cut across the <strong>entire</strong> height or width of the piece to split it into two smaller pieces. After cutting a piece of wood into some number of smaller pieces, you can sell pieces according to <code>prices</code>. You may sell multiple pieces of the same shape, and you do not have to sell all the shapes. The grain of the wood makes a difference, so you <strong>cannot</strong> rotate a piece to swap its height and width.</p>
+<p>Return <em>the <strong>maximum</strong> money you can earn after cutting an </em><code>m x n</code><em> piece of wood</em>.</p>
+<p>Note that you can cut the piece of wood as many times as you want.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/04/27/ex1.png" style="width: 239px; height: 150px;"/>
+<pre><strong>Input:</strong> m = 3, n = 5, prices = [[1,4,2],[2,2,7],[2,1,3]]
+<strong>Output:</strong> 19
+<strong>Explanation:</strong> The diagram above shows a possible scenario. It consists of:
+- 2 pieces of wood shaped 2 x 2, selling for a price of 2 * 7 = 14.
+- 1 piece of wood shaped 2 x 1, selling for a price of 1 * 3 = 3.
+- 1 piece of wood shaped 1 x 4, selling for a price of 1 * 2 = 2.
+This obtains a total of 14 + 3 + 2 = 19 money earned.
+It can be shown that 19 is the maximum amount of money that can be earned.
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/04/27/ex2new.png" style="width: 250px; height: 175px;"/>
+<pre><strong>Input:</strong> m = 4, n = 6, prices = [[3,2,10],[1,4,2],[4,1,3]]
+<strong>Output:</strong> 32
+<strong>Explanation:</strong> The diagram above shows a possible scenario. It consists of:
+- 3 pieces of wood shaped 3 x 2, selling for a price of 3 * 10 = 30.
+- 1 piece of wood shaped 1 x 4, selling for a price of 1 * 2 = 2.
+This obtains a total of 30 + 2 = 32 money earned.
+It can be shown that 32 is the maximum amount of money that can be earned.
+Notice that we cannot rotate the 1 x 4 piece of wood to obtain a 4 x 1 piece of wood.</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= m, n &lt;= 200</code></li>
+<li><code>1 &lt;= prices.length &lt;= 2 * 10<sup>4</sup></code></li>
+<li><code>prices[i].length == 3</code></li>
+<li><code>1 &lt;= h<sub>i</sub> &lt;= m</code></li>
+<li><code>1 &lt;= w<sub>i</sub> &lt;= n</code></li>
+<li><code>1 &lt;= price<sub>i</sub> &lt;= 10<sup>6</sup></code></li>
+<li>All the shapes of wood <code>(h<sub>i</sub>, w<sub>i</sub>)</code> are pairwise <strong>distinct</strong>.</li>
+</ul>
 </div></div><br><br><hr><br>
