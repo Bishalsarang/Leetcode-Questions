@@ -58199,4 +58199,117 @@ Some of the integers that are not special are: 22, 114, and 131.</pre>
 <ul>
 <li><code>1 &lt;= n &lt;= 2 * 10<sup>9</sup></code></li>
 </ul>
+</div></div><br><br><hr><br><style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>******************************<div id="title">2360. Longest Cycle in a Graph</div>
+******************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a <strong>directed</strong> graph of <code>n</code> nodes numbered from <code>0</code> to <code>n - 1</code>, where each node has <strong>at most one</strong> outgoing edge.</p>
+<p>The graph is represented with a given <strong>0-indexed</strong> array <code>edges</code> of size <code>n</code>, indicating that there is a directed edge from node <code>i</code> to node <code>edges[i]</code>. If there is no outgoing edge from node <code>i</code>, then <code>edges[i] == -1</code>.</p>
+<p>Return <em>the length of the <strong>longest</strong> cycle in the graph</em>. If no cycle exists, return <code>-1</code>.</p>
+<p>A cycle is a path that starts and ends at the <strong>same</strong> node.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/06/08/graph4drawio-5.png" style="width: 335px; height: 191px;"/>
+<pre><strong>Input:</strong> edges = [3,3,4,2,3]
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> The longest cycle in the graph is the cycle: 2 -&gt; 4 -&gt; 3 -&gt; 2.
+The length of this cycle is 3, so 3 is returned.
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/06/07/graph4drawio-1.png" style="width: 171px; height: 161px;"/>
+<pre><strong>Input:</strong> edges = [2,-1,3,1]
+<strong>Output:</strong> -1
+<strong>Explanation:</strong> There are no cycles in this graph.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == edges.length</code></li>
+<li><code>2 &lt;= n &lt;= 10<sup>5</sup></code></li>
+<li><code>-1 &lt;= edges[i] &lt; n</code></li>
+<li><code>edges[i] != i</code></li>
+</ul>
+</div></div><br><br><hr><br>********************************************<div id="title">2366. Minimum Replacements to Sort the Array</div>
+********************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code>. In one operation you can replace any element of the array with <strong>any two</strong> elements that <strong>sum</strong> to it.</p>
+<ul>
+<li>For example, consider <code>nums = [5,6,7]</code>. In one operation, we can replace <code>nums[1]</code> with <code>2</code> and <code>4</code> and convert <code>nums</code> to <code>[5,2,4,7]</code>.</li>
+</ul>
+<p>Return <em>the minimum number of operations to make an array that is sorted in <strong>non-decreasing</strong> order</em>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [3,9,3]
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> Here are the steps to sort the array in non-decreasing order:
+- From [3,9,3], replace the 9 with 3 and 6 so the array becomes [3,3,6,3]
+- From [3,3,6,3], replace the 6 with 3 and 3 so the array becomes [3,3,3,3,3]
+There are 2 steps to sort the array in non-decreasing order. Therefore, we return 2.
+
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [1,2,3,4,5]
+<strong>Output:</strong> 0
+<strong>Explanation:</strong> The array is already in non-decreasing order. Therefore, we return 0. 
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>****************************<div id="title">2376. Count Special Integers</div>
+****************************<div class="content__u3I1 question-content__JfgR"><div><p>We call a positive integer <strong>special</strong> if all of its digits are <strong>distinct</strong>.</p>
+<p>Given a <strong>positive</strong> integer <code>n</code>, return <em>the number of special integers that belong to the interval </em><code>[1, n]</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> n = 20
+<strong>Output:</strong> 19
+<strong>Explanation:</strong> All the integers from 1 to 20, except 11, are special. Thus, there are 19 special integers.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> n = 5
+<strong>Output:</strong> 5
+<strong>Explanation:</strong> All the integers from 1 to 5 are special.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> n = 135
+<strong>Output:</strong> 110
+<strong>Explanation:</strong> There are 110 integers from 1 to 135 that are special.
+Some of the integers that are not special are: 22, 114, and 131.</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 2 * 10<sup>9</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>****************************************<div id="title">2382. Maximum Segment Sum After Removals</div>
+****************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given two <strong>0-indexed</strong> integer arrays <code>nums</code> and <code>removeQueries</code>, both of length <code>n</code>. For the <code>i<sup>th</sup></code> query, the element in <code>nums</code> at the index <code>removeQueries[i]</code> is removed, splitting <code>nums</code> into different segments.</p>
+<p>A <strong>segment</strong> is a contiguous sequence of <strong>positive</strong> integers in <code>nums</code>. A <strong>segment sum</strong> is the sum of every element in a segment.</p>
+<p>Return<em> an integer array </em><code>answer</code><em>, of length </em><code>n</code><em>, where </em><code>answer[i]</code><em> is the <strong>maximum</strong> segment sum after applying the </em><code>i<sup>th</sup></code> <em>removal.</em></p>
+<p><strong>Note:</strong> The same index will <strong>not</strong> be removed more than once.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [1,2,5,6,1], removeQueries = [0,3,2,4,1]
+<strong>Output:</strong> [14,7,2,2,0]
+<strong>Explanation:</strong> Using 0 to indicate a removed element, the answer is as follows:
+Query 1: Remove the 0th element, nums becomes [0,2,5,6,1] and the maximum segment sum is 14 for segment [2,5,6,1].
+Query 2: Remove the 3rd element, nums becomes [0,2,5,0,1] and the maximum segment sum is 7 for segment [2,5].
+Query 3: Remove the 2nd element, nums becomes [0,2,0,0,1] and the maximum segment sum is 2 for segment [2]. 
+Query 4: Remove the 4th element, nums becomes [0,2,0,0,0] and the maximum segment sum is 2 for segment [2]. 
+Query 5: Remove the 1st element, nums becomes [0,0,0,0,0] and the maximum segment sum is 0, since there are no segments.
+Finally, we return [14,7,2,2,0].</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [3,2,11,1], removeQueries = [3,2,1,0]
+<strong>Output:</strong> [16,5,3,0]
+<strong>Explanation:</strong> Using 0 to indicate a removed element, the answer is as follows:
+Query 1: Remove the 3rd element, nums becomes [3,2,11,0] and the maximum segment sum is 16 for segment [3,2,11].
+Query 2: Remove the 2nd element, nums becomes [3,2,0,0] and the maximum segment sum is 5 for segment [3,2].
+Query 3: Remove the 1st element, nums becomes [3,0,0,0] and the maximum segment sum is 3 for segment [3].
+Query 4: Remove the 0th element, nums becomes [0,0,0,0] and the maximum segment sum is 0, since there are no segments.
+Finally, we return [16,5,3,0].
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == nums.length == removeQueries.length</code></li>
+<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
+<li><code>0 &lt;= removeQueries[i] &lt; n</code></li>
+<li>All the values of <code>removeQueries</code> are <strong>unique</strong>.</li>
+</ul>
 </div></div><br><br><hr><br>
