@@ -58425,4 +58425,134 @@ The 5-Sum of the array is 2.
 <li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
 <li><code>1 &lt;= k &lt;= min(2000, 2<sup>n</sup>)</code></li>
 </ul>
+</div></div><br><br><hr><br><style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>****************************<div id="title">2376. Count Special Integers</div>
+****************************<div class="content__u3I1 question-content__JfgR"><div><p>We call a positive integer <strong>special</strong> if all of its digits are <strong>distinct</strong>.</p>
+<p>Given a <strong>positive</strong> integer <code>n</code>, return <em>the number of special integers that belong to the interval </em><code>[1, n]</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> n = 20
+<strong>Output:</strong> 19
+<strong>Explanation:</strong> All the integers from 1 to 20, except 11, are special. Thus, there are 19 special integers.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> n = 5
+<strong>Output:</strong> 5
+<strong>Explanation:</strong> All the integers from 1 to 5 are special.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> n = 135
+<strong>Output:</strong> 110
+<strong>Explanation:</strong> There are 110 integers from 1 to 135 that are special.
+Some of the integers that are not special are: 22, 114, and 131.</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 2 * 10<sup>9</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>****************************************<div id="title">2382. Maximum Segment Sum After Removals</div>
+****************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given two <strong>0-indexed</strong> integer arrays <code>nums</code> and <code>removeQueries</code>, both of length <code>n</code>. For the <code>i<sup>th</sup></code> query, the element in <code>nums</code> at the index <code>removeQueries[i]</code> is removed, splitting <code>nums</code> into different segments.</p>
+<p>A <strong>segment</strong> is a contiguous sequence of <strong>positive</strong> integers in <code>nums</code>. A <strong>segment sum</strong> is the sum of every element in a segment.</p>
+<p>Return<em> an integer array </em><code>answer</code><em>, of length </em><code>n</code><em>, where </em><code>answer[i]</code><em> is the <strong>maximum</strong> segment sum after applying the </em><code>i<sup>th</sup></code> <em>removal.</em></p>
+<p><strong>Note:</strong> The same index will <strong>not</strong> be removed more than once.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [1,2,5,6,1], removeQueries = [0,3,2,4,1]
+<strong>Output:</strong> [14,7,2,2,0]
+<strong>Explanation:</strong> Using 0 to indicate a removed element, the answer is as follows:
+Query 1: Remove the 0th element, nums becomes [0,2,5,6,1] and the maximum segment sum is 14 for segment [2,5,6,1].
+Query 2: Remove the 3rd element, nums becomes [0,2,5,0,1] and the maximum segment sum is 7 for segment [2,5].
+Query 3: Remove the 2nd element, nums becomes [0,2,0,0,1] and the maximum segment sum is 2 for segment [2]. 
+Query 4: Remove the 4th element, nums becomes [0,2,0,0,0] and the maximum segment sum is 2 for segment [2]. 
+Query 5: Remove the 1st element, nums becomes [0,0,0,0,0] and the maximum segment sum is 0, since there are no segments.
+Finally, we return [14,7,2,2,0].</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [3,2,11,1], removeQueries = [3,2,1,0]
+<strong>Output:</strong> [16,5,3,0]
+<strong>Explanation:</strong> Using 0 to indicate a removed element, the answer is as follows:
+Query 1: Remove the 3rd element, nums becomes [3,2,11,0] and the maximum segment sum is 16 for segment [3,2,11].
+Query 2: Remove the 2nd element, nums becomes [3,2,0,0] and the maximum segment sum is 5 for segment [3,2].
+Query 3: Remove the 1st element, nums becomes [3,0,0,0] and the maximum segment sum is 3 for segment [3].
+Query 4: Remove the 0th element, nums becomes [0,0,0,0] and the maximum segment sum is 0, since there are no segments.
+Finally, we return [16,5,3,0].
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == nums.length == removeQueries.length</code></li>
+<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
+<li><code>0 &lt;= removeQueries[i] &lt; n</code></li>
+<li>All the values of <code>removeQueries</code> are <strong>unique</strong>.</li>
+</ul>
+</div></div><br><br><hr><br>********************************<div id="title">2386. Find the K-Sum of an Array</div>
+********************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given an integer array <code>nums</code> and a <strong>positive</strong> integer <code>k</code>. You can choose any <strong>subsequence</strong> of the array and sum all of its elements together.</p>
+<p>We define the <strong>K-Sum</strong> of the array as the <code>k<sup>th</sup></code> <strong>largest</strong> subsequence sum that can be obtained (<strong>not</strong> necessarily distinct).</p>
+<p>Return <em>the K-Sum of the array</em>.</p>
+<p>A <strong>subsequence</strong> is an array that can be derived from another array by deleting some or no elements without changing the order of the remaining elements.</p>
+<p><strong>Note</strong> that the empty subsequence is considered to have a sum of <code>0</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [2,4,-2], k = 5
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> All the possible subsequence sums that we can obtain are the following sorted in decreasing order:
+- 6, 4, 4, 2, <u>2</u>, 0, 0, -2.
+The 5-Sum of the array is 2.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [1,-2,3,4,-10,12], k = 16
+<strong>Output:</strong> 10
+<strong>Explanation:</strong> The 16-Sum of the array is 10.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == nums.length</code></li>
+<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>
+<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
+<li><code>1 &lt;= k &lt;= min(2000, 2<sup>n</sup>)</code></li>
+</ul>
+</div></div><br><br><hr><br>************************************<div id="title">2392. Build a Matrix With Conditions</div>
+************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a <strong>positive</strong> integer <code>k</code>. You are also given:</p>
+<ul>
+<li>a 2D integer array <code>rowConditions</code> of size <code>n</code> where <code>rowConditions[i] = [above<sub>i</sub>, below<sub>i</sub>]</code>, and</li>
+<li>a 2D integer array <code>colConditions</code> of size <code>m</code> where <code>colConditions[i] = [left<sub>i</sub>, right<sub>i</sub>]</code>.</li>
+</ul>
+<p>The two arrays contain integers from <code>1</code> to <code>k</code>.</p>
+<p>You have to build a <code>k x k</code> matrix that contains each of the numbers from <code>1</code> to <code>k</code> <strong>exactly once</strong>. The remaining cells should have the value <code>0</code>.</p>
+<p>The matrix should also satisfy the following conditions:</p>
+<ul>
+<li>The number <code>above<sub>i</sub></code> should appear in a <strong>row</strong> that is strictly <strong>above</strong> the row at which the number <code>below<sub>i</sub></code> appears for all <code>i</code> from <code>0</code> to <code>n - 1</code>.</li>
+<li>The number <code>left<sub>i</sub></code> should appear in a <strong>column</strong> that is strictly <strong>left</strong> of the column at which the number <code>right<sub>i</sub></code> appears for all <code>i</code> from <code>0</code> to <code>m - 1</code>.</li>
+</ul>
+<p>Return <em><strong>any</strong> matrix that satisfies the conditions</em>. If no answer exists, return an empty matrix.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/07/06/gridosdrawio.png" style="width: 211px; height: 211px;"/>
+<pre><strong>Input:</strong> k = 3, rowConditions = [[1,2],[3,2]], colConditions = [[2,1],[3,2]]
+<strong>Output:</strong> [[3,0,0],[0,0,1],[0,2,0]]
+<strong>Explanation:</strong> The diagram above shows a valid example of a matrix that satisfies all the conditions.
+The row conditions are the following:
+- Number 1 is in row <u>1</u>, and number 2 is in row <u>2</u>, so 1 is above 2 in the matrix.
+- Number 3 is in row <u>0</u>, and number 2 is in row <u>2</u>, so 3 is above 2 in the matrix.
+The column conditions are the following:
+- Number 2 is in column <u>1</u>, and number 1 is in column <u>2</u>, so 2 is left of 1 in the matrix.
+- Number 3 is in column <u>0</u>, and number 2 is in column <u>1</u>, so 3 is left of 2 in the matrix.
+Note that there may be multiple correct answers.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> k = 3, rowConditions = [[1,2],[2,3],[3,1],[2,3]], colConditions = [[2,1]]
+<strong>Output:</strong> []
+<strong>Explanation:</strong> From the first two conditions, 3 has to be below 1 but the third conditions needs 3 to be above 1 to be satisfied.
+No matrix can satisfy all the conditions, so we return the empty matrix.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>2 &lt;= k &lt;= 400</code></li>
+<li><code>1 &lt;= rowConditions.length, colConditions.length &lt;= 10<sup>4</sup></code></li>
+<li><code>rowConditions[i].length == colConditions[i].length == 2</code></li>
+<li><code>1 &lt;= above<sub>i</sub>, below<sub>i</sub>, left<sub>i</sub>, right<sub>i</sub> &lt;= k</code></li>
+<li><code>above<sub>i</sub> != below<sub>i</sub></code></li>
+<li><code>left<sub>i</sub> != right<sub>i</sub></code></li>
+</ul>
 </div></div><br><br><hr><br>
