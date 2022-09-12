@@ -58811,4 +58811,158 @@ Room 0 held 1 meeting while rooms 1 and 2 each held 2 meetings, so we return 1.
 <li><code>0 &lt;= start<sub>i</sub> &lt; end<sub>i</sub> &lt;= 5 * 10<sup>5</sup></code></li>
 <li>All the values of <code>start<sub>i</sub></code> are <strong>unique</strong>.</li>
 </ul>
+</div></div><br><br><hr><br><style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>************************************<div id="title">2392. Build a Matrix With Conditions</div>
+************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a <strong>positive</strong> integer <code>k</code>. You are also given:</p>
+<ul>
+<li>a 2D integer array <code>rowConditions</code> of size <code>n</code> where <code>rowConditions[i] = [above<sub>i</sub>, below<sub>i</sub>]</code>, and</li>
+<li>a 2D integer array <code>colConditions</code> of size <code>m</code> where <code>colConditions[i] = [left<sub>i</sub>, right<sub>i</sub>]</code>.</li>
+</ul>
+<p>The two arrays contain integers from <code>1</code> to <code>k</code>.</p>
+<p>You have to build a <code>k x k</code> matrix that contains each of the numbers from <code>1</code> to <code>k</code> <strong>exactly once</strong>. The remaining cells should have the value <code>0</code>.</p>
+<p>The matrix should also satisfy the following conditions:</p>
+<ul>
+<li>The number <code>above<sub>i</sub></code> should appear in a <strong>row</strong> that is strictly <strong>above</strong> the row at which the number <code>below<sub>i</sub></code> appears for all <code>i</code> from <code>0</code> to <code>n - 1</code>.</li>
+<li>The number <code>left<sub>i</sub></code> should appear in a <strong>column</strong> that is strictly <strong>left</strong> of the column at which the number <code>right<sub>i</sub></code> appears for all <code>i</code> from <code>0</code> to <code>m - 1</code>.</li>
+</ul>
+<p>Return <em><strong>any</strong> matrix that satisfies the conditions</em>. If no answer exists, return an empty matrix.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/07/06/gridosdrawio.png" style="width: 211px; height: 211px;"/>
+<pre><strong>Input:</strong> k = 3, rowConditions = [[1,2],[3,2]], colConditions = [[2,1],[3,2]]
+<strong>Output:</strong> [[3,0,0],[0,0,1],[0,2,0]]
+<strong>Explanation:</strong> The diagram above shows a valid example of a matrix that satisfies all the conditions.
+The row conditions are the following:
+- Number 1 is in row <u>1</u>, and number 2 is in row <u>2</u>, so 1 is above 2 in the matrix.
+- Number 3 is in row <u>0</u>, and number 2 is in row <u>2</u>, so 3 is above 2 in the matrix.
+The column conditions are the following:
+- Number 2 is in column <u>1</u>, and number 1 is in column <u>2</u>, so 2 is left of 1 in the matrix.
+- Number 3 is in column <u>0</u>, and number 2 is in column <u>1</u>, so 3 is left of 2 in the matrix.
+Note that there may be multiple correct answers.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> k = 3, rowConditions = [[1,2],[2,3],[3,1],[2,3]], colConditions = [[2,1]]
+<strong>Output:</strong> []
+<strong>Explanation:</strong> From the first two conditions, 3 has to be below 1 but the third conditions needs 3 to be above 1 to be satisfied.
+No matrix can satisfy all the conditions, so we return the empty matrix.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>2 &lt;= k &lt;= 400</code></li>
+<li><code>1 &lt;= rowConditions.length, colConditions.length &lt;= 10<sup>4</sup></code></li>
+<li><code>rowConditions[i].length == colConditions[i].length == 2</code></li>
+<li><code>1 &lt;= above<sub>i</sub>, below<sub>i</sub>, left<sub>i</sub>, right<sub>i</sub> &lt;= k</code></li>
+<li><code>above<sub>i</sub> != below<sub>i</sub></code></li>
+<li><code>left<sub>i</sub> != right<sub>i</sub></code></li>
+</ul>
+</div></div><br><br><hr><br>********************************************<div id="title">2398. Maximum Number of Robots Within Budget</div>
+********************************************<div class="content__u3I1 question-content__JfgR"><div><p>You have <code>n</code> robots. You are given two <strong>0-indexed</strong> integer arrays, <code>chargeTimes</code> and <code>runningCosts</code>, both of length <code>n</code>. The <code>i<sup>th</sup></code> robot costs <code>chargeTimes[i]</code> units to charge and costs <code>runningCosts[i]</code> units to run. You are also given an integer <code>budget</code>.</p>
+<p>The <strong>total cost</strong> of running <code>k</code> chosen robots is equal to <code>max(chargeTimes) + k * sum(runningCosts)</code>, where <code>max(chargeTimes)</code> is the largest charge cost among the <code>k</code> robots and <code>sum(runningCosts)</code> is the sum of running costs among the <code>k</code> robots.</p>
+<p>Return<em> the <strong>maximum</strong> number of <strong>consecutive</strong> robots you can run such that the total cost <strong>does not</strong> exceed </em><code>budget</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> chargeTimes = [3,6,1,3,4], runningCosts = [2,1,3,4,5], budget = 25
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> 
+It is possible to run all individual and consecutive pairs of robots within budget.
+To obtain answer 3, consider the first 3 robots. The total cost will be max(3,6,1) + 3 * sum(2,1,3) = 6 + 3 * 6 = 24 which is less than 25.
+It can be shown that it is not possible to run more than 3 consecutive robots within budget, so we return 3.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> chargeTimes = [11,12,19], runningCosts = [10,8,7], budget = 19
+<strong>Output:</strong> 0
+<strong>Explanation:</strong> No robot can be run that does not exceed the budget, so we return 0.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>chargeTimes.length == runningCosts.length == n</code></li>
+<li><code>1 &lt;= n &lt;= 5 * 10<sup>4</sup></code></li>
+<li><code>1 &lt;= chargeTimes[i], runningCosts[i] &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= budget &lt;= 10<sup>15</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>***********************<div id="title">2402. Meeting Rooms III</div>
+***********************<div class="content__u3I1 question-content__JfgR"><div><p>You are given an integer <code>n</code>. There are <code>n</code> rooms numbered from <code>0</code> to <code>n - 1</code>.</p>
+<p>You are given a 2D integer array <code>meetings</code> where <code>meetings[i] = [start<sub>i</sub>, end<sub>i</sub>]</code> means that a meeting will be held during the <strong>half-closed</strong> time interval <code>[start<sub>i</sub>, end<sub>i</sub>)</code>. All the values of <code>start<sub>i</sub></code> are <strong>unique</strong>.</p>
+<p>Meetings are allocated to rooms in the following manner:</p>
+<ol>
+<li>Each meeting will take place in the unused room with the <strong>lowest</strong> number.</li>
+<li>If there are no available rooms, the meeting will be delayed until a room becomes free. The delayed meeting should have the <strong>same</strong> duration as the original meeting.</li>
+<li>When a room becomes unused, meetings that have an earlier original <strong>start</strong> time should be given the room.</li>
+</ol>
+<p>Return<em> the <strong>number</strong> of the room that held the most meetings. </em>If there are multiple rooms, return<em> the room with the <strong>lowest</strong> number.</em></p>
+<p>A <strong>half-closed interval</strong> <code>[a, b)</code> is the interval between <code>a</code> and <code>b</code> <strong>including</strong> <code>a</code> and <strong>not including</strong> <code>b</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> n = 2, meetings = [[0,10],[1,5],[2,7],[3,4]]
+<strong>Output:</strong> 0
+<strong>Explanation:</strong>
+- At time 0, both rooms are not being used. The first meeting starts in room 0.
+- At time 1, only room 1 is not being used. The second meeting starts in room 1.
+- At time 2, both rooms are being used. The third meeting is delayed.
+- At time 3, both rooms are being used. The fourth meeting is delayed.
+- At time 5, the meeting in room 1 finishes. The third meeting starts in room 1 for the time period [5,10).
+- At time 10, the meetings in both rooms finish. The fourth meeting starts in room 0 for the time period [10,11).
+Both rooms 0 and 1 held 2 meetings, so we return 0. 
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> n = 3, meetings = [[1,20],[2,10],[3,5],[4,9],[6,8]]
+<strong>Output:</strong> 1
+<strong>Explanation:</strong>
+- At time 1, all three rooms are not being used. The first meeting starts in room 0.
+- At time 2, rooms 1 and 2 are not being used. The second meeting starts in room 1.
+- At time 3, only room 2 is not being used. The third meeting starts in room 2.
+- At time 4, all three rooms are being used. The fourth meeting is delayed.
+- At time 5, the meeting in room 2 finishes. The fourth meeting starts in room 2 for the time period [5,10).
+- At time 6, all three rooms are being used. The fifth meeting is delayed.
+- At time 10, the meetings in rooms 1 and 2 finish. The fifth meeting starts in room 1 for the time period [10,12).
+Room 0 held 1 meeting while rooms 1 and 2 each held 2 meetings, so we return 1. 
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 100</code></li>
+<li><code>1 &lt;= meetings.length &lt;= 10<sup>5</sup></code></li>
+<li><code>meetings[i].length == 2</code></li>
+<li><code>0 &lt;= start<sub>i</sub> &lt; end<sub>i</sub> &lt;= 5 * 10<sup>5</sup></code></li>
+<li>All the values of <code>start<sub>i</sub></code> are <strong>unique</strong>.</li>
+</ul>
+</div></div><br><br><hr><br>***************************************<div id="title">2407. Longest Increasing Subsequence II</div>
+***************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given an integer array <code>nums</code> and an integer <code>k</code>.</p>
+<p>Find the longest subsequence of <code>nums</code> that meets the following requirements:</p>
+<ul>
+<li>The subsequence is <strong>strictly increasing</strong> and</li>
+<li>The difference between adjacent elements in the subsequence is <strong>at most</strong> <code>k</code>.</li>
+</ul>
+<p>Return<em> the length of the <strong>longest</strong> <strong>subsequence</strong> that meets the requirements.</em></p>
+<p>A <strong>subsequence</strong> is an array that can be derived from another array by deleting some or no elements without changing the order of the remaining elements.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [4,2,1,4,3,4,5,8,15], k = 3
+<strong>Output:</strong> 5
+<strong>Explanation:</strong>
+The longest subsequence that meets the requirements is [1,3,4,5,8].
+The subsequence has a length of 5, so we return 5.
+Note that the subsequence [1,3,4,5,8,15] does not meet the requirements because 15 - 8 = 7 is larger than 3.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [7,4,5,1,8,12,4,7], k = 5
+<strong>Output:</strong> 4
+<strong>Explanation:</strong>
+The longest subsequence that meets the requirements is [4,5,8,12].
+The subsequence has a length of 4, so we return 4.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> nums = [1,5], k = 1
+<strong>Output:</strong> 1
+<strong>Explanation:</strong>
+The longest subsequence that meets the requirements is [1].
+The subsequence has a length of 1, so we return 1.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= nums[i], k &lt;= 10<sup>5</sup></code></li>
+</ul>
 </div></div><br><br><hr><br>
