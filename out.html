@@ -59696,4 +59696,154 @@ We used 4 operations so return 4. It can be proven that 4 is the maximum number 
 <li><code>1 &lt;= s.length &lt;= 4000</code></li>
 <li><code>s</code> consists only of lowercase English letters.</li>
 </ul>
+</div></div><br><br><hr><br><style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>**************************<div id="title">2421. Number of Good Paths</div>
+**************************<div class="content__u3I1 question-content__JfgR"><div><p>There is a tree (i.e. a connected, undirected graph with no cycles) consisting of <code>n</code> nodes numbered from <code>0</code> to <code>n - 1</code> and exactly <code>n - 1</code> edges.</p>
+<p>You are given a <strong>0-indexed</strong> integer array <code>vals</code> of length <code>n</code> where <code>vals[i]</code> denotes the value of the <code>i<sup>th</sup></code> node. You are also given a 2D integer array <code>edges</code> where <code>edges[i] = [a<sub>i</sub>, b<sub>i</sub>]</code> denotes that there exists an <strong>undirected</strong> edge connecting nodes <code>a<sub>i</sub></code> and <code>b<sub>i</sub></code>.</p>
+<p>A <strong>good path</strong> is a simple path that satisfies the following conditions:</p>
+<ol>
+<li>The starting node and the ending node have the <strong>same</strong> value.</li>
+<li>All nodes between the starting node and the ending node have values <strong>less than or equal to</strong> the starting node (i.e. the starting node's value should be the maximum value along the path).</li>
+</ol>
+<p>Return <em>the number of distinct good paths</em>.</p>
+<p>Note that a path and its reverse are counted as the <strong>same</strong> path. For example, <code>0 -&gt; 1</code> is considered to be the same as <code>1 -&gt; 0</code>. A single node is also considered as a valid path.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/08/04/f9caaac15b383af9115c5586779dec5.png" style="width: 400px; height: 333px;"/>
+<pre><strong>Input:</strong> vals = [1,3,2,1,3], edges = [[0,1],[0,2],[2,3],[2,4]]
+<strong>Output:</strong> 6
+<strong>Explanation:</strong> There are 5 good paths consisting of a single node.
+There is 1 additional good path: 1 -&gt; 0 -&gt; 2 -&gt; 4.
+(The reverse path 4 -&gt; 2 -&gt; 0 -&gt; 1 is treated as the same as 1 -&gt; 0 -&gt; 2 -&gt; 4.)
+Note that 0 -&gt; 2 -&gt; 3 is not a good path because vals[2] &gt; vals[0].
+</pre>
+<p><strong>Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/08/04/149d3065ec165a71a1b9aec890776ff.png" style="width: 273px; height: 350px;"/>
+<pre><strong>Input:</strong> vals = [1,1,2,2,3], edges = [[0,1],[1,2],[2,3],[2,4]]
+<strong>Output:</strong> 7
+<strong>Explanation:</strong> There are 5 good paths consisting of a single node.
+There are 2 additional good paths: 0 -&gt; 1 and 2 -&gt; 3.
+</pre>
+<p><strong>Example 3:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/08/04/31705e22af3d9c0a557459bc7d1b62d.png" style="width: 100px; height: 88px;"/>
+<pre><strong>Input:</strong> vals = [1], edges = []
+<strong>Output:</strong> 1
+<strong>Explanation:</strong> The tree consists of only one node, so there is one good path.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == vals.length</code></li>
+<li><code>1 &lt;= n &lt;= 3 * 10<sup>4</sup></code></li>
+<li><code>0 &lt;= vals[i] &lt;= 10<sup>5</sup></code></li>
+<li><code>edges.length == n - 1</code></li>
+<li><code>edges[i].length == 2</code></li>
+<li><code>0 &lt;= a<sub>i</sub>, b<sub>i</sub> &lt; n</code></li>
+<li><code>a<sub>i</sub> != b<sub>i</sub></code></li>
+<li><code>edges</code> represents a valid tree.</li>
+</ul>
+</div></div><br><br><hr><br>*******************************************<div id="title">2426. Number of Pairs Satisfying Inequality</div>
+*******************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given two <strong>0-indexed</strong> integer arrays <code>nums1</code> and <code>nums2</code>, each of size <code>n</code>, and an integer <code>diff</code>. Find the number of <strong>pairs</strong> <code>(i, j)</code> such that:</p>
+<ul>
+<li><code>0 &lt;= i &lt; j &lt;= n - 1</code> <strong>and</strong></li>
+<li><code>nums1[i] - nums1[j] &lt;= nums2[i] - nums2[j] + diff</code>.</li>
+</ul>
+<p>Return<em> the <strong>number of pairs</strong> that satisfy the conditions.</em></p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> nums1 = [3,2,5], nums2 = [2,2,1], diff = 1
+<strong>Output:</strong> 3
+<strong>Explanation:</strong>
+There are 3 pairs that satisfy the conditions:
+1. i = 0, j = 1: 3 - 2 &lt;= 2 - 2 + 1. Since i &lt; j and 1 &lt;= 1, this pair satisfies the conditions.
+2. i = 0, j = 2: 3 - 5 &lt;= 2 - 1 + 1. Since i &lt; j and -2 &lt;= 2, this pair satisfies the conditions.
+3. i = 1, j = 2: 2 - 5 &lt;= 2 - 1 + 1. Since i &lt; j and -3 &lt;= 2, this pair satisfies the conditions.
+Therefore, we return 3.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> nums1 = [3,-1], nums2 = [-2,2], diff = -1
+<strong>Output:</strong> 0
+<strong>Explanation:</strong>
+Since there does not exist any pair that satisfies the conditions, we return 0.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == nums1.length == nums2.length</code></li>
+<li><code>2 &lt;= n &lt;= 10<sup>5</sup></code></li>
+<li><code>-10<sup>4</sup> &lt;= nums1[i], nums2[i] &lt;= 10<sup>4</sup></code></li>
+<li><code>-10<sup>4</sup> &lt;= diff &lt;= 10<sup>4</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>***********************************<div id="title">2430. Maximum Deletions on a String</div>
+***********************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a string <code>s</code> consisting of only lowercase English letters. In one operation, you can:</p>
+<ul>
+<li>Delete <strong>the entire string</strong> <code>s</code>, or</li>
+<li>Delete the <strong>first</strong> <code>i</code> letters of <code>s</code> if the first <code>i</code> letters of <code>s</code> are <strong>equal</strong> to the following <code>i</code> letters in <code>s</code>, for any <code>i</code> in the range <code>1 &lt;= i &lt;= s.length / 2</code>.</li>
+</ul>
+<p>For example, if <code>s = "ababc"</code>, then in one operation, you could delete the first two letters of <code>s</code> to get <code>"abc"</code>, since the first two letters of <code>s</code> and the following two letters of <code>s</code> are both equal to <code>"ab"</code>.</p>
+<p>Return <em>the <strong>maximum</strong> number of operations needed to delete all of </em><code>s</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "abcabcdabc"
+<strong>Output:</strong> 2
+<strong>Explanation:</strong>
+- Delete the first 3 letters ("abc") since the next 3 letters are equal. Now, s = "abcdabc".
+- Delete all the letters.
+We used 2 operations so return 2. It can be proven that 2 is the maximum number of operations needed.
+Note that in the second operation we cannot delete "abc" again because the next occurrence of "abc" does not happen in the next 3 letters.
+</pre>
+<p><strong>Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "aaabaab"
+<strong>Output:</strong> 4
+<strong>Explanation:</strong>
+- Delete the first letter ("a") since the next letter is equal. Now, s = "aabaab".
+- Delete the first 3 letters ("aab") since the next 3 letters are equal. Now, s = "aab".
+- Delete the first letter ("a") since the next letter is equal. Now, s = "ab".
+- Delete all the letters.
+We used 4 operations so return 4. It can be proven that 4 is the maximum number of operations needed.
+</pre>
+<p><strong>Example 3:</strong></p>
+<pre><strong>Input:</strong> s = "aaaaa"
+<strong>Output:</strong> 5
+<strong>Explanation:</strong> In each operation, we can delete the first letter of s.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 4000</code></li>
+<li><code>s</code> consists only of lowercase English letters.</li>
+</ul>
+</div></div><br><br><hr><br>*************************************************<div id="title">2435. Paths in Matrix Whose Sum Is Divisible by K</div>
+*************************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a <strong>0-indexed</strong> <code>m x n</code> integer matrix <code>grid</code> and an integer <code>k</code>. You are currently at position <code>(0, 0)</code> and you want to reach position <code>(m - 1, n - 1)</code> moving only <strong>down</strong> or <strong>right</strong>.</p>
+<p>Return<em> the number of paths where the sum of the elements on the path is divisible by </em><code>k</code>. Since the answer may be very large, return it <strong>modulo</strong> <code>10<sup>9</sup> + 7</code>.</p>
+<p> </p>
+<p><strong>Example 1:</strong></p>
+<img src="https://assets.leetcode.com/uploads/2022/08/13/image-20220813183124-1.png" style="width: 437px; height: 200px;"/>
+<pre><strong>Input:</strong> grid = [[5,2,4],[3,0,5],[0,7,2]], k = 3
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> There are two paths where the sum of the elements on the path is divisible by k.
+The first path highlighted in red has a sum of 5 + 2 + 4 + 5 + 2 = 18 which is divisible by 3.
+The second path highlighted in blue has a sum of 5 + 3 + 0 + 5 + 2 = 15 which is divisible by 3.
+</pre>
+<p><strong>Example 2:</strong></p>
+<img src="https://assets.leetcode.com/uploads/2022/08/17/image-20220817112930-3.png" style="height: 85px; width: 132px;"/>
+<pre><strong>Input:</strong> grid = [[0,0]], k = 5
+<strong>Output:</strong> 1
+<strong>Explanation:</strong> The path highlighted in red has a sum of 0 + 0 = 0 which is divisible by 5.
+</pre>
+<p><strong>Example 3:</strong></p>
+<img src="https://assets.leetcode.com/uploads/2022/08/12/image-20220812224605-3.png" style="width: 257px; height: 200px;"/>
+<pre><strong>Input:</strong> grid = [[7,3,4,9],[2,3,6,2],[2,3,7,0]], k = 1
+<strong>Output:</strong> 10
+<strong>Explanation:</strong> Every integer is divisible by 1 so the sum of the elements on every possible path is divisible by k.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>m == grid.length</code></li>
+<li><code>n == grid[i].length</code></li>
+<li><code>1 &lt;= m, n &lt;= 5 * 10<sup>4</sup></code></li>
+<li><code>1 &lt;= m * n &lt;= 5 * 10<sup>4</sup></code></li>
+<li><code>0 &lt;= grid[i][j] &lt;= 100</code></li>
+<li><code>1 &lt;= k &lt;= 50</code></li>
+</ul>
 </div></div><br><br><hr><br>
