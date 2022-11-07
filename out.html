@@ -60517,4 +60517,167 @@ The height of the tree is 2 (The path 1 -&gt; 3 -&gt; 2).
 <li><code>1 &lt;= queries[i] &lt;= n</code></li>
 <li><code>queries[i] != root.val</code></li>
 </ul>
+</div></div><br><br><hr><br><style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>*********************************************************<div id="title">2449. Minimum Number of Operations to Make Arrays Similar</div>
+*********************************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given two positive integer arrays <code>nums</code> and <code>target</code>, of the same length.</p>
+<p>In one operation, you can choose any two <strong>distinct</strong> indices <code>i</code> and <code>j</code> where <code>0 &lt;= i, j &lt; nums.length</code> and:</p>
+<ul>
+<li>set <code>nums[i] = nums[i] + 2</code> and</li>
+<li>set <code>nums[j] = nums[j] - 2</code>.</li>
+</ul>
+<p>Two arrays are considered to be <strong>similar</strong> if the frequency of each element is the same.</p>
+<p>Return <em>the minimum number of operations required to make </em><code>nums</code><em> similar to </em><code>target</code>. The test cases are generated such that <code>nums</code> can always be similar to <code>target</code>.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [8,12,6], target = [2,14,10]
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> It is possible to make nums similar to target in two operations:
+- Choose i = 0 and j = 2, nums = [10,12,4].
+- Choose i = 1 and j = 2, nums = [10,14,2].
+It can be shown that 2 is the minimum number of operations needed.
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [1,2,5], target = [4,1,3]
+<strong>Output:</strong> 1
+<strong>Explanation:</strong> We can make nums similar to target in one operation:
+- Choose i = 1 and j = 2, nums = [1,4,3].
+</pre>
+<p><strong class="example">Example 3:</strong></p>
+<pre><strong>Input:</strong> nums = [1,1,1,1,1], target = [1,1,1,1,1]
+<strong>Output:</strong> 0
+<strong>Explanation:</strong> The array nums is already similiar to target.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == nums.length == target.length</code></li>
+<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= nums[i], target[i] &lt;= 10<sup>6</sup></code></li>
+<li>It is possible to make <code>nums</code> similar to <code>target</code>.</li>
+</ul>
+</div></div><br><br><hr><br>*****************************<div id="title">2454. Next Greater Element IV</div>
+*****************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a <strong>0-indexed</strong> array of non-negative integers <code>nums</code>. For each integer in <code>nums</code>, you must find its respective <strong>second greater</strong> integer.</p>
+<p>The <strong>second greater</strong> integer of <code>nums[i]</code> is <code>nums[j]</code> such that:</p>
+<ul>
+<li><code>j &gt; i</code></li>
+<li><code>nums[j] &gt; nums[i]</code></li>
+<li>There exists <strong>exactly one</strong> index <code>k</code> such that <code>nums[k] &gt; nums[i]</code> and <code>i &lt; k &lt; j</code>.</li>
+</ul>
+<p>If there is no such <code>nums[j]</code>, the second greater integer is considered to be <code>-1</code>.</p>
+<ul>
+<li>For example, in the array <code>[1, 2, 4, 3]</code>, the second greater integer of <code>1</code> is <code>4</code>, <code>2</code> is <code>3</code>, and that of <code>3</code> and <code>4</code> is <code>-1</code>.</li>
+</ul>
+<p>Return<em> an integer array </em><code>answer</code><em>, where </em><code>answer[i]</code><em> is the second greater integer of </em><code>nums[i]</code><em>.</em></p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [2,4,0,9,6]
+<strong>Output:</strong> [9,6,6,-1,-1]
+<strong>Explanation:</strong>
+0th index: 4 is the first integer greater than 2, and 9 is the second integer greater than 2, to the right of 2.
+1st index: 9 is the first, and 6 is the second integer greater than 4, to the right of 4.
+2nd index: 9 is the first, and 6 is the second integer greater than 0, to the right of 0.
+3rd index: There is no integer greater than 9 to its right, so the second greater integer is considered to be -1.
+4th index: There is no integer greater than 6 to its right, so the second greater integer is considered to be -1.
+Thus, we return [9,6,6,-1,-1].
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [3,3]
+<strong>Output:</strong> [-1,-1]
+<strong>Explanation:</strong>
+We return [-1,-1] since neither integer has any integer greater than it.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
+<li><code>0 &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
+</ul>
+</div></div><br><br><hr><br>*********************************************************<div id="title">2458. Height of Binary Tree After Subtree Removal Queries</div>
+*********************************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given the <code>root</code> of a <strong>binary tree</strong> with <code>n</code> nodes. Each node is assigned a unique value from <code>1</code> to <code>n</code>. You are also given an array <code>queries</code> of size <code>m</code>.</p>
+<p>You have to perform <code>m</code> <strong>independent</strong> queries on the tree where in the <code>i<sup>th</sup></code> query you do the following:</p>
+<ul>
+<li><strong>Remove</strong> the subtree rooted at the node with the value <code>queries[i]</code> from the tree. It is <strong>guaranteed</strong> that <code>queries[i]</code> will <strong>not</strong> be equal to the value of the root.</li>
+</ul>
+<p>Return <em>an array </em><code>answer</code><em> of size </em><code>m</code><em> where </em><code>answer[i]</code><em> is the height of the tree after performing the </em><code>i<sup>th</sup></code><em> query</em>.</p>
+<p><strong>Note</strong>:</p>
+<ul>
+<li>The queries are independent, so the tree returns to its <strong>initial</strong> state after each query.</li>
+<li>The height of a tree is the <strong>number of edges in the longest simple path</strong> from the root to some node in the tree.</li>
+</ul>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/09/07/binaryytreeedrawio-1.png" style="width: 495px; height: 281px;"/>
+<pre><strong>Input:</strong> root = [1,3,4,2,null,6,5,null,null,null,null,null,7], queries = [4]
+<strong>Output:</strong> [2]
+<strong>Explanation:</strong> The diagram above shows the tree after removing the subtree rooted at node with value 4.
+The height of the tree is 2 (The path 1 -&gt; 3 -&gt; 2).
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/09/07/binaryytreeedrawio-2.png" style="width: 301px; height: 284px;"/>
+<pre><strong>Input:</strong> root = [5,8,9,2,1,3,7,4,6], queries = [3,2,4,8]
+<strong>Output:</strong> [3,2,3,2]
+<strong>Explanation:</strong> We have the following queries:
+- Removing the subtree rooted at node with value 3. The height of the tree becomes 3 (The path 5 -&gt; 8 -&gt; 2 -&gt; 4).
+- Removing the subtree rooted at node with value 2. The height of the tree becomes 2 (The path 5 -&gt; 8 -&gt; 1).
+- Removing the subtree rooted at node with value 4. The height of the tree becomes 3 (The path 5 -&gt; 8 -&gt; 2 -&gt; 6).
+- Removing the subtree rooted at node with value 8. The height of the tree becomes 2 (The path 5 -&gt; 9 -&gt; 3).
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>The number of nodes in the tree is <code>n</code>.</li>
+<li><code>2 &lt;= n &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= Node.val &lt;= n</code></li>
+<li>All the values in the tree are <strong>unique</strong>.</li>
+<li><code>m == queries.length</code></li>
+<li><code>1 &lt;= m &lt;= min(n, 10<sup>4</sup>)</code></li>
+<li><code>1 &lt;= queries[i] &lt;= n</code></li>
+<li><code>queries[i] != root.val</code></li>
+</ul>
+</div></div><br><br><hr><br>*************************************<div id="title">2463. Minimum Total Distance Traveled</div>
+*************************************<div class="content__u3I1 question-content__JfgR"><div><p>There are some robots and factories on the X-axis. You are given an integer array <code>robot</code> where <code>robot[i]</code> is the position of the <code>i<sup>th</sup></code> robot. You are also given a 2D integer array <code>factory</code> where <code>factory[j] = [position<sub>j</sub>, limit<sub>j</sub>]</code> indicates that <code>position<sub>j</sub></code> is the position of the <code>j<sup>th</sup></code> factory and that the <code>j<sup>th</sup></code> factory can repair at most <code>limit<sub>j</sub></code> robots.</p>
+<p>The positions of each robot are <strong>unique</strong>. The positions of each factory are also <strong>unique</strong>. Note that a robot can be <strong>in the same position</strong> as a factory initially.</p>
+<p>All the robots are initially broken; they keep moving in one direction. The direction could be the negative or the positive direction of the X-axis. When a robot reaches a factory that did not reach its limit, the factory repairs the robot, and it stops moving.</p>
+<p><strong>At any moment</strong>, you can set the initial direction of moving for <strong>some</strong> robot. Your target is to minimize the total distance traveled by all the robots.</p>
+<p>Return <em>the minimum total distance traveled by all the robots</em>. The test cases are generated such that all the robots can be repaired.</p>
+<p><strong>Note that</strong></p>
+<ul>
+<li>All robots move at the same speed.</li>
+<li>If two robots move in the same direction, they will never collide.</li>
+<li>If two robots move in opposite directions and they meet at some point, they do not collide. They cross each other.</li>
+<li>If a robot passes by a factory that reached its limits, it crosses it as if it does not exist.</li>
+<li>If the robot moved from a position <code>x</code> to a position <code>y</code>, the distance it moved is <code>|y - x|</code>.</li>
+</ul>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/09/15/example1.jpg" style="width: 500px; height: 320px;"/>
+<pre><strong>Input:</strong> robot = [0,4,6], factory = [[2,2],[6,2]]
+<strong>Output:</strong> 4
+<strong>Explanation:</strong> As shown in the figure:
+- The first robot at position 0 moves in the positive direction. It will be repaired at the first factory.
+- The second robot at position 4 moves in the negative direction. It will be repaired at the first factory.
+- The third robot at position 6 will be repaired at the second factory. It does not need to move.
+The limit of the first factory is 2, and it fixed 2 robots.
+The limit of the second factory is 2, and it fixed 1 robot.
+The total distance is |2 - 0| + |2 - 4| + |6 - 6| = 4. It can be shown that we cannot achieve a better total distance than 4.
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/09/15/example-2.jpg" style="width: 500px; height: 329px;"/>
+<pre><strong>Input:</strong> robot = [1,-1], factory = [[-2,1],[2,1]]
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> As shown in the figure:
+- The first robot at position 1 moves in the positive direction. It will be repaired at the second factory.
+- The second robot at position -1 moves in the negative direction. It will be repaired at the first factory.
+The limit of the first factory is 1, and it fixed 1 robot.
+The limit of the second factory is 1, and it fixed 1 robot.
+The total distance is |2 - 1| + |(-2) - (-1)| = 2. It can be shown that we cannot achieve a better total distance than 2.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= robot.length, factory.length &lt;= 100</code></li>
+<li><code>factory[j].length == 2</code></li>
+<li><code>-10<sup>9</sup> &lt;= robot[i], position<sub>j</sub> &lt;= 10<sup>9</sup></code></li>
+<li><code>0 &lt;= limit<sub>j</sub> &lt;= robot.length</code></li>
+<li>The input will be generated such that it is always possible to repair every robot.</li>
+</ul>
 </div></div><br><br><hr><br>
