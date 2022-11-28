@@ -61244,4 +61244,129 @@ Two of them (both equal to "10301") are palindromic.
 <li><code>1 &lt;= s.length &lt;= 10<sup>4</sup></code></li>
 <li><code>s</code> consists of digits.</li>
 </ul>
+</div></div><br><br><hr><br><style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>*************************************************************<div id="title">2472. Maximum Number of Non-overlapping Palindrome Substrings</div>
+*************************************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a string <code>s</code> and a <strong>positive</strong> integer <code>k</code>.</p>
+<p>Select a set of <strong>non-overlapping</strong> substrings from the string <code>s</code> that satisfy the following conditions:</p>
+<ul>
+<li>The <strong>length</strong> of each substring is <strong>at least</strong> <code>k</code>.</li>
+<li>Each substring is a <strong>palindrome</strong>.</li>
+</ul>
+<p>Return <em>the <strong>maximum</strong> number of substrings in an optimal selection</em>.</p>
+<p>A <strong>substring</strong> is a contiguous sequence of characters within a string.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "abaccdbbd", k = 3
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> We can select the substrings underlined in s = "<u><strong>aba</strong></u>cc<u><strong>dbbd</strong></u>". Both "aba" and "dbbd" are palindromes and have a length of at least k = 3.
+It can be shown that we cannot find a selection with more than two valid substrings.
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "adbcda", k = 2
+<strong>Output:</strong> 0
+<strong>Explanation:</strong> There is no palindrome substring of length at least 2 in the string.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= k &lt;= s.length &lt;= 2000</code></li>
+<li><code>s</code> consists of lowercase English letters.</li>
+</ul>
+</div></div><br><br><hr><br>************************************<div id="title">2478. Number of Beautiful Partitions</div>
+************************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given a string <code>s</code> that consists of the digits <code>'1'</code> to <code>'9'</code> and two integers <code>k</code> and <code>minLength</code>.</p>
+<p>A partition of <code>s</code> is called <strong>beautiful</strong> if:</p>
+<ul>
+<li><code>s</code> is partitioned into <code>k</code> non-intersecting substrings.</li>
+<li>Each substring has a length of <strong>at least</strong> <code>minLength</code>.</li>
+<li>Each substring starts with a <strong>prime</strong> digit and ends with a <strong>non-prime</strong> digit. Prime digits are <code>'2'</code>, <code>'3'</code>, <code>'5'</code>, and <code>'7'</code>, and the rest of the digits are non-prime.</li>
+</ul>
+<p>Return<em> the number of <strong>beautiful</strong> partitions of </em><code>s</code>. Since the answer may be very large, return it <strong>modulo</strong> <code>10<sup>9</sup> + 7</code>.</p>
+<p>A <strong>substring</strong> is a contiguous sequence of characters within a string.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "23542185131", k = 3, minLength = 2
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> There exists three ways to create a beautiful partition:
+"2354 | 218 | 5131"
+"2354 | 21851 | 31"
+"2354218 | 51 | 31"
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "23542185131", k = 3, minLength = 3
+<strong>Output:</strong> 1
+<strong>Explanation:</strong> There exists one way to create a beautiful partition: "2354 | 218 | 5131".
+</pre>
+<p><strong class="example">Example 3:</strong></p>
+<pre><strong>Input:</strong> s = "3312958", k = 3, minLength = 1
+<strong>Output:</strong> 1
+<strong>Explanation:</strong> There exists one way to create a beautiful partition: "331 | 29 | 58".
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= k, minLength &lt;= s.length &lt;= 1000</code></li>
+<li><code>s</code> consists of the digits <code>'1'</code> to <code>'9'</code>.</li>
+</ul>
+</div></div><br><br><hr><br>************************************<div id="title">2484. Count Palindromic Subsequences</div>
+************************************<div class="content__u3I1 question-content__JfgR"><div><p>Given a string of digits <code>s</code>, return <em>the number of <strong>palindromic subsequences</strong> of</em> <code>s</code><em> having length </em><code>5</code>. Since the answer may be very large, return it <strong>modulo</strong> <code>10<sup>9</sup> + 7</code>.</p>
+<p><strong>Note:</strong></p>
+<ul>
+<li>A string is <strong>palindromic</strong> if it reads the same forward and backward.</li>
+<li>A <strong>subsequence</strong> is a string that can be derived from another string by deleting some or no characters without changing the order of the remaining characters.</li>
+</ul>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "103301"
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> 
+There are 6 possible subsequences of length 5: "10330","10331","10301","10301","13301","03301". 
+Two of them (both equal to "10301") are palindromic.
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "0000000"
+<strong>Output:</strong> 21
+<strong>Explanation:</strong> All 21 subsequences are "00000", which is palindromic.
+</pre>
+<p><strong class="example">Example 3:</strong></p>
+<pre><strong>Input:</strong> s = "9999900000"
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> The only two palindromic subsequences are "99999" and "00000".
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 10<sup>4</sup></code></li>
+<li><code>s</code> consists of digits.</li>
+</ul>
+</div></div><br><br><hr><br>***********************************<div id="title">2488. Count Subarrays With Median K</div>
+***********************************<div class="content__u3I1 question-content__JfgR"><div><p>You are given an array <code>nums</code> of size <code>n</code> consisting of <strong>distinct </strong>integers from <code>1</code> to <code>n</code> and a positive integer <code>k</code>.</p>
+<p>Return <em>the number of non-empty subarrays in </em><code>nums</code><em> that have a <strong>median</strong> equal to </em><code>k</code>.</p>
+<p><strong>Note</strong>:</p>
+<ul>
+<li>The median of an array is the <strong>middle </strong>element after sorting the array in <strong>ascending </strong>order. If the array is of even length, the median is the <strong>left </strong>middle element.
+
+	<ul>
+<li>For example, the median of <code>[2,3,1,4]</code> is <code>2</code>, and the median of <code>[8,4,3,5,1]</code> is <code>4</code>.</li>
+</ul>
+</li>
+<li>A subarray is a contiguous part of an array.</li>
+</ul>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [3,2,1,4,5], k = 4
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> The subarrays that have a median equal to 4 are: [4], [4,5] and [1,4,5].
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [2,3,1], k = 3
+<strong>Output:</strong> 1
+<strong>Explanation:</strong> [3] is the only subarray that has a median equal to 3.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == nums.length</code></li>
+<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= nums[i], k &lt;= n</code></li>
+<li>The integers in <code>nums</code> are distinct.</li>
+</ul>
 </div></div><br><br><hr><br>
