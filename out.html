@@ -61505,4 +61505,1090 @@ It can be shown that no grouping is possible.
 <li><code>a<sub>i</sub> != b<sub>i</sub></code></li>
 <li>There is at most one edge between any pair of vertices.</li>
 </ul>
-</div></div><br><br><hr><br>
+</div></div><br><br><hr><br><style>pre{white-space:pre-wrap;background:#f7f9fa;padding:10px 15px;color:#263238;line-height:1.6;font-size:13px;border-radius:3px margin-top: 0;margin-bottom:1em;overflow:auto}b,strong{font-weight:bolder}#title{font-size:16px;color:#212121;font-weight:600;margin-bottom:10px}hr{height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset}</style>*********************************<div id="title">2227. Encrypt and Decrypt Strings</div>
+*********************************<div class="_1l1MA"><p>You are given a character array <code>keys</code> containing <strong>unique</strong> characters and a string array <code>values</code> containing strings of length 2. You are also given another string array <code>dictionary</code> that contains all permitted original strings after decryption. You should implement a data structure that can encrypt or decrypt a <strong>0-indexed</strong> string.</p>
+<p>A string is <strong>encrypted</strong> with the following process:</p>
+<ol>
+<li>For each character <code>c</code> in the string, we find the index <code>i</code> satisfying <code>keys[i] == c</code> in <code>keys</code>.</li>
+<li>Replace <code>c</code> with <code>values[i]</code> in the string.</li>
+</ol>
+<p>Note that in case a character of the string is <strong>not present</strong> in <code>keys</code>, the encryption process cannot be carried out, and an empty string <code>""</code> is returned.</p>
+<p>A string is <strong>decrypted</strong> with the following process:</p>
+<ol>
+<li>For each substring <code>s</code> of length 2 occurring at an even index in the string, we find an <code>i</code> such that <code>values[i] == s</code>. If there are multiple valid <code>i</code>, we choose <strong>any</strong> one of them. This means a string could have multiple possible strings it can decrypt to.</li>
+<li>Replace <code>s</code> with <code>keys[i]</code> in the string.</li>
+</ol>
+<p>Implement the <code>Encrypter</code> class:</p>
+<ul>
+<li><code>Encrypter(char[] keys, String[] values, String[] dictionary)</code> Initializes the <code>Encrypter</code> class with <code>keys, values</code>, and <code>dictionary</code>.</li>
+<li><code>String encrypt(String word1)</code> Encrypts <code>word1</code> with the encryption process described above and returns the encrypted string.</li>
+<li><code>int decrypt(String word2)</code> Returns the number of possible strings <code>word2</code> could decrypt to that also appear in <code>dictionary</code>.</li>
+</ul>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input</strong>
+["Encrypter", "encrypt", "decrypt"]
+[[['a', 'b', 'c', 'd'], ["ei", "zf", "ei", "am"], ["abcd", "acbd", "adbc", "badc", "dacb", "cadb", "cbda", "abad"]], ["abcd"], ["eizfeiam"]]
+<strong>Output</strong>
+[null, "eizfeiam", 2]
+
+<strong>Explanation</strong>
+Encrypter encrypter = new Encrypter([['a', 'b', 'c', 'd'], ["ei", "zf", "ei", "am"], ["abcd", "acbd", "adbc", "badc", "dacb", "cadb", "cbda", "abad"]);
+encrypter.encrypt("abcd"); // return "eizfeiam". 
+                           // 'a' maps to "ei", 'b' maps to "zf", 'c' maps to "ei", and 'd' maps to "am".
+encrypter.decrypt("eizfeiam"); // return 2. 
+                              // "ei" can map to 'a' or 'c', "zf" maps to 'b', and "am" maps to 'd'. 
+                              // Thus, the possible strings after decryption are "abad", "cbad", "abcd", and "cbcd". 
+                              // 2 of those strings, "abad" and "abcd", appear in dictionary, so the answer is 2.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= keys.length == values.length &lt;= 26</code></li>
+<li><code>values[i].length == 2</code></li>
+<li><code>1 &lt;= dictionary.length &lt;= 100</code></li>
+<li><code>1 &lt;= dictionary[i].length &lt;= 100</code></li>
+<li>All <code>keys[i]</code> and <code>dictionary[i]</code> are <strong>unique</strong>.</li>
+<li><code>1 &lt;= word1.length &lt;= 2000</code></li>
+<li><code>1 &lt;= word2.length &lt;= 200</code></li>
+<li>All <code>word1[i]</code> appear in <code>keys</code>.</li>
+<li><code>word2.length</code> is even.</li>
+<li><code>keys</code>, <code>values[i]</code>, <code>dictionary[i]</code>, <code>word1</code>, and <code>word2</code> only contain lowercase English letters.</li>
+<li>At most <code>200</code> calls will be made to <code>encrypt</code> and <code>decrypt</code> <strong>in total</strong>.</li>
+</ul>
+</div><br><br><hr><br>*****************************************<div id="title">2234. Maximum Total Beauty of the Gardens</div>
+*****************************************<div class="_1l1MA"><p>Alice is a caretaker of <code>n</code> gardens and she wants to plant flowers to maximize the total beauty of all her gardens.</p>
+<p>You are given a <strong>0-indexed</strong> integer array <code>flowers</code> of size <code>n</code>, where <code>flowers[i]</code> is the number of flowers already planted in the <code>i<sup>th</sup></code> garden. Flowers that are already planted <strong>cannot</strong> be removed. You are then given another integer <code>newFlowers</code>, which is the <strong>maximum</strong> number of flowers that Alice can additionally plant. You are also given the integers <code>target</code>, <code>full</code>, and <code>partial</code>.</p>
+<p>A garden is considered <strong>complete</strong> if it has <strong>at least</strong> <code>target</code> flowers. The <strong>total beauty</strong> of the gardens is then determined as the <strong>sum</strong> of the following:</p>
+<ul>
+<li>The number of <strong>complete</strong> gardens multiplied by <code>full</code>.</li>
+<li>The <strong>minimum</strong> number of flowers in any of the <strong>incomplete</strong> gardens multiplied by <code>partial</code>. If there are no incomplete gardens, then this value will be <code>0</code>.</li>
+</ul>
+<p>Return <em>the <strong>maximum</strong> total beauty that Alice can obtain after planting at most </em><code>newFlowers</code><em> flowers.</em></p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input:</strong> flowers = [1,3,1,1], newFlowers = 7, target = 6, full = 12, partial = 1
+<strong>Output:</strong> 14
+<strong>Explanation:</strong> Alice can plant
+- 2 flowers in the 0<sup>th</sup> garden
+- 3 flowers in the 1<sup>st</sup> garden
+- 1 flower in the 2<sup>nd</sup> garden
+- 1 flower in the 3<sup>rd</sup> garden
+The gardens will then be [3,6,2,2]. She planted a total of 2 + 3 + 1 + 1 = 7 flowers.
+There is 1 garden that is complete.
+The minimum number of flowers in the incomplete gardens is 2.
+Thus, the total beauty is 1 * 12 + 2 * 1 = 12 + 2 = 14.
+No other way of planting flowers can obtain a total beauty higher than 14.
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<pre><strong>Input:</strong> flowers = [2,4,5,3], newFlowers = 10, target = 5, full = 2, partial = 6
+<strong>Output:</strong> 30
+<strong>Explanation:</strong> Alice can plant
+- 3 flowers in the 0<sup>th</sup> garden
+- 0 flowers in the 1<sup>st</sup> garden
+- 0 flowers in the 2<sup>nd</sup> garden
+- 2 flowers in the 3<sup>rd</sup> garden
+The gardens will then be [5,4,5,5]. She planted a total of 3 + 0 + 0 + 2 = 5 flowers.
+There are 3 gardens that are complete.
+The minimum number of flowers in the incomplete gardens is 4.
+Thus, the total beauty is 3 * 2 + 4 * 6 = 6 + 24 = 30.
+No other way of planting flowers can obtain a total beauty higher than 30.
+Note that Alice could make all the gardens complete but in this case, she would obtain a lower total beauty.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= flowers.length &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= flowers[i], target &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= newFlowers &lt;= 10<sup>10</sup></code></li>
+<li><code>1 &lt;= full, partial &lt;= 10<sup>5</sup></code></li>
+</ul>
+</div><br><br><hr><br>**************************************<div id="title">2242. Maximum Score of a Node Sequence</div>
+**************************************<div class="_1l1MA"><p>There is an <strong>undirected</strong> graph with <code>n</code> nodes, numbered from <code>0</code> to <code>n - 1</code>.</p>
+<p>You are given a <strong>0-indexed</strong> integer array <code>scores</code> of length <code>n</code> where <code>scores[i]</code> denotes the score of node <code>i</code>. You are also given a 2D integer array <code>edges</code> where <code>edges[i] = [a<sub>i</sub>, b<sub>i</sub>]</code> denotes that there exists an <strong>undirected</strong> edge connecting nodes <code>a<sub>i</sub></code> and <code>b<sub>i</sub></code>.</p>
+<p>A node sequence is <b>valid</b> if it meets the following conditions:</p>
+<ul>
+<li>There is an edge connecting every pair of <strong>adjacent</strong> nodes in the sequence.</li>
+<li>No node appears more than once in the sequence.</li>
+</ul>
+<p>The score of a node sequence is defined as the <strong>sum</strong> of the scores of the nodes in the sequence.</p>
+<p>Return <em>the <strong>maximum score</strong> of a valid node sequence with a length of </em><code>4</code><em>. </em>If no such sequence exists, return<em> </em><code>-1</code>.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/04/15/ex1new3.png" style="width: 290px; height: 215px;"/>
+<pre><strong>Input:</strong> scores = [5,2,9,8,4], edges = [[0,1],[1,2],[2,3],[0,2],[1,3],[2,4]]
+<strong>Output:</strong> 24
+<strong>Explanation:</strong> The figure above shows the graph and the chosen node sequence [0,1,2,3].
+The score of the node sequence is 5 + 2 + 9 + 8 = 24.
+It can be shown that no other node sequence has a score of more than 24.
+Note that the sequences [3,1,2,0] and [1,0,2,3] are also valid and have a score of 24.
+The sequence [0,3,2,4] is not valid since no edge connects nodes 0 and 3.
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/03/17/ex2.png" style="width: 333px; height: 151px;"/>
+<pre><strong>Input:</strong> scores = [9,20,6,4,11,12], edges = [[0,3],[5,3],[2,4],[1,3]]
+<strong>Output:</strong> -1
+<strong>Explanation:</strong> The figure above shows the graph.
+There are no valid node sequences of length 4, so we return -1.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == scores.length</code></li>
+<li><code>4 &lt;= n &lt;= 5 * 10<sup>4</sup></code></li>
+<li><code>1 &lt;= scores[i] &lt;= 10<sup>8</sup></code></li>
+<li><code>0 &lt;= edges.length &lt;= 5 * 10<sup>4</sup></code></li>
+<li><code>edges[i].length == 2</code></li>
+<li><code>0 &lt;= a<sub>i</sub>, b<sub>i</sub> &lt;= n - 1</code></li>
+<li><code>a<sub>i</sub> != b<sub>i</sub></code></li>
+<li>There are no duplicate edges.</li>
+</ul>
+</div><br><br><hr><br>*****************************************************<div id="title">2246. Longest Path With Different Adjacent Characters</div>
+*****************************************************<div class="_1l1MA"><p>You are given a <strong>tree</strong> (i.e. a connected, undirected graph that has no cycles) <strong>rooted</strong> at node <code>0</code> consisting of <code>n</code> nodes numbered from <code>0</code> to <code>n - 1</code>. The tree is represented by a <strong>0-indexed</strong> array <code>parent</code> of size <code>n</code>, where <code>parent[i]</code> is the parent of node <code>i</code>. Since node <code>0</code> is the root, <code>parent[0] == -1</code>.</p>
+<p>You are also given a string <code>s</code> of length <code>n</code>, where <code>s[i]</code> is the character assigned to node <code>i</code>.</p>
+<p>Return <em>the length of the <strong>longest path</strong> in the tree such that no pair of <strong>adjacent</strong> nodes on the path have the same character assigned to them.</em></p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/03/25/testingdrawio.png" style="width: 201px; height: 241px;"/>
+<pre><strong>Input:</strong> parent = [-1,0,0,1,1,2], s = "abacbe"
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> The longest path where each two adjacent nodes have different characters in the tree is the path: 0 -&gt; 1 -&gt; 3. The length of this path is 3, so 3 is returned.
+It can be proven that there is no longer path that satisfies the conditions. 
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/03/25/graph2drawio.png" style="width: 201px; height: 221px;"/>
+<pre><strong>Input:</strong> parent = [-1,0,0,0], s = "aabc"
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> The longest path where each two adjacent nodes have different characters is the path: 2 -&gt; 0 -&gt; 3. The length of this path is 3, so 3 is returned.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == parent.length == s.length</code></li>
+<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>
+<li><code>0 &lt;= parent[i] &lt;= n - 1</code> for all <code>i &gt;= 1</code></li>
+<li><code>parent[0] == -1</code></li>
+<li><code>parent</code> represents a valid tree.</li>
+<li><code>s</code> consists of only lowercase English letters.</li>
+</ul>
+</div><br><br><hr><br>*************************************<div id="title">2251. Number of Flowers in Full Bloom</div>
+*************************************<div class="_1l1MA"><p>You are given a <strong>0-indexed</strong> 2D integer array <code>flowers</code>, where <code>flowers[i] = [start<sub>i</sub>, end<sub>i</sub>]</code> means the <code>i<sup>th</sup></code> flower will be in <strong>full bloom</strong> from <code>start<sub>i</sub></code> to <code>end<sub>i</sub></code> (<strong>inclusive</strong>). You are also given a <strong>0-indexed</strong> integer array <code>persons</code> of size <code>n</code>, where <code>persons[i]</code> is the time that the <code>i<sup>th</sup></code> person will arrive to see the flowers.</p>
+<p>Return <em>an integer array </em><code>answer</code><em> of size </em><code>n</code><em>, where </em><code>answer[i]</code><em> is the <strong>number</strong> of flowers that are in full bloom when the </em><code>i<sup>th</sup></code><em> person arrives.</em></p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/03/02/ex1new.jpg" style="width: 550px; height: 216px;"/>
+<pre><strong>Input:</strong> flowers = [[1,6],[3,7],[9,12],[4,13]], persons = [2,3,7,11]
+<strong>Output:</strong> [1,2,2,2]
+<strong>Explanation: </strong>The figure above shows the times when the flowers are in full bloom and when the people arrive.
+For each person, we return the number of flowers in full bloom during their arrival.
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/03/02/ex2new.jpg" style="width: 450px; height: 195px;"/>
+<pre><strong>Input:</strong> flowers = [[1,10],[3,3]], persons = [3,3,2]
+<strong>Output:</strong> [2,2,1]
+<strong>Explanation:</strong> The figure above shows the times when the flowers are in full bloom and when the people arrive.
+For each person, we return the number of flowers in full bloom during their arrival.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= flowers.length &lt;= 5 * 10<sup>4</sup></code></li>
+<li><code>flowers[i].length == 2</code></li>
+<li><code>1 &lt;= start<sub>i</sub> &lt;= end<sub>i</sub> &lt;= 10<sup>9</sup></code></li>
+<li><code>1 &lt;= persons.length &lt;= 5 * 10<sup>4</sup></code></li>
+<li><code>1 &lt;= persons[i] &lt;= 10<sup>9</sup></code></li>
+</ul>
+</div><br><br><hr><br>*******************************<div id="title">2258. Escape the Spreading Fire</div>
+*******************************<div class="_1l1MA"><p>You are given a <strong>0-indexed</strong> 2D integer array <code>grid</code> of size <code>m x n</code> which represents a field. Each cell has one of three values:</p>
+<ul>
+<li><code>0</code> represents grass,</li>
+<li><code>1</code> represents fire,</li>
+<li><code>2</code> represents a wall that you and fire cannot pass through.</li>
+</ul>
+<p>You are situated in the top-left cell, <code>(0, 0)</code>, and you want to travel to the safehouse at the bottom-right cell, <code>(m - 1, n - 1)</code>. Every minute, you may move to an <strong>adjacent</strong> grass cell. <strong>After</strong> your move, every fire cell will spread to all <strong>adjacent</strong> cells that are not walls.</p>
+<p>Return <em>the <strong>maximum</strong> number of minutes that you can stay in your initial position before moving while still safely reaching the safehouse</em>. If this is impossible, return <code>-1</code>. If you can <strong>always</strong> reach the safehouse regardless of the minutes stayed, return <code>10<sup>9</sup></code>.</p>
+<p>Note that even if the fire spreads to the safehouse immediately after you have reached it, it will be counted as safely reaching the safehouse.</p>
+<p>A cell is <strong>adjacent</strong> to another cell if the former is directly north, east, south, or west of the latter (i.e., their sides are touching).</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/03/10/ex1new.jpg" style="width: 650px; height: 404px;"/>
+<pre><strong>Input:</strong> grid = [[0,2,0,0,0,0,0],[0,0,0,2,2,1,0],[0,2,0,0,1,2,0],[0,0,2,2,2,0,2],[0,0,0,0,0,0,0]]
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> The figure above shows the scenario where you stay in the initial position for 3 minutes.
+You will still be able to safely reach the safehouse.
+Staying for more than 3 minutes will not allow you to safely reach the safehouse.</pre>
+<p><strong class="example">Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/03/10/ex2new2.jpg" style="width: 515px; height: 150px;"/>
+<pre><strong>Input:</strong> grid = [[0,0,0,0],[0,1,2,0],[0,2,0,0]]
+<strong>Output:</strong> -1
+<strong>Explanation:</strong> The figure above shows the scenario where you immediately move towards the safehouse.
+Fire will spread to any cell you move towards and it is impossible to safely reach the safehouse.
+Thus, -1 is returned.
+</pre>
+<p><strong class="example">Example 3:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/03/10/ex3new.jpg" style="width: 174px; height: 150px;"/>
+<pre><strong>Input:</strong> grid = [[0,0,0],[2,2,0],[1,2,0]]
+<strong>Output:</strong> 1000000000
+<strong>Explanation:</strong> The figure above shows the initial grid.
+Notice that the fire is contained by walls and you will always be able to safely reach the safehouse.
+Thus, 10<sup>9</sup> is returned.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>m == grid.length</code></li>
+<li><code>n == grid[i].length</code></li>
+<li><code>2 &lt;= m, n &lt;= 300</code></li>
+<li><code>4 &lt;= m * n &lt;= 2 * 10<sup>4</sup></code></li>
+<li><code>grid[i][j]</code> is either <code>0</code>, <code>1</code>, or <code>2</code>.</li>
+<li><code>grid[0][0] == grid[m - 1][n - 1] == 0</code></li>
+</ul>
+</div><br><br><hr><br>******************************<div id="title">2262. Total Appeal of A String</div>
+******************************<div class="_1l1MA"><p>The <b>appeal</b> of a string is the number of <strong>distinct</strong> characters found in the string.</p>
+<ul>
+<li>For example, the appeal of <code>"abbca"</code> is <code>3</code> because it has <code>3</code> distinct characters: <code>'a'</code>, <code>'b'</code>, and <code>'c'</code>.</li>
+</ul>
+<p>Given a string <code>s</code>, return <em>the <strong>total appeal of all of its <strong>substrings</strong>.</strong></em></p>
+<p>A <strong>substring</strong> is a contiguous sequence of characters within a string.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "abbca"
+<strong>Output:</strong> 28
+<strong>Explanation:</strong> The following are the substrings of "abbca":
+- Substrings of length 1: "a", "b", "b", "c", "a" have an appeal of 1, 1, 1, 1, and 1 respectively. The sum is 5.
+- Substrings of length 2: "ab", "bb", "bc", "ca" have an appeal of 2, 1, 2, and 2 respectively. The sum is 7.
+- Substrings of length 3: "abb", "bbc", "bca" have an appeal of 2, 2, and 3 respectively. The sum is 7.
+- Substrings of length 4: "abbc", "bbca" have an appeal of 3 and 3 respectively. The sum is 6.
+- Substrings of length 5: "abbca" has an appeal of 3. The sum is 3.
+The total sum is 5 + 7 + 7 + 6 + 3 = 28.
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "code"
+<strong>Output:</strong> 20
+<strong>Explanation:</strong> The following are the substrings of "code":
+- Substrings of length 1: "c", "o", "d", "e" have an appeal of 1, 1, 1, and 1 respectively. The sum is 4.
+- Substrings of length 2: "co", "od", "de" have an appeal of 2, 2, and 2 respectively. The sum is 6.
+- Substrings of length 3: "cod", "ode" have an appeal of 3 and 3 respectively. The sum is 6.
+- Substrings of length 4: "code" has an appeal of 4. The sum is 4.
+The total sum is 4 + 6 + 6 + 4 = 20.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>
+<li><code>s</code> consists of lowercase English letters.</li>
+</ul>
+</div><br><br><hr><br>********************************************************<div id="title">2267.  Check if There Is a Valid Parentheses String Path</div>
+********************************************************<div class="_1l1MA"><p>A parentheses string is a <strong>non-empty</strong> string consisting only of <code>'('</code> and <code>')'</code>. It is <strong>valid</strong> if <strong>any</strong> of the following conditions is <strong>true</strong>:</p>
+<ul>
+<li>It is <code>()</code>.</li>
+<li>It can be written as <code>AB</code> (<code>A</code> concatenated with <code>B</code>), where <code>A</code> and <code>B</code> are valid parentheses strings.</li>
+<li>It can be written as <code>(A)</code>, where <code>A</code> is a valid parentheses string.</li>
+</ul>
+<p>You are given an <code>m x n</code> matrix of parentheses <code>grid</code>. A <strong>valid parentheses string path</strong> in the grid is a path satisfying <strong>all</strong> of the following conditions:</p>
+<ul>
+<li>The path starts from the upper left cell <code>(0, 0)</code>.</li>
+<li>The path ends at the bottom-right cell <code>(m - 1, n - 1)</code>.</li>
+<li>The path only ever moves <strong>down</strong> or <strong>right</strong>.</li>
+<li>The resulting parentheses string formed by the path is <strong>valid</strong>.</li>
+</ul>
+<p>Return <code>true</code> <em>if there exists a <strong>valid parentheses string path</strong> in the grid.</em> Otherwise, return <code>false</code>.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/03/15/example1drawio.png" style="width: 521px; height: 300px;"/>
+<pre><strong>Input:</strong> grid = [["(","(","("],[")","(",")"],["(","(",")"],["(","(",")"]]
+<strong>Output:</strong> true
+<strong>Explanation:</strong> The above diagram shows two possible paths that form valid parentheses strings.
+The first path shown results in the valid parentheses string "()(())".
+The second path shown results in the valid parentheses string "((()))".
+Note that there may be other valid parentheses string paths.
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/03/15/example2drawio.png" style="width: 165px; height: 165px;"/>
+<pre><strong>Input:</strong> grid = [[")",")"],["(","("]]
+<strong>Output:</strong> false
+<strong>Explanation:</strong> The two possible paths form the parentheses strings "))(" and ")((". Since neither of them are valid parentheses strings, we return false.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>m == grid.length</code></li>
+<li><code>n == grid[i].length</code></li>
+<li><code>1 &lt;= m, n &lt;= 100</code></li>
+<li><code>grid[i][j]</code> is either <code>'('</code> or <code>')'</code>.</li>
+</ul>
+</div><br><br><hr><br>*************************************<div id="title">2272. Substring With Largest Variance</div>
+*************************************<div class="_1l1MA"><p>The <strong>variance</strong> of a string is defined as the largest difference between the number of occurrences of <strong>any</strong> <code>2</code> characters present in the string. Note the two characters may or may not be the same.</p>
+<p>Given a string <code>s</code> consisting of lowercase English letters only, return <em>the <strong>largest variance</strong> possible among all <strong>substrings</strong> of</em> <code>s</code>.</p>
+<p>A <strong>substring</strong> is a contiguous sequence of characters within a string.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "aababbb"
+<strong>Output:</strong> 3
+<strong>Explanation:</strong>
+All possible variances along with their respective substrings are listed below:
+- Variance 0 for substrings "a", "aa", "ab", "abab", "aababb", "ba", "b", "bb", and "bbb".
+- Variance 1 for substrings "aab", "aba", "abb", "aabab", "ababb", "aababbb", and "bab".
+- Variance 2 for substrings "aaba", "ababbb", "abbb", and "babb".
+- Variance 3 for substring "babbb".
+Since the largest possible variance is 3, we return it.
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "abcde"
+<strong>Output:</strong> 0
+<strong>Explanation:</strong>
+No letter occurs more than once in s, so the variance of every substring is 0.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 10<sup>4</sup></code></li>
+<li><code>s</code> consists of lowercase English letters.</li>
+</ul>
+</div><br><br><hr><br>*********************************<div id="title">2276. Count Integers in Intervals</div>
+*********************************<div class="_1l1MA"><p>Given an <strong>empty</strong> set of intervals, implement a data structure that can:</p>
+<ul>
+<li><strong>Add</strong> an interval to the set of intervals.</li>
+<li><strong>Count</strong> the number of integers that are present in <strong>at least one</strong> interval.</li>
+</ul>
+<p>Implement the <code>CountIntervals</code> class:</p>
+<ul>
+<li><code>CountIntervals()</code> Initializes the object with an empty set of intervals.</li>
+<li><code>void add(int left, int right)</code> Adds the interval <code>[left, right]</code> to the set of intervals.</li>
+<li><code>int count()</code> Returns the number of integers that are present in <strong>at least one</strong> interval.</li>
+</ul>
+<p><strong>Note</strong> that an interval <code>[left, right]</code> denotes all the integers <code>x</code> where <code>left &lt;= x &lt;= right</code>.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input</strong>
+["CountIntervals", "add", "add", "count", "add", "count"]
+[[], [2, 3], [7, 10], [], [5, 8], []]
+<strong>Output</strong>
+[null, null, null, 6, null, 8]
+
+<strong>Explanation</strong>
+CountIntervals countIntervals = new CountIntervals(); // initialize the object with an empty set of intervals. 
+countIntervals.add(2, 3);  // add [2, 3] to the set of intervals.
+countIntervals.add(7, 10); // add [7, 10] to the set of intervals.
+countIntervals.count();    // return 6
+                           // the integers 2 and 3 are present in the interval [2, 3].
+                           // the integers 7, 8, 9, and 10 are present in the interval [7, 10].
+countIntervals.add(5, 8);  // add [5, 8] to the set of intervals.
+countIntervals.count();    // return 8
+                           // the integers 2 and 3 are present in the interval [2, 3].
+                           // the integers 5 and 6 are present in the interval [5, 8].
+                           // the integers 7 and 8 are present in the intervals [5, 8] and [7, 10].
+                           // the integers 9 and 10 are present in the interval [7, 10].
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= left &lt;= right &lt;= 10<sup>9</sup></code></li>
+<li>At most <code>10<sup>5</sup></code> calls <strong>in total</strong> will be made to <code>add</code> and <code>count</code>.</li>
+<li>At least <strong>one</strong> call will be made to <code>count</code>.</li>
+</ul>
+</div><br><br><hr><br>**************************************<div id="title">2281. Sum of Total Strength of Wizards</div>
+**************************************<div class="_1l1MA"><p>As the ruler of a kingdom, you have an army of wizards at your command.</p>
+<p>You are given a <strong>0-indexed</strong> integer array <code>strength</code>, where <code>strength[i]</code> denotes the strength of the <code>i<sup>th</sup></code> wizard. For a <strong>contiguous</strong> group of wizards (i.e. the wizards' strengths form a <strong>subarray</strong> of <code>strength</code>), the <strong>total strength</strong> is defined as the <strong>product</strong> of the following two values:</p>
+<ul>
+<li>The strength of the <strong>weakest</strong> wizard in the group.</li>
+<li>The <strong>total</strong> of all the individual strengths of the wizards in the group.</li>
+</ul>
+<p>Return <em>the <strong>sum</strong> of the total strengths of <strong>all</strong> contiguous groups of wizards</em>. Since the answer may be very large, return it <strong>modulo</strong> <code>10<sup>9</sup> + 7</code>.</p>
+<p>A <strong>subarray</strong> is a contiguous <strong>non-empty</strong> sequence of elements within an array.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input:</strong> strength = [1,3,1,2]
+<strong>Output:</strong> 44
+<strong>Explanation:</strong> The following are all the contiguous groups of wizards:
+- [1] from [<u><strong>1</strong></u>,3,1,2] has a total strength of min([1]) * sum([1]) = 1 * 1 = 1
+- [3] from [1,<u><strong>3</strong></u>,1,2] has a total strength of min([3]) * sum([3]) = 3 * 3 = 9
+- [1] from [1,3,<u><strong>1</strong></u>,2] has a total strength of min([1]) * sum([1]) = 1 * 1 = 1
+- [2] from [1,3,1,<u><strong>2</strong></u>] has a total strength of min([2]) * sum([2]) = 2 * 2 = 4
+- [1,3] from [<u><strong>1,3</strong></u>,1,2] has a total strength of min([1,3]) * sum([1,3]) = 1 * 4 = 4
+- [3,1] from [1,<u><strong>3,1</strong></u>,2] has a total strength of min([3,1]) * sum([3,1]) = 1 * 4 = 4
+- [1,2] from [1,3,<u><strong>1,2</strong></u>] has a total strength of min([1,2]) * sum([1,2]) = 1 * 3 = 3
+- [1,3,1] from [<u><strong>1,3,1</strong></u>,2] has a total strength of min([1,3,1]) * sum([1,3,1]) = 1 * 5 = 5
+- [3,1,2] from [1,<u><strong>3,1,2</strong></u>] has a total strength of min([3,1,2]) * sum([3,1,2]) = 1 * 6 = 6
+- [1,3,1,2] from [<u><strong>1,3,1,2</strong></u>] has a total strength of min([1,3,1,2]) * sum([1,3,1,2]) = 1 * 7 = 7
+The sum of all the total strengths is 1 + 9 + 1 + 4 + 4 + 4 + 3 + 5 + 6 + 7 = 44.
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<pre><strong>Input:</strong> strength = [5,4,6]
+<strong>Output:</strong> 213
+<strong>Explanation:</strong> The following are all the contiguous groups of wizards: 
+- [5] from [<u><strong>5</strong></u>,4,6] has a total strength of min([5]) * sum([5]) = 5 * 5 = 25
+- [4] from [5,<u><strong>4</strong></u>,6] has a total strength of min([4]) * sum([4]) = 4 * 4 = 16
+- [6] from [5,4,<u><strong>6</strong></u>] has a total strength of min([6]) * sum([6]) = 6 * 6 = 36
+- [5,4] from [<u><strong>5,4</strong></u>,6] has a total strength of min([5,4]) * sum([5,4]) = 4 * 9 = 36
+- [4,6] from [5,<u><strong>4,6</strong></u>] has a total strength of min([4,6]) * sum([4,6]) = 4 * 10 = 40
+- [5,4,6] from [<u><strong>5,4,6</strong></u>] has a total strength of min([5,4,6]) * sum([5,4,6]) = 4 * 15 = 60
+The sum of all the total strengths is 25 + 16 + 36 + 36 + 40 + 60 = 213.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= strength.length &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= strength[i] &lt;= 10<sup>9</sup></code></li>
+</ul>
+</div><br><br><hr><br>***************************************<div id="title">2286. Booking Concert Tickets in Groups</div>
+***************************************<div class="_1l1MA"><p>A concert hall has <code>n</code> rows numbered from <code>0</code> to <code>n - 1</code>, each with <code>m</code> seats, numbered from <code>0</code> to <code>m - 1</code>. You need to design a ticketing system that can allocate seats in the following cases:</p>
+<ul>
+<li>If a group of <code>k</code> spectators can sit <strong>together</strong> in a row.</li>
+<li>If <strong>every</strong> member of a group of <code>k</code> spectators can get a seat. They may or <strong>may not</strong> sit together.</li>
+</ul>
+<p>Note that the spectators are very picky. Hence:</p>
+<ul>
+<li>They will book seats only if each member of their group can get a seat with row number <strong>less than or equal</strong> to <code>maxRow</code>. <code>maxRow</code> can <strong>vary</strong> from group to group.</li>
+<li>In case there are multiple rows to choose from, the row with the <strong>smallest</strong> number is chosen. If there are multiple seats to choose in the same row, the seat with the <strong>smallest</strong> number is chosen.</li>
+</ul>
+<p>Implement the <code>BookMyShow</code> class:</p>
+<ul>
+<li><code>BookMyShow(int n, int m)</code> Initializes the object with <code>n</code> as number of rows and <code>m</code> as number of seats per row.</li>
+<li><code>int[] gather(int k, int maxRow)</code> Returns an array of length <code>2</code> denoting the row and seat number (respectively) of the <strong>first seat</strong> being allocated to the <code>k</code> members of the group, who must sit <strong>together</strong>. In other words, it returns the smallest possible <code>r</code> and <code>c</code> such that all <code>[c, c + k - 1]</code> seats are valid and empty in row <code>r</code>, and <code>r &lt;= maxRow</code>. Returns <code>[]</code> in case it is <strong>not possible</strong> to allocate seats to the group.</li>
+<li><code>boolean scatter(int k, int maxRow)</code> Returns <code>true</code> if all <code>k</code> members of the group can be allocated seats in rows <code>0</code> to <code>maxRow</code>, who may or <strong>may not</strong> sit together. If the seats can be allocated, it allocates <code>k</code> seats to the group with the <strong>smallest</strong> row numbers, and the smallest possible seat numbers in each row. Otherwise, returns <code>false</code>.</li>
+</ul>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input</strong>
+["BookMyShow", "gather", "gather", "scatter", "scatter"]
+[[2, 5], [4, 0], [2, 0], [5, 1], [5, 1]]
+<strong>Output</strong>
+[null, [0, 0], [], true, false]
+
+<strong>Explanation</strong>
+BookMyShow bms = new BookMyShow(2, 5); // There are 2 rows with 5 seats each 
+bms.gather(4, 0); // return [0, 0]
+                  // The group books seats [0, 3] of row 0. 
+bms.gather(2, 0); // return []
+                  // There is only 1 seat left in row 0,
+                  // so it is not possible to book 2 consecutive seats. 
+bms.scatter(5, 1); // return True
+                   // The group books seat 4 of row 0 and seats [0, 3] of row 1. 
+bms.scatter(5, 1); // return False
+                   // There is only one seat left in the hall.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 5 * 10<sup>4</sup></code></li>
+<li><code>1 &lt;= m, k &lt;= 10<sup>9</sup></code></li>
+<li><code>0 &lt;= maxRow &lt;= n - 1</code></li>
+<li>At most <code>5 * 10<sup>4</sup></code> calls <strong>in total</strong> will be made to <code>gather</code> and <code>scatter</code>.</li>
+</ul>
+</div><br><br><hr><br>**********************************************<div id="title">2290. Minimum Obstacle Removal to Reach Corner</div>
+**********************************************<div class="_1l1MA"><p>You are given a <strong>0-indexed</strong> 2D integer array <code>grid</code> of size <code>m x n</code>. Each cell has one of two values:</p>
+<ul>
+<li><code>0</code> represents an <strong>empty</strong> cell,</li>
+<li><code>1</code> represents an <strong>obstacle</strong> that may be removed.</li>
+</ul>
+<p>You can move up, down, left, or right from and to an empty cell.</p>
+<p>Return <em>the <strong>minimum</strong> number of <strong>obstacles</strong> to <strong>remove</strong> so you can move from the upper left corner </em><code>(0, 0)</code><em> to the lower right corner </em><code>(m - 1, n - 1)</code>.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/04/06/example1drawio-1.png" style="width: 605px; height: 246px;"/>
+<pre><strong>Input:</strong> grid = [[0,1,1],[1,1,0],[1,1,0]]
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> We can remove the obstacles at (0, 1) and (0, 2) to create a path from (0, 0) to (2, 2).
+It can be shown that we need to remove at least 2 obstacles, so we return 2.
+Note that there may be other ways to remove 2 obstacles to create a path.
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/04/06/example1drawio.png" style="width: 405px; height: 246px;"/>
+<pre><strong>Input:</strong> grid = [[0,1,0,0,0],[0,1,0,1,0],[0,0,0,1,0]]
+<strong>Output:</strong> 0
+<strong>Explanation:</strong> We can move from (0, 0) to (2, 4) without removing any obstacles, so we return 0.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>m == grid.length</code></li>
+<li><code>n == grid[i].length</code></li>
+<li><code>1 &lt;= m, n &lt;= 10<sup>5</sup></code></li>
+<li><code>2 &lt;= m * n &lt;= 10<sup>5</sup></code></li>
+<li><code>grid[i][j]</code> is either <code>0</code> <strong>or</strong> <code>1</code>.</li>
+<li><code>grid[0][0] == grid[m - 1][n - 1] == 0</code></li>
+</ul>
+</div><br><br><hr><br>**************************<div id="title">2296. Design a Text Editor</div>
+**************************<div class="_1l1MA"><p>Design a text editor with a cursor that can do the following:</p>
+<ul>
+<li><strong>Add</strong> text to where the cursor is.</li>
+<li><strong>Delete</strong> text from where the cursor is (simulating the backspace key).</li>
+<li><strong>Move</strong> the cursor either left or right.</li>
+</ul>
+<p>When deleting text, only characters to the left of the cursor will be deleted. The cursor will also remain within the actual text and cannot be moved beyond it. More formally, we have that <code>0 &lt;= cursor.position &lt;= currentText.length</code> always holds.</p>
+<p>Implement the <code>TextEditor</code> class:</p>
+<ul>
+<li><code>TextEditor()</code> Initializes the object with empty text.</li>
+<li><code>void addText(string text)</code> Appends <code>text</code> to where the cursor is. The cursor ends to the right of <code>text</code>.</li>
+<li><code>int deleteText(int k)</code> Deletes <code>k</code> characters to the left of the cursor. Returns the number of characters actually deleted.</li>
+<li><code>string cursorLeft(int k)</code> Moves the cursor to the left <code>k</code> times. Returns the last <code>min(10, len)</code> characters to the left of the cursor, where <code>len</code> is the number of characters to the left of the cursor.</li>
+<li><code>string cursorRight(int k)</code> Moves the cursor to the right <code>k</code> times. Returns the last <code>min(10, len)</code> characters to the left of the cursor, where <code>len</code> is the number of characters to the left of the cursor.</li>
+</ul>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input</strong>
+["TextEditor", "addText", "deleteText", "addText", "cursorRight", "cursorLeft", "deleteText", "cursorLeft", "cursorRight"]
+[[], ["leetcode"], [4], ["practice"], [3], [8], [10], [2], [6]]
+<strong>Output</strong>
+[null, null, 4, null, "etpractice", "leet", 4, "", "practi"]
+
+<strong>Explanation</strong>
+TextEditor textEditor = new TextEditor(); // The current text is "|". (The '|' character represents the cursor)
+textEditor.addText("leetcode"); // The current text is "leetcode|".
+textEditor.deleteText(4); // return 4
+                          // The current text is "leet|". 
+                          // 4 characters were deleted.
+textEditor.addText("practice"); // The current text is "leetpractice|". 
+textEditor.cursorRight(3); // return "etpractice"
+                           // The current text is "leetpractice|". 
+                           // The cursor cannot be moved beyond the actual text and thus did not move.
+                           // "etpractice" is the last 10 characters to the left of the cursor.
+textEditor.cursorLeft(8); // return "leet"
+                          // The current text is "leet|practice".
+                          // "leet" is the last min(10, 4) = 4 characters to the left of the cursor.
+textEditor.deleteText(10); // return 4
+                           // The current text is "|practice".
+                           // Only 4 characters were deleted.
+textEditor.cursorLeft(2); // return ""
+                          // The current text is "|practice".
+                          // The cursor cannot be moved beyond the actual text and thus did not move. 
+                          // "" is the last min(10, 0) = 0 characters to the left of the cursor.
+textEditor.cursorRight(6); // return "practi"
+                           // The current text is "practi|ce".
+                           // "practi" is the last min(10, 6) = 6 characters to the left of the cursor.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= text.length, k &lt;= 40</code></li>
+<li><code>text</code> consists of lowercase English letters.</li>
+<li>At most <code>2 * 10<sup>4</sup></code> calls <strong>in total</strong> will be made to <code>addText</code>, <code>deleteText</code>, <code>cursorLeft</code> and <code>cursorRight</code>.</li>
+</ul>
+<p> </p>
+<p><strong>Follow-up:</strong> Could you find a solution with time complexity of <code>O(k)</code> per call?</p>
+</div><br><br><hr><br>***************************************<div id="title">2301. Match Substring After Replacement</div>
+***************************************<div class="_1l1MA"><p>You are given two strings <code>s</code> and <code>sub</code>. You are also given a 2D character array <code>mappings</code> where <code>mappings[i] = [old<sub>i</sub>, new<sub>i</sub>]</code> indicates that you may perform the following operation <strong>any</strong> number of times:</p>
+<ul>
+<li><strong>Replace</strong> a character <code>old<sub>i</sub></code> of <code>sub</code> with <code>new<sub>i</sub></code>.</li>
+</ul>
+<p>Each character in <code>sub</code> <strong>cannot</strong> be replaced more than once.</p>
+<p>Return <code>true</code><em> if it is possible to make </em><code>sub</code><em> a substring of </em><code>s</code><em> by replacing zero or more characters according to </em><code>mappings</code>. Otherwise, return <code>false</code>.</p>
+<p>A <strong>substring</strong> is a contiguous non-empty sequence of characters within a string.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input:</strong> s = "fool3e7bar", sub = "leet", mappings = [["e","3"],["t","7"],["t","8"]]
+<strong>Output:</strong> true
+<strong>Explanation:</strong> Replace the first 'e' in sub with '3' and 't' in sub with '7'.
+Now sub = "l3e7" is a substring of s, so we return true.</pre>
+<p><strong class="example">Example 2:</strong></p>
+<pre><strong>Input:</strong> s = "fooleetbar", sub = "f00l", mappings = [["o","0"]]
+<strong>Output:</strong> false
+<strong>Explanation:</strong> The string "f00l" is not a substring of s and no replacements can be made.
+Note that we cannot replace '0' with 'o'.
+</pre>
+<p><strong class="example">Example 3:</strong></p>
+<pre><strong>Input:</strong> s = "Fool33tbaR", sub = "leetd", mappings = [["e","3"],["t","7"],["t","8"],["d","b"],["p","b"]]
+<strong>Output:</strong> true
+<strong>Explanation:</strong> Replace the first and second 'e' in sub with '3' and 'd' in sub with 'b'.
+Now sub = "l33tb" is a substring of s, so we return true.
+
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= sub.length &lt;= s.length &lt;= 5000</code></li>
+<li><code>0 &lt;= mappings.length &lt;= 1000</code></li>
+<li><code>mappings[i].length == 2</code></li>
+<li><code>old<sub>i</sub> != new<sub>i</sub></code></li>
+<li><code>s</code> and <code>sub</code> consist of uppercase and lowercase English letters and digits.</li>
+<li><code>old<sub>i</sub></code> and <code>new<sub>i</sub></code> are either uppercase or lowercase English letters or digits.</li>
+</ul>
+</div><br><br><hr><br>********************************************<div id="title">2302. Count Subarrays With Score Less Than K</div>
+********************************************<div class="_1l1MA"><p>The <strong>score</strong> of an array is defined as the <strong>product</strong> of its sum and its length.</p>
+<ul>
+<li>For example, the score of <code>[1, 2, 3, 4, 5]</code> is <code>(1 + 2 + 3 + 4 + 5) * 5 = 75</code>.</li>
+</ul>
+<p>Given a positive integer array <code>nums</code> and an integer <code>k</code>, return <em>the <strong>number of non-empty subarrays</strong> of</em> <code>nums</code> <em>whose score is <strong>strictly less</strong> than</em> <code>k</code>.</p>
+<p>A <strong>subarray</strong> is a contiguous sequence of elements within an array.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [2,1,4,3,5], k = 10
+<strong>Output:</strong> 6
+<strong>Explanation:</strong>
+The 6 subarrays having scores less than 10 are:
+- [2] with score 2 * 1 = 2.
+- [1] with score 1 * 1 = 1.
+- [4] with score 4 * 1 = 4.
+- [3] with score 3 * 1 = 3. 
+- [5] with score 5 * 1 = 5.
+- [2,1] with score (2 + 1) * 2 = 6.
+Note that subarrays such as [1,4] and [4,3,5] are not considered because their scores are 10 and 36 respectively, while we need scores strictly less than 10.</pre>
+<p><strong class="example">Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [1,1,1], k = 5
+<strong>Output:</strong> 5
+<strong>Explanation:</strong>
+Every subarray except [1,1,1] has a score less than 5.
+[1,1,1] has a score (1 + 1 + 1) * 3 = 9, which is greater than 5.
+Thus, there are 5 subarrays having scores less than 5.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= nums[i] &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= k &lt;= 10<sup>15</sup></code></li>
+</ul>
+</div><br><br><hr><br>**********************<div id="title">2306. Naming a Company</div>
+**********************<div class="_1l1MA"><p>You are given an array of strings <code>ideas</code> that represents a list of names to be used in the process of naming a company. The process of naming a company is as follows:</p>
+<ol>
+<li>Choose 2 <strong>distinct</strong> names from <code>ideas</code>, call them <code>idea<sub>A</sub></code> and <code>idea<sub>B</sub></code>.</li>
+<li>Swap the first letters of <code>idea<sub>A</sub></code> and <code>idea<sub>B</sub></code> with each other.</li>
+<li>If <strong>both</strong> of the new names are not found in the original <code>ideas</code>, then the name <code>idea<sub>A</sub> idea<sub>B</sub></code> (the <strong>concatenation</strong> of <code>idea<sub>A</sub></code> and <code>idea<sub>B</sub></code>, separated by a space) is a valid company name.</li>
+<li>Otherwise, it is not a valid name.</li>
+</ol>
+<p>Return <em>the number of <strong>distinct</strong> valid names for the company</em>.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input:</strong> ideas = ["coffee","donuts","time","toffee"]
+<strong>Output:</strong> 6
+<strong>Explanation:</strong> The following selections are valid:
+- ("coffee", "donuts"): The company name created is "doffee conuts".
+- ("donuts", "coffee"): The company name created is "conuts doffee".
+- ("donuts", "time"): The company name created is "tonuts dime".
+- ("donuts", "toffee"): The company name created is "tonuts doffee".
+- ("time", "donuts"): The company name created is "dime tonuts".
+- ("toffee", "donuts"): The company name created is "doffee tonuts".
+Therefore, there are a total of 6 distinct company names.
+
+The following are some examples of invalid selections:
+- ("coffee", "time"): The name "toffee" formed after swapping already exists in the original array.
+- ("time", "toffee"): Both names are still the same after swapping and exist in the original array.
+- ("coffee", "toffee"): Both names formed after swapping already exist in the original array.
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<pre><strong>Input:</strong> ideas = ["lack","back"]
+<strong>Output:</strong> 0
+<strong>Explanation:</strong> There are no valid selections. Therefore, 0 is returned.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>2 &lt;= ideas.length &lt;= 5 * 10<sup>4</sup></code></li>
+<li><code>1 &lt;= ideas[i].length &lt;= 10</code></li>
+<li><code>ideas[i]</code> consists of lowercase English letters.</li>
+<li>All the strings in <code>ideas</code> are <strong>unique</strong>.</li>
+</ul>
+</div><br><br><hr><br>****************************<div id="title">2312. Selling Pieces of Wood</div>
+****************************<div class="_1l1MA"><p>You are given two integers <code>m</code> and <code>n</code> that represent the height and width of a rectangular piece of wood. You are also given a 2D integer array <code>prices</code>, where <code>prices[i] = [h<sub>i</sub>, w<sub>i</sub>, price<sub>i</sub>]</code> indicates you can sell a rectangular piece of wood of height <code>h<sub>i</sub></code> and width <code>w<sub>i</sub></code> for <code>price<sub>i</sub></code> dollars.</p>
+<p>To cut a piece of wood, you must make a vertical or horizontal cut across the <strong>entire</strong> height or width of the piece to split it into two smaller pieces. After cutting a piece of wood into some number of smaller pieces, you can sell pieces according to <code>prices</code>. You may sell multiple pieces of the same shape, and you do not have to sell all the shapes. The grain of the wood makes a difference, so you <strong>cannot</strong> rotate a piece to swap its height and width.</p>
+<p>Return <em>the <strong>maximum</strong> money you can earn after cutting an </em><code>m x n</code><em> piece of wood</em>.</p>
+<p>Note that you can cut the piece of wood as many times as you want.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/04/27/ex1.png" style="width: 239px; height: 150px;"/>
+<pre><strong>Input:</strong> m = 3, n = 5, prices = [[1,4,2],[2,2,7],[2,1,3]]
+<strong>Output:</strong> 19
+<strong>Explanation:</strong> The diagram above shows a possible scenario. It consists of:
+- 2 pieces of wood shaped 2 x 2, selling for a price of 2 * 7 = 14.
+- 1 piece of wood shaped 2 x 1, selling for a price of 1 * 3 = 3.
+- 1 piece of wood shaped 1 x 4, selling for a price of 1 * 2 = 2.
+This obtains a total of 14 + 3 + 2 = 19 money earned.
+It can be shown that 19 is the maximum amount of money that can be earned.
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/04/27/ex2new.png" style="width: 250px; height: 175px;"/>
+<pre><strong>Input:</strong> m = 4, n = 6, prices = [[3,2,10],[1,4,2],[4,1,3]]
+<strong>Output:</strong> 32
+<strong>Explanation:</strong> The diagram above shows a possible scenario. It consists of:
+- 3 pieces of wood shaped 3 x 2, selling for a price of 3 * 10 = 30.
+- 1 piece of wood shaped 1 x 4, selling for a price of 1 * 2 = 2.
+This obtains a total of 30 + 2 = 32 money earned.
+It can be shown that 32 is the maximum amount of money that can be earned.
+Notice that we cannot rotate the 1 x 4 piece of wood to obtain a 4 x 1 piece of wood.</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= m, n &lt;= 200</code></li>
+<li><code>1 &lt;= prices.length &lt;= 2 * 10<sup>4</sup></code></li>
+<li><code>prices[i].length == 3</code></li>
+<li><code>1 &lt;= h<sub>i</sub> &lt;= m</code></li>
+<li><code>1 &lt;= w<sub>i</sub> &lt;= n</code></li>
+<li><code>1 &lt;= price<sub>i</sub> &lt;= 10<sup>6</sup></code></li>
+<li>All the shapes of wood <code>(h<sub>i</sub>, w<sub>i</sub>)</code> are pairwise <strong>distinct</strong>.</li>
+</ul>
+</div><br><br><hr><br>***************************************<div id="title">2318. Number of Distinct Roll Sequences</div>
+***************************************<div class="_1l1MA"><p>You are given an integer <code>n</code>. You roll a fair 6-sided dice <code>n</code> times. Determine the total number of <strong>distinct</strong> sequences of rolls possible such that the following conditions are satisfied:</p>
+<ol>
+<li>The <strong>greatest common divisor</strong> of any <strong>adjacent</strong> values in the sequence is equal to <code>1</code>.</li>
+<li>There is <strong>at least</strong> a gap of <code>2</code> rolls between <strong>equal</strong> valued rolls. More formally, if the value of the <code>i<sup>th</sup></code> roll is <strong>equal</strong> to the value of the <code>j<sup>th</sup></code> roll, then <code>abs(i - j) &gt; 2</code>.</li>
+</ol>
+<p>Return <em>the<strong> total number</strong> of distinct sequences possible</em>. Since the answer may be very large, return it <strong>modulo</strong> <code>10<sup>9</sup> + 7</code>.</p>
+<p>Two sequences are considered distinct if at least one element is different.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input:</strong> n = 4
+<strong>Output:</strong> 184
+<strong>Explanation:</strong> Some of the possible sequences are (1, 2, 3, 4), (6, 1, 2, 3), (1, 2, 3, 1), etc.
+Some invalid sequences are (1, 2, 1, 3), (1, 2, 3, 6).
+(1, 2, 1, 3) is invalid since the first and third roll have an equal value and abs(1 - 3) = 2 (i and j are 1-indexed).
+(1, 2, 3, 6) is invalid since the greatest common divisor of 3 and 6 = 3.
+There are a total of 184 distinct sequences possible, so we return 184.</pre>
+<p><strong class="example">Example 2:</strong></p>
+<pre><strong>Input:</strong> n = 2
+<strong>Output:</strong> 22
+<strong>Explanation:</strong> Some of the possible sequences are (1, 2), (2, 1), (3, 2).
+Some invalid sequences are (3, 6), (2, 4) since the greatest common divisor is not equal to 1.
+There are a total of 22 distinct sequences possible, so we return 22.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 10<sup>4</sup></code></li>
+</ul>
+</div><br><br><hr><br>************************************<div id="title">2321. Maximum Score Of Spliced Array</div>
+************************************<div class="_1l1MA"><p>You are given two <strong>0-indexed</strong> integer arrays <code>nums1</code> and <code>nums2</code>, both of length <code>n</code>.</p>
+<p>You can choose two integers <code>left</code> and <code>right</code> where <code>0 &lt;= left &lt;= right &lt; n</code> and <strong>swap</strong> the subarray <code>nums1[left...right]</code> with the subarray <code>nums2[left...right]</code>.</p>
+<ul>
+<li>For example, if <code>nums1 = [1,2,3,4,5]</code> and <code>nums2 = [11,12,13,14,15]</code> and you choose <code>left = 1</code> and <code>right = 2</code>, <code>nums1</code> becomes <code>[1,<strong><u>12,13</u></strong>,4,5]</code> and <code>nums2</code> becomes <code>[11,<strong><u>2,3</u></strong>,14,15]</code>.</li>
+</ul>
+<p>You may choose to apply the mentioned operation <strong>once</strong> or not do anything.</p>
+<p>The <strong>score</strong> of the arrays is the <strong>maximum</strong> of <code>sum(nums1)</code> and <code>sum(nums2)</code>, where <code>sum(arr)</code> is the sum of all the elements in the array <code>arr</code>.</p>
+<p>Return <em>the <strong>maximum possible score</strong></em>.</p>
+<p>A <strong>subarray</strong> is a contiguous sequence of elements within an array. <code>arr[left...right]</code> denotes the subarray that contains the elements of <code>nums</code> between indices <code>left</code> and <code>right</code> (<strong>inclusive</strong>).</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input:</strong> nums1 = [60,60,60], nums2 = [10,90,10]
+<strong>Output:</strong> 210
+<strong>Explanation:</strong> Choosing left = 1 and right = 1, we have nums1 = [60,<u><strong>90</strong></u>,60] and nums2 = [10,<u><strong>60</strong></u>,10].
+The score is max(sum(nums1), sum(nums2)) = max(210, 80) = 210.</pre>
+<p><strong class="example">Example 2:</strong></p>
+<pre><strong>Input:</strong> nums1 = [20,40,20,70,30], nums2 = [50,20,50,40,20]
+<strong>Output:</strong> 220
+<strong>Explanation:</strong> Choosing left = 3, right = 4, we have nums1 = [20,40,20,<u><strong>40,20</strong></u>] and nums2 = [50,20,50,<u><strong>70,30</strong></u>].
+The score is max(sum(nums1), sum(nums2)) = max(140, 220) = 220.
+</pre>
+<p><strong class="example">Example 3:</strong></p>
+<pre><strong>Input:</strong> nums1 = [7,11,13], nums2 = [1,1,1]
+<strong>Output:</strong> 31
+<strong>Explanation:</strong> We choose not to swap any subarray.
+The score is max(sum(nums1), sum(nums2)) = max(31, 3) = 31.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == nums1.length == nums2.length</code></li>
+<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= nums1[i], nums2[i] &lt;= 10<sup>4</sup></code></li>
+</ul>
+</div><br><br><hr><br>********************************************<div id="title">2322. Minimum Score After Removals on a Tree</div>
+********************************************<div class="_1l1MA"><p>There is an undirected connected tree with <code>n</code> nodes labeled from <code>0</code> to <code>n - 1</code> and <code>n - 1</code> edges.</p>
+<p>You are given a <strong>0-indexed</strong> integer array <code>nums</code> of length <code>n</code> where <code>nums[i]</code> represents the value of the <code>i<sup>th</sup></code> node. You are also given a 2D integer array <code>edges</code> of length <code>n - 1</code> where <code>edges[i] = [a<sub>i</sub>, b<sub>i</sub>]</code> indicates that there is an edge between nodes <code>a<sub>i</sub></code> and <code>b<sub>i</sub></code> in the tree.</p>
+<p>Remove two <strong>distinct</strong> edges of the tree to form three connected components. For a pair of removed edges, the following steps are defined:</p>
+<ol>
+<li>Get the XOR of all the values of the nodes for <strong>each</strong> of the three components respectively.</li>
+<li>The <strong>difference</strong> between the <strong>largest</strong> XOR value and the <strong>smallest</strong> XOR value is the <strong>score</strong> of the pair.</li>
+</ol>
+<ul>
+<li>For example, say the three components have the node values: <code>[4,5,7]</code>, <code>[1,9]</code>, and <code>[3,3,3]</code>. The three XOR values are <code>4 ^ 5 ^ 7 = <u><strong>6</strong></u></code>, <code>1 ^ 9 = <u><strong>8</strong></u></code>, and <code>3 ^ 3 ^ 3 = <u><strong>3</strong></u></code>. The largest XOR value is <code>8</code> and the smallest XOR value is <code>3</code>. The score is then <code>8 - 3 = 5</code>.</li>
+</ul>
+<p>Return <em>the <strong>minimum</strong> score of any possible pair of edge removals on the given tree</em>.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/05/03/ex1drawio.png" style="width: 193px; height: 190px;"/>
+<pre><strong>Input:</strong> nums = [1,5,5,4,11], edges = [[0,1],[1,2],[1,3],[3,4]]
+<strong>Output:</strong> 9
+<strong>Explanation:</strong> The diagram above shows a way to make a pair of removals.
+- The 1<sup>st</sup> component has nodes [1,3,4] with values [5,4,11]. Its XOR value is 5 ^ 4 ^ 11 = 10.
+- The 2<sup>nd</sup> component has node [0] with value [1]. Its XOR value is 1 = 1.
+- The 3<sup>rd</sup> component has node [2] with value [5]. Its XOR value is 5 = 5.
+The score is the difference between the largest and smallest XOR value which is 10 - 1 = 9.
+It can be shown that no other pair of removals will obtain a smaller score than 9.
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/05/03/ex2drawio.png" style="width: 287px; height: 150px;"/>
+<pre><strong>Input:</strong> nums = [5,5,2,4,4,2], edges = [[0,1],[1,2],[5,2],[4,3],[1,3]]
+<strong>Output:</strong> 0
+<strong>Explanation:</strong> The diagram above shows a way to make a pair of removals.
+- The 1<sup>st</sup> component has nodes [3,4] with values [4,4]. Its XOR value is 4 ^ 4 = 0.
+- The 2<sup>nd</sup> component has nodes [1,0] with values [5,5]. Its XOR value is 5 ^ 5 = 0.
+- The 3<sup>rd</sup> component has nodes [2,5] with values [2,2]. Its XOR value is 2 ^ 2 = 0.
+The score is the difference between the largest and smallest XOR value which is 0 - 0 = 0.
+We cannot obtain a smaller score than 0.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == nums.length</code></li>
+<li><code>3 &lt;= n &lt;= 1000</code></li>
+<li><code>1 &lt;= nums[i] &lt;= 10<sup>8</sup></code></li>
+<li><code>edges.length == n - 1</code></li>
+<li><code>edges[i].length == 2</code></li>
+<li><code>0 &lt;= a<sub>i</sub>, b<sub>i</sub> &lt; n</code></li>
+<li><code>a<sub>i</sub> != b<sub>i</sub></code></li>
+<li><code>edges</code> represents a valid tree.</li>
+</ul>
+</div><br><br><hr><br>******************************************<div id="title">2328. Number of Increasing Paths in a Grid</div>
+******************************************<div class="_1l1MA"><p>You are given an <code>m x n</code> integer matrix <code>grid</code>, where you can move from a cell to any adjacent cell in all <code>4</code> directions.</p>
+<p>Return <em>the number of <strong>strictly</strong> <strong>increasing</strong> paths in the grid such that you can start from <strong>any</strong> cell and end at <strong>any</strong> cell. </em>Since the answer may be very large, return it <strong>modulo</strong> <code>10<sup>9</sup> + 7</code>.</p>
+<p>Two paths are considered different if they do not have exactly the same sequence of visited cells.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/05/10/griddrawio-4.png" style="width: 181px; height: 121px;"/>
+<pre><strong>Input:</strong> grid = [[1,1],[3,4]]
+<strong>Output:</strong> 8
+<strong>Explanation:</strong> The strictly increasing paths are:
+- Paths with length 1: [1], [1], [3], [4].
+- Paths with length 2: [1 -&gt; 3], [1 -&gt; 4], [3 -&gt; 4].
+- Paths with length 3: [1 -&gt; 3 -&gt; 4].
+The total number of paths is 4 + 3 + 1 = 8.
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<pre><strong>Input:</strong> grid = [[1],[2]]
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> The strictly increasing paths are:
+- Paths with length 1: [1], [2].
+- Paths with length 2: [1 -&gt; 2].
+The total number of paths is 2 + 1 = 3.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>m == grid.length</code></li>
+<li><code>n == grid[i].length</code></li>
+<li><code>1 &lt;= m, n &lt;= 1000</code></li>
+<li><code>1 &lt;= m * n &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= grid[i][j] &lt;= 10<sup>5</sup></code></li>
+</ul>
+</div><br><br><hr><br>***********************************************************<div id="title">2334. Subarray With Elements Greater Than Varying Threshold</div>
+***********************************************************<div class="_1l1MA"><p>You are given an integer array <code>nums</code> and an integer <code>threshold</code>.</p>
+<p>Find any subarray of <code>nums</code> of length <code>k</code> such that <strong>every</strong> element in the subarray is <strong>greater</strong> than <code>threshold / k</code>.</p>
+<p>Return<em> the <strong>size</strong> of <strong>any</strong> such subarray</em>. If there is no such subarray, return <code>-1</code>.</p>
+<p>A <strong>subarray</strong> is a contiguous non-empty sequence of elements within an array.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [1,3,4,3,1], threshold = 6
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> The subarray [3,4,3] has a size of 3, and every element is greater than 6 / 3 = 2.
+Note that this is the only valid subarray.
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [6,5,6,5,8], threshold = 7
+<strong>Output:</strong> 1
+<strong>Explanation:</strong> The subarray [8] has a size of 1, and 8 &gt; 7 / 1 = 7. So 1 is returned.
+Note that the subarray [6,5] has a size of 2, and every element is greater than 7 / 2 = 3.5. 
+Similarly, the subarrays [6,5,6], [6,5,6,5], [6,5,6,5,8] also satisfy the given conditions.
+Therefore, 2, 3, 4, or 5 may also be returned.</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= nums[i], threshold &lt;= 10<sup>9</sup></code></li>
+</ul>
+</div><br><br><hr><br>**************************************<div id="title">2338. Count the Number of Ideal Arrays</div>
+**************************************<div class="_1l1MA"><p>You are given two integers <code>n</code> and <code>maxValue</code>, which are used to describe an <strong>ideal</strong> array.</p>
+<p>A <strong>0-indexed</strong> integer array <code>arr</code> of length <code>n</code> is considered <strong>ideal</strong> if the following conditions hold:</p>
+<ul>
+<li>Every <code>arr[i]</code> is a value from <code>1</code> to <code>maxValue</code>, for <code>0 &lt;= i &lt; n</code>.</li>
+<li>Every <code>arr[i]</code> is divisible by <code>arr[i - 1]</code>, for <code>0 &lt; i &lt; n</code>.</li>
+</ul>
+<p>Return <em>the number of <strong>distinct</strong> ideal arrays of length </em><code>n</code>. Since the answer may be very large, return it modulo <code>10<sup>9</sup> + 7</code>.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input:</strong> n = 2, maxValue = 5
+<strong>Output:</strong> 10
+<strong>Explanation:</strong> The following are the possible ideal arrays:
+- Arrays starting with the value 1 (5 arrays): [1,1], [1,2], [1,3], [1,4], [1,5]
+- Arrays starting with the value 2 (2 arrays): [2,2], [2,4]
+- Arrays starting with the value 3 (1 array): [3,3]
+- Arrays starting with the value 4 (1 array): [4,4]
+- Arrays starting with the value 5 (1 array): [5,5]
+There are a total of 5 + 2 + 1 + 1 + 1 = 10 distinct ideal arrays.
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<pre><strong>Input:</strong> n = 5, maxValue = 3
+<strong>Output:</strong> 11
+<strong>Explanation:</strong> The following are the possible ideal arrays:
+- Arrays starting with the value 1 (9 arrays): 
+   - With no other distinct values (1 array): [1,1,1,1,1] 
+   - With 2<sup>nd</sup> distinct value 2 (4 arrays): [1,1,1,1,2], [1,1,1,2,2], [1,1,2,2,2], [1,2,2,2,2]
+   - With 2<sup>nd</sup> distinct value 3 (4 arrays): [1,1,1,1,3], [1,1,1,3,3], [1,1,3,3,3], [1,3,3,3,3]
+- Arrays starting with the value 2 (1 array): [2,2,2,2,2]
+- Arrays starting with the value 3 (1 array): [3,3,3,3,3]
+There are a total of 9 + 1 + 1 = 11 distinct ideal arrays.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>2 &lt;= n &lt;= 10<sup>4</sup></code></li>
+<li><code>1 &lt;= maxValue &lt;= 10<sup>4</sup></code></li>
+</ul>
+</div><br><br><hr><br>***********************************************<div id="title">2344. Minimum Deletions to Make Array Divisible</div>
+***********************************************<div class="_1l1MA"><p>You are given two positive integer arrays <code>nums</code> and <code>numsDivide</code>. You can delete any number of elements from <code>nums</code>.</p>
+<p>Return <em>the <strong>minimum</strong> number of deletions such that the <strong>smallest</strong> element in </em><code>nums</code><em> <strong>divides</strong> all the elements of </em><code>numsDivide</code>. If this is not possible, return <code>-1</code>.</p>
+<p>Note that an integer <code>x</code> divides <code>y</code> if <code>y % x == 0</code>.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [2,3,2,4,3], numsDivide = [9,6,9,3,15]
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> 
+The smallest element in [2,3,2,4,3] is 2, which does not divide all the elements of numsDivide.
+We use 2 deletions to delete the elements in nums that are equal to 2 which makes nums = [3,4,3].
+The smallest element in [3,4,3] is 3, which divides all the elements of numsDivide.
+It can be shown that 2 is the minimum number of deletions needed.
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [4,3,6], numsDivide = [8,2,6,10]
+<strong>Output:</strong> -1
+<strong>Explanation:</strong> 
+We want the smallest element in nums to divide all the elements of numsDivide.
+There is no way to delete elements from nums to allow this.</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length, numsDivide.length &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= nums[i], numsDivide[i] &lt;= 10<sup>9</sup></code></li>
+</ul>
+</div><br><br><hr><br>*******************************************<div id="title">2350. Shortest Impossible Sequence of Rolls</div>
+*******************************************<div class="_1l1MA"><p>You are given an integer array <code>rolls</code> of length <code>n</code> and an integer <code>k</code>. You roll a <code>k</code> sided dice numbered from <code>1</code> to <code>k</code>, <code>n</code> times, where the result of the <code>i<sup>th</sup></code> roll is <code>rolls[i]</code>.</p>
+<p>Return<em> the length of the <strong>shortest</strong> sequence of rolls that <strong>cannot</strong> be taken from </em><code>rolls</code>.</p>
+<p>A <strong>sequence of rolls</strong> of length <code>len</code> is the result of rolling a <code>k</code> sided dice <code>len</code> times.</p>
+<p><strong>Note</strong> that the sequence taken does not have to be consecutive as long as it is in order.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input:</strong> rolls = [4,2,1,2,3,3,2,4,1], k = 4
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> Every sequence of rolls of length 1, [1], [2], [3], [4], can be taken from rolls.
+Every sequence of rolls of length 2, [1, 1], [1, 2], ..., [4, 4], can be taken from rolls.
+The sequence [1, 4, 2] cannot be taken from rolls, so we return 3.
+Note that there are other sequences that cannot be taken from rolls.</pre>
+<p><strong class="example">Example 2:</strong></p>
+<pre><strong>Input:</strong> rolls = [1,1,2,2], k = 2
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> Every sequence of rolls of length 1, [1], [2], can be taken from rolls.
+The sequence [2, 1] cannot be taken from rolls, so we return 2.
+Note that there are other sequences that cannot be taken from rolls but [2, 1] is the shortest.
+</pre>
+<p><strong class="example">Example 3:</strong></p>
+<pre><strong>Input:</strong> rolls = [1,1,3,2,2,2,3,3], k = 4
+<strong>Output:</strong> 1
+<strong>Explanation:</strong> The sequence [4] cannot be taken from rolls, so we return 1.
+Note that there are other sequences that cannot be taken from rolls but [4] is the shortest.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == rolls.length</code></li>
+<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= rolls[i] &lt;= k &lt;= 10<sup>5</sup></code></li>
+</ul>
+</div><br><br><hr><br>*******************************<div id="title">2354. Number of Excellent Pairs</div>
+*******************************<div class="_1l1MA"><p>You are given a <strong>0-indexed</strong> positive integer array <code>nums</code> and a positive integer <code>k</code>.</p>
+<p>A pair of numbers <code>(num1, num2)</code> is called <strong>excellent</strong> if the following conditions are satisfied:</p>
+<ul>
+<li><strong>Both</strong> the numbers <code>num1</code> and <code>num2</code> exist in the array <code>nums</code>.</li>
+<li>The sum of the number of set bits in <code>num1 OR num2</code> and <code>num1 AND num2</code> is greater than or equal to <code>k</code>, where <code>OR</code> is the bitwise <strong>OR</strong> operation and <code>AND</code> is the bitwise <strong>AND</strong> operation.</li>
+</ul>
+<p>Return <em>the number of <strong>distinct</strong> excellent pairs</em>.</p>
+<p>Two pairs <code>(a, b)</code> and <code>(c, d)</code> are considered distinct if either <code>a != c</code> or <code>b != d</code>. For example, <code>(1, 2)</code> and <code>(2, 1)</code> are distinct.</p>
+<p><strong>Note</strong> that a pair <code>(num1, num2)</code> such that <code>num1 == num2</code> can also be excellent if you have at least <strong>one</strong> occurrence of <code>num1</code> in the array.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [1,2,3,1], k = 3
+<strong>Output:</strong> 5
+<strong>Explanation:</strong> The excellent pairs are the following:
+- (3, 3). (3 AND 3) and (3 OR 3) are both equal to (11) in binary. The total number of set bits is 2 + 2 = 4, which is greater than or equal to k = 3.
+- (2, 3) and (3, 2). (2 AND 3) is equal to (10) in binary, and (2 OR 3) is equal to (11) in binary. The total number of set bits is 1 + 2 = 3.
+- (1, 3) and (3, 1). (1 AND 3) is equal to (01) in binary, and (1 OR 3) is equal to (11) in binary. The total number of set bits is 1 + 2 = 3.
+So the number of excellent pairs is 5.</pre>
+<p><strong class="example">Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [5,1,1], k = 10
+<strong>Output:</strong> 0
+<strong>Explanation:</strong> There are no excellent pairs for this array.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
+<li><code>1 &lt;= k &lt;= 60</code></li>
+</ul>
+</div><br><br><hr><br>******************************<div id="title">2360. Longest Cycle in a Graph</div>
+******************************<div class="_1l1MA"><p>You are given a <strong>directed</strong> graph of <code>n</code> nodes numbered from <code>0</code> to <code>n - 1</code>, where each node has <strong>at most one</strong> outgoing edge.</p>
+<p>The graph is represented with a given <strong>0-indexed</strong> array <code>edges</code> of size <code>n</code>, indicating that there is a directed edge from node <code>i</code> to node <code>edges[i]</code>. If there is no outgoing edge from node <code>i</code>, then <code>edges[i] == -1</code>.</p>
+<p>Return <em>the length of the <strong>longest</strong> cycle in the graph</em>. If no cycle exists, return <code>-1</code>.</p>
+<p>A cycle is a path that starts and ends at the <strong>same</strong> node.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/06/08/graph4drawio-5.png" style="width: 335px; height: 191px;"/>
+<pre><strong>Input:</strong> edges = [3,3,4,2,3]
+<strong>Output:</strong> 3
+<strong>Explanation:</strong> The longest cycle in the graph is the cycle: 2 -&gt; 4 -&gt; 3 -&gt; 2.
+The length of this cycle is 3, so 3 is returned.
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<img alt="" src="https://assets.leetcode.com/uploads/2022/06/07/graph4drawio-1.png" style="width: 171px; height: 161px;"/>
+<pre><strong>Input:</strong> edges = [2,-1,3,1]
+<strong>Output:</strong> -1
+<strong>Explanation:</strong> There are no cycles in this graph.
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>n == edges.length</code></li>
+<li><code>2 &lt;= n &lt;= 10<sup>5</sup></code></li>
+<li><code>-1 &lt;= edges[i] &lt; n</code></li>
+<li><code>edges[i] != i</code></li>
+</ul>
+</div><br><br><hr><br>********************************************<div id="title">2366. Minimum Replacements to Sort the Array</div>
+********************************************<div class="_1l1MA"><p>You are given a <strong>0-indexed</strong> integer array <code>nums</code>. In one operation you can replace any element of the array with <strong>any two</strong> elements that <strong>sum</strong> to it.</p>
+<ul>
+<li>For example, consider <code>nums = [5,6,7]</code>. In one operation, we can replace <code>nums[1]</code> with <code>2</code> and <code>4</code> and convert <code>nums</code> to <code>[5,2,4,7]</code>.</li>
+</ul>
+<p>Return <em>the minimum number of operations to make an array that is sorted in <strong>non-decreasing</strong> order</em>.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input:</strong> nums = [3,9,3]
+<strong>Output:</strong> 2
+<strong>Explanation:</strong> Here are the steps to sort the array in non-decreasing order:
+- From [3,9,3], replace the 9 with 3 and 6 so the array becomes [3,3,6,3]
+- From [3,3,6,3], replace the 6 with 3 and 3 so the array becomes [3,3,3,3,3]
+There are 2 steps to sort the array in non-decreasing order. Therefore, we return 2.
+
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<pre><strong>Input:</strong> nums = [1,2,3,4,5]
+<strong>Output:</strong> 0
+<strong>Explanation:</strong> The array is already in non-decreasing order. Therefore, we return 0. 
+</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10<sup>5</sup></code></li>
+<li><code>1 &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
+</ul>
+</div><br><br><hr><br>****************************<div id="title">2376. Count Special Integers</div>
+****************************<div class="_1l1MA"><p>We call a positive integer <strong>special</strong> if all of its digits are <strong>distinct</strong>.</p>
+<p>Given a <strong>positive</strong> integer <code>n</code>, return <em>the number of special integers that belong to the interval </em><code>[1, n]</code>.</p>
+<p> </p>
+<p><strong class="example">Example 1:</strong></p>
+<pre><strong>Input:</strong> n = 20
+<strong>Output:</strong> 19
+<strong>Explanation:</strong> All the integers from 1 to 20, except 11, are special. Thus, there are 19 special integers.
+</pre>
+<p><strong class="example">Example 2:</strong></p>
+<pre><strong>Input:</strong> n = 5
+<strong>Output:</strong> 5
+<strong>Explanation:</strong> All the integers from 1 to 5 are special.
+</pre>
+<p><strong class="example">Example 3:</strong></p>
+<pre><strong>Input:</strong> n = 135
+<strong>Output:</strong> 110
+<strong>Explanation:</strong> There are 110 integers from 1 to 135 that are special.
+Some of the integers that are not special are: 22, 114, and 131.</pre>
+<p> </p>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 2 * 10<sup>9</sup></code></li>
+</ul>
+</div><br><br><hr><br>
